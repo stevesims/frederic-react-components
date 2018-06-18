@@ -75,8 +75,11 @@ src/.idea/
 src/.sonarlint/
 .scannerwork/
 /lib
+/es
 /storybook-static
 /storybook-static.zip
+
+/packages/storybook/storybook-static/static
 
 /components/*/es
 
