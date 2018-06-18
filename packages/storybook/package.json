@@ -1,0 +1,51 @@
+{
+  "name": "@frederic-react-components/storybook",
+  "version": "0.0.1",
+  "dependencies": {
+    "@frederic-react-components/arrow": "^0.0.1",
+    "@frederic-react-components/arrow-left": "^0.0.1",
+    "@frederic-react-components/compact-table-accordion-group": "^0.0.1",
+    "@frederic-react-components/count": "^0.0.1",
+    "@frederic-react-components/countdown-text-area": "^0.0.1",
+    "@frederic-react-components/counter-bar": "^0.0.1",
+    "@frederic-react-components/distraction-free": "^0.0.1",
+    "@frederic-react-components/header-button": "^0.0.1",
+    "@frederic-react-components/keyline": "^0.0.1",
+    "@frederic-react-components/open-button": "^0.0.1",
+    "@frederic-react-components/remove-button": "^0.0.1",
+    "@frederic-react-components/result-count": "^0.0.1",
+    "@frederic-react-components/result-count-title": "^0.0.1",
+    "@frederic-react-components/spinner": "^0.0.1",
+    "@frederic-react-components/table": "^0.0.1",
+    "@frederic-react-components/table-accordion-group": "^0.0.1",
+    "@frederic-react-components/title-result-count": "^0.0.1",
+    "@storybook/addon-actions": "^3.4.1",
+    "@storybook/addon-knobs": "^3.4.1",
+    "@storybook/addon-links": "^3.4.1",
+    "@storybook/addons": "^3.4.1",
+    "@storybook/react": "^3.4.1",
+    "@storybook/storybook-deployer": "^2.2.0",
+    "govuk-colours": "^1.0.3",
+    "normalize.css": "^8.0.0",
+    "react-final-form": "^3.1.0"
+  },
+  "peerDependencies": {
+    "prop-types": ">=15",
+    "react": ">=16.2.0"
+  },
+  "scripts": {
+    "start": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006",
+    "build": "build-storybook"
+  },
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "author": "Tarandeep Singh Chauhan",
+  "license": "MIT",
+  "homepage": "https://github.com/stevesims/frederic-react-components#readme",
+  "description": "frederic-react-components: Frederic project specific components.",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  }
+}

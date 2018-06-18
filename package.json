@@ -1,17 +1,14 @@
 {
-  "name": "@frederic/react-components",
-  "version": "1.0.10",
-  "description": "",
-  "keywords": [],
-  "main": "lib/index.js",
-  "homepage": "",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/stevesims/frederic-react-components.git"
+  "name": "@frederic-react-components/monorepo",
+  "engines": {
+    "node": "~8.2.0"
   },
-  "private": true,
-  "watch": {
-    "test": "./src/**/*.test.js"
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-3"
+    ]
   },
   "scripts": {
     "start": "npm run storybook",
@@ -30,15 +27,8 @@
     "test-unit:debug": "cross-env NODE_ENV=test node --inspect-brk ./node_modules/tape/bin/tape -r babel-register -r jsdom-global/register -r ./test/init.js src/**/*.unit.js src/**/unit.js | faucet",
     "test-unit:watch": "cross-env NODE_ENV=test tape-watch -r babel-register -r jsdom-global/register src/**/*.unit.js src/**/unit.js -p faucet"
   },
-  "engines": {
-    "node": "~8.2.0"
-  },
-  "babel": {
-    "presets": [
-      "env",
-      "react",
-      "stage-3"
-    ]
+  "watch": {
+    "test": "./src/**/*.test.js"
   },
   "nyc": {
     "extends": "@istanbuljs/nyc-config-babel",
@@ -56,18 +46,19 @@
       "text-summary"
     ]
   },
-  "author": "IBM",
-  "license": "UNLICENSED",
-  "peerDependencies": {
-    "glamorous": ">=4",
-    "prop-types": ">=15",
-    "react": ">=16"
-  },
+  "description": "frederic-react-components: Frederic project specific components.",
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "dependencies": {
     "emotion": "^9.2.3",
     "react-collapse": "^4.0.3",
     "react-emotion": "^9.2.3",
     "react-motion": "^0.5.2"
+  },
+  "peerDependencies": {
+    "glamorous": ">=4",
+    "prop-types": ">=15",
+    "react": ">=16"
   },
   "devDependencies": {
     "@govuk-react/text-area": "^0.2.4",
@@ -96,6 +87,7 @@
     "govuk-colours": "^1.0.3",
     "jsdom": "^11.5.1",
     "jsdom-global": "^3.0.2",
+    "lerna": "^2.11.0",
     "make-index": "0.0.4",
     "manage-state": "0.0.3",
     "nyc": "^11.5.0",
@@ -107,5 +99,20 @@
     "tape-watch": "^2.3.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stevesims/frederic-react-components.git"
+  },
+  "author": "IBM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stevesims/frederic-react-components/issues"
+  },
+  "homepage": "https://github.com/stevesims/frederic-react-components#readme",
+  "workspaces": [
+    "components/*",
+    "packages/*"
+  ],
+  "private": true
 }
