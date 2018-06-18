@@ -1,8 +1,5 @@
 {
   "name": "@frederic-react-components/monorepo",
-  "engines": {
-    "node": "~8.2.0"
-  },
   "babel": {
     "presets": [
       "env",
