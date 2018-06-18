@@ -75,7 +75,6 @@
     "@frederic-react-components/table": "*",
     "@frederic-react-components/table-accordion-group": "*",
     "@frederic-react-components/title-result-count": "*",
-    "@govuk-react/text-area": "^0.2.4",
     "@istanbuljs/nyc-config-babel": "^1.2.3",
     "@storybook/react": "^3.2.17",
     "babel-cli": "^6.26.0",
