@@ -77,3 +77,10 @@ src/.sonarlint/
 /lib
 /storybook-static
 /storybook-static.zip
+
+/components/*/es
+
+/components/*/lib
+
+/packages/*/es
+/packages/*/lib
