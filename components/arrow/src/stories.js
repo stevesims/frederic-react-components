@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 
 import Arrow from '.';
 
-export default ({module}) => {
-  storiesOf('Arrow', module)
-    .add('default', () => <Arrow />);
-};
+const stories = storiesOf('Arrow', module);
+
+stories.add('Component default', () => <Arrow />);

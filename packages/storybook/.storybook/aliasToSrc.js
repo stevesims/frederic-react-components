@@ -1,7 +1,7 @@
 const path = require('path');
 
 // set up a webpack alias object for a given array of packages, that point to the src folder of those packages
-const aliasToSrc = (packages, dontAlias = ["@govuk-react/images"]) => {
+const aliasToSrc = (packages, dontAlias = []) => {
   return packages.reduce((acc, package) => {
     try {
       const { name } = require(path.join(process.cwd(), package, 'package.json'));
