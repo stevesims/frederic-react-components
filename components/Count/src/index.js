@@ -6,15 +6,7 @@ const StyledCount = styled('div')({
   fontFamily: 'Roboto, Arial, sans-serif',
 });
 
-const Count = props => {
-  const { value } = props;
-
-  return (
-    <StyledCount>
-      <span>{value}</span>
-    </StyledCount>
-  );
-};
+const Count = ({ value, ...props }) => <StyledCount {...props}><span>{value}</span></StyledCount>;
 
 Count.propTypes = {
   textClass: PropTypes.string,
