@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
 import { Collapse } from 'react-collapse';
 
-import OpenButton from '../OpenButton';
+import OpenButton from '@frederic-react-components/open-button';
 
 const Container = glamorous.div({
   fontFamily: 'Roboto, Arial, sans-serif',

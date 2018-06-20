@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
 
-import Arrow from '../Arrow';
+import Arrow from '@frederic-react-components/arrow';
 
 const RotatingButton = glamorous.button(
   {

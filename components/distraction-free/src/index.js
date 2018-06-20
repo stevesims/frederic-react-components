@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
 import { GREY_1, WHITE } from 'govuk-colours';
 
-import ArrowLeft from '../ArrowLeft';
+import ArrowLeft from '@frederic-react-components/arrow-left';
 
 const Background = glamorous.div({
   alignItems: 'center',

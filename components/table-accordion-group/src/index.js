@@ -4,7 +4,7 @@ import glamorous from 'glamorous';
 import { Collapse } from 'react-collapse';
 import { FONT_SIZE } from '@govuk-react/constants';
 
-import OpenButton from '../OpenButton';
+import OpenButton from '@frederic-react-components/open-button';
 
 const Container = glamorous.div({
   display: 'flex',

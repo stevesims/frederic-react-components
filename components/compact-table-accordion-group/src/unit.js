@@ -4,7 +4,7 @@ import { mount, shallow } from 'enzyme';
 import sinon from 'sinon';
 
 import Component, { Title } from '.';
-import OpenButton from '../OpenButton';
+import OpenButton from '@frederic-react-components/open-button';
 
 test(
   'CompactTableAccordionGroup: Component renders with only required properties',

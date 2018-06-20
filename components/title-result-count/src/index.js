@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
 
-import ResultCount from '../ResultCount';
+import ResultCount from '@frederic-react-components/result-count';
 
 const Wrapper = glamorous.div({
   display: 'inline-block',
