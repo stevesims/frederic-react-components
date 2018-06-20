@@ -3,8 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import RemoveButton from '.';
 
-export default ({module}) => {
-  storiesOf('RemoveButton', module)
-    .add('default', () => <RemoveButton title="Remove" />)
-    .add('Next to some text', () => <div><span>Text here</span><RemoveButton title="Remove" /></div>);
-};
+const stories = storiesOf('Buttons/RemoveButton', module);
+
+stories.add('Component default', () => <RemoveButton title="Remove" />);
+stories.add('Next to some text', () => <div><span>Text here</span><RemoveButton title="Remove" /></div>);

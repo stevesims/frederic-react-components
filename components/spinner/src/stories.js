@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 
 import Component from '.';
 
-export default ({module}) => {
-  storiesOf('unsorted/Spinner', module)
-    .add('default', () => <Component visible />);
-};
+const stories = storiesOf('Loading/Spinner', module);
+
+stories.add('Component default', () => <Component visible />);

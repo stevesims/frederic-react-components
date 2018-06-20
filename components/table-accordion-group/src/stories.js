@@ -94,30 +94,34 @@ const ManagedTableAccordionGroup = manageState(TableAccordionGroup, {
 
 const arrayExampleItems = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
 
-export default ({module}) => {
-  storiesOf('TableAccordionGroup', module)
-    .add('default', () => <TableAccordionGroup title="Title" expanded="expanded">
+const stories = storiesOf('Tables/TableAccordionGroup', module);
+
+stories.add('Component default', () => <TableAccordionGroup title="Title" expanded="expanded">
       Children
-    </TableAccordionGroup>)
-    .add('open', () => <TableAccordionGroup open title="Title" expanded="expanded">
+</TableAccordionGroup>);
+
+stories.add('open', () => <TableAccordionGroup open title="Title" expanded="expanded">
       Children
-    </TableAccordionGroup>)
-    .add('state managed', () => <ManagedTableAccordionGroup title="Title" expanded="expanded">
+</TableAccordionGroup>);
+
+stories.add('state managed', () => <ManagedTableAccordionGroup title="Title" expanded="expanded">
           Children
-    </ManagedTableAccordionGroup>)
-    .add('changeOnTitleClick', () => <ManagedTableAccordionGroup changeOnTitleClick title="Title" expanded="expanded">
+</ManagedTableAccordionGroup>);
+
+stories.add('changeOnTitleClick', () => <ManagedTableAccordionGroup changeOnTitleClick title="Title" expanded="expanded">
           Children
-    </ManagedTableAccordionGroup>)
-    .add('array', () => <ManagedTableAccordionGroup
-      expanded={
-        arrayExampleItems.map((item, index) => {
-          if (index) {
-            return <div>{item}</div>;
-          }
-          return null;
-        })}
-    >
-      {arrayExampleItems[0]}
-    </ManagedTableAccordionGroup>)
-    .add('async', () => <TableAccordionGroupAsyncExample />);
-};
+</ManagedTableAccordionGroup>);
+
+stories.add('array', () => <ManagedTableAccordionGroup
+  expanded={
+    arrayExampleItems.map((item, index) => {
+      if (index) {
+        return <div>{item}</div>;
+      }
+      return null;
+    })}
+>
+  {arrayExampleItems[0]}
+</ManagedTableAccordionGroup>);
+
+stories.add('async', () => <TableAccordionGroupAsyncExample />);

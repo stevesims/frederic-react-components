@@ -7,7 +7,6 @@ import manageState from 'manage-state';
 
 const ManagedOpenButton = manageState(OpenButton, { propsToState: ['open']});
 
-export default ({module}) => {
-  storiesOf('OpenButton', module)
-    .add('default', () => <ManagedOpenButton />);
-};
+const stories = storiesOf('Buttons/OpenButton', module);
+
+stories.add('Component default', () => <ManagedOpenButton />);

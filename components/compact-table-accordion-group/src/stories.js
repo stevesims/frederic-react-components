@@ -94,32 +94,38 @@ const ManagedCompactTableAccordionGroup = manageState(CompactTableAccordionGroup
 
 const arrayExampleItems = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
 
-export default ({module}) => {
-  storiesOf('CompactTableAccordionGroup', module)
-    .add('default', () => <CompactTableAccordionGroup title="Title" expanded="expanded">
+const stories = storiesOf('Tables/CompactTableAccordionGroup', module);
+
+stories.add('Component default', () => <CompactTableAccordionGroup title="Title" expanded="expanded">
       Children
-    </CompactTableAccordionGroup>)
-    .add('no children', () => <CompactTableAccordionGroup open title="Title" expanded="expanded"/>)
-    .add('open', () => <CompactTableAccordionGroup open title="Title" expanded="expanded">
+</CompactTableAccordionGroup>);
+
+stories.add('no children', () => <CompactTableAccordionGroup open title="Title" expanded="expanded"/>);
+
+stories.add('open', () => <CompactTableAccordionGroup open title="Title" expanded="expanded">
       Children
-    </CompactTableAccordionGroup>)
-    .add('state managed', () => <ManagedCompactTableAccordionGroup title="Title" expanded="expanded">
+</CompactTableAccordionGroup>);
+
+stories.add('state managed', () => <ManagedCompactTableAccordionGroup title="Title" expanded="expanded">
           Children
-    </ManagedCompactTableAccordionGroup>)
-    .add('state managed without children', () => <ManagedCompactTableAccordionGroup title="Title" expanded="expanded"/>)
-    .add('changeOnTitleClick', () => <ManagedCompactTableAccordionGroup changeOnTitleClick title="Title" expanded="expanded">
+</ManagedCompactTableAccordionGroup>);
+
+stories.add('state managed without children', () => <ManagedCompactTableAccordionGroup title="Title" expanded="expanded"/>);
+
+stories.add('changeOnTitleClick', () => <ManagedCompactTableAccordionGroup changeOnTitleClick title="Title" expanded="expanded">
           Children
-    </ManagedCompactTableAccordionGroup>)
-    .add('array', () => <ManagedCompactTableAccordionGroup
-      expanded={
-        arrayExampleItems.map((item, index) => {
-          if (index) {
-            return <div>{item}</div>;
-          }
-          return null;
-        })}
-    >
-      {arrayExampleItems[0]}
-    </ManagedCompactTableAccordionGroup>)
-    .add('async', () => <CompactTableAccordionGroupAsyncExample />);
-};
+</ManagedCompactTableAccordionGroup>);
+
+stories.add('array', () => <ManagedCompactTableAccordionGroup
+  expanded={
+    arrayExampleItems.map((item, index) => {
+      if (index) {
+        return <div>{item}</div>;
+      }
+      return null;
+    })}
+>
+  {arrayExampleItems[0]}
+</ManagedCompactTableAccordionGroup>);
+
+stories.add('async', () => <CompactTableAccordionGroupAsyncExample />);

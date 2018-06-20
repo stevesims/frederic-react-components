@@ -3,9 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import Count from '.';
 
-export default ({module}) => {
-  storiesOf('unsorted/Count', module)
-    .add('default', () => <Count
-      value="5"
-    />);
-};
+const stories = storiesOf('Count/Count', module);
+
+stories.add('Component default', () => <Count
+  value="5"
+/>);

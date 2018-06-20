@@ -10,21 +10,24 @@ const arrayExampleContent = [
 ];
 const exampleNames = ['one', 'two', 'three', 'four'];
 
-export default ({module}) => {
-  storiesOf('Table', module)
-    .add('default', () =>
-      <Table titles={arrayExampleHeadings} rows={arrayExampleContent} names={exampleNames} />
-    )
-    .add('rowIncludesHeading', () =>
-      <Table titles={arrayExampleHeadings} rows={arrayExampleContent} rowIncludesHeading />
-    )
-    .add('rowIncludesHeading, no titles', () =>
-      <Table rows={arrayExampleContent} rowIncludesHeading names={exampleNames} />
-    )
-    .add('rowIncludesHeading, no titles, small single row', () =>
-      <Table rows={[['title', 'value']]} rowIncludesHeading />
-    )
-    .add('rowIncludesHeading, with flexible columns', () =>
-      <Table titles={arrayExampleHeadings} rows={arrayExampleContent} flexibleColumns rowIncludesHeading />
-    );
-};
+const stories = storiesOf('Tables/Table', module);
+
+stories.add('Component default', () =>
+  <Table titles={arrayExampleHeadings} rows={arrayExampleContent} names={exampleNames} />
+);
+
+stories.add('rowIncludesHeading', () =>
+  <Table titles={arrayExampleHeadings} rows={arrayExampleContent} rowIncludesHeading />
+);
+
+stories.add('rowIncludesHeading, no titles', () =>
+  <Table rows={arrayExampleContent} rowIncludesHeading names={exampleNames} />
+);
+
+stories.add('rowIncludesHeading, no titles, small single row', () =>
+  <Table rows={[['title', 'value']]} rowIncludesHeading />
+);
+
+stories.add('rowIncludesHeading, with flexible columns', () =>
+  <Table titles={arrayExampleHeadings} rows={arrayExampleContent} flexibleColumns rowIncludesHeading />
+);

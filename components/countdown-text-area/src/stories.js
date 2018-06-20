@@ -10,9 +10,9 @@ const ManagedCountdownTextarea = manageState(CountdownTextarea, {
   propsToState: ['value'],
 });
 
-export default ({module}) => {
-  storiesOf('unsorted/CountdownTextarea', module)
-    .add('default', () => <ManagedCountdownTextarea />)
-    .add('with maxLength (150)', () => <ManagedCountdownTextarea noMaxLengthAttr maxLength={150} />)
-    .add('with maxLength (100) and positiveOnly', () => <ManagedCountdownTextarea maxLength={100} positiveOnly />);
-};
+const stories = storiesOf('Forms/CountdownTextarea', module);
+
+stories.add('Component default', () => <ManagedCountdownTextarea />);
+stories.add('with maxLength (150)', () => <ManagedCountdownTextarea noMaxLengthAttr maxLength={150} />);
+stories.add('with maxLength (100) and positiveOnly', () => <ManagedCountdownTextarea maxLength={100} positiveOnly />);
+
