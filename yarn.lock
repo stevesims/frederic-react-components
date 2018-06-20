@@ -975,6 +975,71 @@
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.6.3.tgz#65682e68a82701c70eefb38d7f941a2c0bfa90de"
 
+"@govuk-react/constants@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@govuk-react/constants/-/constants-0.2.2.tgz#842c88824a5d9d19a02d7769cc8b472a7e9ec710"
+  dependencies:
+    govuk-colours "^1.0.3"
+
+"@govuk-react/error-text@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@govuk-react/error-text/-/error-text-0.2.4.tgz#4a4643f1dce51345ffadce8b3119e7101c91b5ca"
+  dependencies:
+    "@govuk-react/constants" "^0.2.2"
+    "@govuk-react/hoc" "^0.2.4"
+    govuk-colours "^1.0.3"
+
+"@govuk-react/hint-text@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@govuk-react/hint-text/-/hint-text-0.2.4.tgz#2d447d8efe947540fcc867b5586bc5fdc89972f8"
+  dependencies:
+    "@govuk-react/constants" "^0.2.2"
+    "@govuk-react/hoc" "^0.2.4"
+    govuk-colours "^1.0.3"
+
+"@govuk-react/hoc@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@govuk-react/hoc/-/hoc-0.2.4.tgz#f67f21ae294613f3d5252d56cd2fd78cdd3dc794"
+  dependencies:
+    "@govuk-react/constants" "^0.2.2"
+    "@govuk-react/icons" "^0.2.4"
+    govuk-colours "^1.0.3"
+
+"@govuk-react/icons@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@govuk-react/icons/-/icons-0.2.4.tgz#197069c5af1a2e147895856743922e06fe04d227"
+  dependencies:
+    "@govuk-react/constants" "^0.2.2"
+    govuk-colours "^1.0.3"
+
+"@govuk-react/label-text@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@govuk-react/label-text/-/label-text-0.2.4.tgz#04765a9af385847fe202fae6736d593a3ffa478d"
+  dependencies:
+    "@govuk-react/constants" "^0.2.2"
+    "@govuk-react/hoc" "^0.2.4"
+    govuk-colours "^1.0.3"
+
+"@govuk-react/label@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@govuk-react/label/-/label-0.2.4.tgz#ddadff428826b3c9cce37bb12ddf0262413682d7"
+  dependencies:
+    "@govuk-react/constants" "^0.2.2"
+    "@govuk-react/hoc" "^0.2.4"
+    govuk-colours "^1.0.3"
+
+"@govuk-react/text-area@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@govuk-react/text-area/-/text-area-0.2.4.tgz#1e1bc144183fb7a3f132d2061149c728e30f9894"
+  dependencies:
+    "@govuk-react/constants" "^0.2.2"
+    "@govuk-react/error-text" "^0.2.4"
+    "@govuk-react/hint-text" "^0.2.4"
+    "@govuk-react/hoc" "^0.2.4"
+    "@govuk-react/label" "^0.2.4"
+    "@govuk-react/label-text" "^0.2.4"
+    govuk-colours "^1.0.3"
+
 "@istanbuljs/nyc-config-babel@^1.2.3":
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/@istanbuljs/nyc-config-babel/-/nyc-config-babel-1.2.3.tgz#ccd8f77cf64f3e6abb8f777a69b1a30e14435a48"
