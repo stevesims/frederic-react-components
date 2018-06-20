@@ -3,6 +3,22 @@
   "version": "0.0.1",
   "dependencies": {
     "@frederic-react-components/arrow": "^0.0.1",
+    "@frederic-react-components/arrow-left": "^0.0.1",
+    "@frederic-react-components/compact-table-accordion-group": "^0.0.1",
+    "@frederic-react-components/count": "^0.0.1",
+    "@frederic-react-components/countdown-text-area": "^0.0.1",
+    "@frederic-react-components/counter-bar": "^0.0.1",
+    "@frederic-react-components/distraction-free": "^0.0.1",
+    "@frederic-react-components/header-button": "^0.0.1",
+    "@frederic-react-components/keyline": "^0.0.1",
+    "@frederic-react-components/open-button": "^0.0.1",
+    "@frederic-react-components/remove-button": "^0.0.1",
+    "@frederic-react-components/result-count": "^0.0.1",
+    "@frederic-react-components/result-count-title": "^0.0.1",
+    "@frederic-react-components/spinner": "^0.0.1",
+    "@frederic-react-components/table": "^0.0.1",
+    "@frederic-react-components/table-accordion-group": "^0.0.1",
+    "@frederic-react-components/title-result-count": "^0.0.1",
     "govuk-colours": "^1.0.3"
   },
   "peerDependencies": {
