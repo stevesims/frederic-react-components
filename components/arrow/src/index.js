@@ -10,16 +10,11 @@ import PropTypes from 'prop-types';
 // - height of triangle is 3
 // - height of viewport = height of triangle * 4/3 = 4 (see * above)
 
-const Arrow = ({fill, width, ...rest}) => <svg
-  width={`${width}px`}
-  height={`${width}px`}
-  viewBox="0 0 6 4"
-  {...rest}>
-  <polygon
-    fill={fill}
-    points="3 4 6 1 0 1"
-  />
-</svg>;
+const Arrow = ({ fill, width, ...rest }) => (
+  <svg width={`${width}px`} height={`${width}px`} viewBox="0 0 6 4" {...rest}>
+    <polygon fill={fill} points="3 4 6 1 0 1" />
+  </svg>
+);
 
 Arrow.propTypes = {
   fill: PropTypes.string,
