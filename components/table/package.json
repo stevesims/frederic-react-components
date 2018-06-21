@@ -5,7 +5,8 @@
     "@storybook/addon-knobs": "^3.4.2"
   },
   "peerDependencies": {
-    "glamorous": ">=4",
+    "emotion": ">=9",
+    "react-emotion": ">=9",
     "prop-types": ">=15",
     "react": ">=16.2.0"
   },

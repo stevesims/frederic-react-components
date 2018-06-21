@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 import { Collapse } from 'react-collapse';
 
 import OpenButton from '@frederic-react-components/open-button';
 
-const Container = glamorous.div({
+const Container = styled('div')({
   fontFamily: 'Roboto, Arial, sans-serif',
   fontSize: '14px',
   paddingBottom: '10px',
@@ -13,12 +13,12 @@ const Container = glamorous.div({
   position: 'relative',
 });
 
-const TitleRow = glamorous.div({
+const TitleRow = styled('div')({
   display: 'flex',
   marginBottom: '8px',
 });
 
-const Title = glamorous.header(({ clickable }) => (clickable ? { cursor: 'pointer' } : undefined), {
+const Title = styled('header')(({ clickable }) => (clickable ? { cursor: 'pointer' } : undefined), {
   paddingLeft: '16px',
 });
 

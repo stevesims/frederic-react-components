@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 
 import ResultCount from '@frederic-react-components/result-count';
 
-const Wrapper = glamorous.div({
+const Wrapper = styled('div')({
   display: 'inline-block',
 });
 
-const Title = glamorous.div({
+const Title = styled('div')({
   display: 'inline-block',
   fontFamily: 'Roboto, Arial, sans-serif',
   fontSize: '15px',

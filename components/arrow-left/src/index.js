@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 import { FONT_SIZE, LINE_HEIGHT, MEDIA_QUERIES } from '@govuk-react/constants';
 
 import { BLUE } from 'govuk-colours';
 
-const Wrapper = glamorous.span(
+const Wrapper = styled('span')(
   {
     alignItems: 'center',
     display: 'flex',
@@ -16,7 +16,7 @@ const Wrapper = glamorous.span(
   }),
 );
 
-const Title = glamorous.span({
+const Title = styled('span')({
   fontFamily: 'Roboto, Arial, sans-serif',
   fontSize: FONT_SIZE.SIZE_14,
   lineHeight: LINE_HEIGHT.SIZE_14,

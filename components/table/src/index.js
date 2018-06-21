@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 
-const TableContainer = glamorous('table', {
-  // use `forwardProps` here as by default glamorous doesn't allow setting `name` prop on a `table`
+const TableContainer = styled('table', {
+  // use `forwardProps` here as by default emotion doesn't allow setting `name` prop on a `table`
   forwardProps: ['name'],
 })(
   {
@@ -14,7 +14,7 @@ const TableContainer = glamorous('table', {
   ({ flexibleColumns }) => ({ tableLayout: flexibleColumns ? 'auto' : 'fixed' }),
 );
 
-const TableHeading = glamorous('th', {
+const TableHeading = styled('th', {
   forwardProps: ['name'],
 })(({ rowHeading, columnCount }) => ({
   ':first-child': {
@@ -32,8 +32,8 @@ const TableHeading = glamorous('th', {
   verticalAlign: 'baseline',
 }));
 
-const TableData = glamorous('td', {
-  // use `forwardProps` here as by default glamorous doesn't allow setting `name` prop on a `td`
+const TableData = styled('td', {
+  // use `forwardProps` here as by default emotion doesn't allow setting `name` prop on a `td`
   forwardProps: ['name'],
 })({
   ':first-child': {

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 
 import { GREY_1 } from 'govuk-colours';
 
-const KeylineWrapper = glamorous.span(({ inlineBlock, borderColor }) => ({
+const KeylineWrapper = styled('span')(({ inlineBlock, borderColor }) => ({
   border: 0,
   borderBottom: `1px solid ${borderColor ? borderColor : GREY_1}`,
   display: inlineBlock ? 'inline-block' : 'block',

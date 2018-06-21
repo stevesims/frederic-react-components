@@ -63,7 +63,7 @@ test(
 test(
   'Table: Component renders with flexible column styling (coverage)',
   assert => {
-    // need to mount for this test, otherwise the glamorous styling doesn't get evaluated
+    // need to mount for this test, otherwise the emotion styling doesn't get evaluated
     mount(<Table titles={titles} rows={rows} flexibleColumns />);
     assert.end();
   }

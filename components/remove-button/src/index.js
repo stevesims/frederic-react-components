@@ -1,7 +1,7 @@
 import React from 'react';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 
-const RemoveButtonInner = glamorous.button({
+const RemoveButtonInner = styled('button')({
   '&:first-child': {
     margin: 0,
   },
