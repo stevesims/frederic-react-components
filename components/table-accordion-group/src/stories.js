@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import manageState from 'manage-state';
 
 import TableAccordionGroup from '.';
 import ResultCountTitle from '@frederic-react-components/result-count-title';
 import Spinner from '@frederic-react-components/spinner';
-
-import manageState from 'manage-state';
 
 class TableAccordionGroupAsyncExample extends React.Component {
   constructor(props) {
@@ -38,7 +37,7 @@ class TableAccordionGroupAsyncExample extends React.Component {
             };
           } return item;
         });
-        return {items: newItems};
+        return { items: newItems };
       });
     }, 1000);
   }
@@ -53,7 +52,7 @@ class TableAccordionGroupAsyncExample extends React.Component {
           };
         } return item;
       });
-      return {items: newItems};
+      return { items: newItems };
     });
 
     // eslint disable justification:
@@ -62,7 +61,7 @@ class TableAccordionGroupAsyncExample extends React.Component {
     // - `index` is not a user input as it comes from items.map in render.
     // - This code is also not expected to be executed on a server, other than during unit tests,
     //   in which case this vulnerability is not relevant.
-    if(open && !this.state.items[index].loaded) { // eslint-disable-line security/detect-object-injection
+    if (open && !this.state.items[index].loaded) { // eslint-disable-line security/detect-object-injection
       this.loadItem(index);
     }
   }
@@ -70,7 +69,7 @@ class TableAccordionGroupAsyncExample extends React.Component {
   render() {
     const { items } = this.state;
 
-    return <div>
+    return (<div>
       {items.map((item, index) => (
         <TableAccordionGroup
           changeOnTitleClick
@@ -84,7 +83,7 @@ class TableAccordionGroupAsyncExample extends React.Component {
           {item.firstItem}
         </TableAccordionGroup>
       ))}
-    </div>;
+    </div>);
   }
 }
 
@@ -96,23 +95,23 @@ const arrayExampleItems = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
 
 const stories = storiesOf('Tables/TableAccordionGroup', module);
 
-stories.add('Component default', () => <TableAccordionGroup title="Title" expanded="expanded">
+stories.add('Component default', () => (<TableAccordionGroup title="Title" expanded="expanded">
       Children
-</TableAccordionGroup>);
+</TableAccordionGroup>));
 
-stories.add('open', () => <TableAccordionGroup open title="Title" expanded="expanded">
+stories.add('open', () => (<TableAccordionGroup open title="Title" expanded="expanded">
       Children
-</TableAccordionGroup>);
+</TableAccordionGroup>));
 
-stories.add('state managed', () => <ManagedTableAccordionGroup title="Title" expanded="expanded">
+stories.add('state managed', () => (<ManagedTableAccordionGroup title="Title" expanded="expanded">
           Children
-</ManagedTableAccordionGroup>);
+</ManagedTableAccordionGroup>));
 
-stories.add('changeOnTitleClick', () => <ManagedTableAccordionGroup changeOnTitleClick title="Title" expanded="expanded">
+stories.add('changeOnTitleClick', () => (<ManagedTableAccordionGroup changeOnTitleClick title="Title" expanded="expanded">
           Children
-</ManagedTableAccordionGroup>);
+</ManagedTableAccordionGroup>));
 
-stories.add('array', () => <ManagedTableAccordionGroup
+stories.add('array', () => (<ManagedTableAccordionGroup
   expanded={
     arrayExampleItems.map((item, index) => {
       if (index) {
@@ -122,6 +121,6 @@ stories.add('array', () => <ManagedTableAccordionGroup
     })}
 >
   {arrayExampleItems[0]}
-</ManagedTableAccordionGroup>);
+</ManagedTableAccordionGroup>));
 
 stories.add('async', () => <TableAccordionGroupAsyncExample />);

@@ -9,8 +9,7 @@ describe('Exports', () => {
   Object.keys(packageExports).map(exportName =>
     it(`${exportName} is truthy`, () => {
       expect(!!packageExports[exportName]).toBe(true);
-    }),
-  );
+    }));
 });
 
 // https://stackoverflow.com/questions/18112204/get-all-directories-within-directory-nodejs?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
@@ -24,9 +23,6 @@ describe('Components', () => {
 
   components.map(component =>
     it(`@frederic-react-components/${component} is in dependencies`, () => {
-      expect(
-        !!pkg.dependencies[`@frederic-react-components/${component}`],
-      ).toBe(true);
-    }),
-  );
+      expect(!!pkg.dependencies[`@frederic-react-components/${component}`]).toBe(true);
+    }));
 });
