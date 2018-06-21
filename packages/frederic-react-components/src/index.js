@@ -2,7 +2,6 @@
 // see https://github.com/benmosher/eslint-plugin-import/issues/1049
 
 // Components
-// Components
 export { default as Arrow } from '@frederic-react-components/arrow';
 export { default as ArrowLeft } from '@frederic-react-components/arrow-left';
 export { default as CompactTableAccordionGroup } from '@frederic-react-components/compact-table-accordion-group';
