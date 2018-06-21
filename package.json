@@ -25,9 +25,7 @@
     "collectCoverageFrom": [
       "<rootDir>/{components,packages}/*/src/**.js",
       "!<rootDir>/{components,packages}/*/src/**/{stories,example,fixtures}.js",
-      "!<rootDir>/packages/storybook/**",
-      "!<rootDir>/packages/api-docs/**",
-      "!<rootDir>/packages/storybook-components/**"
+      "!<rootDir>/packages/storybook/**"
     ],
     "setupTestFrameworkScriptFile": "<rootDir>/scripts/setupTests.js",
     "testMatch": [
@@ -106,6 +104,7 @@
     "emotion": "^9.2.3",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme-to-json": "^3.3.0",
     "eslint": "^4.12.1",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-react": "^7.5.1",
