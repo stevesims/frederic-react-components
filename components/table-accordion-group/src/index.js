@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 import { Collapse } from 'react-collapse';
 import { FONT_SIZE } from '@govuk-react/constants';
 
 import OpenButton from '@frederic-react-components/open-button';
 
-const Container = glamorous.div({
+const Container = styled('div')({
   display: 'flex',
   fontFamily: 'Roboto, Arial, sans-serif',
   fontSize: FONT_SIZE.SIZE_14,
@@ -16,12 +16,12 @@ const Container = glamorous.div({
   position: 'relative',
 });
 
-const Title = glamorous.header(({ clickable }) => (clickable ? { cursor: 'pointer' } : undefined), {
+const Title = styled('header')(({ clickable }) => (clickable ? { cursor: 'pointer' } : undefined), {
   paddingLeft: '16px',
 });
 
-const Items = glamorous.div({});
-const FirstItem = glamorous.div({});
+const Items = styled('div')({});
+const FirstItem = styled('div')({});
 
 const TableAccordionGroup = ({ title, children, expanded, onChange, open, changeOnTitleClick }) => {
   return (

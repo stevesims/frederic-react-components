@@ -1,9 +1,9 @@
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 import PropTypes from 'prop-types';
 
 import { GREY_1, WHITE } from 'govuk-colours';
 
-const ResultCount = glamorous.span(({ backgroundColor, color }) => ({
+const ResultCount = styled('span')(({ backgroundColor, color }) => ({
   background: backgroundColor || GREY_1,
   color: color || WHITE,
   display: 'inline-block',

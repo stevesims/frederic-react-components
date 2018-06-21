@@ -46,7 +46,8 @@
     "govuk-colours": "^1.0.3"
   },
   "peerDependencies": {
-    "glamorous": ">=4",
+    "emotion": ">=9",
+    "react-emotion": ">=9",
     "prop-types": ">=15",
     "react": ">=16"
   },
@@ -97,7 +98,6 @@
     "eslint-plugin-react": "^7.5.1",
     "eslint-plugin-security": "^1.4.0",
     "faucet": "0.0.1",
-    "glamorous": "^4.11.0",
     "jsdom": "^11.5.1",
     "jsdom-global": "^3.0.2",
     "lerna": "^2.9.0",

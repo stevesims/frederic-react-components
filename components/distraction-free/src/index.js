@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 import { GREY_1, WHITE } from 'govuk-colours';
 
 import ArrowLeft from '@frederic-react-components/arrow-left';
 
-const Background = glamorous.div({
+const Background = styled('div')({
   alignItems: 'center',
   backgroundColor: GREY_1,
   boxSizing: 'border-box',
@@ -16,7 +16,7 @@ const Background = glamorous.div({
   padding: '0 32px 0 90px',
 });
 
-const Header = glamorous.header({
+const Header = styled('header')({
   '> span': {
     textDecoration: 'underline',
   },
@@ -25,7 +25,7 @@ const Header = glamorous.header({
   width: '100%',
 });
 
-const Body = glamorous.article({
+const Body = styled('article')({
   backgroundColor: WHITE,
   fontFamily: 'Roboto, Arial, sans-serif',
   height: '100%',
@@ -33,7 +33,7 @@ const Body = glamorous.article({
   minHeight: '640px',
   width: '100%',
 });
-const Button = glamorous.button({
+const Button = styled('button')({
   backgroundColor: 'transparent',
   border: 0,
 });

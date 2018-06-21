@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 
 import ResultCountTitle from '@frederic-react-components/result-count-title';
 
 import { BLACK, GREY_1, GREY_3, LINK_COLOUR, RED, WHITE, YELLOW } from 'govuk-colours';
 
-const Container = glamorous.div({
+const Container = styled('div')({
   display: 'flex',
   lineHeight: '1',
 });
 
-const CountWrapper = glamorous.button(
+const CountWrapper = styled('div')(
   {
     ':focus': {
       outline: `solid 4px ${YELLOW}`,
@@ -32,7 +32,7 @@ const CountWrapper = glamorous.button(
   }),
 );
 
-const Counter = glamorous.button(
+const Counter = styled('button')(
   {
     ':focus': {
       outline: `solid 4px ${YELLOW}`,

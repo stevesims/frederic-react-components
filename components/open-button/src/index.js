@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 
 import Arrow from '@frederic-react-components/arrow';
 
-const RotatingButton = glamorous.button(
+const RotatingButton = styled('button')(
   {
     ':focus': {
       outline: 'none',

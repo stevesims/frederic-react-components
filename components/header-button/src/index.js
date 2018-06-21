@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 
 import { FOCUS_COLOUR, LINK_ACTIVE_COLOUR, LINK_COLOUR } from 'govuk-colours';
 
-const Button = glamorous.button(
+const Button = styled('button')(
   {
     background: 'none',
     borderBottom: '4px solid transparent',
