@@ -1,4 +1,3 @@
-import test from 'tape';
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 
@@ -12,59 +11,47 @@ const rows = [
 ];
 const names = ['one', 'two', 'three', 'four'];
 
-test(
-  'Table: Component renders rows with title header',
-  assert => {
-    shallow(<Table titles={titles} rows={rows} />);
-    assert.end();
-  }
-);
+describe('Table: Component renders rows with title header', assert => {
+  shallow(<Table titles={titles} rows={rows} />);
+  assert.end();
+});
 
-test(
-  'Table: Component renders rows with header column',
-  assert => {
-    // use `mount` to render, as a `shallow` won't allow the `th` to be found
-    let wrapper = mount(<Table rowIncludesHeading rows={[['title', 'value', 'value-2']]} />);
+describe('Table: Component renders rows with header column', assert => {
+  // use `mount` to render, as a `shallow` won't allow the `th` to be found
+  let wrapper = mount(<Table rowIncludesHeading rows={[['title', 'value', 'value-2']]} />);
 
-    assert.ok(wrapper.find('tbody th').length, 'some THs found');
-    assert.notOk(wrapper.find('thead').exists(), 'no thead found');
+  assert.ok(wrapper.find('tbody th').length, 'some THs found');
+  assert.notOk(wrapper.find('thead').exists(), 'no thead found');
 
-    // re-render with wider rows to get coverage
-    wrapper = mount(<Table rowIncludesHeading rows={rows} />);
+  // re-render with wider rows to get coverage
+  wrapper = mount(<Table rowIncludesHeading rows={rows} />);
 
-    assert.end();
-  }
-);
+  assert.end();
+});
 
-test(
-  'Table: Component can accept name and names props',
-  assert => {
-    // first of all, check that there's no names by default
-    let wrapper = mount(<Table rows={rows} />);
+describe('Table: Component can accept name and names props', assert => {
+  // first of all, check that there's no names by default
+  let wrapper = mount(<Table rows={rows} />);
 
-    assert.notOk(wrapper.find('table').prop('name'), 'no name found on table');
-    wrapper.find('td').forEach(td => assert.notOk(td.prop('name'), 'no name on td'));
+  assert.notOk(wrapper.find('table').prop('name'), 'no name found on table');
+  wrapper.find('td').forEach(td => assert.notOk(td.prop('name'), 'no name on td'));
 
-    wrapper = mount(<Table rows={rows} name={'name'} names={names} />);
+  wrapper = mount(<Table rows={rows} name={'name'} names={names} />);
 
-    const trs = wrapper.find('tr');
+  const trs = wrapper.find('tr');
 
-    assert.equal(wrapper.find('table').prop('name'), 'name', 'name found on table');
-    trs.forEach(tr => {
-      // disable false-positive rule - this is an access into an array of strings, not object access
-      // eslint-disable-next-line security/detect-object-injection
-      tr.find('td').forEach((td, index) => assert.equal(td.prop('name'), names[index], 'correct name for td'));
-    });
+  assert.equal(wrapper.find('table').prop('name'), 'name', 'name found on table');
+  trs.forEach(tr => {
+    // disable false-positive rule - this is an access into an array of strings, not object access
+    // eslint-disable-next-line security/detect-object-injection
+    tr.find('td').forEach((td, index) => assert.equal(td.prop('name'), names[index], 'correct name for td'));
+  });
 
-    assert.end();
-  }
-);
+  assert.end();
+});
 
-test(
-  'Table: Component renders with flexible column styling (coverage)',
-  assert => {
-    // need to mount for this test, otherwise the emotion styling doesn't get evaluated
-    mount(<Table titles={titles} rows={rows} flexibleColumns />);
-    assert.end();
-  }
-);
+describe('Table: Component renders with flexible column styling (coverage)', assert => {
+  // need to mount for this test, otherwise the emotion styling doesn't get evaluated
+  mount(<Table titles={titles} rows={rows} flexibleColumns />);
+  assert.end();
+});

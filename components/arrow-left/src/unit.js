@@ -1,10 +1,10 @@
-import test from 'tape';
+
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 
 import ArrowLeft from '.';
 
-test(
+describe(
   'ArrowLeft: ArrowLeft renders with no properties',
   assert => {
     mount(<ArrowLeft />);
@@ -12,7 +12,7 @@ test(
   }
 );
 
-test(
+describe(
   'ArrowLeft: ArrowLeft renders with a title',
   assert => {
     shallow(<ArrowLeft title="Example" />);
@@ -20,7 +20,7 @@ test(
   }
 );
 
-test(
+describe(
   'ArrowLeft: ArrowLeft renders with a title and colour fill',
   assert => {
     shallow(<ArrowLeft fill="red">Title</ArrowLeft>);
@@ -28,7 +28,7 @@ test(
   }
 );
 
-test(
+describe(
   'ArrowLeft: ArrowLeft support setting color',
   assert => {
     mount(<ArrowLeft color="purple" />);
