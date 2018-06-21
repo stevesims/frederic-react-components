@@ -17,7 +17,7 @@
     "test": "cross-env CI=true npm run test:unit && npm run eslint && npm run flow",
     "test:unit": "jest --env=jsdom",
     "test:debug": "node --inspect-brk ./node_modules/.bin/jest --env=jsdom",
-    "test:snapshot": "npm run test:unit -- -u",
+    "test:snapshot": "npm run test:unit -- -u"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
