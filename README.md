@@ -1,15 +1,15 @@
-# frederic-react-components
+# govuk-frederic
 
 - Frederic component library. More detailed description forthcoming.
 
 ## Usage
 
 ```sh
-npm install frederic-react-components emotion react-emotion --save
+npm install govuk-frederic emotion react-emotion --save
 ```
 
 ```js
-import { Arrow } from 'frederic-react-components';
+import { Arrow } from 'govuk-frederic';
 
 const Page = () => (
   <div>
@@ -18,7 +18,7 @@ const Page = () => (
 );
 ```
 
-See the [Storybook](https://{placeholder}.github.io/frederic-react-components) for examples of all available components.
+See the [Storybook](https://{placeholder}.github.io/govuk-frederic) for examples of all available components.
 
 ## Contributors
 

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import HeaderButton from '.';
-import Keyline from '@frederic-react-components/keyline';
+import Keyline from '@govuk-frederic/keyline';
 
 const stories = storiesOf('Buttons/HeaderButton', module);
 

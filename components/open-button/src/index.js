@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
-import Arrow from '@frederic-react-components/arrow';
+import Arrow from '@govuk-frederic/arrow';
 
 const RotatingButton = styled('button')(
   {

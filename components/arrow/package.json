@@ -1,5 +1,5 @@
 {
-  "name": "@frederic-react-components/arrow",
+  "name": "@govuk-frederic/arrow",
   "version": "0.0.1",
   "devDependencies": {
     "@storybook/addon-knobs": "^3.4.2"
@@ -17,8 +17,8 @@
   "module": "es/index.js",
   "author": "Tarandeep Singh Chauhan",
   "license": "MIT",
-  "homepage": "https://github.com/stevesims/frederic-react-components#readme",
-  "description": "frederic-react-components: Frederic project specific components.",
+  "homepage": "https://github.com/stevesims/govuk-frederic#readme",
+  "description": "govuk-frederic: Frederic project specific components.",
   "private": false,
   "publishConfig": {
     "access": "public"

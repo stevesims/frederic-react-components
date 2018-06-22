@@ -3,7 +3,7 @@ import { mount, shallow } from 'enzyme';
 import sinon from 'sinon';
 
 import Component, { Title } from '.';
-import OpenButton from '@frederic-react-components/open-button';
+import OpenButton from '@govuk-frederic/open-button';
 
 describe('CompactTableAccordionGroup: Component renders with only required properties', assert => {
   shallow(<Component expanded="Expanded">Test</Component>);

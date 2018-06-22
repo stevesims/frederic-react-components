@@ -4,7 +4,7 @@ import styled from 'react-emotion';
 import { Collapse } from 'react-collapse';
 import { FONT_SIZE } from '@govuk-react/constants';
 
-import OpenButton from '@frederic-react-components/open-button';
+import OpenButton from '@govuk-frederic/open-button';
 
 const Container = styled('div')({
   display: 'flex',

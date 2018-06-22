@@ -1,5 +1,5 @@
 {
-  "name": "@frederic-react-components/monorepo",
+  "name": "@govuk-frederic/monorepo",
   "scripts": {
     "start": "cd packages/storybook && npm start",
     "bootstrap": "lerna bootstrap",
@@ -11,7 +11,7 @@
     "build:sync": "lerna run build",
     "build:lib": "lerna run build:lib --parallel",
     "build:es": "lerna run build:es --parallel",
-    "build:dist": "npm run build:es && rimraf dist && webpack -p packages/frederic-react-components/es/index.js --output-filename dist/index.js",
+    "build:dist": "npm run build:es && rimraf dist && webpack -p packages/govuk-frederic/es/index.js --output-filename dist/index.js",
     "pack": "lerna exec --parallel -- npm pack",
     "watch": "npm run watch:lib",
     "watch:es": "cross-env BABEL_ENV=es lerna exec --parallel -- babel src -d es -w --source-maps",
@@ -57,7 +57,7 @@
       "enzyme-to-json/serializer"
     ]
   },
-  "description": "frederic-react-components: Frederic project specific components",
+  "description": "govuk-frederic: Frederic project specific components",
   "main": "lib/index.js",
   "module": "es/index.js",
   "dependencies": {
@@ -76,23 +76,23 @@
     "@babel/preset-flow": "7.0.0-beta.44",
     "@babel/preset-react": "7.0.0-beta.44",
     "@babel/preset-stage-1": "7.0.0-beta.44",
-    "@frederic-react-components/arrow": "*",
-    "@frederic-react-components/arrow-left": "*",
-    "@frederic-react-components/compact-table-accordion-group": "*",
-    "@frederic-react-components/count": "*",
-    "@frederic-react-components/countdown-text-area": "*",
-    "@frederic-react-components/counter-bar": "*",
-    "@frederic-react-components/distraction-free": "*",
-    "@frederic-react-components/header-button": "*",
-    "@frederic-react-components/keyline": "*",
-    "@frederic-react-components/open-button": "*",
-    "@frederic-react-components/remove-button": "*",
-    "@frederic-react-components/result-count": "*",
-    "@frederic-react-components/result-count-title": "*",
-    "@frederic-react-components/spinner": "*",
-    "@frederic-react-components/table": "*",
-    "@frederic-react-components/table-accordion-group": "*",
-    "@frederic-react-components/title-result-count": "*",
+    "@govuk-frederic/arrow": "*",
+    "@govuk-frederic/arrow-left": "*",
+    "@govuk-frederic/compact-table-accordion-group": "*",
+    "@govuk-frederic/count": "*",
+    "@govuk-frederic/countdown-text-area": "*",
+    "@govuk-frederic/counter-bar": "*",
+    "@govuk-frederic/distraction-free": "*",
+    "@govuk-frederic/header-button": "*",
+    "@govuk-frederic/keyline": "*",
+    "@govuk-frederic/open-button": "*",
+    "@govuk-frederic/remove-button": "*",
+    "@govuk-frederic/result-count": "*",
+    "@govuk-frederic/result-count-title": "*",
+    "@govuk-frederic/spinner": "*",
+    "@govuk-frederic/table": "*",
+    "@govuk-frederic/table-accordion-group": "*",
+    "@govuk-frederic/title-result-count": "*",
     "@storybook/addon-actions": "^3.4.1",
     "@storybook/addon-knobs": "^3.4.1",
     "@storybook/addons": "^3.4.1",
@@ -145,14 +145,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/stevesims/frederic-react-components.git"
+    "url": "https://github.com/stevesims/govuk-frederic.git"
   },
   "author": "Steve Sims",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/stevesims/frederic-react-components/issues"
+    "url": "https://github.com/stevesims/govuk-frederic/issues"
   },
-  "homepage": "https://github.com/stevesims/frederic-react-components#readme",
+  "homepage": "https://github.com/stevesims/govuk-frederic#readme",
   "bundlesize": [
     {
       "path": "./dist/index.js",

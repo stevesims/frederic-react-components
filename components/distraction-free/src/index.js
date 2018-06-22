@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import { GREY_1, WHITE } from 'govuk-colours';
 
-import ArrowLeft from '@frederic-react-components/arrow-left';
+import ArrowLeft from '@govuk-frederic/arrow-left';
 
 const Background = styled('div')({
   alignItems: 'center',

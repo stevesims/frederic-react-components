@@ -2,20 +2,20 @@
 // see https://github.com/benmosher/eslint-plugin-import/issues/1049
 
 // Components
-export { default as Arrow } from '@frederic-react-components/arrow';
-export { default as ArrowLeft } from '@frederic-react-components/arrow-left';
-export { default as CompactTableAccordionGroup } from '@frederic-react-components/compact-table-accordion-group';
-export { default as Count } from '@frederic-react-components/count';
-export { default as CountdownTextarea } from '@frederic-react-components/countdown-text-area';
-export { default as CounterBar } from '@frederic-react-components/counter-bar';
-export { default as DistractionFree } from '@frederic-react-components/distraction-free';
-export { default as HeaderButton } from '@frederic-react-components/header-button';
-export { default as Keyline } from '@frederic-react-components/keyline';
-export { default as OpenButton } from '@frederic-react-components/open-button';
-export { default as RemoveButton } from '@frederic-react-components/remove-button';
-export { default as ResultCount } from '@frederic-react-components/result-count';
-export { default as ResultCountTitle } from '@frederic-react-components/result-count-title';
-export { default as Spinner } from '@frederic-react-components/spinner';
-export { default as Table } from '@frederic-react-components/table';
-export { default as TableAccordionGroup } from '@frederic-react-components/table-accordion-group';
-export { default as TitleResultCount } from '@frederic-react-components/title-result-count';
+export { default as Arrow } from '@govuk-frederic/arrow';
+export { default as ArrowLeft } from '@govuk-frederic/arrow-left';
+export { default as CompactTableAccordionGroup } from '@govuk-frederic/compact-table-accordion-group';
+export { default as Count } from '@govuk-frederic/count';
+export { default as CountdownTextarea } from '@govuk-frederic/countdown-text-area';
+export { default as CounterBar } from '@govuk-frederic/counter-bar';
+export { default as DistractionFree } from '@govuk-frederic/distraction-free';
+export { default as HeaderButton } from '@govuk-frederic/header-button';
+export { default as Keyline } from '@govuk-frederic/keyline';
+export { default as OpenButton } from '@govuk-frederic/open-button';
+export { default as RemoveButton } from '@govuk-frederic/remove-button';
+export { default as ResultCount } from '@govuk-frederic/result-count';
+export { default as ResultCountTitle } from '@govuk-frederic/result-count-title';
+export { default as Spinner } from '@govuk-frederic/spinner';
+export { default as Table } from '@govuk-frederic/table';
+export { default as TableAccordionGroup } from '@govuk-frederic/table-accordion-group';
+export { default as TitleResultCount } from '@govuk-frederic/title-result-count';

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import { Collapse } from 'react-collapse';
 
-import OpenButton from '@frederic-react-components/open-button';
+import OpenButton from '@govuk-frederic/open-button';
 
 const Container = styled('div')({
   fontFamily: 'Roboto, Arial, sans-serif',

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
-import ResultCount from '@frederic-react-components/result-count';
+import ResultCount from '@govuk-frederic/result-count';
 
 const Wrapper = styled('div')({
   display: 'inline-block',

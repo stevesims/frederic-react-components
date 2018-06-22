@@ -22,7 +22,7 @@ describe('Components', () => {
   const components = dirs(path.join(__dirname, '../../../components'));
 
   components.map(component =>
-    it(`@frederic-react-components/${component} is in dependencies`, () => {
-      expect(!!pkg.dependencies[`@frederic-react-components/${component}`]).toBe(true);
+    it(`@govuk-frederic/${component} is in dependencies`, () => {
+      expect(!!pkg.dependencies[`@govuk-frederic/${component}`]).toBe(true);
     }));
 });

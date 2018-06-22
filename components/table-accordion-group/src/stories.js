@@ -3,8 +3,8 @@ import { storiesOf } from '@storybook/react';
 import manageState from 'manage-state';
 
 import TableAccordionGroup from '.';
-import ResultCountTitle from '@frederic-react-components/result-count-title';
-import Spinner from '@frederic-react-components/spinner';
+import ResultCountTitle from '@govuk-frederic/result-count-title';
+import Spinner from '@govuk-frederic/spinner';
 
 class TableAccordionGroupAsyncExample extends React.Component {
   constructor(props) {

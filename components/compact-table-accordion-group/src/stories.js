@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import CompactTableAccordionGroup from '.';
-import ResultCountTitle from '@frederic-react-components/result-count-title';
-import Spinner from '@frederic-react-components/spinner';
+import ResultCountTitle from '@govuk-frederic/result-count-title';
+import Spinner from '@govuk-frederic/spinner';
 
 import manageState from 'manage-state';
 
