@@ -18,26 +18,35 @@ const TitleRow = styled('div')({
   marginBottom: '8px',
 });
 
-const Title = styled('header')(({ clickable }) => (clickable ? { cursor: 'pointer' } : undefined), {
-  paddingLeft: '16px',
-});
+const Title = styled('header')(
+  ({ clickable }) => (clickable ? { cursor: 'pointer' } : undefined),
+  {
+    paddingLeft: '16px',
+  },
+);
 
-const CompactTableAccordionGroup = ({ title, expanded, onChange, open, changeOnTitleClick }) => {
-  return (
-    <Container>
-      <TitleRow>
-        <OpenButton open={open} onChange={onChange} />
-        <Title
-          clickable={changeOnTitleClick}
-          onClick={changeOnTitleClick ? () => onChange({ open: !open }) : undefined}
-        >
-          {title}
-        </Title>
-      </TitleRow>
-      <Collapse isOpened={open}>{expanded}</Collapse>
-    </Container>
-  );
-};
+const CompactTableAccordionGroup = ({
+  title,
+  expanded,
+  onChange,
+  open,
+  changeOnTitleClick,
+}) => (
+  <Container>
+    <TitleRow>
+      <OpenButton open={open} onChange={onChange} />
+      <Title
+        clickable={changeOnTitleClick}
+        onClick={
+          changeOnTitleClick ? () => onChange({ open: !open }) : undefined
+        }
+      >
+        {title}
+      </Title>
+    </TitleRow>
+    <Collapse isOpened={open}>{expanded}</Collapse>
+  </Container>
+);
 
 CompactTableAccordionGroup.propTypes = {
   changeOnTitleClick: PropTypes.bool,
