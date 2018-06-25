@@ -7,6 +7,7 @@ const presets = [
 ];
 
 const plugins = [
+  ['emotion', { autoLabel: true }],
   'transform-decorators-legacy',
   ['transform-react-remove-prop-types', { mode: 'wrap' }],
   [
