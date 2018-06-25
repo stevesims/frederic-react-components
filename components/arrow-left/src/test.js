@@ -27,7 +27,7 @@ describe('ArrowLeft', () => {
   });
 
   it('supports setting of color', () => {
-    wrapper = mount(<Component color="purple" />);
+    wrapper = shallow(<Component color="purple" />);
     expect(wrapper).toHaveStyleRule('color', 'purple');
   });
 
