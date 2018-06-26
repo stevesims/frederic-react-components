@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 // the component
-import CountdownTextarea from '.';
+import CountdownTextArea from '.';
 
-describe('Component - CountdownTextarea displays a countdown based on maxLength prop', t => {
+describe('Component - CountdownTextArea displays a countdown based on maxLength prop', (t) => {
   t.plan(2);
-  const wrapper = mount(<CountdownTextarea maxLength={250} />);
+  const wrapper = mount(<CountdownTextArea maxLength={250} />);
 
   t.equal(wrapper.find('StyledCountdown').text(), '250', 'contains countdown');
 
@@ -13,31 +13,31 @@ describe('Component - CountdownTextarea displays a countdown based on maxLength 
   t.equal(wrapper.find('StyledCountdown').text(), '246', 'reduces countdown');
 });
 
-describe('Component - CountdownTextarea omits countdown field when no maxLength given', t => {
+describe('Component - CountdownTextArea omits countdown field when no maxLength given', (t) => {
   t.plan(1);
-  const wrapper = mount(<CountdownTextarea value={'Test'} />);
+  const wrapper = mount(<CountdownTextArea value="Test" />);
 
   t.equal(wrapper.find('StyledCountdown').exists(), false, 'has no countdown');
 });
 
-describe("Component - CountdownTextarea sets 'over' class when overflowing", t => {
+describe("Component - CountdownTextArea sets 'over' class when overflowing", (t) => {
   t.plan(1);
-  const wrapper = mount(<CountdownTextarea value={'Test'} maxLength={2} />);
+  const wrapper = mount(<CountdownTextArea value="Test" maxLength={2} />);
 
   t.equal(wrapper.find('StyledCountdown').text(), '-2', 'correctly shows -2 as count when 2 over');
   wrapper.setProps({ maxLength: 250 });
 });
 
-describe('Component - CountdownTextarea maxLengths to zero when positiveOnly set', t => {
+describe('Component - CountdownTextarea maxLengths to zero when positiveOnly set', (t) => {
   t.plan(1);
-  const wrapper = mount(<CountdownTextarea value={'Test'} maxLength={2} positiveOnly />);
+  const wrapper = mount(<CountdownTextArea value="Test" maxLength={2} positiveOnly />);
 
   t.equal(wrapper.find('StyledCountdown').text(), '0', 'countdown value limited by maxLength');
 });
 
-describe('Component - CountdownTextarea noMaxLengthAttr omits maxLength attribute', t => {
+describe('Component - CountdownTextarea noMaxLengthAttr omits maxLength attribute', (t) => {
   t.plan(2);
-  const wrapper = shallow(<CountdownTextarea value={'Test'} maxLength={10} />);
+  const wrapper = shallow(<CountdownTextArea value="Test" maxLength={10} />);
 
   t.ok(wrapper.find('[maxLength]').exists(), 'maxLength found as expected');
 

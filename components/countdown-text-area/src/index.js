@@ -37,8 +37,10 @@ const StyledCountdown = styled('div')({
 
 StyledCountdown.displayName = 'StyledCountdown';
 
-const CountdownTextarea = props => {
-  const { maxLength, noMaxLengthAttr, positiveOnly, ...input } = props;
+const CountdownTextArea = (props) => {
+  const {
+    maxLength, noMaxLengthAttr, positiveOnly, ...input
+  } = props;
 
   const showRemaining = !!maxLength;
   const remaining = showRemaining ? maxLength - (input.value || '').length : false;
@@ -56,10 +58,16 @@ const CountdownTextarea = props => {
   );
 };
 
-CountdownTextarea.propTypes = {
+CountdownTextArea.defaultProps = {
+  maxLength: undefined,
+  noMaxLengthAttr: false,
+  positiveOnly: false,
+};
+
+CountdownTextArea.propTypes = {
   maxLength: PropTypes.number,
   noMaxLengthAttr: PropTypes.bool,
   positiveOnly: PropTypes.bool,
 };
 
-export default CountdownTextarea;
+export default CountdownTextArea;
