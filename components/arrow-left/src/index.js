@@ -28,7 +28,7 @@ const Title = styled('span')({
 });
 
 const ArrowLeft = ({
- fill, color, width, children, onClick, ...props 
+  fill, color, width, children, onClick, ...props
 }) => (
   <Wrapper onClick={onClick} color={color}>
     <svg
