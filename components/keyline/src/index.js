@@ -6,11 +6,22 @@ import { GREY_1 } from 'govuk-colours';
 
 const KeylineWrapper = styled('span')(({ inlineBlock, borderColor }) => ({
   border: 0,
-  borderBottom: `1px solid ${borderColor ? borderColor : GREY_1}`,
+  borderBottom: `1px solid ${borderColor || GREY_1}`,
   display: inlineBlock ? 'inline-block' : 'block',
   fontFamily: 'Roboto, Arial, sans-serif',
 }));
 
+/**
+ *
+ * ### Usage
+ *
+ * Simple
+ * ```jsx
+ * <Keyline>
+ *    <p>example</p>
+ * </Keyline>
+ * ```
+ */
 const Keyline = ({ children, inlineBlock, borderColor }) => (
   <KeylineWrapper inlineBlock={inlineBlock} borderColor={borderColor}>
     {children}
