@@ -5,9 +5,10 @@ import * as emotion from 'emotion';
 import Component from '.';
 
 expect.extend(createMatchers(emotion));
-let wrapper;
 
 describe('ArrowLeft', () => {
+  let wrapper;
+  
   it('renders without crashing', () => {
     wrapper = shallow(<Component />);
   });
