@@ -1,9 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { WithDocsCustom } from '@govuk-react/storybook-components';
+import { withKnobs } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
 import { GREY_1, WHITE } from 'govuk-colours';
 
+
 import ArrowLeft from '.';
+import ReadMe from '../README.md';
 
 const darkBackground = {
   backgroundColor: GREY_1,
@@ -20,6 +24,9 @@ const lightBackground = {
 };
 
 const stories = storiesOf('Icons/ArrowLeft', module);
+
+stories.addDecorator(WithDocsCustom(ReadMe));
+stories.addDecorator(withKnobs);
 
 stories
   .add('Component default', () => (
@@ -46,7 +53,7 @@ stories.add('with title text', () => (
 
 stories.add('wrapped with anchor with title text', () => (
   <div style={lightBackground}>
-    <a href="http://example.com" style={{ color: '#005CA7'}}>
+    <a href="http://example.com" style={{ color: '#005CA7' }}>
       <ArrowLeft width={28} fill="black">
             Back to previous page
       </ArrowLeft>
@@ -56,7 +63,7 @@ stories.add('wrapped with anchor with title text', () => (
 
 stories.add('wrapped with anchor with title text on darkBackground', () => (
   <div style={darkBackground}>
-    <a href="http://example.com" style={{ color: 'white'}}>
+    <a href="http://example.com" style={{ color: 'white' }}>
       <ArrowLeft width={28} fill="white">
             Back to previous page
       </ArrowLeft>
