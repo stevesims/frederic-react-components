@@ -200,7 +200,14 @@ Keyline
 ```
 <!-- STORY -->
 
+### Usage
 
+Simple
+```jsx
+<Keyline>
+   <p>example</p>
+</Keyline>
+```
 
 ### Properties
 Prop | Required | Default | Type | Description
@@ -288,7 +295,12 @@ Spinner
 ```
 <!-- STORY -->
 
+### Usage
 
+Simple
+```jsx
+<Spinner visible />
+```
 
 ### Properties
 Prop | Required | Default | Type | Description
