@@ -12,4 +12,8 @@ describe('Count', () => {
   it('displays number passed in correctly', () => {
     expect(wrapper.find('span').text()).toBe('4');
   });
+  
+  it('matches snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
 });
