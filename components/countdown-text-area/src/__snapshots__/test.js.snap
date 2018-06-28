@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CountdownTextarea renders consistently matches snapshot 1`] = `
+exports[`CountdownTextarea matches snapshot 1`] = `
 <StyledTextArea
   over={false}
 >

@@ -65,16 +65,12 @@ describe('CountdownTextarea', () => {
     });
   });
 
-  describe('omits countdown field when no maxLength given', () => {
-    it('has no countdown', () => {
-      wrapper = shallow(<CountdownTextarea value="Test" />);
-      expect(wrapper.find('StyledCountdown').exists()).toBe(false);
-    });
+  it('omits countdown field when no maxLength given', () => {
+    wrapper = shallow(<CountdownTextarea value="Test" />);
+    expect(wrapper.find('StyledCountdown').exists()).toBe(false);
   });
 
-  describe('renders consistently', () => {
-    it('matches snapshot', () => {
-      expect(wrapper).toMatchSnapshot();
-    });
+  it('matches snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
   });
 });
