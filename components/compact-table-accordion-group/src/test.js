@@ -1,25 +1,25 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
+import { createMatchers } from 'jest-emotion';
+import * as emotion from 'emotion';
 import Component from '.';
+
+expect.extend(createMatchers(emotion));
 
 describe('CompactTableAccordionGroup', () => {
   let wrapper;
   const changeHandler = jest.fn();
 
-  it('renders without crashing', () => {
-    wrapper = shallow(<Component expanded="Expanded">Test</Component>);
+  it('renders with only required properties', () => {
+    wrapper = shallow(<Component expanded="Expanded" />);
+  });
+
+  it('renders style rules', () => {
+    expect(wrapper).toHaveStyleRule('font-family', 'Roboto,Arial,sans-serif');
   });
 
   it('renders title when passed', () => {
-    wrapper = shallow(
-      <Component
-        expanded="Expanded"
-        onChange={changeHandler}
-        title="Example title"
-      >
-        Test
-      </Component>,
-    );
+    wrapper.setProps({ title: 'Example title' });
     expect(
       wrapper
         .find('Title')
@@ -34,38 +34,20 @@ describe('CompactTableAccordionGroup', () => {
         Test
       </Component>,
     );
-    wrapper.find('button').simulate('click');
+    wrapper.find('OpenButton').simulate('click');
     expect(changeHandler).toHaveBeenCalledTimes(1);
   });
 
   it('does not trigger onChange when title is clicked and changeOnTitleClick is false', () => {
     changeHandler.mockReset();
-    wrapper = mount(
-      <Component
-        expanded="Expanded"
-        title="Example title"
-        onChange={changeHandler}
-      >
-        Test
-      </Component>,
-    );
-    wrapper.find('header').simulate('click');
+    wrapper.find('Title').simulate('click');
     expect(changeHandler).not.toHaveBeenCalled();
   });
 
   it('triggers onChange when title is clicked and changeOnTitleClick is true', () => {
     changeHandler.mockReset();
-    wrapper = mount(
-      <Component
-        expanded="Expanded"
-        title="Example title"
-        onChange={changeHandler}
-        changeOnTitleClick
-      >
-        Test
-      </Component>,
-    );
-    wrapper.find('header').simulate('click');
+    wrapper.setProps({ changeOnTitleClick: true });
+    wrapper.find('Title').simulate('click');
     expect(changeHandler).toHaveBeenCalledTimes(1);
   });
 
