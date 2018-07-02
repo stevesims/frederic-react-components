@@ -59,7 +59,7 @@ describe('CountdownTextarea', () => {
       wrapper = shallow(<CountdownTextarea value="Test" maxLength={10} />);
       expect(wrapper.find('StyledTextAreaField').prop('maxLength')).toBe(10);
     });
-    it('does not set maxLength prop if not` sent', () => {
+    it('does not set maxLength prop if not sent', () => {
       wrapper.setProps({ noMaxLengthAttr: true });
       expect(wrapper.find('StyledTextAreaField').prop('maxLength')).toBe(null);
     });
