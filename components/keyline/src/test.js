@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import { createMatchers } from 'jest-emotion';
 import * as emotion from 'emotion';
 import { GREY_1 } from 'govuk-colours';
+
 import Component from '.';
 
 expect.extend(createMatchers(emotion));

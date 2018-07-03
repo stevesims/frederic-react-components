@@ -2,8 +2,9 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { createMatchers } from 'jest-emotion';
 import * as emotion from 'emotion';
-import Component from '.';
 import { LINK_COLOUR, WHITE } from 'govuk-colours';
+
+import Component from '.';
 
 expect.extend(createMatchers(emotion));
 
