@@ -104,7 +104,12 @@ Count
 ```
 <!-- STORY -->
 
+### Usage
 
+Simple
+```jsx
+<Count value="5" />
+```
 
 ### Properties
 Prop | Required | Default | Type | Description
