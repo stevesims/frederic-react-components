@@ -44,6 +44,45 @@ const Button = styled('button')(
       },
 );
 
+/**
+ *
+ * ### Usage
+
+ * Default
+ * ```jsx
+ * <HeaderButton>One</HeaderButton>
+ * ```
+ * With title
+ * ```jsx
+ * <DistractionFree arrowLeftTitle="Back to example" onClick={(e) => {}}>
+ *    content goes here
+ * </DistractionFree>
+ * ```
+ * Multiple header buttons
+ * ```jsx
+ * <Fragment>
+ *  <HeaderButton>One</HeaderButton>
+ *  <HeaderButton>Two</HeaderButton>
+ * </Fragment>
+ * ```
+ * Multiple header buttons with keyline
+ * ```jsx
+ * <Fragment>
+ *  <Keyline>
+ *    <HeaderButton>One</HeaderButton>
+ *    <HeaderButton>Two</HeaderButton>
+ *  </Keyline>
+ * </Fragment>
+ * ```
+ * Active header button
+ * ```jsx
+ * <HeaderButton active>On</HeaderButton>
+ * ```
+ * Disabled header button
+ * ```jsx
+ * <HeaderButton disabled>Off</HeaderButton>
+ * ```
+ */
 const HeaderButton = ({ active, children, disabled, ...props }) => (
   <Button {...props} active={active} disabled={disabled}>
     {children}
