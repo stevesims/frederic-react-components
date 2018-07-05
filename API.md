@@ -306,7 +306,16 @@ OpenButton
 ```
 <!-- STORY -->
 
+### Usage
 
+Simple
+```jsx
+import manageState from 'manage-state';
+
+const ManagedOpenButton = manageState(OpenButton, { propsToState: ['open']});
+
+<ManagedOpenButton />
+```
 
 ### Properties
 Prop | Required | Default | Type | Description
