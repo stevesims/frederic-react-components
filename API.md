@@ -333,7 +333,16 @@ RemoveButton
 ```
 <!-- STORY -->
 
+### Usage
 
+Simple
+```jsx
+<RemoveButton title="Remove" />
+```
+Next to some text
+```jsx
+<div><span>Text here</span><RemoveButton title="Remove" /></div>
+```
 
 
 ResultCountTitle
