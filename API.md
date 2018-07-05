@@ -167,86 +167,7 @@ CounterBar
 ```
 <!-- STORY -->
 
-### Usage
 
-Default
-```jsx
-<CounterBar
- listTitle="All counters"
- name="name"
- counters={[
-   { id: 'abc', name: 'Counter 1', score: 0 },
-   { id: 'def', name: 'Counter 2', score: 2 },
-   { id: 'ghi', name: 'Counter 3', score: 2 },
-   { id: 'jkl', name: 'Counter 4', score: 9 },
-   { id: 'mno', name: 'Counter 5', score: 2 },
-   { id: 'pqr', name: 'Counter 6', score: 1 },
-   { id: 'stu', name: 'Counter 7', score: 0 },
- ]}
-/>
-```
-Active counter
-```jsx
-<CounterBar
- listTitle="All counters"
- name="name"
- counters={[
-   { id: 'abc', name: 'Counter 1', score: 0 },
-   { active: true, id: 'def', name: 'Counter 2', score: 2 },
-   { id: 'ghi', name: 'Counter 3', score: 2 },
- ]}
-/>
-```
-Active title
-```jsx
-<CounterBar
- activeTitle
- listTitle="All counters"
- name="name"
- counters={[
-   { id: 'abc', name: 'Counter 1', score: 0 },
-   { id: 'def', name: 'Counter 2', score: 2 },
-   { id: 'ghi', name: 'Counter 3', score: 0 },
- ]}
-/>
-```
-Active counter and title on click
-```jsx
-<CounterBar
- listTitle="All counters"
- activeTitle
- name="name"
- counters={[
-   { id: 'abc', name: 'Counter 1', score: 0 },
-   { id: 'def', name: 'Counter 2', score: 2 },
-   { id: 'ghi', name: 'Counter 3', score: 2 },
-   { id: 'jkl', name: 'Counter 4', score: 9 },
-   { id: 'mno', name: 'Counter 5', score: 2 },
-   { id: 'pqr', name: 'Counter 6', score: 1 },
-   { id: 'stu', name: 'Counter 7' },
- ]}
- // eslint-disable-next-line no-alert
- onSelect={ (id) => alert(`Counter with id: ${id} selected.`) }
-/>
-```
-Clickable counters
-```jsx
-<CounterBar
- listTitle="All counters"
- name="name"
- counters={[
-   { id: 'abc', name: 'Counter 1', score: 0 },
-   { id: 'def', name: 'Counter 2', score: 2 },
-   { id: 'ghi', name: 'Counter 3', score: 2 },
-   { id: 'jkl', name: 'Counter 4', score: 9 },
-   { id: 'mno', name: 'Counter 5', score: 2 },
-   { id: 'pqr', name: 'Counter 6', score: 1 },
-   { id: 'stu', name: 'Counter 7' },
- ]}
- // eslint-disable-next-line no-alert
- onSelect={ (id) => alert(`Counter with id: ${id} selected.`) }
-/>
-```
 
 ### Properties
 Prop | Required | Default | Type | Description
@@ -304,12 +225,6 @@ HeaderButton
 Default
 ```jsx
 <HeaderButton>One</HeaderButton>
-```
-With title
-```jsx
-<DistractionFree arrowLeftTitle="Back to example" onClick={(e) => {}}>
-   content goes here
-</DistractionFree>
 ```
 Multiple header buttons
 ```jsx

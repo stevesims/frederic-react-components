@@ -52,12 +52,6 @@ const Button = styled('button')(
  * ```jsx
  * <HeaderButton>One</HeaderButton>
  * ```
- * With title
- * ```jsx
- * <DistractionFree arrowLeftTitle="Back to example" onClick={(e) => {}}>
- *    content goes here
- * </DistractionFree>
- * ```
  * Multiple header buttons
  * ```jsx
  * <Fragment>
