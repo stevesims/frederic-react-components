@@ -12,7 +12,6 @@ module.exports = {
     /* THE FOLLOWING OVERRIDES TO AIRBNB ARE CURRENTLY REQUIRED TO MAKE CODE PASS: */
     
     /* I like these rules! */
-    "comma-dangle": 0,
     "function-paren-newline": 0,
     "keyword-spacing": 0, /* Recommend: 'function-paren-newline': ['error', 'consistent'], */
     "import/first": 0,
