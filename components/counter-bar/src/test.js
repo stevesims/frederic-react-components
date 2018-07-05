@@ -9,19 +9,19 @@ import Component from '.';
 expect.extend(createMatchers(emotion));
 
 const testCounters = [
-  { id: 'abc', name: 'abc', score: 1, },
-  { id: 'def', name: 'def', score: 3, },
-  { id: 'ghi', me: 'ghi', },
-  { id: 'jlk', name: '', score: 0, },
+  { id: 'abc', name: 'abc', score: 1 },
+  { id: 'def', name: 'def', score: 3 },
+  { id: 'ghi', me: 'ghi' },
+  { id: 'jlk', name: '', score: 0 },
 ];
 
 const testActiveCounters = [
-  { active: true, id: 'abc', name: 'abc', score: 1, },
-  { id: 'def', name: 'def', score: 3, },
+  { active: true, id: 'abc', name: 'abc', score: 1 },
+  { id: 'def', name: 'def', score: 3 },
 ];
 
 const testDisabledCounters = [
-  { id: 'def', name: 'def', score: 0, },
+  { id: 'def', name: 'def', score: 0 },
 ];
 
 describe('CounterBar', () => {
