@@ -29,21 +29,25 @@ stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
 stories
-  .add('Component default', () => (
+  .add('Simple', () => (
+    <ArrowLeft />
+  ));
+
+stories
+  .add('Dark background', () => (
     <div style={darkBackground}>
       <ArrowLeft width={28} fill="white" />
     </div>
   ));
 
-stories.add('default with light background & title', () => (
+stories.add('Light background', () => (
   <div style={lightBackground}>
-    <ArrowLeft width={28} fill="black">
-          Back to previous page
-    </ArrowLeft>
+    <ArrowLeft width={28} fill="black" />
   </div>
 ));
 
-stories.add('with title text', () => (
+
+stories.add('Dark background & title', () => (
   <div style={darkBackground}>
     <ArrowLeft width={28} fill="white" color="white">
           Back to previous page
@@ -51,7 +55,15 @@ stories.add('with title text', () => (
   </div>
 ));
 
-stories.add('wrapped with anchor with title text', () => (
+stories.add('Light background & title', () => (
+  <div style={lightBackground}>
+    <ArrowLeft width={28} fill="black">
+          Back to previous page
+    </ArrowLeft>
+  </div>
+));
+
+stories.add('Wrapped with anchor with title text', () => (
   <div style={lightBackground}>
     <a href="http://example.com" style={{ color: '#005CA7' }}>
       <ArrowLeft width={28} fill="black">
@@ -61,7 +73,7 @@ stories.add('wrapped with anchor with title text', () => (
   </div>
 ));
 
-stories.add('wrapped with anchor with title text on darkBackground', () => (
+stories.add('Wrapped with anchor with title text on dark background', () => (
   <div style={darkBackground}>
     <a href="http://example.com" style={{ color: 'white' }}>
       <ArrowLeft width={28} fill="white">
@@ -71,7 +83,7 @@ stories.add('wrapped with anchor with title text on darkBackground', () => (
   </div>
 ));
 
-stories.add('passing down onClick with title text', () => (
+stories.add('Passing down onClick with title text', () => (
   <div style={darkBackground}>
     <ArrowLeft width={28} fill="white" color="white" onClick={action('clicked arrow button')}>
           Back to previous page

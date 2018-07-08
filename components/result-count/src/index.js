@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import { GREY_1, WHITE } from 'govuk-colours';
 
 const StyledResultCount = styled('span')(({ backgroundColor, color }) => ({
-  background: backgroundColor || GREY_1,
-  color: color || WHITE,
+  background: backgroundColor,
+  color,
   display: 'inline-block',
   fontFamily: 'Roboto, Arial, sans-serif',
   fontSize: '15px',
@@ -25,24 +25,28 @@ const StyledResultCount = styled('span')(({ backgroundColor, color }) => ({
  * ```jsx
  * <ResultCount backgroundColor="#6f777b" color="white">0</ResultCount>
  * ```
+ * 
  * Long count
  * ```jsx
  * <ResultCount backgroundColor="#6f777b" color="white">000</ResultCount>
  * ```
+ * 
  * Disable count
  * ```jsx
  * <ResultCount backgroundColor="#dee0e2" color="black">0</ResultCount>
  * ```
+ * 
  * Highlight count
  * ```jsx
  * <ResultCount backgroundColor="#b10e1e" color="white">3</ResultCount>
  * ```
+ * 
  * Alternative count
  * ```jsx
  * <ResultCount backgroundColor="#e48600" color="#3a2505">3</ResultCount>
  * ```
  */
-const ResultCount = props => <StyledResultCount {...props}>X</StyledResultCount>;
+const ResultCount = props => <StyledResultCount {...props} />;
 
 ResultCount.defaultProps = {
   backgroundColor: GREY_1,

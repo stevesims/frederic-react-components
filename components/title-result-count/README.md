@@ -1,9 +1,9 @@
-ResultCountTitle
+TitleResultCount
 ================
 
 ### Import
 ```js
-  import ResultCountTitle from '@govuk-frederic/result-count-title';
+  import TitleResultCount from '@govuk-frederic/title-result-count';
 ```
 <!-- STORY -->
 
@@ -11,12 +11,16 @@ ResultCountTitle
 
 Simple
 ```jsx
-<ResultCountTitle count={3} countColor="white" countBackgroundColor="#b10e1e">Title</ResultCountTitle>
+<ResultCountHeader count={3} countColor="white" countBackgroundColor="#b10e1e">
+ Title Title Title
+</ResultCountHeader>
 ```
 
-In black with count value 0
+Counter title with value 0
 ```jsx
-<ResultCountTitle count={0} countColor="black" countBackgroundColor="#dee0e2">Title</ResultCountTitle>
+<ResultCountHeader count={0} countColor="black" countBackgroundColor="#dee0e2">
+ Title Title Title
+</ResultCountHeader>
 ```
 
 ### Properties

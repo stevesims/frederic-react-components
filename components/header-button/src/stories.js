@@ -12,18 +12,18 @@ const stories = storiesOf('Buttons/HeaderButton', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Component default', () =>
+stories.add('Simple', () =>
   <HeaderButton>One</HeaderButton>,
 );
 
-stories.add('Multiple Header Buttons', () =>
+stories.add('Multiple header buttons', () =>
   <Fragment>
     <HeaderButton>One</HeaderButton>
     <HeaderButton>Two</HeaderButton>
   </Fragment>,
 );
 
-stories.add('Multiple Header Buttons with keyline', () =>
+stories.add('Multiple header buttons with keyline', () =>
   <Fragment>
     <Keyline>
       <HeaderButton>One</HeaderButton>
@@ -32,10 +32,10 @@ stories.add('Multiple Header Buttons with keyline', () =>
   </Fragment>,
 );
 
-stories.add('Active Header Button', () =>
+stories.add('Active header button', () =>
   <HeaderButton active>On</HeaderButton>,
 );
 
-stories.add('Disabled Header Button', () =>
+stories.add('Disabled header button', () =>
   <HeaderButton disabled>Off</HeaderButton>,
 );

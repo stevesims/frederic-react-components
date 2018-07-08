@@ -15,4 +15,4 @@ const stories = storiesOf('Buttons/OpenButton', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Component default', () => <ManagedOpenButton />);
+stories.add('Simple', () => <ManagedOpenButton />);

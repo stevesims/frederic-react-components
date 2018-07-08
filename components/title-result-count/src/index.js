@@ -16,6 +16,24 @@ const Title = styled('div')({
   marginRight: '10px',
 });
 
+/**
+ *
+ * ### Usage
+ *
+ * Simple
+ * ```jsx
+ * <ResultCountHeader count={3} countColor="white" countBackgroundColor="#b10e1e">
+ *  Title Title Title
+ * </ResultCountHeader>
+ * ```
+ * 
+ * Counter title with value 0
+ * ```jsx
+ * <ResultCountHeader count={0} countColor="black" countBackgroundColor="#dee0e2">
+ *  Title Title Title
+ * </ResultCountHeader>
+ * ```
+ */
 const TitleResultCount = ({ countBackgroundColor, children, countColor, count, ...props }) => {
   return <Wrapper {...props}>
     <Title>{children}</Title>

@@ -1,11 +1,69 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs/react';
-import { WithDocsCustom } from '@govuk-react/storybook-components';
+TableAccordionGroup
+===================
+
+### Import
+```js
+  import TableAccordionGroup from '@govuk-frederic/table-accordion-group';
+```
+<!-- STORY -->
+
+### Usage
+
+Simple
+```jsx
+<TableAccordionGroup title="Title" expanded="expanded">Children</TableAccordionGroup>
+```
+
+Open
+```jsx
+<TableAccordionGroup open title="Title" expanded="expanded">Children</TableAccordionGroup>
+```
+
+State managed
+```jsx
 import manageState from 'manage-state';
 
-import TableAccordionGroup from '.';
-import ReadMe from '../README.md';
+const ManagedTableAccordionGroup = manageState(TableAccordionGroup, {
+ propsToState: ['open'],
+});
+
+<ManagedTableAccordionGroup title="Title" expanded="expanded">Children</ManagedTableAccordionGroup>
+```
+
+changeOnTitleClick
+```jsx
+import manageState from 'manage-state';
+
+const ManagedTableAccordionGroup = manageState(TableAccordionGroup, {
+ propsToState: ['open'],
+});
+
+<ManagedTableAccordionGroup changeOnTitleClick title="Title" expanded="expanded">Children</ManagedTableAccordionGroup>
+```
+
+array
+```jsx
+import manageState from 'manage-state';
+
+const ManagedTableAccordionGroup = manageState(TableAccordionGroup, {
+ propsToState: ['open'],
+});
+
+<ManagedTableAccordionGroup
+ expanded={
+   arrayExampleItems.map((item, index) => {
+     if (index) {
+       return <div>{item}</div>;
+     }
+     return null;
+   })}
+>
+ {arrayExampleItems[0]}
+</ManagedTableAccordionGroup>
+```
+
+async
+```jsx
 import ResultCountTitle from '@govuk-frederic/result-count-title';
 import Spinner from '@govuk-frederic/spinner';
 
@@ -60,11 +118,11 @@ class TableAccordionGroupAsyncExample extends React.Component {
 
     // eslint disable justification:
     // "avoid the use of user input in property name fields"
-    // https://blog.liftsecurity.io/2015/01/14/the-dangers-of-square-bracket-notation/
+    //  * https://blog.liftsecurity.io/2015/01/14/the-dangers-of-square-bracket-notat * ion/
     // - `index` is not a user input as it comes from items.map in render.
-    // - This code is also not expected to be executed on a server, other than during unit tests,
+    // - This code is also not expected to be executed on a server, other than  * during unit tests,
     //   in which case this vulnerability is not relevant.
-    if (open && !this.state.items[index].loaded) { // eslint-disable-line security/detect-object-injection
+    if (open && !this.state.items[index].loaded) { // eslint-disable-line  * security/detect-object-injection
       this.loadItem(index);
     }
   }
@@ -90,43 +148,17 @@ class TableAccordionGroupAsyncExample extends React.Component {
   }
 }
 
-const ManagedTableAccordionGroup = manageState(TableAccordionGroup, {
-  propsToState: ['open'],
-});
+<TableAccordionGroupAsyncExample />
+```
 
-const arrayExampleItems = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+### Properties
+Prop | Required | Default | Type | Description
+:--- | :------- | :------ | :--- | :----------
+ `changeOnTitleClick` |  | ```false``` | bool | 
+ `children` | true | `````` | node | 
+ `expanded` | true | `````` | node | 
+ `onChange` |  | `````` | func | 
+ `open` |  | ```false``` | bool | 
+ `title` |  | `````` | node | 
 
-const stories = storiesOf('Tables/TableAccordionGroup', module);
 
-stories.addDecorator(WithDocsCustom(ReadMe));
-stories.addDecorator(withKnobs);
-
-stories.add('Simple', () => (<TableAccordionGroup title="Title" expanded="expanded">
-      Children
-</TableAccordionGroup>));
-
-stories.add('Open', () => (<TableAccordionGroup open title="Title" expanded="expanded">
-      Children
-</TableAccordionGroup>));
-
-stories.add('State managed', () => (<ManagedTableAccordionGroup title="Title" expanded="expanded">
-          Children
-</ManagedTableAccordionGroup>));
-
-stories.add('changeOnTitleClick', () => (<ManagedTableAccordionGroup changeOnTitleClick title="Title" expanded="expanded">
-          Children
-</ManagedTableAccordionGroup>));
-
-stories.add('array', () => (<ManagedTableAccordionGroup
-  expanded={
-    arrayExampleItems.map((item, index) => {
-      if (index) {
-        return <div>{item}</div>;
-      }
-      return null;
-    })}
->
-  {arrayExampleItems[0]}
-</ManagedTableAccordionGroup>));
-
-stories.add('async', () => <TableAccordionGroupAsyncExample />);

@@ -27,6 +27,7 @@ const RemoveButtonInner = styled('button')({
  * ```jsx
  * <RemoveButton title="Remove" />
  * ```
+ * 
  * Next to some text
  * ```jsx
  * <div><span>Text here</span><RemoveButton title="Remove" /></div>

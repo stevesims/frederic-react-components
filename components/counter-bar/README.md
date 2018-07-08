@@ -9,7 +9,7 @@ CounterBar
 
 ### Usage
 
-Default
+Simple
 ```jsx
 <CounterBar
  listTitle="All counters"

@@ -21,12 +21,14 @@ const KeylineWrapper = styled('span')(({ inlineBlock, borderColor }) => ({
  *    <p>example</p>
  * </Keyline>
  * ```
+ * 
  * inlineBlock
  * ```jsx
  * <Keyline inlineBlock>
  *    <p>example</p>
  * </Keyline>
  * ```
+ * 
  * inlineBlock with orange border
  * ```jsx
  * <<Keyline inlineBlock borderColor="#ff9900">

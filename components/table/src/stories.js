@@ -1,6 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withKnobs } from '@storybook/addon-knobs/react';
+import { WithDocsCustom } from '@govuk-react/storybook-components';
+
 import Table from '.';
+import ReadMe from '../README.md';
 
 const arrayExampleHeadings = ['Heading 1', 'Heading 2', 'Heading 3', 'Heading 4'];
 const arrayExampleContent = [
@@ -12,7 +16,10 @@ const exampleNames = ['one', 'two', 'three', 'four'];
 
 const stories = storiesOf('Tables/Table', module);
 
-stories.add('Component default', () =>
+stories.addDecorator(WithDocsCustom(ReadMe));
+stories.addDecorator(withKnobs);
+
+stories.add('Simple', () =>
   <Table titles={arrayExampleHeadings} rows={arrayExampleContent} names={exampleNames} />,
 );
 

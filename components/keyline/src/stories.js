@@ -11,7 +11,7 @@ const stories = storiesOf('Typography/Keyline', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Component default', () => (
+stories.add('Simple', () => (
   <div>
     <Keyline>
       <p>example</p>

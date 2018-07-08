@@ -9,12 +9,13 @@ DistractionFree
 
 ### Usage
 
-Default
+Simple
 ```jsx
 <DistractionFree onClick={(e) => {}}>
    content goes here
 </DistractionFree>
 ```
+
 With title
 ```jsx
 <DistractionFree arrowLeftTitle="Back to example" onClick={(e) => {}}>

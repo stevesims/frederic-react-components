@@ -1,7 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withKnobs } from '@storybook/addon-knobs/react';
+import { WithDocsCustom } from '@govuk-react/storybook-components';
 
 import CounterBar from '.';
+import ReadMe from '../README.md';
 
 class ControlledCounterBar extends React.Component {
   state = {
@@ -36,7 +39,10 @@ class ControlledCounterBar extends React.Component {
 
 const stories = storiesOf('Count/CounterBar', module);
 
-stories.add('Component default', () =>
+stories.addDecorator(WithDocsCustom(ReadMe));
+stories.addDecorator(withKnobs);
+
+stories.add('Simple', () =>
   <CounterBar
     listTitle="All counters"
     name="name"

@@ -48,10 +48,11 @@ const Button = styled('button')(
  *
  * ### Usage
 
- * Default
+ * Simple
  * ```jsx
  * <HeaderButton>One</HeaderButton>
  * ```
+ * 
  * Multiple header buttons
  * ```jsx
  * <Fragment>
@@ -59,6 +60,7 @@ const Button = styled('button')(
  *  <HeaderButton>Two</HeaderButton>
  * </Fragment>
  * ```
+ * 
  * Multiple header buttons with keyline
  * ```jsx
  * <Fragment>
@@ -68,10 +70,12 @@ const Button = styled('button')(
  *  </Keyline>
  * </Fragment>
  * ```
+ * 
  * Active header button
  * ```jsx
  * <HeaderButton active>On</HeaderButton>
  * ```
+ * 
  * Disabled header button
  * ```jsx
  * <HeaderButton disabled>Off</HeaderButton>

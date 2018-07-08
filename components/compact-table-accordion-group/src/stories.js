@@ -96,21 +96,21 @@ const arrayExampleItems = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
 
 const stories = storiesOf('Tables/CompactTableAccordionGroup', module);
 
-stories.add('Component default', () => <CompactTableAccordionGroup title="Title" expanded="expanded">
+stories.add('Simple', () => <CompactTableAccordionGroup title="Title" expanded="expanded">
       Children
 </CompactTableAccordionGroup>);
 
-stories.add('no children', () => <CompactTableAccordionGroup open title="Title" expanded="expanded"/>);
+stories.add('No children', () => <CompactTableAccordionGroup open title="Title" expanded="expanded"/>);
 
-stories.add('open', () => <CompactTableAccordionGroup open title="Title" expanded="expanded">
+stories.add('Open', () => <CompactTableAccordionGroup open title="Title" expanded="expanded">
       Children
 </CompactTableAccordionGroup>);
 
-stories.add('state managed', () => <ManagedCompactTableAccordionGroup title="Title" expanded="expanded">
+stories.add('State managed', () => <ManagedCompactTableAccordionGroup title="Title" expanded="expanded">
           Children
 </ManagedCompactTableAccordionGroup>);
 
-stories.add('state managed without children', () => <ManagedCompactTableAccordionGroup title="Title" expanded="expanded"/>);
+stories.add('State managed without children', () => <ManagedCompactTableAccordionGroup title="Title" expanded="expanded"/>);
 
 stories.add('changeOnTitleClick', () => <ManagedCompactTableAccordionGroup changeOnTitleClick title="Title" expanded="expanded">
           Children

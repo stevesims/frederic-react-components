@@ -11,4 +11,4 @@ const stories = storiesOf('Icons/Arrow', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Component default', () => <Arrow />);
+stories.add('Simple', () => <Arrow />);
