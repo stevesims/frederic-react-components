@@ -139,6 +139,36 @@ const Counter = styled('button')(
  *  onSelect={ (id) => alert(`Counter with id: ${id} selected.`) }
  * />
  * ```
+ * 
+ * Padded container
+ * ```jsx 
+ * <CounterBar
+ *  listTitle="All counters"
+ *  name="name"
+ *  counters={[
+ *    { id: 'abc', name: 'Counter 1', score: 0 },
+ *    { id: 'def', name: 'Counter 2', score: 2 },
+ *    { id: 'ghi', name: 'Counter 3', score: 2 },
+ *    { id: 'jkl', name: 'Counter 4', score: 0 },
+ *    { id: 'mno', name: 'Counter 5', score: 2 },
+ *    { id: 'pqr', name: 'Counter 6', score: 0 },
+ *    { id: 'stu', name: 'Counter 7', score: 2 },
+ *  ]}
+ * />
+ * ```
+ * 
+ * Zero/no scores
+ * ```jsx 
+ * <CounterBar
+ *  listTitle="All counters"
+ *  name="name"
+ *  counters={[
+ *    { id: 'abc', name: 'Counter 1', score: 0 },
+ *    { id: 'def', name: 'Counter 2' },
+ *    { id: 'ghi', name: 'Counter 3', score: 0 },
+ *  ]}
+ * />
+ * ```
  */
 const CounterBar = ({ activeTitle, listTitle, counters, onSelect, ...props }) => {
   const totalScore = counters.reduce((a, b) => a + (Number(b.score) || 0), 0);
