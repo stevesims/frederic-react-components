@@ -11,4 +11,4 @@ const stories = storiesOf('Loading/Spinner', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Simple', () => <Component visible />);
+stories.add('Component default', () => <Component visible />);

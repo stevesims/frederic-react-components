@@ -12,7 +12,7 @@ const stories = storiesOf('Page/DistractionFree', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Simple', () => (
+stories.add('Component default', () => (
   <DistractionFree onClick={action('clicked back button')}>
     content goes here
   </DistractionFree>

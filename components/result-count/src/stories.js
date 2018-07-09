@@ -11,7 +11,7 @@ const stories = storiesOf('Count/ResultCount', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Simple', () => (
+stories.add('Component default', () => (
   <ResultCount backgroundColor="#6f777b" color="white">0</ResultCount>
 ));
 

@@ -101,7 +101,7 @@ const stories = storiesOf('Tables/TableAccordionGroup', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Simple', () => (<TableAccordionGroup title="Title" expanded="expanded">
+stories.add('Component default', () => (<TableAccordionGroup title="Title" expanded="expanded">
       Children
 </TableAccordionGroup>));
 

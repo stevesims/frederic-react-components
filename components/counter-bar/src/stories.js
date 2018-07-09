@@ -42,7 +42,7 @@ const stories = storiesOf('Count/CounterBar', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Simple', () =>
+stories.add('Component default', () =>
   <CounterBar
     listTitle="All counters"
     name="name"

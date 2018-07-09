@@ -11,5 +11,5 @@ const stories = storiesOf('Count/TitleResultCount', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Simple', () => <ResultCountHeader count={3} countColor="white" countBackgroundColor="#b10e1e">Title Title Title</ResultCountHeader>);
+stories.add('Component default', () => <ResultCountHeader count={3} countColor="white" countBackgroundColor="#b10e1e">Title Title Title</ResultCountHeader>);
 stories.add('Counter title with value 0', () => <ResultCountHeader count={0} countColor="black" countBackgroundColor="#dee0e2">Title Title Title</ResultCountHeader>);

@@ -11,6 +11,6 @@ const stories = storiesOf('Count/Count', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Simple', () => <Count
+stories.add('Component default', () => <Count
   value="5"
 />);

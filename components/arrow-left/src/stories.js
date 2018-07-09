@@ -29,7 +29,7 @@ stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
 stories
-  .add('Simple', () => (
+  .add('Component default', () => (
     <ArrowLeft />
   ));
 

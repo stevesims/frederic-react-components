@@ -12,7 +12,7 @@ const stories = storiesOf('Buttons/HeaderButton', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Simple', () =>
+stories.add('Component default', () =>
   <HeaderButton>One</HeaderButton>,
 );
 

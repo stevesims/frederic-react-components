@@ -19,7 +19,7 @@ const stories = storiesOf('Tables/Table', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Simple', () =>
+stories.add('Component default', () =>
   <Table titles={arrayExampleHeadings} rows={arrayExampleContent} names={exampleNames} />,
 );
 

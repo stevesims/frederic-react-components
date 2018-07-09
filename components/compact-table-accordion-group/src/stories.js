@@ -96,7 +96,7 @@ const arrayExampleItems = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
 
 const stories = storiesOf('Tables/CompactTableAccordionGroup', module);
 
-stories.add('Simple', () => <CompactTableAccordionGroup title="Title" expanded="expanded">
+stories.add('Component default', () => <CompactTableAccordionGroup title="Title" expanded="expanded">
       Children
 </CompactTableAccordionGroup>);
 
