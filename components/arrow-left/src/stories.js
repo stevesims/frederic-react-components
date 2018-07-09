@@ -5,7 +5,6 @@ import { withKnobs } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
 import { GREY_1, WHITE } from 'govuk-colours';
 
-
 import ArrowLeft from '.';
 import ReadMe from '../README.md';
 
