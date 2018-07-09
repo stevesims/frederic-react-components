@@ -97,6 +97,7 @@ const ManagedTableAccordionGroup = manageState(TableAccordionGroup, {
 const arrayExampleItems = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
 
 const stories = storiesOf('Tables/TableAccordionGroup', module);
+const examples = storiesOf('Tables/TableAccordionGroup/Examples', module);
 
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
@@ -105,19 +106,19 @@ stories.add('Component default', () => (<TableAccordionGroup title="Title" expan
       Children
 </TableAccordionGroup>));
 
-stories.add('Open', () => (<TableAccordionGroup open title="Title" expanded="expanded">
+examples.add('Open', () => (<TableAccordionGroup open title="Title" expanded="expanded">
       Children
 </TableAccordionGroup>));
 
-stories.add('State managed', () => (<ManagedTableAccordionGroup title="Title" expanded="expanded">
+examples.add('State managed', () => (<ManagedTableAccordionGroup title="Title" expanded="expanded">
           Children
 </ManagedTableAccordionGroup>));
 
-stories.add('changeOnTitleClick', () => (<ManagedTableAccordionGroup changeOnTitleClick title="Title" expanded="expanded">
+examples.add('changeOnTitleClick', () => (<ManagedTableAccordionGroup changeOnTitleClick title="Title" expanded="expanded">
           Children
 </ManagedTableAccordionGroup>));
 
-stories.add('array', () => (<ManagedTableAccordionGroup
+examples.add('array', () => (<ManagedTableAccordionGroup
   expanded={
     arrayExampleItems.map((item, index) => {
       if (index) {
@@ -129,4 +130,4 @@ stories.add('array', () => (<ManagedTableAccordionGroup
   {arrayExampleItems[0]}
 </ManagedTableAccordionGroup>));
 
-stories.add('async', () => <TableAccordionGroupAsyncExample />);
+examples.add('async', () => <TableAccordionGroupAsyncExample />);

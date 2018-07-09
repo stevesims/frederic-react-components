@@ -7,6 +7,7 @@ import Keyline from '.';
 import ReadMe from '../README.md';
 
 const stories = storiesOf('Typography/Keyline', module);
+const examples = storiesOf('Typography/Keyline/Examples', module);
 
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
@@ -19,7 +20,7 @@ stories.add('Component default', () => (
   </div>
 ));
 
-stories.add('inlineBlock', () => (
+examples.add('inlineBlock', () => (
   <div>
     <Keyline inlineBlock>
       <p>example</p>
@@ -27,7 +28,7 @@ stories.add('inlineBlock', () => (
   </div>
 ));
 
-stories.add('inlineBlock with orange border', () => (
+examples.add('inlineBlock with orange border', () => (
   <div>
     <Keyline inlineBlock borderColor="#ff9900">
       <p>example</p>

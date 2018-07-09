@@ -8,6 +8,7 @@ import Keyline from '@govuk-frederic/keyline';
 import ReadMe from '../README.md';
 
 const stories = storiesOf('Buttons/HeaderButton', module);
+const examples = storiesOf('Buttons/HeaderButton/Examples', module);
 
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
@@ -16,14 +17,14 @@ stories.add('Component default', () =>
   <HeaderButton>One</HeaderButton>,
 );
 
-stories.add('Multiple header buttons', () =>
+examples.add('Multiple header buttons', () =>
   <Fragment>
     <HeaderButton>One</HeaderButton>
     <HeaderButton>Two</HeaderButton>
   </Fragment>,
 );
 
-stories.add('Multiple header buttons with keyline', () =>
+examples.add('Multiple header buttons with keyline', () =>
   <Fragment>
     <Keyline>
       <HeaderButton>One</HeaderButton>
@@ -32,10 +33,10 @@ stories.add('Multiple header buttons with keyline', () =>
   </Fragment>,
 );
 
-stories.add('Active header button', () =>
+examples.add('Active header button', () =>
   <HeaderButton active>On</HeaderButton>,
 );
 
-stories.add('Disabled header button', () =>
+examples.add('Disabled header button', () =>
   <HeaderButton disabled>Off</HeaderButton>,
 );

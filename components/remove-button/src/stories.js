@@ -7,9 +7,10 @@ import RemoveButton from '.';
 import ReadMe from '../README.md';
 
 const stories = storiesOf('Buttons/RemoveButton', module);
+const examples = storiesOf('Buttons/RemoveButton/Examples', module);
 
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
 stories.add('Component default', () => <RemoveButton title="Remove" />);
-stories.add('Next to some text', () => <div><span>Text here</span><RemoveButton title="Remove" /></div>);
+examples.add('Next to some text', () => <div><span>Text here</span><RemoveButton title="Remove" /></div>);

@@ -15,6 +15,7 @@ const arrayExampleContent = [
 const exampleNames = ['one', 'two', 'three', 'four'];
 
 const stories = storiesOf('Tables/Table', module);
+const examples = storiesOf('Tables/Table/Examples', module);
 
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
@@ -23,18 +24,18 @@ stories.add('Component default', () =>
   <Table titles={arrayExampleHeadings} rows={arrayExampleContent} names={exampleNames} />,
 );
 
-stories.add('rowIncludesHeading', () =>
+examples.add('rowIncludesHeading', () =>
   <Table titles={arrayExampleHeadings} rows={arrayExampleContent} rowIncludesHeading />,
 );
 
-stories.add('rowIncludesHeading, no titles', () =>
+examples.add('rowIncludesHeading, no titles', () =>
   <Table rows={arrayExampleContent} rowIncludesHeading names={exampleNames} />,
 );
 
-stories.add('rowIncludesHeading, no titles, small single row', () =>
+examples.add('rowIncludesHeading, no titles, small single row', () =>
   <Table rows={[['title', 'value']]} rowIncludesHeading />,
 );
 
-stories.add('rowIncludesHeading, with flexible columns', () =>
+examples.add('rowIncludesHeading, with flexible columns', () =>
   <Table titles={arrayExampleHeadings} rows={arrayExampleContent} flexibleColumns rowIncludesHeading />,
 );
