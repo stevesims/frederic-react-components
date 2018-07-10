@@ -22,16 +22,16 @@ const Title = styled('div')({
  *
  * Simple
  * ```jsx
- * <ResultCountHeader count={3} countColor="white" countBackgroundColor="#b10e1e">
+ * <TitleResultCount count={3}>
  *  Title Title Title
- * </ResultCountHeader>
+ * </TitleResultCount>
  * ```
  * 
- * Counter title with value 0
+ * Counter title with value 0 and override text and background colour.
  * ```jsx
- * <ResultCountHeader count={0} countColor="black" countBackgroundColor="#dee0e2">
+ * <TitleResultCount count={0} countColor="black" countBackgroundColor="#dee0e2">
  *  Title Title Title
- * </ResultCountHeader>
+ * </TitleResultCount>
  * ```
  */
 const TitleResultCount = ({ countBackgroundColor, children, countColor, count, ...props }) => {
