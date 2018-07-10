@@ -12,7 +12,7 @@ describe('ResultCountTitle', () => {
 
   it('renders with expected style rule', () => {
     wrapper = shallow(<Component count="000">Sample title</Component>);
-    expect(wrapper).toHaveStyleRule('display', 'inline-block');
+    expect(wrapper).toHaveStyleRule('display', 'flex');
   });
 
   it('renders with count', () => {

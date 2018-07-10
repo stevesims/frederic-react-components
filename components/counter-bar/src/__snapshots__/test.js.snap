@@ -16,36 +16,38 @@ exports[`CounterBar matches snapshot 1`] = `
       Test Title
     </ResultCountTitle>
   </CountWrapper>
-  <Counter
-    active={true}
-    disabled={false}
-    empty={false}
-    key="abc"
-    name="abc"
-    onClick={[Function]}
-  >
-    <ResultCountTitle
-      count={1}
-      countBackgroundColor="#b10e1e"
-      countColor="#ffffff"
+  <CountersWrapper>
+    <Counter
+      active={true}
+      disabled={false}
+      empty={false}
+      key="abc"
+      name="abc"
+      onClick={[Function]}
     >
-      abc
-    </ResultCountTitle>
-  </Counter>
-  <Counter
-    disabled={false}
-    empty={false}
-    key="def"
-    name="def"
-    onClick={[Function]}
-  >
-    <ResultCountTitle
-      count={3}
-      countBackgroundColor="#b10e1e"
-      countColor="#ffffff"
+      <ResultCountTitle
+        count={1}
+        countBackgroundColor="#b10e1e"
+        countColor="#ffffff"
+      >
+        abc
+      </ResultCountTitle>
+    </Counter>
+    <Counter
+      disabled={false}
+      empty={false}
+      key="def"
+      name="def"
+      onClick={[Function]}
     >
-      def
-    </ResultCountTitle>
-  </Counter>
+      <ResultCountTitle
+        count={3}
+        countBackgroundColor="#b10e1e"
+        countColor="#ffffff"
+      >
+        def
+      </ResultCountTitle>
+    </Counter>
+  </CountersWrapper>
 </Container>
 `;

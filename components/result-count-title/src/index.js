@@ -4,16 +4,19 @@ import styled from 'react-emotion';
 
 import ResultCount from '@govuk-frederic/result-count';
 
-const Wrapper = styled('div')({
-  display: 'inline-block',
-});
+const Wrapper = styled('div')(
+  {
+    display: 'flex',
+    flexWrap: 'nowrap',
+  },
+);
 
 const Title = styled('div')({
   display: 'inline-block',
   fontFamily: 'Roboto, Arial, sans-serif',
   fontSize: '15px',
   lineHeight: '1.25',
-  marginLeft: '10px',
+  padding: '2px',
 });
 
 const ResultCountTitle = ({ countBackgroundColor, children, count, countColor, ...props }) => {

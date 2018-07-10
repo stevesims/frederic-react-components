@@ -8,22 +8,21 @@ import { BLACK, GREY_1, GREY_3, LINK_COLOUR, RED, WHITE, YELLOW } from 'govuk-co
 
 const Container = styled('div')({
   display: 'flex',
+  flexWrap: 'nowrap',
   lineHeight: '1',
 });
 
-const CountWrapper = styled('div')(
+const CountWrapper = styled('a')(
   {
     ':focus': {
       outline: `solid 4px ${YELLOW}`,
     },
-    alignItems: 'center',
     border: '0',
-    display: 'inline-flex',
-    flex: '1',
-    marginRight: '8px',
+    flex: '0 0 auto',
+    margin: '0 6px 6px 0',
+    maxWidth: '250px',
     outline: 'none',
-    padding: '0',
-    position: 'relative',
+    padding: '0 8px 0 0',
   },
   ({ active }) => ({
     background: active ? LINK_COLOUR : WHITE,
@@ -32,27 +31,26 @@ const CountWrapper = styled('div')(
   }),
 );
 
-const Counter = styled('button')(
+const CountersWrapper = styled('div')(
   {
-    ':focus': {
-      outline: `solid 4px ${YELLOW}`,
-    },
+    alignItems: 'flex-start',
+    display: 'flex',
+    marginRight: '-6px',
+    flex: '1 1 auto',
+    flexWrap: 'wrap',
+  },
+);
+
+const Counter = styled(CountWrapper)(
+  {
     ':last-child': {
       marginRight: '0',
     },
-    alignItems: 'center',
-    border: '0',
     color: WHITE,
-    display: 'inline-flex',
-    flex: '1',
-    marginRight: '8px',
-    outline: 'none',
-    padding: '0',
-    position: 'relative',
+    flex: '1 1 auto',
   },
   ({ active }) => ({
     background: active ? LINK_COLOUR : GREY_1,
-    outline: active ? `2px solid ${LINK_COLOUR}` : undefined,
   }),
   ({ empty }) => (empty ? { opacity: 0 } : undefined),
 );
@@ -70,24 +68,26 @@ const CounterBar = ({ activeTitle, listTitle, counters, onSelect, ...props }) =>
           {listTitle}
         </ResultCountTitle>
       </CountWrapper>
-      {counters.map(counter => (
-        <Counter
-          active={counter.active}
-          disabled={!counter.score}
-          key={counter.id}
-          name={counter.id}
-          onClick={() => onSelect(counter.id)}
-          empty={!counter.name || counter.name.length === 0}
+      <CountersWrapper>
+        {counters.map(counter => (
+          <Counter
+            active={counter.active}
+            disabled={!counter.score}
+            key={counter.id}
+            name={counter.id}
+            onClick={() => onSelect(counter.id)}
+            empty={!counter.name || counter.name.length === 0}
         >
-          <ResultCountTitle
-            countColor={counter.score > 0 ? WHITE : BLACK}
-            countBackgroundColor={counter.score > 0 ? RED : GREY_3}
-            count={counter.score || 0}
+            <ResultCountTitle
+              countColor={counter.score > 0 ? WHITE : BLACK}
+              countBackgroundColor={counter.score > 0 ? RED : GREY_3}
+              count={counter.score || 0}
           >
-            {counter.name}
-          </ResultCountTitle>
-        </Counter>
+              {counter.name}
+            </ResultCountTitle>
+          </Counter>
       ))}
+      </CountersWrapper>
     </Container>
   );
 };

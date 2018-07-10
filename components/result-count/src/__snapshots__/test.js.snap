@@ -2,22 +2,28 @@
 
 exports[`ResultCount matches snapshot 1`] = `
 .emotion-0 {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   background: yellow;
   color: blue;
-  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   font-family: Roboto,Arial,sans-serif;
   font-size: 15px;
   line-height: 1.25;
   min-height: 20px;
   min-width: 20px;
   padding: 1px 4px;
+  margin-right: 6px;
   text-align: center;
 }
 
-<span
+<div
   className="emotion-0 emotion-1"
   color="blue"
 >
   000
-</span>
+</div>
 `;
