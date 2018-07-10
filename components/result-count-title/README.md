@@ -11,7 +11,7 @@ ResultCountTitle
 
 Simple
 ```jsx
-<ResultCountTitle count={3} countColor="white" countBackgroundColor="#b10e1e">Title</ResultCountTitle>
+<ResultCountTitle count={3}>Title</ResultCountTitle>
 ```
 
 In black with count value 0
