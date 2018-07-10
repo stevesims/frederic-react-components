@@ -105,7 +105,7 @@ const TableAccordionGroup = ({ title, children, expanded, onChange, open, change
 
 TableAccordionGroup.propTypes = {
   changeOnTitleClick: PropTypes.bool,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   expanded: PropTypes.node.isRequired,
   onChange: PropTypes.func,
   open: PropTypes.bool,
@@ -114,6 +114,7 @@ TableAccordionGroup.propTypes = {
 
 TableAccordionGroup.defaultProps = {
   changeOnTitleClick: false,
+  children: undefined,
   open: false,
 };
 

@@ -122,7 +122,7 @@ const CompactTableAccordionGroup = ({
 
 CompactTableAccordionGroup.propTypes = {
   changeOnTitleClick: PropTypes.bool,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   expanded: PropTypes.node.isRequired,
   onChange: PropTypes.func,
   open: PropTypes.bool,
@@ -131,6 +131,7 @@ CompactTableAccordionGroup.propTypes = {
 
 CompactTableAccordionGroup.defaultProps = {
   changeOnTitleClick: false,
+  children: undefined,
   open: false,
 };
 
