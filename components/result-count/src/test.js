@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { createMatchers } from 'jest-emotion';
 import * as emotion from 'emotion';
 import { GREY_1, WHITE } from 'govuk-colours';
@@ -30,6 +30,7 @@ describe('ResultCount', () => {
   });
 
   it('matches snapshot', () => {
+    wrapper = mount(<Component>0</Component>);
     expect(wrapper).toMatchSnapshot();
   });
 });
