@@ -1,22 +1,44 @@
+import React from 'react';
 import styled from 'react-emotion';
 import PropTypes from 'prop-types';
 
 import { GREY_1, WHITE } from 'govuk-colours';
 
-const ResultCount = styled('div')(({ backgroundColor, color }) => ({
-  alignSelf: 'flex-start',
-  background: backgroundColor || GREY_1,
-  color: color || WHITE,
-  flex: '0 0 auto',
+const StyledResultCount = styled('span')(({ backgroundColor, color }) => ({
+  background: backgroundColor,
+  color,
+  display: 'inline-block',
   fontFamily: 'Roboto, Arial, sans-serif',
   fontSize: '15px',
   lineHeight: '1.25',
   minHeight: '20px',
   minWidth: '20px',
   padding: '1px 4px',
-  marginRight: '6px',
   textAlign: 'center',
 }));
+
+/**
+ *
+ * ### Usage
+ *
+ * Simple
+ * ```jsx
+ * <ResultCount>0</ResultCount>
+ * ```
+ * 
+ * Overriding background and text colours
+ * ```jsx
+ * <ResultCount backgroundColor="#6f777b" color="white">000</ResultCount>
+ * ```
+ * 
+ */
+const ResultCount = props => <StyledResultCount {...props} />;
+
+ResultCount.defaultProps = {
+  backgroundColor: GREY_1,
+  children: undefined,
+  color: WHITE,
+};
 
 ResultCount.propTypes = {
   backgroundColor: PropTypes.string,
