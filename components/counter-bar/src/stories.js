@@ -6,37 +6,6 @@ import { WithDocsCustom } from '@govuk-react/storybook-components';
 import CounterBar from '.';
 import ReadMe from '../README.md';
 
-class ControlledCounterBar extends React.Component {
-  state = {
-    activeTitle: true,
-    counters: [
-      { id: 'abc', name: 'Counter 1', score: 0 },
-      { id: 'def', name: 'Counter 2', score: 2 },
-      { id: 'ghi', name: 'Counter 3', score: 2 },
-    ],
-  };
-
-  render() {
-    return <div style={{padding: '4px'}}>
-      <CounterBar
-        activeTitle={this.state.activeTitle}
-        listTitle="All counters"
-        name="name"
-        counters={this.state.counters}
-        onSelect={(id) => {
-          const newCounters = this.state.counters.map(counter => {
-            return {
-              ...counter,
-              active: counter.id === id,
-            };
-          });
-          this.setState({ activeTitle: id === undefined, counters: newCounters });
-        }}
-      />
-    </div>;
-  }
-}
-
 const stories = storiesOf('Count/CounterBar', module);
 const examples = storiesOf('Count/CounterBar/Examples', module);
 
@@ -44,90 +13,98 @@ stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
 stories.add('Component default', () =>
-  <CounterBar
-    listTitle="All counters"
-    name="name"
-    counters={[
-      { id: 'abc', name: 'Counter 1', score: 0 },
-      { id: 'def', name: 'Counter 2', score: 2 },
-      { id: 'ghi', name: 'Counter 3', score: 2 },
-      { id: 'jkl', name: 'Counter 4', score: 9 },
-      { id: 'mno', name: 'Counter 5', score: 2 },
-      { id: 'pqr', name: 'Counter 6', score: 1 },
-      { id: 'stu', name: 'Counter 7', score: 0 },
-    ]}
-  />,
+(<CounterBar>
+  <CounterBar.Total score={16}>All counters</CounterBar.Total>
+  <CounterBar.Container>
+    <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
+    <CounterBar.Item score={9}>Counter 4</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
+    <CounterBar.Item score={1}>Counter 6</CounterBar.Item>
+    <CounterBar.Item score={0}>Counter 7</CounterBar.Item>
+  </CounterBar.Container>
+</CounterBar>),
 );
 
 examples.add('Active Counter', () =>
-  <CounterBar
-    listTitle="All counters"
-    name="name"
-    counters={[
-      { id: 'abc', name: 'Counter 1', score: 0 },
-      { active: true, id: 'def', name: 'Counter 2', score: 2 },
-      { id: 'ghi', name: 'Counter 3', score: 2 },
-    ]}
-  />,
+(<CounterBar>
+  <CounterBar.Total score={5}>All counters</CounterBar.Total>
+  <CounterBar.Container>
+    <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+    <CounterBar.Item score={2} active>Counter 2</CounterBar.Item>
+    <CounterBar.Item score={3}>Counter 3</CounterBar.Item>
+  </CounterBar.Container>
+</CounterBar>),
 );
 
 examples.add('Active Title', () =>
-  <CounterBar
-    activeTitle
-    listTitle="All counters"
-    name="name"
-    counters={[
-      { id: 'abc', name: 'Counter 1', score: 0 },
-      { id: 'def', name: 'Counter 2', score: 2 },
-      { id: 'ghi', name: 'Counter 3', score: 0 },
-    ]}
-  />,
+  (<CounterBar>
+    <CounterBar.Total active score={2}>All counters</CounterBar.Total>
+    <CounterBar.Container>
+      <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+      <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+      <CounterBar.Item score={0}>Counter 3</CounterBar.Item>
+    </CounterBar.Container>
+  </CounterBar>),
 );
 
-examples.add('Active Counter and Title on click', () => <ControlledCounterBar />);
+examples.add('Active Counter and Title on click', () =>
+(<CounterBar>
+  <CounterBar.Total score={16}>All counters</CounterBar.Total>
+  <CounterBar.Container>
+    <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+    { /* eslint-disable-next-line no-alert */ }
+    <CounterBar.Item score={2} active onSelect={ (e) => alert(`${e.target} clicked`) }>Counter 2</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
+    <CounterBar.Item score={9}>Counter 4</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
+    <CounterBar.Item score={1}>Counter 6</CounterBar.Item>
+    <CounterBar.Item>Counter 7</CounterBar.Item>
+  </CounterBar.Container>
+</CounterBar>),
+);
 
-examples.add('Clickable Counters', () => <CounterBar
-  listTitle="All counters"
-  name="name"
-  counters={[
-    { id: 'abc', name: 'Counter 1', score: 0 },
-    { id: 'def', name: 'Counter 2', score: 2 },
-    { id: 'ghi', name: 'Counter 3', score: 2 },
-    { id: 'jkl', name: 'Counter 4', score: 9 },
-    { id: 'mno', name: 'Counter 5', score: 2 },
-    { id: 'pqr', name: 'Counter 6', score: 1 },
-    { id: 'stu', name: 'Counter 7' },
-  ]}
-  // eslint-disable-next-line no-alert
-  onSelect={ (id) => alert(`Counter with id: ${id} selected.`) }
-/>);
+examples.add('Clickable Counters', () => 
+(<CounterBar>
+  <CounterBar.Total score={16}>All counters</CounterBar.Total>
+  <CounterBar.Container>
+    <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+    { /* eslint-disable-next-line no-alert */ }
+    <CounterBar.Item score={2} active onSelect={ (e) => alert(`${e.target} clicked`) }>Counter 2</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
+    <CounterBar.Item score={9}>Counter 4</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
+    <CounterBar.Item score={1}>Counter 6</CounterBar.Item>
+    <CounterBar.Item>Counter 7</CounterBar.Item>
+  </CounterBar.Container>
+</CounterBar>),
+);
 
 examples.add('CounterBar with padded container', () =>
-  <div style={{padding: '4px'}}>
-    <CounterBar
-      listTitle="All counters"
-      name="name"
-      counters={[
-        { id: 'abc', name: 'Counter 1', score: 0 },
-        { id: 'def', name: 'Counter 2', score: 2 },
-        { id: 'ghi', name: 'Counter 3', score: 2 },
-        { id: 'jkl', name: 'Counter 4', score: 0 },
-        { id: 'mno', name: 'Counter 5', score: 2 },
-        { id: 'pqr', name: 'Counter 6', score: 0 },
-        { id: 'stu', name: 'Counter 7', score: 2 },
-      ]}
-    />
-  </div>,
+(<div style={{padding: '4px'}}>
+  <CounterBar>
+    <CounterBar.Total score={8}>All counters</CounterBar.Total>
+    <CounterBar.Container>
+      <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+      <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+      <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
+      <CounterBar.Item score={0}>Counter 4</CounterBar.Item>
+      <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
+      <CounterBar.Item score={0}>Counter 6</CounterBar.Item>
+      <CounterBar.Item score={2}>Counter 7</CounterBar.Item>
+    </CounterBar.Container>
+  </CounterBar>
+</div>),
 );
 
 examples.add('Zero/no scores', () =>
-  <CounterBar
-    listTitle="All counters"
-    name="name"
-    counters={[
-      { id: 'abc', name: 'Counter 1', score: 0 },
-      { id: 'def', name: 'Counter 2' },
-      { id: 'ghi', name: 'Counter 3', score: 0 },
-    ]}
-  />,
+  <CounterBar>
+    <CounterBar.Total score={0}>All counters</CounterBar.Total>
+    <CounterBar.Container>
+      <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+      <CounterBar.Item>Counter 2</CounterBar.Item>
+      <CounterBar.Item score={0}>Counter 3</CounterBar.Item>
+    </CounterBar.Container>
+  </CounterBar>,
 );

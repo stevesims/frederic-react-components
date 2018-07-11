@@ -11,120 +11,102 @@ CounterBar
 
 Simple
 ```jsx
-<CounterBar
- listTitle="All counters"
- name="name"
- counters={[
-   { id: 'abc', name: 'Counter 1', score: 0 },
-   { id: 'def', name: 'Counter 2', score: 2 },
-   { id: 'ghi', name: 'Counter 3', score: 2 },
-   { id: 'jkl', name: 'Counter 4', score: 9 },
-   { id: 'mno', name: 'Counter 5', score: 2 },
-   { id: 'pqr', name: 'Counter 6', score: 1 },
-   { id: 'stu', name: 'Counter 7', score: 0 },
- ]}
-/>
+<CounterBar>
+  <CounterBar.Total score={16}>All counters</CounterBar.Total>
+  <CounterBar.Container>
+    <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
+    <CounterBar.Item score={9}>Counter 4</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
+    <CounterBar.Item score={1}>Counter 6</CounterBar.Item>
+    <CounterBar.Item score={0}>Counter 7</CounterBar.Item>
+  </CounterBar.Container>
+</CounterBar>
 ```
 Active counter
 ```jsx
-<CounterBar
- listTitle="All counters"
- name="name"
- counters={[
-   { id: 'abc', name: 'Counter 1', score: 0 },
-   { active: true, id: 'def', name: 'Counter 2', score: 2 },
-   { id: 'ghi', name: 'Counter 3', score: 2 },
- ]}
-/>
+<CounterBar>
+ <CounterBar.Total score={5}>All counters</CounterBar.Total>
+ <CounterBar.Container>
+ <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+ <CounterBar.Item score={2} active>Counter 2</CounterBar.Item>
+ <CounterBar.Item score={3}>Counter 3</CounterBar.Item>
+ </CounterBar.Container>
+</CounterBar>
 ```
 Active title
 ```jsx
-<CounterBar
- activeTitle
- listTitle="All counters"
- name="name"
- counters={[
-   { id: 'abc', name: 'Counter 1', score: 0 },
-   { id: 'def', name: 'Counter 2', score: 2 },
-   { id: 'ghi', name: 'Counter 3', score: 0 },
- ]}
-/>
+<CounterBar>
+ <CounterBar.Total active score={2}>All counters</CounterBar.Total>
+ <CounterBar.Container>
+  <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+  <CounterBar.Item score={2} active>Counter 2</CounterBar.Item>
+  <CounterBar.Item score={0}>Counter 3</CounterBar.Item>
+ </CounterBar.Container>
+</CounterBar>
 ```
 Active counter and title on click
 ```jsx
-<CounterBar
- listTitle="All counters"
- activeTitle
- name="name"
- counters={[
-   { id: 'abc', name: 'Counter 1', score: 0 },
-   { id: 'def', name: 'Counter 2', score: 2 },
-   { id: 'ghi', name: 'Counter 3', score: 2 },
-   { id: 'jkl', name: 'Counter 4', score: 9 },
-   { id: 'mno', name: 'Counter 5', score: 2 },
-   { id: 'pqr', name: 'Counter 6', score: 1 },
-   { id: 'stu', name: 'Counter 7' },
- ]}
- // eslint-disable-next-line no-alert
- onSelect={ (id) => alert(`Counter with id: ${id} selected.`) }
-/>
+// eslint-disable-next-line no-alert
+<CounterBar onSelect={ (id) => alert(`Counter selected.`) }>
+ <CounterBar.Total active score={2}>All counters</CounterBar.Total>
+ <CounterBar.Container>
+  <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+  <CounterBar.Item score={2} active>Counter 2</CounterBar.Item>
+  <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
+  <CounterBar.Item score={9}>Counter 4</CounterBar.Item>
+  <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
+  <CounterBar.Item score={1}>Counter 6</CounterBar.Item>
+  <CounterBar.Item>Counter 7</CounterBar.Item>
+ </CounterBar.Container>
+</CounterBar>
 ```
 Clickable counters
 ```jsx
-<CounterBar
- listTitle="All counters"
- name="name"
- counters={[
-   { id: 'abc', name: 'Counter 1', score: 0 },
-   { id: 'def', name: 'Counter 2', score: 2 },
-   { id: 'ghi', name: 'Counter 3', score: 2 },
-   { id: 'jkl', name: 'Counter 4', score: 9 },
-   { id: 'mno', name: 'Counter 5', score: 2 },
-   { id: 'pqr', name: 'Counter 6', score: 1 },
-   { id: 'stu', name: 'Counter 7' },
- ]}
- // eslint-disable-next-line no-alert
- onSelect={ (id) => alert(`Counter with id: ${id} selected.`) }
-/>
+<CounterBar>
+  <CounterBar.Total score={16}>All counters</CounterBar.Total>
+  <CounterBar.Container>
+    <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+    <CounterBar.Item score={2} active onSelect={ (e) => alert(`${e.target} clicked`) }>Counter 2</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
+    <CounterBar.Item score={9}>Counter 4</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
+    <CounterBar.Item score={1}>Counter 6</CounterBar.Item>
+    <CounterBar.Item>Counter 7</CounterBar.Item>
+  </CounterBar.Container>
+</CounterBar>
 ```
-
-Padded container
-```jsx 
-<CounterBar
- listTitle="All counters"
- name="name"
- counters={[
-   { id: 'abc', name: 'Counter 1', score: 0 },
-   { id: 'def', name: 'Counter 2', score: 2 },
-   { id: 'ghi', name: 'Counter 3', score: 2 },
-   { id: 'jkl', name: 'Counter 4', score: 0 },
-   { id: 'mno', name: 'Counter 5', score: 2 },
-   { id: 'pqr', name: 'Counter 6', score: 0 },
-   { id: 'stu', name: 'Counter 7', score: 2 },
- ]}
-/>
+CounterBar with padded container
+```jsx
+<CounterBar>
+  <CounterBar.Total score={8}>All counters</CounterBar.Total>
+  <CounterBar.Container>
+    <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
+    <CounterBar.Item score={0}>Counter 4</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
+    <CounterBar.Item score={0}>Counter 6</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 7</CounterBar.Item>
+  </CounterBar.Container>
+</CounterBar>
 ```
-
 Zero/no scores
-```jsx 
-<CounterBar
- listTitle="All counters"
- name="name"
- counters={[
-   { id: 'abc', name: 'Counter 1', score: 0 },
-   { id: 'def', name: 'Counter 2' },
-   { id: 'ghi', name: 'Counter 3', score: 0 },
- ]}
-/>
+```jsx
+<CounterBar>
+  <CounterBar.Total score={0}>All counters</CounterBar.Total>
+  <CounterBar.Container>
+    <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+    <CounterBar.Item>Counter 2</CounterBar.Item>
+    <CounterBar.Item score={0}>Counter 3</CounterBar.Item>
+  </CounterBar.Container>
+</CounterBar>,
 ```
 
 ### Properties
 Prop | Required | Default | Type | Description
 :--- | :------- | :------ | :--- | :----------
- `activeTitle` |  | `````` | bool | 
- `counters` |  | `````` | arrayOf[object Object] | 
- `listTitle` |  | `````` | any | 
- `name` | true | `````` | string | 
- `onSelect` |  | ```() => {}``` | func | 
+ `children` | true | `````` | node | 
 
 

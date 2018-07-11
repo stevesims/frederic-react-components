@@ -6,13 +6,13 @@ import ResultCountTitle from '@govuk-frederic/result-count-title';
 
 import { BLACK, GREY_1, GREY_3, LINK_COLOUR, RED, WHITE, YELLOW } from 'govuk-colours';
 
-const Container = styled('div')({
+const Wrapper = styled('div')({
   display: 'flex',
   flexWrap: 'nowrap',
   lineHeight: '1',
 });
 
-const CountWrapper = styled('a')(
+const TotalWrapper = styled('a')(
   {
     ':focus': {
       outline: `solid 4px ${YELLOW}`,
@@ -31,7 +31,7 @@ const CountWrapper = styled('a')(
   }),
 );
 
-const CountersWrapper = styled('div')(
+const ItemsWrapper = styled('div')(
   {
     alignItems: 'flex-start',
     display: 'flex',
@@ -41,7 +41,7 @@ const CountersWrapper = styled('div')(
   },
 );
 
-const Counter = styled(CountWrapper)(
+const ItemWrapper = styled(TotalWrapper)(
   {
     ':last-child': {
       marginRight: '0',
@@ -61,168 +61,172 @@ const Counter = styled(CountWrapper)(
  *
  * Simple
  * ```jsx
- * <CounterBar
- *  listTitle="All counters"
- *  name="name"
- *  counters={[
- *    { id: 'abc', name: 'Counter 1', score: 0 },
- *    { id: 'def', name: 'Counter 2', score: 2 },
- *    { id: 'ghi', name: 'Counter 3', score: 2 },
- *    { id: 'jkl', name: 'Counter 4', score: 9 },
- *    { id: 'mno', name: 'Counter 5', score: 2 },
- *    { id: 'pqr', name: 'Counter 6', score: 1 },
- *    { id: 'stu', name: 'Counter 7', score: 0 },
- *  ]}
- * />
+ * <CounterBar>
+ *   <CounterBar.Total score={16}>All counters</CounterBar.Total>
+ *   <CounterBar.Container>
+ *     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+ *     <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+ *     <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
+ *     <CounterBar.Item score={9}>Counter 4</CounterBar.Item>
+ *     <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
+ *     <CounterBar.Item score={1}>Counter 6</CounterBar.Item>
+ *     <CounterBar.Item score={0}>Counter 7</CounterBar.Item>
+ *   </CounterBar.Container>
+ * </CounterBar>
  * ```
  * Active counter
  * ```jsx
- * <CounterBar
- *  listTitle="All counters"
- *  name="name"
- *  counters={[
- *    { id: 'abc', name: 'Counter 1', score: 0 },
- *    { active: true, id: 'def', name: 'Counter 2', score: 2 },
- *    { id: 'ghi', name: 'Counter 3', score: 2 },
- *  ]}
- * />
+ * <CounterBar>
+ *  <CounterBar.Total score={5}>All counters</CounterBar.Total>
+ *  <CounterBar.Container>
+ *  <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+ *  <CounterBar.Item score={2} active>Counter 2</CounterBar.Item>
+ *  <CounterBar.Item score={3}>Counter 3</CounterBar.Item>
+ *  </CounterBar.Container>
+ * </CounterBar>
  * ```
  * Active title
  * ```jsx
- * <CounterBar
- *  activeTitle
- *  listTitle="All counters"
- *  name="name"
- *  counters={[
- *    { id: 'abc', name: 'Counter 1', score: 0 },
- *    { id: 'def', name: 'Counter 2', score: 2 },
- *    { id: 'ghi', name: 'Counter 3', score: 0 },
- *  ]}
- * />
+ * <CounterBar>
+ *  <CounterBar.Total active score={2}>All counters</CounterBar.Total>
+ *  <CounterBar.Container>
+ *   <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+ *   <CounterBar.Item score={2} active>Counter 2</CounterBar.Item>
+ *   <CounterBar.Item score={0}>Counter 3</CounterBar.Item>
+ *  </CounterBar.Container>
+ * </CounterBar>
  * ```
  * Active counter and title on click
  * ```jsx
- * <CounterBar
- *  listTitle="All counters"
- *  activeTitle
- *  name="name"
- *  counters={[
- *    { id: 'abc', name: 'Counter 1', score: 0 },
- *    { id: 'def', name: 'Counter 2', score: 2 },
- *    { id: 'ghi', name: 'Counter 3', score: 2 },
- *    { id: 'jkl', name: 'Counter 4', score: 9 },
- *    { id: 'mno', name: 'Counter 5', score: 2 },
- *    { id: 'pqr', name: 'Counter 6', score: 1 },
- *    { id: 'stu', name: 'Counter 7' },
- *  ]}
- *  // eslint-disable-next-line no-alert
- *  onSelect={ (id) => alert(`Counter with id: ${id} selected.`) }
- * />
+ * // eslint-disable-next-line no-alert
+ * <CounterBar onSelect={ (id) => alert(`Counter selected.`) }>
+ *  <CounterBar.Total active score={2}>All counters</CounterBar.Total>
+ *  <CounterBar.Container>
+ *   <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+ *   <CounterBar.Item score={2} active>Counter 2</CounterBar.Item>
+ *   <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
+ *   <CounterBar.Item score={9}>Counter 4</CounterBar.Item>
+ *   <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
+ *   <CounterBar.Item score={1}>Counter 6</CounterBar.Item>
+ *   <CounterBar.Item>Counter 7</CounterBar.Item>
+ *  </CounterBar.Container>
+ * </CounterBar>
  * ```
  * Clickable counters
  * ```jsx
- * <CounterBar
- *  listTitle="All counters"
- *  name="name"
- *  counters={[
- *    { id: 'abc', name: 'Counter 1', score: 0 },
- *    { id: 'def', name: 'Counter 2', score: 2 },
- *    { id: 'ghi', name: 'Counter 3', score: 2 },
- *    { id: 'jkl', name: 'Counter 4', score: 9 },
- *    { id: 'mno', name: 'Counter 5', score: 2 },
- *    { id: 'pqr', name: 'Counter 6', score: 1 },
- *    { id: 'stu', name: 'Counter 7' },
- *  ]}
- *  // eslint-disable-next-line no-alert
- *  onSelect={ (id) => alert(`Counter with id: ${id} selected.`) }
- * />
+ * <CounterBar>
+ *   <CounterBar.Total score={16}>All counters</CounterBar.Total>
+ *   <CounterBar.Container>
+ *     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+ *     <CounterBar.Item score={2} active onSelect={ (e) => alert(`${e.target} clicked`) }>Counter 2</CounterBar.Item>
+ *     <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
+ *     <CounterBar.Item score={9}>Counter 4</CounterBar.Item>
+ *     <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
+ *     <CounterBar.Item score={1}>Counter 6</CounterBar.Item>
+ *     <CounterBar.Item>Counter 7</CounterBar.Item>
+ *   </CounterBar.Container>
+ * </CounterBar>
  * ```
- * 
- * Padded container
- * ```jsx 
- * <CounterBar
- *  listTitle="All counters"
- *  name="name"
- *  counters={[
- *    { id: 'abc', name: 'Counter 1', score: 0 },
- *    { id: 'def', name: 'Counter 2', score: 2 },
- *    { id: 'ghi', name: 'Counter 3', score: 2 },
- *    { id: 'jkl', name: 'Counter 4', score: 0 },
- *    { id: 'mno', name: 'Counter 5', score: 2 },
- *    { id: 'pqr', name: 'Counter 6', score: 0 },
- *    { id: 'stu', name: 'Counter 7', score: 2 },
- *  ]}
- * />
+ * CounterBar with padded container
+ * ```jsx
+ * <CounterBar>
+ *   <CounterBar.Total score={8}>All counters</CounterBar.Total>
+ *   <CounterBar.Container>
+ *     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+ *     <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+ *     <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
+ *     <CounterBar.Item score={0}>Counter 4</CounterBar.Item>
+ *     <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
+ *     <CounterBar.Item score={0}>Counter 6</CounterBar.Item>
+ *     <CounterBar.Item score={2}>Counter 7</CounterBar.Item>
+ *   </CounterBar.Container>
+ * </CounterBar>
  * ```
- * 
  * Zero/no scores
- * ```jsx 
- * <CounterBar
- *  listTitle="All counters"
- *  name="name"
- *  counters={[
- *    { id: 'abc', name: 'Counter 1', score: 0 },
- *    { id: 'def', name: 'Counter 2' },
- *    { id: 'ghi', name: 'Counter 3', score: 0 },
- *  ]}
- * />
+ * ```jsx
+ * <CounterBar>
+ *   <CounterBar.Total score={0}>All counters</CounterBar.Total>
+ *   <CounterBar.Container>
+ *     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+ *     <CounterBar.Item>Counter 2</CounterBar.Item>
+ *     <CounterBar.Item score={0}>Counter 3</CounterBar.Item>
+ *   </CounterBar.Container>
+ * </CounterBar>,
  * ```
  */
-const CounterBar = ({ activeTitle, listTitle, counters, onSelect, ...props }) => {
-  const totalScore = counters.reduce((a, b) => a + (Number(b.score) || 0), 0);
+const CounterBar = ({ children, ...props }) => {
   return (
-    <Container {...props}>
-      <CountWrapper active={activeTitle} disabled={!totalScore} onClick={() => onSelect()}>
-        <ResultCountTitle
-          count={totalScore}
-          countColor={totalScore > 0 ? WHITE : BLACK}
-          countBackgroundColor={totalScore > 0 ? RED : GREY_3}
-        >
-          {listTitle}
-        </ResultCountTitle>
-      </CountWrapper>
-      <CountersWrapper>
-        {counters.map(counter => (
-          <Counter
-            active={counter.active}
-            disabled={!counter.score}
-            key={counter.id}
-            name={counter.id}
-            onClick={() => onSelect(counter.id)}
-            empty={!counter.name || counter.name.length === 0}
-        >
-            <ResultCountTitle
-              countColor={counter.score > 0 ? WHITE : BLACK}
-              countBackgroundColor={counter.score > 0 ? RED : GREY_3}
-              count={counter.score || 0}
-          >
-              {counter.name}
-            </ResultCountTitle>
-          </Counter>
-      ))}
-      </CountersWrapper>
-    </Container>
+    <Wrapper {...props}>
+      {children}
+    </Wrapper>
   );
 };
 
 CounterBar.propTypes = {
-  activeTitle: PropTypes.bool,
-  counters: PropTypes.arrayOf(
-    PropTypes.shape({
-      active: PropTypes.bool,
-      id: PropTypes.any.isRequired,
-      name: PropTypes.string,
-      score: PropTypes.number,
-    }),
-  ),
-  listTitle: PropTypes.any,
-  name: PropTypes.string.isRequired,
-  onSelect: PropTypes.func,
+  children: PropTypes.node.isRequired,
 };
 
-CounterBar.defaultProps = {
+CounterBar.Total = ({active, children, onSelect, score}) => {
+  return (
+    <TotalWrapper active={active} disabled={!score}>
+      <ResultCountTitle
+        count={score}
+        countColor={score > 0 ? WHITE : BLACK}
+        countBackgroundColor={score > 0 ? RED : GREY_3}
+        >
+        {children}
+      </ResultCountTitle>
+    </TotalWrapper>
+  );
+};
+CounterBar.Total.displayName = 'Total';
+
+CounterBar.Item = ({active, children, onSelect, score}) => {
+ return (
+   <ItemWrapper
+     active={active}
+     disabled={!score}
+     onClick={(e) => onSelect(e)}
+     empty={!children || children.length === 0}>
+     <ResultCountTitle
+       countColor={score > 0 ? WHITE : BLACK}
+       countBackgroundColor={score > 0 ? RED : GREY_3}
+       count={score || 0}
+          >
+       {children}
+     </ResultCountTitle>
+   </ItemWrapper>
+ ); 
+};
+CounterBar.Item.displayName = 'Item';
+
+const sharedPropTypes = {
+  active: PropTypes.bool,
+  children: PropTypes.node,
+  onSelect: PropTypes.func,
+  score: PropTypes.number,
+};
+
+const sharedDefaultProps = {
   onSelect: () => {},
 };
 
+CounterBar.Total.propTypes = sharedPropTypes;
+CounterBar.Total.defaultProps = sharedDefaultProps;
+CounterBar.Item.propTypes = sharedPropTypes;
+CounterBar.Item.defaultProps = sharedDefaultProps;
+
+CounterBar.Container = ({children}) => {
+  return (
+    <ItemsWrapper>
+      {children}
+    </ItemsWrapper>
+  );
+};
+CounterBar.Container.displayName = 'Container';
+
+CounterBar.Container.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 export default CounterBar;
-export { CountWrapper, Counter };
