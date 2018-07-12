@@ -49,38 +49,6 @@ examples.add('Active Title', () =>
   </CounterBar>),
 );
 
-examples.add('Active Counter and Title on click', () =>
-(<CounterBar>
-  <CounterBar.Total score={16}>All counters</CounterBar.Total>
-  <CounterBar.Container>
-    <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
-    { /* eslint-disable-next-line no-alert */ }
-    <CounterBar.Item score={2} active onSelect={ (e) => alert(`${e.target} clicked`) }>Counter 2</CounterBar.Item>
-    <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
-    <CounterBar.Item score={9}>Counter 4</CounterBar.Item>
-    <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
-    <CounterBar.Item score={1}>Counter 6</CounterBar.Item>
-    <CounterBar.Item>Counter 7</CounterBar.Item>
-  </CounterBar.Container>
-</CounterBar>),
-);
-
-examples.add('Clickable Counters', () => 
-(<CounterBar>
-  <CounterBar.Total score={16}>All counters</CounterBar.Total>
-  <CounterBar.Container>
-    <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
-    { /* eslint-disable-next-line no-alert */ }
-    <CounterBar.Item score={2} active onSelect={ (e) => alert(`${e.target} clicked`) }>Counter 2</CounterBar.Item>
-    <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
-    <CounterBar.Item score={9}>Counter 4</CounterBar.Item>
-    <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
-    <CounterBar.Item score={1}>Counter 6</CounterBar.Item>
-    <CounterBar.Item>Counter 7</CounterBar.Item>
-  </CounterBar.Container>
-</CounterBar>),
-);
-
 examples.add('CounterBar with padded container', () =>
 (<div style={{padding: '4px'}}>
   <CounterBar>

@@ -96,37 +96,6 @@ const ItemWrapper = styled(TotalWrapper)(
  *  </CounterBar.Container>
  * </CounterBar>
  * ```
- * Active counter and title on click
- * ```jsx
- * // eslint-disable-next-line no-alert
- * <CounterBar onSelect={ (id) => alert(`Counter selected.`) }>
- *  <CounterBar.Total active score={2}>All counters</CounterBar.Total>
- *  <CounterBar.Container>
- *   <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
- *   <CounterBar.Item score={2} active>Counter 2</CounterBar.Item>
- *   <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
- *   <CounterBar.Item score={9}>Counter 4</CounterBar.Item>
- *   <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
- *   <CounterBar.Item score={1}>Counter 6</CounterBar.Item>
- *   <CounterBar.Item>Counter 7</CounterBar.Item>
- *  </CounterBar.Container>
- * </CounterBar>
- * ```
- * Clickable counters
- * ```jsx
- * <CounterBar>
- *   <CounterBar.Total score={16}>All counters</CounterBar.Total>
- *   <CounterBar.Container>
- *     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
- *     <CounterBar.Item score={2} active onSelect={ (e) => alert(`${e.target} clicked`) }>Counter 2</CounterBar.Item>
- *     <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
- *     <CounterBar.Item score={9}>Counter 4</CounterBar.Item>
- *     <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
- *     <CounterBar.Item score={1}>Counter 6</CounterBar.Item>
- *     <CounterBar.Item>Counter 7</CounterBar.Item>
- *   </CounterBar.Container>
- * </CounterBar>
- * ```
  * CounterBar with padded container
  * ```jsx
  * <CounterBar>
@@ -166,7 +135,7 @@ CounterBar.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-CounterBar.Total = ({active, children, onSelect, score}) => {
+CounterBar.Total = ({active, children, score}) => {
   return (
     <TotalWrapper active={active} disabled={!score}>
       <ResultCountTitle
@@ -181,12 +150,11 @@ CounterBar.Total = ({active, children, onSelect, score}) => {
 };
 CounterBar.Total.displayName = 'Total';
 
-CounterBar.Item = ({active, children, onSelect, score}) => {
+CounterBar.Item = ({active, children, score}) => {
  return (
    <ItemWrapper
      active={active}
      disabled={!score}
-     onClick={(e) => onSelect(e)}
      empty={!children || children.length === 0}>
      <ResultCountTitle
        countColor={score > 0 ? WHITE : BLACK}
@@ -203,7 +171,6 @@ CounterBar.Item.displayName = 'Item';
 const sharedPropTypes = {
   active: PropTypes.bool,
   children: PropTypes.node,
-  onSelect: PropTypes.func,
   score: PropTypes.number,
 };
 
