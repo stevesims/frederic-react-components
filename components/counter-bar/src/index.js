@@ -77,23 +77,23 @@ const ItemWrapper = styled(TotalWrapper)(
  * Active counter
  * ```jsx
  * <CounterBar>
- *  <CounterBar.Total score={5}>All counters</CounterBar.Total>
- *  <CounterBar.Container>
- *  <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
- *  <CounterBar.Item score={2} active>Counter 2</CounterBar.Item>
- *  <CounterBar.Item score={3}>Counter 3</CounterBar.Item>
- *  </CounterBar.Container>
+ *   <CounterBar.Total score={5}>All counters</CounterBar.Total>
+ *     <CounterBar.Container>
+ *     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+ *     <CounterBar.Item score={2} active>Counter 2</CounterBar.Item>
+ *     <CounterBar.Item score={3}>Counter 3</CounterBar.Item>
+ *   </CounterBar.Container>
  * </CounterBar>
  * ```
  * Active title
  * ```jsx
  * <CounterBar>
- *  <CounterBar.Total active score={2}>All counters</CounterBar.Total>
- *  <CounterBar.Container>
- *   <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
- *   <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
- *   <CounterBar.Item score={0}>Counter 3</CounterBar.Item>
- *  </CounterBar.Container>
+ *   <CounterBar.Total score={2} active>All counters</CounterBar.Total>
+ *   <CounterBar.Container>
+ *     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+ *     <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+ *     <CounterBar.Item score={0}>Counter 3</CounterBar.Item>
+ *   </CounterBar.Container>
  * </CounterBar>
  * ```
  * CounterBar with padded container
@@ -123,7 +123,7 @@ const ItemWrapper = styled(TotalWrapper)(
  * </CounterBar>,
  * ```
  */
-const CounterBar = Wrapper;
+const CounterBar = props => <Wrapper {...props}/>;
 
 CounterBar.propTypes = {
   children: PropTypes.node.isRequired,
