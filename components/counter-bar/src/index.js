@@ -91,7 +91,7 @@ const ItemWrapper = styled(TotalWrapper)(
  *  <CounterBar.Total active score={2}>All counters</CounterBar.Total>
  *  <CounterBar.Container>
  *   <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
- *   <CounterBar.Item score={2} active>Counter 2</CounterBar.Item>
+ *   <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
  *   <CounterBar.Item score={0}>Counter 3</CounterBar.Item>
  *  </CounterBar.Container>
  * </CounterBar>
