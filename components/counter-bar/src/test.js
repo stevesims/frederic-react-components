@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { createMatchers } from 'jest-emotion';
 import * as emotion from 'emotion';
-import { LINK_COLOUR, WHITE, MINISTRY_OF_DEFENCE_WEBSAFE } from 'govuk-colours';
+import { LINK_COLOUR, WHITE } from 'govuk-colours';
 
 import CounterBar from '.';
 
@@ -10,7 +10,6 @@ expect.extend(createMatchers(emotion));
 
 describe('CounterBar', () => {
   let wrapper;
-  const handleChange = jest.fn();
   
   it('renders counters without active title', () => {
     wrapper = mount(<CounterBar>
@@ -47,11 +46,6 @@ describe('CounterBar', () => {
     expect(totalWrapper).toHaveStyleRule('outline', `2px solid ${LINK_COLOUR}`);
   });
 
-  xit('renders default props as expected', () => {
-    expect(typeof wrapper.prop('onSelect') === 'function').toBe(true);
-    wrapper.prop('onSelect')();
-  });
-
   it('renders counters with disabled counter values', () => {
     wrapper = mount(<CounterBar>
       <CounterBar.Total active score={0}>All counters</CounterBar.Total>
@@ -78,18 +72,7 @@ describe('CounterBar', () => {
     expect(itemWrapper).toHaveStyleRule('outline', `2px solid ${LINK_COLOUR}`);
   });
   
-  xit('calls onSelect ID when CountWrapper is clicked', () => {
-    wrapper.setProps({ onSelect: handleChange }).find('CountWrapper').simulate('click');
-    expect(handleChange).toHaveBeenCalledTimes(1);
-  });
-
-  xit('calls onSelect with expected ID when clicked', () => {
-    handleChange.mockReset();
-    wrapper.find('Counter').first().simulate('click');
-    expect(handleChange).toHaveBeenCalledWith(testActiveCounters[0].id);
-  });
-
-  xit('matches snapshot', () => {
+  it('matches snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });

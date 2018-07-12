@@ -168,14 +168,8 @@ const sharedPropTypes = {
   score: PropTypes.number,
 };
 
-const sharedDefaultProps = {
-  onSelect: () => {},
-};
-
 CounterBar.Total.propTypes = sharedPropTypes;
-CounterBar.Total.defaultProps = sharedDefaultProps;
 CounterBar.Item.propTypes = sharedPropTypes;
-CounterBar.Item.defaultProps = sharedDefaultProps;
 
 CounterBar.Container = ItemsWrapper;
 CounterBar.Container.propTypes = {

@@ -1,53 +1,350 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CounterBar matches snapshot 1`] = `
-<Container
-  name="test"
->
-  <CountWrapper
-    disabled={false}
-    onClick={[Function]}
-  >
-    <ResultCountTitle
-      count={4}
-      countBackgroundColor="#b10e1e"
-      countColor="#ffffff"
+.emotion-34 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  line-height: 1;
+}
+
+.emotion-6 {
+  border: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0 6px 6px 0;
+  max-width: 250px;
+  outline: none;
+  padding: 0 8px 0 0;
+  background: #ffffff;
+}
+
+.emotion-6:focus {
+  outline: solid 4px #ffbf47;
+}
+
+.emotion-4 {
+  display: inline-block;
+}
+
+.emotion-0 {
+  background: #b10e1e;
+  color: #ffffff;
+  display: inline-block;
+  font-family: Roboto,Arial,sans-serif;
+  font-size: 15px;
+  line-height: 1.25;
+  min-height: 20px;
+  min-width: 20px;
+  padding: 1px 4px;
+  text-align: center;
+}
+
+.emotion-2 {
+  display: inline-block;
+  font-family: Roboto,Arial,sans-serif;
+  font-size: 15px;
+  line-height: 1.25;
+  margin-left: 10px;
+}
+
+.emotion-32 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: -6px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-14 {
+  border: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0 6px 6px 0;
+  max-width: 250px;
+  outline: none;
+  padding: 0 8px 0 0;
+  background: #ffffff;
+  color: #ffffff;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #6f777b;
+}
+
+.emotion-14:focus {
+  outline: solid 4px #ffbf47;
+}
+
+.emotion-14:last-child {
+  margin-right: 0px;
+}
+
+.emotion-8 {
+  background: #dee0e2;
+  color: #0b0c0c;
+  display: inline-block;
+  font-family: Roboto,Arial,sans-serif;
+  font-size: 15px;
+  line-height: 1.25;
+  min-height: 20px;
+  min-width: 20px;
+  padding: 1px 4px;
+  text-align: center;
+}
+
+.emotion-22 {
+  border: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0 6px 6px 0;
+  max-width: 250px;
+  outline: none;
+  padding: 0 8px 0 0;
+  background: #005ea5;
+  color: #ffffff;
+  outline: 2px solid #005ea5;
+  color: #ffffff;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #005ea5;
+}
+
+.emotion-22:focus {
+  outline: solid 4px #ffbf47;
+}
+
+.emotion-22:last-child {
+  margin-right: 0px;
+}
+
+<CounterBar>
+  <Wrapper>
+    <div
+      className="emotion-34 emotion-35"
     >
-      Test Title
-    </ResultCountTitle>
-  </CountWrapper>
-  <CountersWrapper>
-    <Counter
-      active={true}
-      disabled={false}
-      empty={false}
-      key="abc"
-      name="abc"
-      onClick={[Function]}
-    >
-      <ResultCountTitle
-        count={1}
-        countBackgroundColor="#b10e1e"
-        countColor="#ffffff"
+      <Total
+        score={2}
       >
-        abc
-      </ResultCountTitle>
-    </Counter>
-    <Counter
-      disabled={false}
-      empty={false}
-      key="def"
-      name="def"
-      onClick={[Function]}
-    >
-      <ResultCountTitle
-        count={3}
-        countBackgroundColor="#b10e1e"
-        countColor="#ffffff"
-      >
-        def
-      </ResultCountTitle>
-    </Counter>
-  </CountersWrapper>
-</Container>
+        <TotalWrapper
+          disabled={false}
+        >
+          <a
+            className="emotion-6 emotion-7"
+            disabled={false}
+          >
+            <ResultCountTitle
+              count={2}
+              countBackgroundColor="#b10e1e"
+              countColor="#ffffff"
+            >
+              <Wrapper>
+                <div
+                  className="emotion-4 emotion-1"
+                >
+                  <ResultCount
+                    backgroundColor="#b10e1e"
+                    color="#ffffff"
+                  >
+                    <StyledResultCount
+                      backgroundColor="#b10e1e"
+                      color="#ffffff"
+                    >
+                      <span
+                        className="emotion-0 emotion-1"
+                        color="#ffffff"
+                      >
+                        X
+                      </span>
+                    </StyledResultCount>
+                  </ResultCount>
+                  <Title>
+                    <div
+                      className="emotion-2 emotion-3"
+                    >
+                      All counters
+                    </div>
+                  </Title>
+                </div>
+              </Wrapper>
+            </ResultCountTitle>
+          </a>
+        </TotalWrapper>
+      </Total>
+      <ItemsWrapper>
+        <div
+          className="emotion-32 emotion-33"
+        >
+          <Item
+            score={0}
+          >
+            <ItemWrapper
+              disabled={true}
+              empty={false}
+            >
+              <a
+                className="emotion-14 emotion-15"
+                disabled={true}
+              >
+                <ResultCountTitle
+                  count={0}
+                  countBackgroundColor="#dee0e2"
+                  countColor="#0b0c0c"
+                >
+                  <Wrapper>
+                    <div
+                      className="emotion-4 emotion-1"
+                    >
+                      <ResultCount
+                        backgroundColor="#dee0e2"
+                        color="#0b0c0c"
+                      >
+                        <StyledResultCount
+                          backgroundColor="#dee0e2"
+                          color="#0b0c0c"
+                        >
+                          <span
+                            className="emotion-8 emotion-1"
+                            color="#0b0c0c"
+                          >
+                            X
+                          </span>
+                        </StyledResultCount>
+                      </ResultCount>
+                      <Title>
+                        <div
+                          className="emotion-2 emotion-3"
+                        >
+                          Counter 1
+                        </div>
+                      </Title>
+                    </div>
+                  </Wrapper>
+                </ResultCountTitle>
+              </a>
+            </ItemWrapper>
+          </Item>
+          <Item
+            active={true}
+            score={2}
+          >
+            <ItemWrapper
+              active={true}
+              disabled={false}
+              empty={false}
+            >
+              <a
+                className="emotion-22 emotion-15"
+                disabled={false}
+              >
+                <ResultCountTitle
+                  count={2}
+                  countBackgroundColor="#b10e1e"
+                  countColor="#ffffff"
+                >
+                  <Wrapper>
+                    <div
+                      className="emotion-4 emotion-1"
+                    >
+                      <ResultCount
+                        backgroundColor="#b10e1e"
+                        color="#ffffff"
+                      >
+                        <StyledResultCount
+                          backgroundColor="#b10e1e"
+                          color="#ffffff"
+                        >
+                          <span
+                            className="emotion-0 emotion-1"
+                            color="#ffffff"
+                          >
+                            X
+                          </span>
+                        </StyledResultCount>
+                      </ResultCount>
+                      <Title>
+                        <div
+                          className="emotion-2 emotion-3"
+                        >
+                          Counter 2
+                        </div>
+                      </Title>
+                    </div>
+                  </Wrapper>
+                </ResultCountTitle>
+              </a>
+            </ItemWrapper>
+          </Item>
+          <Item
+            score={0}
+          >
+            <ItemWrapper
+              disabled={true}
+              empty={false}
+            >
+              <a
+                className="emotion-14 emotion-15"
+                disabled={true}
+              >
+                <ResultCountTitle
+                  count={0}
+                  countBackgroundColor="#dee0e2"
+                  countColor="#0b0c0c"
+                >
+                  <Wrapper>
+                    <div
+                      className="emotion-4 emotion-1"
+                    >
+                      <ResultCount
+                        backgroundColor="#dee0e2"
+                        color="#0b0c0c"
+                      >
+                        <StyledResultCount
+                          backgroundColor="#dee0e2"
+                          color="#0b0c0c"
+                        >
+                          <span
+                            className="emotion-8 emotion-1"
+                            color="#0b0c0c"
+                          >
+                            X
+                          </span>
+                        </StyledResultCount>
+                      </ResultCount>
+                      <Title>
+                        <div
+                          className="emotion-2 emotion-3"
+                        >
+                          Counter 3
+                        </div>
+                      </Title>
+                    </div>
+                  </Wrapper>
+                </ResultCountTitle>
+              </a>
+            </ItemWrapper>
+          </Item>
+        </div>
+      </ItemsWrapper>
+    </div>
+  </Wrapper>
+</CounterBar>
 `;
