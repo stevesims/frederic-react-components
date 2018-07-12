@@ -142,7 +142,11 @@ exports[`CounterBar matches snapshot 1`] = `
       className="emotion-34 emotion-35"
     >
       <Total
+        countBackgroundColor="#ffffff"
+        countDisabledBackgroundColor="#0b0c0c"
         score={2}
+        scoreBackgroundColor="#b10e1e"
+        scoreDisabledBackgroundColor="#dee0e2"
       >
         <TotalWrapper
           disabled={false}

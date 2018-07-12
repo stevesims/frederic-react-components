@@ -129,13 +129,13 @@ CounterBar.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-CounterBar.Total = ({active, children, score}) => {
+CounterBar.Total = ({active, countBackgroundColor, countDisabledBackgroundColor, children, score, scoreBackgroundColor, scoreDisabledBackgroundColor}) => {
   return (
     <TotalWrapper active={active} disabled={!score}>
       <ResultCountTitle
         count={score}
-        countColor={score > 0 ? WHITE : BLACK}
-        countBackgroundColor={score > 0 ? RED : GREY_3}
+        countColor={score > 0 ? countBackgroundColor : countDisabledBackgroundColor}
+        countBackgroundColor={score > 0 ? scoreBackgroundColor : scoreDisabledBackgroundColor}
         >
         {children}
       </ResultCountTitle>
@@ -143,6 +143,23 @@ CounterBar.Total = ({active, children, score}) => {
   );
 };
 CounterBar.Total.displayName = 'Total';
+
+CounterBar.Total.propTypes = {
+  active: PropTypes.bool,
+  children: PropTypes.node,
+  countBackgroundColor: PropTypes.string,
+  countDisabledBackgroundColor: PropTypes.string,
+  score: PropTypes.number,
+  scoreBackgroundColor: PropTypes.string,
+  scoreDisabledBackgroundColor: PropTypes.string,
+};
+
+CounterBar.Total.defaultProps = {
+  countBackgroundColor: WHITE,
+  countDisabledBackgroundColor: BLACK,
+  scoreBackgroundColor: RED,
+  scoreDisabledBackgroundColor: GREY_3,
+};
 
 CounterBar.Item = ({active, children, score}) => {
  return (
@@ -162,14 +179,11 @@ CounterBar.Item = ({active, children, score}) => {
 };
 CounterBar.Item.displayName = 'Item';
 
-const sharedPropTypes = {
+CounterBar.Item.propTypes = {
   active: PropTypes.bool,
   children: PropTypes.node,
   score: PropTypes.number,
 };
-
-CounterBar.Total.propTypes = sharedPropTypes;
-CounterBar.Item.propTypes = sharedPropTypes;
 
 CounterBar.Container = ItemsWrapper;
 CounterBar.Container.propTypes = {
