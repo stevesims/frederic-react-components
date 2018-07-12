@@ -36,7 +36,7 @@ const ItemsWrapper = styled('div')(
     alignItems: 'flex-start',
     display: 'flex',
     marginRight: '-6px',
-    flex: '1 1 auto',
+    flex: '1',
     flexWrap: 'wrap',
   },
 );
@@ -47,7 +47,7 @@ const ItemWrapper = styled(TotalWrapper)(
       marginRight: '0',
     },
     color: WHITE,
-    flex: '1 1 auto',
+    flex: '1',
   },
   ({ active }) => ({
     background: active ? LINK_COLOUR : GREY_1,
