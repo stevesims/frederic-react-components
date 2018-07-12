@@ -129,13 +129,23 @@ CounterBar.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-CounterBar.Total = ({active, countBackgroundColor, countDisabledBackgroundColor, children, score, scoreBackgroundColor, scoreDisabledBackgroundColor}) => {
+CounterBar.Total = ({
+  active,
+  countBackgroundColor,
+  countDisabledBackgroundColor,
+  children,
+  score,
+  scoreBackgroundColor,
+  scoreDisabledBackgroundColor,
+}) => {
   return (
     <TotalWrapper active={active} disabled={!score}>
       <ResultCountTitle
         count={score}
-        countColor={score > 0 ? countBackgroundColor : countDisabledBackgroundColor}
-        countBackgroundColor={score > 0 ? scoreBackgroundColor : scoreDisabledBackgroundColor}
+        countColor={score > 0 ? 
+          countBackgroundColor : countDisabledBackgroundColor}
+        countBackgroundColor={score > 0 ? 
+          scoreBackgroundColor : scoreDisabledBackgroundColor}
         >
         {children}
       </ResultCountTitle>
