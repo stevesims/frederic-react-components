@@ -148,10 +148,11 @@ CounterBar.Total = ({
   scoreBackgroundColor,
   scoreDisabledBackgroundColor,
   tag,
+  ...props
 }) => {
   const TotalWrapper = TotalWrapperInner.withComponent(tag);
   return (
-    <TotalWrapper active={active} disabled={!score}>
+    <TotalWrapper active={active} disabled={!score} {...props}>
       <ResultCountTitle
         count={score}
         countColor={score > 0 ? 

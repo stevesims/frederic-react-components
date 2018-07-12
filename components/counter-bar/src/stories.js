@@ -77,7 +77,7 @@ examples.add('Zero/no scores', () =>
   </CounterBar>),
 );
 
-stories.add('Use any tag or component for the total', () =>
+examples.add('Use any tag or component for the total', () =>
   (<CounterBar>
     <CounterBar.Total tag="aside" score={2}>All counters</CounterBar.Total>
     <CounterBar.Container>
