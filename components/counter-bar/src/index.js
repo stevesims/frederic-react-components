@@ -123,13 +123,7 @@ const ItemWrapper = styled(TotalWrapper)(
  * </CounterBar>,
  * ```
  */
-const CounterBar = ({ children, ...props }) => {
-  return (
-    <Wrapper {...props}>
-      {children}
-    </Wrapper>
-  );
-};
+const CounterBar = Wrapper;
 
 CounterBar.propTypes = {
   children: PropTypes.node.isRequired,
@@ -183,15 +177,7 @@ CounterBar.Total.defaultProps = sharedDefaultProps;
 CounterBar.Item.propTypes = sharedPropTypes;
 CounterBar.Item.defaultProps = sharedDefaultProps;
 
-CounterBar.Container = ({children}) => {
-  return (
-    <ItemsWrapper>
-      {children}
-    </ItemsWrapper>
-  );
-};
-CounterBar.Container.displayName = 'Container';
-
+CounterBar.Container = ItemsWrapper;
 CounterBar.Container.propTypes = {
   children: PropTypes.node.isRequired,
 };
