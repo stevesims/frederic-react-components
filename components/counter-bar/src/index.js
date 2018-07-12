@@ -12,7 +12,7 @@ const Wrapper = styled('div')({
   lineHeight: '1',
 });
 
-const TotalWrapper = styled('a')(
+const TotalWrapperInner = styled('a')(
   {
     ':focus': {
       outline: `solid 4px ${YELLOW}`,
@@ -24,7 +24,7 @@ const TotalWrapper = styled('a')(
     outline: 'none',
     padding: '0 8px 0 0',
   },
-  ({ active }) => ({
+  ({active}) => ({
     background: active ? LINK_COLOUR : WHITE,
     color: active ? WHITE : undefined,
     outline: active ? `2px solid ${LINK_COLOUR}` : undefined,
@@ -41,7 +41,7 @@ const ItemsWrapper = styled('div')(
   },
 );
 
-const ItemWrapper = styled(TotalWrapper)(
+const ItemWrapper = styled(TotalWrapperInner)(
   {
     ':last-child': {
       marginRight: '0',
@@ -122,6 +122,16 @@ const ItemWrapper = styled(TotalWrapper)(
  *   </CounterBar.Container>
  * </CounterBar>,
  * ```
+ * Use any tag or component for the total
+ * ```jsx
+ * <CounterBar>
+ *   <CounterBar.Total tag="aside" score={2}>All counters</CounterBar.Total>
+ *   <CounterBar.Container>
+ *     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+ *     <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+ *   </CounterBar.Container>
+ * </CounterBar>
+ * ```
  */
 const CounterBar = props => <Wrapper {...props}/>;
 
@@ -137,7 +147,9 @@ CounterBar.Total = ({
   score,
   scoreBackgroundColor,
   scoreDisabledBackgroundColor,
+  tag,
 }) => {
+  const TotalWrapper = TotalWrapperInner.withComponent(tag);
   return (
     <TotalWrapper active={active} disabled={!score}>
       <ResultCountTitle
@@ -162,6 +174,7 @@ CounterBar.Total.propTypes = {
   score: PropTypes.number,
   scoreBackgroundColor: PropTypes.string,
   scoreDisabledBackgroundColor: PropTypes.string,
+  tag: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
 CounterBar.Total.defaultProps = {
@@ -169,6 +182,7 @@ CounterBar.Total.defaultProps = {
   countDisabledBackgroundColor: BLACK,
   scoreBackgroundColor: RED,
   scoreDisabledBackgroundColor: GREY_3,
+  tag: 'a',
 };
 
 CounterBar.Item = ({active, children, score}) => {

@@ -147,8 +147,9 @@ exports[`CounterBar matches snapshot 1`] = `
         score={2}
         scoreBackgroundColor="#b10e1e"
         scoreDisabledBackgroundColor="#dee0e2"
+        tag="a"
       >
-        <TotalWrapper
+        <TotalWrapperInner
           disabled={false}
         >
           <a
@@ -191,7 +192,7 @@ exports[`CounterBar matches snapshot 1`] = `
               </Wrapper>
             </ResultCountTitle>
           </a>
-        </TotalWrapper>
+        </TotalWrapperInner>
       </Total>
       <ItemsWrapper>
         <div
