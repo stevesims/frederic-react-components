@@ -49,6 +49,19 @@ examples.add('Active Title', () =>
   </CounterBar>),
 );
 
+examples.add('Empty items', () =>
+  (<CounterBar>
+    <CounterBar.Total score={4}>All counters</CounterBar.Total>
+    <CounterBar.Container>
+      <CounterBar.Item score={1}>Counter 1</CounterBar.Item>
+      <CounterBar.Item score={3}>Counter 2</CounterBar.Item>
+      <CounterBar.Item />
+      <CounterBar.Item score={5}>Counter 4</CounterBar.Item>
+    </CounterBar.Container>
+  </CounterBar>),
+);
+
+
 examples.add('CounterBar with padded container', () =>
   (<div style={{padding: '4px'}}>
     <CounterBar>

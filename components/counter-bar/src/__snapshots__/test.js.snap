@@ -29,7 +29,13 @@ exports[`CounterBar matches snapshot 1`] = `
 }
 
 .emotion-4 {
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
 
 .emotion-0 {
@@ -50,7 +56,7 @@ exports[`CounterBar matches snapshot 1`] = `
   font-family: Roboto,Arial,sans-serif;
   font-size: 15px;
   line-height: 1.25;
-  margin-left: 10px;
+  padding: 2px;
 }
 
 .emotion-32 {
@@ -177,7 +183,7 @@ exports[`CounterBar matches snapshot 1`] = `
                         className="emotion-0 emotion-1"
                         color="#ffffff"
                       >
-                        X
+                        2
                       </span>
                     </StyledResultCount>
                   </ResultCount>
@@ -230,7 +236,7 @@ exports[`CounterBar matches snapshot 1`] = `
                             className="emotion-8 emotion-1"
                             color="#0b0c0c"
                           >
-                            X
+                            0
                           </span>
                         </StyledResultCount>
                       </ResultCount>
@@ -281,7 +287,7 @@ exports[`CounterBar matches snapshot 1`] = `
                             className="emotion-0 emotion-1"
                             color="#ffffff"
                           >
-                            X
+                            2
                           </span>
                         </StyledResultCount>
                       </ResultCount>
@@ -330,7 +336,7 @@ exports[`CounterBar matches snapshot 1`] = `
                             className="emotion-8 emotion-1"
                             color="#0b0c0c"
                           >
-                            X
+                            0
                           </span>
                         </StyledResultCount>
                       </ResultCount>
@@ -352,4 +358,109 @@ exports[`CounterBar matches snapshot 1`] = `
     </div>
   </Wrapper>
 </CounterBar>
+`;
+
+exports[`CounterBar renders empty counters 1`] = `
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.emotion-2 {
+  display: inline-block;
+  font-family: Roboto,Arial,sans-serif;
+  font-size: 15px;
+  line-height: 1.25;
+  padding: 2px;
+}
+
+.emotion-6 {
+  border: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0 6px 6px 0;
+  max-width: 250px;
+  outline: none;
+  padding: 0 8px 0 0;
+  background: #ffffff;
+  color: #ffffff;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #6f777b;
+  opacity: 0;
+}
+
+.emotion-6:focus {
+  outline: solid 4px #ffbf47;
+}
+
+.emotion-6:last-child {
+  margin-right: 0px;
+}
+
+.emotion-0 {
+  background: #dee0e2;
+  color: #0b0c0c;
+  display: inline-block;
+  font-family: Roboto,Arial,sans-serif;
+  font-size: 15px;
+  line-height: 1.25;
+  min-height: 20px;
+  min-width: 20px;
+  padding: 1px 4px;
+  text-align: center;
+}
+
+<Item>
+  <ItemWrapper
+    disabled={true}
+    empty={true}
+  >
+    <a
+      className="emotion-6 emotion-7"
+      disabled={true}
+    >
+      <ResultCountTitle
+        count={0}
+        countBackgroundColor="#dee0e2"
+        countColor="#0b0c0c"
+      >
+        <Wrapper>
+          <div
+            className="emotion-4 emotion-1"
+          >
+            <ResultCount
+              backgroundColor="#dee0e2"
+              color="#0b0c0c"
+            >
+              <StyledResultCount
+                backgroundColor="#dee0e2"
+                color="#0b0c0c"
+              >
+                <span
+                  className="emotion-0 emotion-1"
+                  color="#0b0c0c"
+                >
+                  0
+                </span>
+              </StyledResultCount>
+            </ResultCount>
+            <Title>
+              <div
+                className="emotion-2 emotion-3"
+              />
+            </Title>
+          </div>
+        </Wrapper>
+      </ResultCountTitle>
+    </a>
+  </ItemWrapper>
+</Item>
 `;
