@@ -15,6 +15,8 @@ describe('Table', () => {
     ['Content 3-1', 'Content 3-2', 'Content 3-3', 'Content 3-4'],
   ];
   const names = ['one', 'two', 'three', 'four'];
+  const rowIncludesHeadingNames = [['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four']];
+
   let wrapper;
 
   it('renders as a table', () => {
@@ -41,6 +43,19 @@ describe('Table', () => {
     expect(th.prop('name')).toBe('three');
     const td = wrapper.find('TableData').at(2);
     expect(td.prop('name')).toBe('four');
+  });
+
+  it('names each cell according to its row', () => {
+    wrapper.setProps({ names: rowIncludesHeadingNames });
+
+    let td = wrapper.find('TableData').at(0);
+    expect(td.prop('name')).toBe('one');
+
+    td = wrapper.find('TableData').at(4);
+    expect(td.prop('name')).toBe('two');
+
+    td = wrapper.find('TableData').at(8);
+    expect(td.prop('name')).toBe('three');
   });
 
   it('sets th width according to rowHeading prop', () => {

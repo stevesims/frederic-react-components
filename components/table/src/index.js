@@ -48,6 +48,14 @@ const TableData = styled('td', {
   verticalAlign: 'baseline',
 });
 
+const getName = (names, row, column, isHeading = false) => {
+  const colName = names[column];
+  if (Array.isArray(colName)) {
+    return colName[(isHeading ? column : row)];
+  }
+  return colName;
+};
+
 /**
  *
  * ### Usage
@@ -86,7 +94,7 @@ const Table = ({ name, names = [], rowIncludesHeading, titles, rows, flexibleCol
           {titles.map((title, index) => (
             // disable false-positive rule - this is an access into an array of strings, not object access
             // eslint-disable-next-line security/detect-object-injection
-            <TableHeading key={title.key || index} name={names[index]}>
+            <TableHeading key={title.key || index} name={getName(names, 0, index, true)}>
               {title}
             </TableHeading>
           ))}
@@ -99,13 +107,13 @@ const Table = ({ name, names = [], rowIncludesHeading, titles, rows, flexibleCol
           {row.map(
             (item, itemIndex) =>
               rowIncludesHeading && itemIndex === 0 ? (
-                <TableHeading rowHeading columnCount={row.length} key={item.key || itemIndex}>
+                <TableHeading rowHeading columnCount={row.length} key={item.key || itemIndex} name={getName(names, index, itemIndex)}>
                   {item}
                 </TableHeading>
               ) : (
                 // disable false-positive rule - this is an access into an array of strings, not object access
                 // eslint-disable-next-line security/detect-object-injection
-                <TableData key={item.key || itemIndex} name={names[itemIndex]}>
+                <TableData key={item.key || itemIndex} name={getName(names, index, itemIndex)}>
                   {item}
                 </TableData>
               ),
@@ -119,7 +127,10 @@ const Table = ({ name, names = [], rowIncludesHeading, titles, rows, flexibleCol
 Table.propTypes = {
   flexibleColumns: PropTypes.bool,
   name: PropTypes.string,
-  names: PropTypes.arrayOf(PropTypes.string),
+  names: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+  ]),
   rowIncludesHeading: PropTypes.bool,
   rows: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.node]))).isRequired,
   titles: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.node])),
