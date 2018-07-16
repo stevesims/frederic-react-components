@@ -29,7 +29,13 @@ exports[`CounterBar matches snapshot 1`] = `
 }
 
 .emotion-4 {
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
 
 .emotion-0 {
@@ -50,7 +56,7 @@ exports[`CounterBar matches snapshot 1`] = `
   font-family: Roboto,Arial,sans-serif;
   font-size: 15px;
   line-height: 1.25;
-  margin-left: 10px;
+  padding: 2px;
 }
 
 .emotion-32 {
