@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CounterBar matches snapshot 1`] = `
-.emotion-34 {
+.emotion-52 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -59,7 +59,7 @@ exports[`CounterBar matches snapshot 1`] = `
   padding: 2px;
 }
 
-.emotion-32 {
+.emotion-50 {
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -102,164 +102,35 @@ exports[`CounterBar matches snapshot 1`] = `
   margin-right: 0px;
 }
 
-.emotion-8 {
-  background: #dee0e2;
-  color: #0b0c0c;
-  display: inline-block;
-  font-family: Roboto,Arial,sans-serif;
-  font-size: 15px;
-  line-height: 1.25;
-  min-height: 20px;
-  min-width: 20px;
-  padding: 1px 4px;
-  text-align: center;
-}
-
-.emotion-22 {
-  border: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  margin: 0 6px 6px 0;
-  max-width: 250px;
-  outline: none;
-  padding: 0 8px 0 0;
-  background: #005ea5;
-  color: #ffffff;
-  outline: 2px solid #005ea5;
-  color: #ffffff;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  background: #005ea5;
-}
-
-.emotion-22:focus {
-  outline: solid 4px #ffbf47;
-}
-
-.emotion-22:last-child {
-  margin-right: 0px;
-}
-
-<CounterBar>
-  <Wrapper>
-    <div
-      className="emotion-34 emotion-35"
-    >
-      <Total
-        component="a"
-        score={2}
-        scoreBackgroundColor="#b10e1e"
-        scoreColor="#ffffff"
-        scoreDisabledBackgroundColor="#dee0e2"
-        scoreDisabledColor="#0b0c0c"
-      >
-        <TotalWrapperInner
-          disabled={false}
-        >
-          <a
-            className="emotion-6 emotion-7"
-            disabled={false}
-          >
-            <ResultCountTitle
-              count={2}
-              countBackgroundColor="#b10e1e"
-              countColor="#ffffff"
-            >
-              <Wrapper>
-                <div
-                  className="emotion-4 emotion-1"
-                >
-                  <ResultCount
-                    backgroundColor="#b10e1e"
-                    color="#ffffff"
-                  >
-                    <StyledResultCount
-                      backgroundColor="#b10e1e"
-                      color="#ffffff"
-                    >
-                      <span
-                        className="emotion-0 emotion-1"
-                        color="#ffffff"
-                      >
-                        2
-                      </span>
-                    </StyledResultCount>
-                  </ResultCount>
-                  <Title>
-                    <div
-                      className="emotion-2 emotion-3"
-                    >
-                      All counters
-                    </div>
-                  </Title>
-                </div>
-              </Wrapper>
-            </ResultCountTitle>
-          </a>
-        </TotalWrapperInner>
-      </Total>
-      <ItemsWrapper>
+<HashRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <CounterBar>
+      <OuterWrapper>
         <div
-          className="emotion-32 emotion-33"
+          className="emotion-52 emotion-53"
         >
-          <Item
-            component="a"
-            score={0}
-            scoreBackgroundColor="#b10e1e"
-            scoreColor="#ffffff"
-            scoreDisabledBackgroundColor="#dee0e2"
-            scoreDisabledColor="#0b0c0c"
-          >
-            <ItemWrapperInner
-              disabled={true}
-              empty={false}
-            >
-              <a
-                className="emotion-14 emotion-15"
-                disabled={true}
-              >
-                <ResultCountTitle
-                  count={0}
-                  countBackgroundColor="#dee0e2"
-                  countColor="#0b0c0c"
-                >
-                  <Wrapper>
-                    <div
-                      className="emotion-4 emotion-1"
-                    >
-                      <ResultCount
-                        backgroundColor="#dee0e2"
-                        color="#0b0c0c"
-                      >
-                        <StyledResultCount
-                          backgroundColor="#dee0e2"
-                          color="#0b0c0c"
-                        >
-                          <span
-                            className="emotion-8 emotion-1"
-                            color="#0b0c0c"
-                          >
-                            0
-                          </span>
-                        </StyledResultCount>
-                      </ResultCount>
-                      <Title>
-                        <div
-                          className="emotion-2 emotion-3"
-                        >
-                          Counter 1
-                        </div>
-                      </Title>
-                    </div>
-                  </Wrapper>
-                </ResultCountTitle>
-              </a>
-            </ItemWrapperInner>
-          </Item>
-          <Item
-            active={true}
+          <Total
             component="a"
             score={2}
             scoreBackgroundColor="#b10e1e"
@@ -267,215 +138,406 @@ exports[`CounterBar matches snapshot 1`] = `
             scoreDisabledBackgroundColor="#dee0e2"
             scoreDisabledColor="#0b0c0c"
           >
-            <ItemWrapperInner
-              active={true}
-              disabled={false}
-              empty={false}
+            <Item
+              component="a"
+              score={2}
+              scoreBackgroundColor="#b10e1e"
+              scoreColor="#ffffff"
+              scoreDisabledBackgroundColor="#dee0e2"
+              scoreDisabledColor="#0b0c0c"
+              wrapper={[Function]}
             >
-              <a
-                className="emotion-22 emotion-15"
+              <TotalWrapper
                 disabled={false}
+                empty={0}
               >
-                <ResultCountTitle
-                  count={2}
-                  countBackgroundColor="#b10e1e"
-                  countColor="#ffffff"
+                <a
+                  className="emotion-6 emotion-7"
+                  disabled={false}
                 >
-                  <Wrapper>
-                    <div
-                      className="emotion-4 emotion-1"
-                    >
-                      <ResultCount
-                        backgroundColor="#b10e1e"
-                        color="#ffffff"
+                  <ResultCountTitle
+                    count={2}
+                    countBackgroundColor="#b10e1e"
+                    countColor="#ffffff"
+                  >
+                    <Wrapper>
+                      <div
+                        className="emotion-4 emotion-1"
                       >
-                        <StyledResultCount
+                        <ResultCount
                           backgroundColor="#b10e1e"
                           color="#ffffff"
                         >
-                          <span
-                            className="emotion-0 emotion-1"
+                          <StyledResultCount
+                            backgroundColor="#b10e1e"
                             color="#ffffff"
                           >
-                            2
-                          </span>
-                        </StyledResultCount>
-                      </ResultCount>
-                      <Title>
-                        <div
-                          className="emotion-2 emotion-3"
-                        >
-                          Counter 2
-                        </div>
-                      </Title>
-                    </div>
-                  </Wrapper>
-                </ResultCountTitle>
-              </a>
-            </ItemWrapperInner>
-          </Item>
-          <Item
-            component="a"
-            score={0}
-            scoreBackgroundColor="#b10e1e"
-            scoreColor="#ffffff"
-            scoreDisabledBackgroundColor="#dee0e2"
-            scoreDisabledColor="#0b0c0c"
-          >
-            <ItemWrapperInner
-              disabled={true}
-              empty={false}
-            >
-              <a
-                className="emotion-14 emotion-15"
-                disabled={true}
-              >
-                <ResultCountTitle
-                  count={0}
-                  countBackgroundColor="#dee0e2"
-                  countColor="#0b0c0c"
-                >
-                  <Wrapper>
-                    <div
-                      className="emotion-4 emotion-1"
-                    >
-                      <ResultCount
-                        backgroundColor="#dee0e2"
-                        color="#0b0c0c"
-                      >
-                        <StyledResultCount
-                          backgroundColor="#dee0e2"
-                          color="#0b0c0c"
-                        >
-                          <span
-                            className="emotion-8 emotion-1"
-                            color="#0b0c0c"
+                            <span
+                              className="emotion-0 emotion-1"
+                              color="#ffffff"
+                            >
+                              2
+                            </span>
+                          </StyledResultCount>
+                        </ResultCount>
+                        <Title>
+                          <div
+                            className="emotion-2 emotion-3"
                           >
-                            0
-                          </span>
-                        </StyledResultCount>
-                      </ResultCount>
-                      <Title>
-                        <div
-                          className="emotion-2 emotion-3"
-                        >
-                          Counter 3
-                        </div>
-                      </Title>
-                    </div>
-                  </Wrapper>
-                </ResultCountTitle>
-              </a>
-            </ItemWrapperInner>
-          </Item>
-        </div>
-      </ItemsWrapper>
-    </div>
-  </Wrapper>
-</CounterBar>
-`;
-
-exports[`CounterBar renders empty counters 1`] = `
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-}
-
-.emotion-2 {
-  display: inline-block;
-  font-family: Roboto,Arial,sans-serif;
-  font-size: 15px;
-  line-height: 1.25;
-  padding: 2px;
-}
-
-.emotion-6 {
-  border: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  margin: 0 6px 6px 0;
-  max-width: 250px;
-  outline: none;
-  padding: 0 8px 0 0;
-  background: #ffffff;
-  color: #ffffff;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  background: #6f777b;
-  opacity: 0;
-}
-
-.emotion-6:focus {
-  outline: solid 4px #ffbf47;
-}
-
-.emotion-6:last-child {
-  margin-right: 0px;
-}
-
-.emotion-0 {
-  background: #dee0e2;
-  color: #0b0c0c;
-  display: inline-block;
-  font-family: Roboto,Arial,sans-serif;
-  font-size: 15px;
-  line-height: 1.25;
-  min-height: 20px;
-  min-width: 20px;
-  padding: 1px 4px;
-  text-align: center;
-}
-
-<Item>
-  <ItemWrapper
-    disabled={true}
-    empty={true}
-  >
-    <a
-      className="emotion-6 emotion-7"
-      disabled={true}
-    >
-      <ResultCountTitle
-        count={0}
-        countBackgroundColor="#dee0e2"
-        countColor="#0b0c0c"
-      >
-        <Wrapper>
-          <div
-            className="emotion-4 emotion-1"
-          >
-            <ResultCount
-              backgroundColor="#dee0e2"
-              color="#0b0c0c"
+                            All counters
+                          </div>
+                        </Title>
+                      </div>
+                    </Wrapper>
+                  </ResultCountTitle>
+                </a>
+              </TotalWrapper>
+            </Item>
+          </Total>
+          <CountersWrapper>
+            <div
+              className="emotion-50 emotion-51"
             >
-              <StyledResultCount
-                backgroundColor="#dee0e2"
-                color="#0b0c0c"
+              <Counter
+                component={[Function]}
+                score={1}
+                scoreBackgroundColor="#b10e1e"
+                scoreColor="#ffffff"
+                scoreDisabledBackgroundColor="#dee0e2"
+                scoreDisabledColor="#0b0c0c"
+                to="/courses/1/"
               >
-                <span
-                  className="emotion-0 emotion-1"
-                  color="#0b0c0c"
+                <Item
+                  component={[Function]}
+                  score={1}
+                  scoreBackgroundColor="#b10e1e"
+                  scoreColor="#ffffff"
+                  scoreDisabledBackgroundColor="#dee0e2"
+                  scoreDisabledColor="#0b0c0c"
+                  to="/courses/1/"
+                  wrapper={[Function]}
                 >
-                  0
-                </span>
-              </StyledResultCount>
-            </ResultCount>
-            <Title>
-              <div
-                className="emotion-2 emotion-3"
-              />
-            </Title>
-          </div>
-        </Wrapper>
-      </ResultCountTitle>
-    </a>
-  </ItemWrapper>
-</Item>
+                  <CounterWrapper
+                    disabled={false}
+                    empty={0}
+                    replace={false}
+                    to="/courses/1/"
+                  >
+                    <Link
+                      className="emotion-14 emotion-7"
+                      disabled={false}
+                      empty={0}
+                      replace={false}
+                      to="/courses/1/"
+                    >
+                      <a
+                        className="emotion-14 emotion-7"
+                        disabled={false}
+                        empty={0}
+                        href="#/courses/1/"
+                        onClick={[Function]}
+                      >
+                        <ResultCountTitle
+                          count={1}
+                          countBackgroundColor="#b10e1e"
+                          countColor="#ffffff"
+                        >
+                          <Wrapper>
+                            <div
+                              className="emotion-4 emotion-1"
+                            >
+                              <ResultCount
+                                backgroundColor="#b10e1e"
+                                color="#ffffff"
+                              >
+                                <StyledResultCount
+                                  backgroundColor="#b10e1e"
+                                  color="#ffffff"
+                                >
+                                  <span
+                                    className="emotion-0 emotion-1"
+                                    color="#ffffff"
+                                  >
+                                    1
+                                  </span>
+                                </StyledResultCount>
+                              </ResultCount>
+                              <Title>
+                                <div
+                                  className="emotion-2 emotion-3"
+                                >
+                                  Counter 1
+                                </div>
+                              </Title>
+                            </div>
+                          </Wrapper>
+                        </ResultCountTitle>
+                      </a>
+                    </Link>
+                  </CounterWrapper>
+                </Item>
+              </Counter>
+              <Counter
+                component="a"
+                score={2}
+                scoreBackgroundColor="#b10e1e"
+                scoreColor="#ffffff"
+                scoreDisabledBackgroundColor="#dee0e2"
+                scoreDisabledColor="#0b0c0c"
+              >
+                <Item
+                  component="a"
+                  score={2}
+                  scoreBackgroundColor="#b10e1e"
+                  scoreColor="#ffffff"
+                  scoreDisabledBackgroundColor="#dee0e2"
+                  scoreDisabledColor="#0b0c0c"
+                  wrapper={[Function]}
+                >
+                  <CounterWrapper
+                    disabled={false}
+                    empty={0}
+                  >
+                    <a
+                      className="emotion-14 emotion-7"
+                      disabled={false}
+                    >
+                      <ResultCountTitle
+                        count={2}
+                        countBackgroundColor="#b10e1e"
+                        countColor="#ffffff"
+                      >
+                        <Wrapper>
+                          <div
+                            className="emotion-4 emotion-1"
+                          >
+                            <ResultCount
+                              backgroundColor="#b10e1e"
+                              color="#ffffff"
+                            >
+                              <StyledResultCount
+                                backgroundColor="#b10e1e"
+                                color="#ffffff"
+                              >
+                                <span
+                                  className="emotion-0 emotion-1"
+                                  color="#ffffff"
+                                >
+                                  2
+                                </span>
+                              </StyledResultCount>
+                            </ResultCount>
+                            <Title>
+                              <div
+                                className="emotion-2 emotion-3"
+                              >
+                                Counter 2
+                              </div>
+                            </Title>
+                          </div>
+                        </Wrapper>
+                      </ResultCountTitle>
+                    </a>
+                  </CounterWrapper>
+                </Item>
+              </Counter>
+              <Counter
+                component="a"
+                score={3}
+                scoreBackgroundColor="#b10e1e"
+                scoreColor="#ffffff"
+                scoreDisabledBackgroundColor="#dee0e2"
+                scoreDisabledColor="#0b0c0c"
+              >
+                <Item
+                  component="a"
+                  score={3}
+                  scoreBackgroundColor="#b10e1e"
+                  scoreColor="#ffffff"
+                  scoreDisabledBackgroundColor="#dee0e2"
+                  scoreDisabledColor="#0b0c0c"
+                  wrapper={[Function]}
+                >
+                  <CounterWrapper
+                    disabled={false}
+                    empty={0}
+                  >
+                    <a
+                      className="emotion-14 emotion-7"
+                      disabled={false}
+                    >
+                      <ResultCountTitle
+                        count={3}
+                        countBackgroundColor="#b10e1e"
+                        countColor="#ffffff"
+                      >
+                        <Wrapper>
+                          <div
+                            className="emotion-4 emotion-1"
+                          >
+                            <ResultCount
+                              backgroundColor="#b10e1e"
+                              color="#ffffff"
+                            >
+                              <StyledResultCount
+                                backgroundColor="#b10e1e"
+                                color="#ffffff"
+                              >
+                                <span
+                                  className="emotion-0 emotion-1"
+                                  color="#ffffff"
+                                >
+                                  3
+                                </span>
+                              </StyledResultCount>
+                            </ResultCount>
+                            <Title>
+                              <div
+                                className="emotion-2 emotion-3"
+                              >
+                                Counter 3
+                              </div>
+                            </Title>
+                          </div>
+                        </Wrapper>
+                      </ResultCountTitle>
+                    </a>
+                  </CounterWrapper>
+                </Item>
+              </Counter>
+              <Counter
+                component="a"
+                score={4}
+                scoreBackgroundColor="#b10e1e"
+                scoreColor="#ffffff"
+                scoreDisabledBackgroundColor="#dee0e2"
+                scoreDisabledColor="#0b0c0c"
+              >
+                <Item
+                  component="a"
+                  score={4}
+                  scoreBackgroundColor="#b10e1e"
+                  scoreColor="#ffffff"
+                  scoreDisabledBackgroundColor="#dee0e2"
+                  scoreDisabledColor="#0b0c0c"
+                  wrapper={[Function]}
+                >
+                  <CounterWrapper
+                    disabled={false}
+                    empty={0}
+                  >
+                    <a
+                      className="emotion-14 emotion-7"
+                      disabled={false}
+                    >
+                      <ResultCountTitle
+                        count={4}
+                        countBackgroundColor="#b10e1e"
+                        countColor="#ffffff"
+                      >
+                        <Wrapper>
+                          <div
+                            className="emotion-4 emotion-1"
+                          >
+                            <ResultCount
+                              backgroundColor="#b10e1e"
+                              color="#ffffff"
+                            >
+                              <StyledResultCount
+                                backgroundColor="#b10e1e"
+                                color="#ffffff"
+                              >
+                                <span
+                                  className="emotion-0 emotion-1"
+                                  color="#ffffff"
+                                >
+                                  4
+                                </span>
+                              </StyledResultCount>
+                            </ResultCount>
+                            <Title>
+                              <div
+                                className="emotion-2 emotion-3"
+                              >
+                                Counter 4
+                              </div>
+                            </Title>
+                          </div>
+                        </Wrapper>
+                      </ResultCountTitle>
+                    </a>
+                  </CounterWrapper>
+                </Item>
+              </Counter>
+              <Counter
+                component="a"
+                score={5}
+                scoreBackgroundColor="#b10e1e"
+                scoreColor="#ffffff"
+                scoreDisabledBackgroundColor="#dee0e2"
+                scoreDisabledColor="#0b0c0c"
+              >
+                <Item
+                  component="a"
+                  score={5}
+                  scoreBackgroundColor="#b10e1e"
+                  scoreColor="#ffffff"
+                  scoreDisabledBackgroundColor="#dee0e2"
+                  scoreDisabledColor="#0b0c0c"
+                  wrapper={[Function]}
+                >
+                  <CounterWrapper
+                    disabled={false}
+                    empty={0}
+                  >
+                    <a
+                      className="emotion-14 emotion-7"
+                      disabled={false}
+                    >
+                      <ResultCountTitle
+                        count={5}
+                        countBackgroundColor="#b10e1e"
+                        countColor="#ffffff"
+                      >
+                        <Wrapper>
+                          <div
+                            className="emotion-4 emotion-1"
+                          >
+                            <ResultCount
+                              backgroundColor="#b10e1e"
+                              color="#ffffff"
+                            >
+                              <StyledResultCount
+                                backgroundColor="#b10e1e"
+                                color="#ffffff"
+                              >
+                                <span
+                                  className="emotion-0 emotion-1"
+                                  color="#ffffff"
+                                >
+                                  5
+                                </span>
+                              </StyledResultCount>
+                            </ResultCount>
+                            <Title>
+                              <div
+                                className="emotion-2 emotion-3"
+                              >
+                                Counter 5
+                              </div>
+                            </Title>
+                          </div>
+                        </Wrapper>
+                      </ResultCountTitle>
+                    </a>
+                  </CounterWrapper>
+                </Item>
+              </Counter>
+            </div>
+          </CountersWrapper>
+        </div>
+      </OuterWrapper>
+    </CounterBar>
+  </Router>
+</HashRouter>
 `;

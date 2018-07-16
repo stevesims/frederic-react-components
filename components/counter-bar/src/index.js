@@ -6,13 +6,13 @@ import ResultCountTitle from '@govuk-frederic/result-count-title';
 
 import { BLACK, GREY_1, GREY_3, LINK_COLOUR, RED, WHITE, YELLOW } from 'govuk-colours';
 
-const Wrapper = styled('div')({
+const OuterWrapper = styled('div')({
   display: 'flex',
   flexWrap: 'nowrap',
   lineHeight: '1',
 });
 
-const TotalWrapperInner = styled('a')(
+const TotalWrapper = styled('a')(
   {
     ':focus': {
       outline: `solid 4px ${YELLOW}`,
@@ -31,7 +31,7 @@ const TotalWrapperInner = styled('a')(
   }),
 );
 
-const ItemsWrapper = styled('div')(
+const CountersWrapper = styled('div')(
   {
     alignItems: 'flex-start',
     display: 'flex',
@@ -41,7 +41,7 @@ const ItemsWrapper = styled('div')(
   },
 );
 
-const ItemWrapperInner = styled(TotalWrapperInner)(
+const CounterWrapper = styled(TotalWrapper)(
   {
     ':last-child': {
       marginRight: '0',
@@ -62,74 +62,120 @@ const ItemWrapperInner = styled(TotalWrapperInner)(
  * Simple
  * ```jsx
  * <CounterBar>
- *   <CounterBar.Total score={16}>All counters</CounterBar.Total>
- *   <CounterBar.Container>
- *     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
- *     <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
- *     <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
- *     <CounterBar.Item score={9}>Counter 4</CounterBar.Item>
- *     <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
- *     <CounterBar.Item score={1}>Counter 6</CounterBar.Item>
- *     <CounterBar.Item score={0}>Counter 7</CounterBar.Item>
- *   </CounterBar.Container>
+ *   <CounterBar.Total score={15}>All counters</CounterBar.Total>
+ *   <CounterBar.Counters>
+ *     <CounterBar.Counter score={1}>Counter 1</CounterBar.Counter>
+ *     <CounterBar.Counter score={2}>Counter 2</CounterBar.Counter>
+ *     <CounterBar.Counter score={3}>Counter 3</CounterBar.Counter>
+ *     <CounterBar.Counter score={4}>Counter 4</CounterBar.Counter>
+ *     <CounterBar.Counter score={5}>Counter 5</CounterBar.Counter>
+ *   </CounterBar.Counters>
  * </CounterBar>
  * ```
  * Active counter
  * ```jsx
  * <CounterBar>
- *   <CounterBar.Total score={5}>All counters</CounterBar.Total>
- *     <CounterBar.Container>
- *     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
- *     <CounterBar.Item score={2} active>Counter 2</CounterBar.Item>
- *     <CounterBar.Item score={3}>Counter 3</CounterBar.Item>
- *   </CounterBar.Container>
+ *   <CounterBar.Total score={15}>All counters</CounterBar.Total>
+ *   <CounterBar.Counters>
+ *     <CounterBar.Counter score={1}>Counter 1</CounterBar.Counter>
+ *     <CounterBar.Counter score={2}>Counter 2</CounterBar.Counter>
+ *     <CounterBar.Counter score={3} active>Counter 3</CounterBar.Counter>
+ *     <CounterBar.Counter score={4}>Counter 4</CounterBar.Counter>
+ *     <CounterBar.Counter score={5}>Counter 5</CounterBar.Counter>
+ *   </CounterBar.Counters>
  * </CounterBar>
  * ```
- * Active title
+ * Active total
  * ```jsx
  * <CounterBar>
- *   <CounterBar.Total score={2} active>All counters</CounterBar.Total>
- *   <CounterBar.Container>
- *     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
- *     <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
- *     <CounterBar.Item score={0}>Counter 3</CounterBar.Item>
- *   </CounterBar.Container>
+ *   <CounterBar.Total score={15} active>All counters</CounterBar.Total>
+ *   <CounterBar.Counters>
+ *     <CounterBar.Counter score={1}>Counter 1</CounterBar.Counter>
+ *     <CounterBar.Counter score={2}>Counter 2</CounterBar.Counter>
+ *     <CounterBar.Counter score={3}>Counter 3</CounterBar.Counter>
+ *     <CounterBar.Counter score={4}>Counter 4</CounterBar.Counter>
+ *     <CounterBar.Counter score={5}>Counter 5</CounterBar.Counter>
+ *   </CounterBar.Counters>
  * </CounterBar>
  * ```
- * CounterBar with padded container
+ * Empty counters
  * ```jsx
  * <CounterBar>
- *   <CounterBar.Total score={8}>All counters</CounterBar.Total>
- *   <CounterBar.Container>
- *     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
- *     <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
- *     <CounterBar.Item score={2}>Counter 3</CounterBar.Item>
- *     <CounterBar.Item score={0}>Counter 4</CounterBar.Item>
- *     <CounterBar.Item score={2}>Counter 5</CounterBar.Item>
- *     <CounterBar.Item score={0}>Counter 6</CounterBar.Item>
- *     <CounterBar.Item score={2}>Counter 7</CounterBar.Item>
- *   </CounterBar.Container>
+ *   <CounterBar.Total score={7}>All counters</CounterBar.Total>
+ *   <CounterBar.Counters>
+ *     <CounterBar.Counter score={1}>Counter 1</CounterBar.Counter>
+ *     <CounterBar.Counter score={2}>Counter 2</CounterBar.Counter>
+ *     <CounterBar.Counter />
+ *     <CounterBar.Counter score={4}>Counter 4</CounterBar.Counter>
+ *     <CounterBar.Counter />
+ *   </CounterBar.Counters>
  * </CounterBar>
+ * ```
+ * CounterBar with padded counters container
+ * ```jsx
+ * <div style={{padding: '4px'}}>
+ *   <CounterBar>
+ *     <CounterBar.Total score={15}>All counters</CounterBar.Total>
+ *     <CounterBar.Counters>
+ *       <CounterBar.Counter score={1}>Counter 1</CounterBar.Counter>
+ *       <CounterBar.Counter score={2}>Counter 2</CounterBar.Counter>
+ *       <CounterBar.Counter score={3}>Counter 3</CounterBar.Counter>
+ *       <CounterBar.Counter score={4}>Counter 4</CounterBar.Counter>
+ *       <CounterBar.Counter score={5}>Counter 5</CounterBar.Counter>
+ *     </CounterBar.Counters>
+ *   </CounterBar>
+ * </div>
  * ```
  * Zero/no scores
  * ```jsx
  * <CounterBar>
- *   <CounterBar.Total score={0}>All counters</CounterBar.Total>
- *   <CounterBar.Container>
- *     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
- *     <CounterBar.Item>Counter 2</CounterBar.Item>
- *     <CounterBar.Item score={0}>Counter 3</CounterBar.Item>
- *   </CounterBar.Container>
- * </CounterBar>,
+ *   <CounterBar.Total score={9}>All counters</CounterBar.Total>
+ *   <CounterBar.Counters>
+ *     <CounterBar.Counter score={1}>Counter 1</CounterBar.Counter>
+ *     <CounterBar.Counter score={0}>Counter 2</CounterBar.Counter>
+ *     <CounterBar.Counter score={3}>Counter 3</CounterBar.Counter>
+ *     <CounterBar.Counter>Counter 4</CounterBar.Counter>
+ *     <CounterBar.Counter score={5}>Counter 5</CounterBar.Counter>
+ *   </CounterBar.Counters>
+ * </CounterBar>
+ * ```
+ * Custom colours on total
+ * ```jsx
+ * <CounterBar>
+ *   <CounterBar.Total score={15} scoreColor="yellow" scoreBackgroundColor="pink">All counters</CounterBar.Total>
+ *   <CounterBar.Counters>
+ *     <CounterBar.Counter score={1}>Counter 1</CounterBar.Counter>
+ *     <CounterBar.Counter score={2}>Counter 2</CounterBar.Counter>
+ *     <CounterBar.Counter score={3}>Counter 3</CounterBar.Counter>
+ *     <CounterBar.Counter score={4}>Counter 4</CounterBar.Counter>
+ *     <CounterBar.Counter score={5}>Counter 5</CounterBar.Counter>
+ *   </CounterBar.Counters>
+ * </CounterBar>
+ * ```
+ * Custom colours on counters
+ * ```jsx
+ * <CounterBar>
+ *   <CounterBar.Total score={15}>All counters</CounterBar.Total>
+ *   <CounterBar.Counters>
+ *     <CounterBar.Counter score={1}>Counter 1</CounterBar.Counter>
+ *     <CounterBar.Counter score={2} scoreColor="orange" scoreBackgroundColor="blue">Counter 2</CounterBar.Counter>
+ *     <CounterBar.Counter score={3}>Counter 3</CounterBar.Counter>
+ *     <CounterBar.Counter score={4} scoreColor="yellow" scoreBackgroundColor="purple">Counter 4</CounterBar.Counter>
+ *     <CounterBar.Counter score={5}>Counter 5</CounterBar.Counter>
+ *   </CounterBar.Counters>
+ * </CounterBar>
  * ```
  * Use any HTML element string for the total
  * ```jsx
  * <CounterBar>
- *   <CounterBar.Total score={2} component="aside">All counters</CounterBar.Total>
- *   <CounterBar.Container>
- *     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
- *     <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
- *   </CounterBar.Container>
+ *   <CounterBar.Total score={15} component="aside">All counters</CounterBar.Total>
+ *   <CounterBar.Counters>
+ *     <CounterBar.Counter score={1}>Counter 1</CounterBar.Counter>
+ *     <CounterBar.Counter score={2}>Counter 2</CounterBar.Counter>
+ *     <CounterBar.Counter score={3}>Counter 3</CounterBar.Counter>
+ *     <CounterBar.Counter score={4}>Counter 4</CounterBar.Counter>
+ *     <CounterBar.Counter score={5}>Counter 5</CounterBar.Counter>
+ *   </CounterBar.Counters>
  * </CounterBar>
  * ```
  * Use a Link component for the total
@@ -138,72 +184,53 @@ const ItemWrapperInner = styled(TotalWrapperInner)(
  * 
  * <HashRouter>
  *   <CounterBar>
- *     <CounterBar.Total score={2} component={Link} to="/courses?sort=name'/">All counters</CounterBar.Total>
- *     <CounterBar.Container>
- *       <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
- *       <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
- *     </CounterBar.Container>
+ *     <CounterBar.Total score={15} component={Link} to="/courses?sort=name'/">All counters</CounterBar.Total>
+ *     <CounterBar.Counters>
+ *       <CounterBar.Counter score={1}>Counter 1</CounterBar.Counter>
+ *       <CounterBar.Counter score={2}>Counter 2</CounterBar.Counter>
+ *       <CounterBar.Counter score={3}>Counter 3</CounterBar.Counter>
+ *       <CounterBar.Counter score={4}>Counter 4</CounterBar.Counter>
+ *       <CounterBar.Counter score={5}>Counter 5</CounterBar.Counter>
+ *     </CounterBar.Counters>
  *   </CounterBar>
  * </HashRouter>
  * ```
- * Use any HTML element string for an item
+ * Use any HTML element string for a counter
  * ```jsx
  * <CounterBar>
- *   <CounterBar.Total score={2}>All counters</CounterBar.Total>
- *   <CounterBar.Container>
- *     <CounterBar.Item score={0} component="nav">Counter 1</CounterBar.Item>
- *     <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
- *   </CounterBar.Container>
+ *   <CounterBar.Total score={15}>All counters</CounterBar.Total>
+ *   <CounterBar.Counters>
+ *     <CounterBar.Counter score={1} component="nav">Counter 1</CounterBar.Counter>
+ *     <CounterBar.Counter score={2} component="aside">Counter 2</CounterBar.Counter>
+ *     <CounterBar.Counter score={3} component="div">Counter 3</CounterBar.Counter>
+ *     <CounterBar.Counter score={4} component="section">Counter 4</CounterBar.Counter>
+ *     <CounterBar.Counter score={5} component="span">Counter 5</CounterBar.Counter>
+ *   </CounterBar.Counters>
  * </CounterBar>
  * ```
- * Use a Link component for an item
+ * Use a Link component for a counter
  * ```jsx
  * import { HashRouter, Link } from 'react-router-dom';
  * 
  * <HashRouter>
  *   <CounterBar>
  *     <CounterBar.Total score={2}>All counters</CounterBar.Total>
- *     <CounterBar.Container>
- *       <CounterBar.Item score={0} component={Link} to="/courses?sort=name'/">Counter 1</CounterBar.Item>
- *       <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
- *     </CounterBar.Container>
+ *     <CounterBar.Counters>
+ *       <CounterBar.Counter score={1} component={Link} to="/courses/1/">Counter 1</CounterBar.Counter>
+ *       <CounterBar.Counter score={2}>Counter 2</CounterBar.Counter>
+ *       <CounterBar.Counter score={3}>Counter 3</CounterBar.Counter>
+ *       <CounterBar.Counter score={4}>Counter 4</CounterBar.Counter>
+ *       <CounterBar.Counter score={5}>Counter 5</CounterBar.Counter>
+ *     </CounterBar.Counters>
  *   </CounterBar>
  * </HashRouter>
  * ```
  */
-const CounterBar = props => <Wrapper {...props}/>;
+const CounterBar = props => <OuterWrapper {...props}/>;
 
 CounterBar.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
-CounterBar.Total = ({
-  active,
-  children,
-  component,
-  score,
-  scoreColor,
-  scoreDisabledColor,
-  scoreBackgroundColor,
-  scoreDisabledBackgroundColor,
-  ...props
-}) => {
-  const TotalWrapper = TotalWrapperInner.withComponent(component);
-  return (
-    <TotalWrapper active={active} disabled={!score} {...props}>
-      <ResultCountTitle
-        count={score}
-        countColor={score > 0 ? 
-          scoreColor : scoreDisabledColor}
-        countBackgroundColor={score > 0 ? 
-          scoreBackgroundColor : scoreDisabledBackgroundColor}
-        >
-        {children}
-      </ResultCountTitle>
-    </TotalWrapper>
-  );
-};
-CounterBar.Total.displayName = 'Total';
 
 CounterBar.Item = ({
   active,
@@ -214,55 +241,61 @@ CounterBar.Item = ({
   scoreDisabledColor,
   scoreBackgroundColor,
   scoreDisabledBackgroundColor,
+  wrapper,
   ...props
 }) => {
-  const ItemWrapper = ItemWrapperInner.withComponent(component);
+  const Wrapper = wrapper.withComponent(component);
   return (
-    <ItemWrapper
-      active={active}
-      disabled={!score}
-      empty={!children || children.length === 0}
-      {...props}
-    >
+    <Wrapper active={active} disabled={!score} empty={ !children || children.length === 0 ? 1 : 0 } {...props}>
       <ResultCountTitle
-        count={score || 0}
+        count={score}
         countColor={score > 0 ? scoreColor : scoreDisabledColor}
         countBackgroundColor={score > 0 ? scoreBackgroundColor : scoreDisabledBackgroundColor}
         >
         {children}
       </ResultCountTitle>
-    </ItemWrapper>
-  ); 
+    </Wrapper>
+  );
 };
 CounterBar.Item.displayName = 'Item';
+
+CounterBar.Total = props => (<CounterBar.Item wrapper={TotalWrapper} {...props} />);
+CounterBar.Total.displayName = 'Total';
+CounterBar.Counter = props => (<CounterBar.Item wrapper={CounterWrapper} {...props} />);
+CounterBar.Counter.displayName = 'Counter';
 
 const sharedPropTypes = {
   active: PropTypes.bool,
   children: PropTypes.node,
-  component: PropTypes.node,
+  component: PropTypes.any,
+  empty: PropTypes.bool,
   score: PropTypes.number,
   scoreColor: PropTypes.string,
   scoreDisabledColor: PropTypes.string,
   scoreBackgroundColor: PropTypes.string,
   scoreDisabledBackgroundColor: PropTypes.string,
+  wrapper: PropTypes.func,
 };
 
-CounterBar.Total.propTypes = { ...sharedPropTypes, children: PropTypes.node.isRequired };
 CounterBar.Item.propTypes = sharedPropTypes;
+CounterBar.Total.propTypes = sharedPropTypes;
+CounterBar.Counter.propTypes = sharedPropTypes;
 
 const sharedDefaultProps = {
   component: 'a',
+  score: 0,
   scoreColor: WHITE,
   scoreDisabledColor: BLACK,
   scoreBackgroundColor: RED,
   scoreDisabledBackgroundColor: GREY_3,
 };
 
-CounterBar.Total.defaultProps = sharedDefaultProps;
 CounterBar.Item.defaultProps = sharedDefaultProps;
+CounterBar.Total.defaultProps = sharedDefaultProps;
+CounterBar.Counter.defaultProps = sharedDefaultProps;
 
-CounterBar.Container = ItemsWrapper;
-CounterBar.Container.propTypes = {
+CounterBar.Counters = CountersWrapper;
+CounterBar.Counters.propTypes = {
   children: PropTypes.node.isRequired,
 };
 

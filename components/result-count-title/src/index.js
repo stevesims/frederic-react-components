@@ -6,8 +6,7 @@ import ResultCount from '@govuk-frederic/result-count';
 
 const Wrapper = styled('div')(
   {
-    display: 'flex',
-    flexWrap: 'nowrap',
+    display: 'inline-block',
   },
 );
 
@@ -16,7 +15,7 @@ const Title = styled('div')({
   fontFamily: 'Roboto, Arial, sans-serif',
   fontSize: '15px',
   lineHeight: '1.25',
-  padding: '2px',
+  marginLeft: '10px',
 });
 
 /**
