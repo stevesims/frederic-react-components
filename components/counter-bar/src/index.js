@@ -24,7 +24,7 @@ const TotalWrapperInner = styled('a')(
     outline: 'none',
     padding: '0 8px 0 0',
   },
-  ({active}) => ({
+  ({ active }) => ({
     background: active ? LINK_COLOUR : WHITE,
     color: active ? WHITE : undefined,
     outline: active ? `2px solid ${LINK_COLOUR}` : undefined,
