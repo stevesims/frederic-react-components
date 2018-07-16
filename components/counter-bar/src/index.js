@@ -179,11 +179,11 @@ CounterBar.propTypes = {
 
 CounterBar.Total = ({
   active,
-  countBackgroundColor,
-  countDisabledBackgroundColor,
   children,
   component,
   score,
+  scoreColor,
+  scoreDisabledColor,
   scoreBackgroundColor,
   scoreDisabledBackgroundColor,
   ...props
@@ -194,7 +194,7 @@ CounterBar.Total = ({
       <ResultCountTitle
         count={score}
         countColor={score > 0 ? 
-          countBackgroundColor : countDisabledBackgroundColor}
+          scoreColor : scoreDisabledColor}
         countBackgroundColor={score > 0 ? 
           scoreBackgroundColor : scoreDisabledBackgroundColor}
         >
@@ -205,30 +205,15 @@ CounterBar.Total = ({
 };
 CounterBar.Total.displayName = 'Total';
 
-CounterBar.Total.propTypes = {
-  active: PropTypes.bool,
-  children: PropTypes.node,
-  component: PropTypes.node,
-  countBackgroundColor: PropTypes.string,
-  countDisabledBackgroundColor: PropTypes.string,
-  score: PropTypes.number,
-  scoreBackgroundColor: PropTypes.string,
-  scoreDisabledBackgroundColor: PropTypes.string,
-};
-
-CounterBar.Total.defaultProps = {
-  component: 'a',
-  countBackgroundColor: WHITE,
-  countDisabledBackgroundColor: BLACK,
-  scoreBackgroundColor: RED,
-  scoreDisabledBackgroundColor: GREY_3,
-};
-
 CounterBar.Item = ({
   active,
   children,
   component,
   score,
+  scoreColor,
+  scoreDisabledColor,
+  scoreBackgroundColor,
+  scoreDisabledBackgroundColor,
   ...props
 }) => {
   const ItemWrapper = ItemWrapperInner.withComponent(component);
@@ -240,9 +225,9 @@ CounterBar.Item = ({
       {...props}
     >
       <ResultCountTitle
-        countColor={score > 0 ? WHITE : BLACK}
-        countBackgroundColor={score > 0 ? RED : GREY_3}
         count={score || 0}
+        countColor={score > 0 ? scoreColor : scoreDisabledColor}
+        countBackgroundColor={score > 0 ? scoreBackgroundColor : scoreDisabledBackgroundColor}
         >
         {children}
       </ResultCountTitle>
@@ -251,16 +236,30 @@ CounterBar.Item = ({
 };
 CounterBar.Item.displayName = 'Item';
 
-CounterBar.Item.propTypes = {
+const sharedPropTypes = {
   active: PropTypes.bool,
   children: PropTypes.node,
   component: PropTypes.node,
   score: PropTypes.number,
+  scoreColor: PropTypes.string,
+  scoreDisabledColor: PropTypes.string,
+  scoreBackgroundColor: PropTypes.string,
+  scoreDisabledBackgroundColor: PropTypes.string,
 };
 
-CounterBar.Item.defaultProps = {
+CounterBar.Total.propTypes = { ...sharedPropTypes, children: PropTypes.node.isRequired };
+CounterBar.Item.propTypes = sharedPropTypes;
+
+const sharedDefaultProps = {
   component: 'a',
+  scoreColor: WHITE,
+  scoreDisabledColor: BLACK,
+  scoreBackgroundColor: RED,
+  scoreDisabledBackgroundColor: GREY_3,
 };
+
+CounterBar.Total.defaultProps = sharedDefaultProps;
+CounterBar.Item.defaultProps = sharedDefaultProps;
 
 CounterBar.Container = ItemsWrapper;
 CounterBar.Container.propTypes = {

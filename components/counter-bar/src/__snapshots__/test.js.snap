@@ -29,13 +29,7 @@ exports[`CounterBar matches snapshot 1`] = `
 }
 
 .emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+  display: inline-block;
 }
 
 .emotion-0 {
@@ -56,7 +50,7 @@ exports[`CounterBar matches snapshot 1`] = `
   font-family: Roboto,Arial,sans-serif;
   font-size: 15px;
   line-height: 1.25;
-  padding: 2px;
+  margin-left: 10px;
 }
 
 .emotion-32 {
@@ -149,11 +143,11 @@ exports[`CounterBar matches snapshot 1`] = `
     >
       <Total
         component="a"
-        countBackgroundColor="#ffffff"
-        countDisabledBackgroundColor="#0b0c0c"
         score={2}
         scoreBackgroundColor="#b10e1e"
+        scoreColor="#ffffff"
         scoreDisabledBackgroundColor="#dee0e2"
+        scoreDisabledColor="#0b0c0c"
       >
         <TotalWrapperInner
           disabled={false}
@@ -207,6 +201,10 @@ exports[`CounterBar matches snapshot 1`] = `
           <Item
             component="a"
             score={0}
+            scoreBackgroundColor="#b10e1e"
+            scoreColor="#ffffff"
+            scoreDisabledBackgroundColor="#dee0e2"
+            scoreDisabledColor="#0b0c0c"
           >
             <ItemWrapperInner
               disabled={true}
@@ -258,6 +256,10 @@ exports[`CounterBar matches snapshot 1`] = `
             active={true}
             component="a"
             score={2}
+            scoreBackgroundColor="#b10e1e"
+            scoreColor="#ffffff"
+            scoreDisabledBackgroundColor="#dee0e2"
+            scoreDisabledColor="#0b0c0c"
           >
             <ItemWrapperInner
               active={true}
@@ -309,6 +311,10 @@ exports[`CounterBar matches snapshot 1`] = `
           <Item
             component="a"
             score={0}
+            scoreBackgroundColor="#b10e1e"
+            scoreColor="#ffffff"
+            scoreDisabledBackgroundColor="#dee0e2"
+            scoreDisabledColor="#0b0c0c"
           >
             <ItemWrapperInner
               disabled={true}
