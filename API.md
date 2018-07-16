@@ -411,15 +411,53 @@ Zero/no scores
   </CounterBar.Container>
 </CounterBar>,
 ```
-Use any tag or component for the total
+Use any HTML element string for the total
 ```jsx
 <CounterBar>
-  <CounterBar.Total tag="aside" score={2}>All counters</CounterBar.Total>
+  <CounterBar.Total score={2} component="aside">All counters</CounterBar.Total>
   <CounterBar.Container>
     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
     <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
   </CounterBar.Container>
 </CounterBar>
+```
+Use a Link component for the total
+```jsx
+import { HashRouter, Link } from 'react-router-dom';
+
+<HashRouter>
+  <CounterBar>
+    <CounterBar.Total score={2} component={Link} to="/courses?sort=name'/">All counters</CounterBar.Total>
+    <CounterBar.Container>
+      <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+      <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+    </CounterBar.Container>
+  </CounterBar>
+</HashRouter>
+```
+Use any HTML element string for an item
+```jsx
+<CounterBar>
+  <CounterBar.Total score={2}>All counters</CounterBar.Total>
+  <CounterBar.Container>
+    <CounterBar.Item score={0} component="nav">Counter 1</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+  </CounterBar.Container>
+</CounterBar>
+```
+Use a Link component for an item
+```jsx
+import { HashRouter, Link } from 'react-router-dom';
+
+<HashRouter>
+  <CounterBar>
+    <CounterBar.Total score={2}>All counters</CounterBar.Total>
+    <CounterBar.Container>
+      <CounterBar.Item score={0} component={Link} to="/courses?sort=name'/">Counter 1</CounterBar.Item>
+      <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+    </CounterBar.Container>
+  </CounterBar>
+</HashRouter>
 ```
 
 ### Properties

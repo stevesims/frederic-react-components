@@ -41,7 +41,7 @@ const ItemsWrapper = styled('div')(
   },
 );
 
-const ItemWrapper = styled(TotalWrapperInner)(
+const ItemWrapperInner = styled(TotalWrapperInner)(
   {
     ':last-child': {
       marginRight: '0',
@@ -122,15 +122,53 @@ const ItemWrapper = styled(TotalWrapperInner)(
  *   </CounterBar.Container>
  * </CounterBar>,
  * ```
- * Use any tag or component for the total
+ * Use any HTML element string for the total
  * ```jsx
  * <CounterBar>
- *   <CounterBar.Total tag="aside" score={2}>All counters</CounterBar.Total>
+ *   <CounterBar.Total score={2} component="aside">All counters</CounterBar.Total>
  *   <CounterBar.Container>
  *     <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
  *     <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
  *   </CounterBar.Container>
  * </CounterBar>
+ * ```
+ * Use a Link component for the total
+ * ```jsx
+ * import { HashRouter, Link } from 'react-router-dom';
+ * 
+ * <HashRouter>
+ *   <CounterBar>
+ *     <CounterBar.Total score={2} component={Link} to="/courses?sort=name'/">All counters</CounterBar.Total>
+ *     <CounterBar.Container>
+ *       <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+ *       <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+ *     </CounterBar.Container>
+ *   </CounterBar>
+ * </HashRouter>
+ * ```
+ * Use any HTML element string for an item
+ * ```jsx
+ * <CounterBar>
+ *   <CounterBar.Total score={2}>All counters</CounterBar.Total>
+ *   <CounterBar.Container>
+ *     <CounterBar.Item score={0} component="nav">Counter 1</CounterBar.Item>
+ *     <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+ *   </CounterBar.Container>
+ * </CounterBar>
+ * ```
+ * Use a Link component for an item
+ * ```jsx
+ * import { HashRouter, Link } from 'react-router-dom';
+ * 
+ * <HashRouter>
+ *   <CounterBar>
+ *     <CounterBar.Total score={2}>All counters</CounterBar.Total>
+ *     <CounterBar.Container>
+ *       <CounterBar.Item score={0} component={Link} to="/courses?sort=name'/">Counter 1</CounterBar.Item>
+ *       <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+ *     </CounterBar.Container>
+ *   </CounterBar>
+ * </HashRouter>
  * ```
  */
 const CounterBar = props => <Wrapper {...props}/>;
@@ -144,13 +182,13 @@ CounterBar.Total = ({
   countBackgroundColor,
   countDisabledBackgroundColor,
   children,
+  component,
   score,
   scoreBackgroundColor,
   scoreDisabledBackgroundColor,
-  tag,
   ...props
 }) => {
-  const TotalWrapper = TotalWrapperInner.withComponent(tag);
+  const TotalWrapper = TotalWrapperInner.withComponent(component);
   return (
     <TotalWrapper active={active} disabled={!score} {...props}>
       <ResultCountTitle
@@ -170,44 +208,58 @@ CounterBar.Total.displayName = 'Total';
 CounterBar.Total.propTypes = {
   active: PropTypes.bool,
   children: PropTypes.node,
+  component: PropTypes.node,
   countBackgroundColor: PropTypes.string,
   countDisabledBackgroundColor: PropTypes.string,
   score: PropTypes.number,
   scoreBackgroundColor: PropTypes.string,
   scoreDisabledBackgroundColor: PropTypes.string,
-  tag: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
 CounterBar.Total.defaultProps = {
+  component: 'a',
   countBackgroundColor: WHITE,
   countDisabledBackgroundColor: BLACK,
   scoreBackgroundColor: RED,
   scoreDisabledBackgroundColor: GREY_3,
-  tag: 'a',
 };
 
-CounterBar.Item = ({active, children, score}) => {
- return (
-   <ItemWrapper
-     active={active}
-     disabled={!score}
-     empty={!children || children.length === 0}>
-     <ResultCountTitle
-       countColor={score > 0 ? WHITE : BLACK}
-       countBackgroundColor={score > 0 ? RED : GREY_3}
-       count={score || 0}
-          >
-       {children}
-     </ResultCountTitle>
-   </ItemWrapper>
- ); 
+CounterBar.Item = ({
+  active,
+  children,
+  component,
+  score,
+  ...props
+}) => {
+  const ItemWrapper = ItemWrapperInner.withComponent(component);
+  return (
+    <ItemWrapper
+      active={active}
+      disabled={!score}
+      empty={!children || children.length === 0}
+      {...props}
+    >
+      <ResultCountTitle
+        countColor={score > 0 ? WHITE : BLACK}
+        countBackgroundColor={score > 0 ? RED : GREY_3}
+        count={score || 0}
+        >
+        {children}
+      </ResultCountTitle>
+    </ItemWrapper>
+  ); 
 };
 CounterBar.Item.displayName = 'Item';
 
 CounterBar.Item.propTypes = {
   active: PropTypes.bool,
   children: PropTypes.node,
+  component: PropTypes.node,
   score: PropTypes.number,
+};
+
+CounterBar.Item.defaultProps = {
+  component: 'a',
 };
 
 CounterBar.Container = ItemsWrapper;

@@ -53,7 +53,7 @@ describe('CounterBar', () => {
         <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
       </CounterBar.Container>
     </CounterBar>);
-    const itemWrapper = wrapper.find('ItemWrapper').first();
+    const itemWrapper = wrapper.find('ItemWrapperInner').first();
     expect(itemWrapper.prop('disabled')).toBe(true);
   });
   

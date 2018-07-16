@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { HashRouter, Link } from 'react-router-dom';
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs/react';
 import { WithDocsCustom } from '@govuk-react/storybook-components';
@@ -90,12 +92,46 @@ examples.add('Zero/no scores', () =>
   </CounterBar>),
 );
 
-examples.add('Use any tag or component for the total', () =>
+examples.add('Use any HTML element string for the total', () =>
+(<CounterBar>
+  <CounterBar.Total score={2} component="aside">All counters</CounterBar.Total>
+  <CounterBar.Container>
+    <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+    <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+  </CounterBar.Container>
+</CounterBar>),
+);
+
+examples.add('Use a Link component for the total', () =>
+  (<HashRouter>
+    <CounterBar>
+      <CounterBar.Total score={2} component={Link} to="/courses?sort=name'/">All counters</CounterBar.Total>
+      <CounterBar.Container>
+        <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+        <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+      </CounterBar.Container>
+    </CounterBar>
+  </HashRouter>),
+);
+
+examples.add('Use any HTML element string for an item', () =>
   (<CounterBar>
-    <CounterBar.Total tag="aside" score={2}>All counters</CounterBar.Total>
+    <CounterBar.Total score={2}>All counters</CounterBar.Total>
     <CounterBar.Container>
-      <CounterBar.Item score={0}>Counter 1</CounterBar.Item>
+      <CounterBar.Item score={0} component="nav">Counter 1</CounterBar.Item>
       <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
     </CounterBar.Container>
   </CounterBar>),
+);
+
+examples.add('Use a Link component for an item', () =>
+  (<HashRouter>
+    <CounterBar>
+      <CounterBar.Total score={2}>All counters</CounterBar.Total>
+      <CounterBar.Container>
+        <CounterBar.Item score={0} component={Link} to="/courses?sort=name'/">Counter 1</CounterBar.Item>
+        <CounterBar.Item score={2}>Counter 2</CounterBar.Item>
+      </CounterBar.Container>
+    </CounterBar>
+  </HashRouter>),
 );
