@@ -14,39 +14,35 @@ const TableContainer = styled('table', {
   ({ flexibleColumns }) => ({ tableLayout: flexibleColumns ? 'auto' : 'fixed' }),
 );
 
-const TableHeading = styled('th', {
-  forwardProps: ['name'],
-})(({ rowHeading, columnCount }) => ({
+const cellStyles = {
   ':first-child': {
-    padding: '15px 8px 15px 0',
-    width: rowHeading && columnCount < 4 ? '25%' : undefined,
+    padding: '15px 4px 15px 0',
   },
   ':last-child': {
-    padding: '15px 0 15px 8px',
+    padding: '15px 0 15px 4px',
   },
   borderBottom: '1px solid #bfc1c3',
   display: 'table-cell',
   fontSize: '14px',
-  fontWeight: 'bold',
-  textAlign: 'left',
+  padding: '15px 4px',
   verticalAlign: 'baseline',
-}));
+};
 
 const TableData = styled('td', {
   // use `forwardProps` here as by default emotion doesn't allow setting `name` prop on a `td`
   forwardProps: ['name'],
-})({
-  ':first-child': {
-    padding: '15px 8px 15px 0',
-  },
-  ':last-child': {
-    padding: '15px 0 15px 8px',
-  },
-  borderBottom: '1px solid #bfc1c3',
-  display: 'table-cell',
-  fontSize: '14px',
-  verticalAlign: 'baseline',
-});
+})(cellStyles);
+
+const TableHeading = styled('th')(
+  cellStyles,
+  ({rowHeading, columnCount}) => (
+    {
+      fontWeight: 'bold',
+      textAlign: 'left',
+      width: rowHeading && columnCount < 4 ? '25%' : undefined,
+    }
+  ),
+);
 
 const getName = (names, row, column, isHeading = false) => {
   const colName = names[column];
