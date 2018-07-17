@@ -9,6 +9,7 @@ import { BLACK, GREY_1, GREY_3, LINK_COLOUR, RED, WHITE, YELLOW } from 'govuk-co
 const OuterWrapper = styled('div')({
   display: 'flex',
   flexWrap: 'wrap',
+  alignItems: 'flex-start',
   lineHeight: '1',
 });
 
