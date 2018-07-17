@@ -267,7 +267,7 @@ CounterBar.Counter.displayName = 'Counter';
 const sharedPropTypes = {
   active: PropTypes.bool,
   children: PropTypes.node,
-  component: PropTypes.any,
+  component: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   empty: PropTypes.bool,
   score: PropTypes.number,
   scoreColor: PropTypes.string,
