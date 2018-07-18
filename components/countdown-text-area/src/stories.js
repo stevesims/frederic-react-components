@@ -18,6 +18,6 @@ const examples = storiesOf('Forms/CountdownTextArea/Examples', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Component default', () => <ManagedCountdownTextarea />);
+stories.add('Component default', () => <ManagedCountdownTextarea maxLength={250} />);
 examples.add('With maxLength (150)', () => <ManagedCountdownTextarea noMaxLengthAttr maxLength={150} />);
 examples.add('With maxLength (100) and positiveOnly', () => <ManagedCountdownTextarea maxLength={100} positiveOnly />);
