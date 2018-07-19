@@ -47,7 +47,7 @@ const TableHeading = styled('th')(
   ),
 );
 
-const getName = (names, row, column, rowIncludesHeading = false) => {
+const getName = (names, row, column, rowIncludesHeading) => {
   return (rowIncludesHeading) ? names.values[row] : names.values[column];
 };
 
@@ -84,7 +84,7 @@ const getName = (names, row, column, rowIncludesHeading = false) => {
  * <Table titles={arrayExampleHeadings} rows={arrayExampleContent} flexibleColumns rowIncludesHeading names={horizontalTableNames} />
  * ```
  */
-const Table = ({ name, names = [], rowIncludesHeading, titles, rows, flexibleColumns, verticalAlign }) => (
+const Table = ({ name, names, rowIncludesHeading, titles, rows, flexibleColumns, verticalAlign }) => (
   <TableContainer name={name} flexibleColumns={flexibleColumns}>
     {titles &&
       titles.length && (

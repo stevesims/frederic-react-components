@@ -22,6 +22,7 @@ describe('Table', () => {
 
   it('renders as a table', () => {
     wrapper = shallow(<Component titles={titles} rows={rows} />);
+    console.log(wrapper.html());
     expect(wrapper).toHaveStyleRule('display', 'table');
   });
 
