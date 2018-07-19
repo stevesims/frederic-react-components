@@ -3,14 +3,34 @@
 exports[`Table matches snapshot 1`] = `
 <TableContainer
   flexibleColumns={true}
-  name="name"
 >
   <thead>
     <tr>
       <TableHeading
         key="0"
-        name="one"
-        verticalAlign="baseline"
+        name="heading"
+        verticalAlign="top"
+      >
+        Heading 1
+      </TableHeading>
+      <TableHeading
+        key="1"
+        name="heading"
+        verticalAlign="top"
+      >
+        Heading 2
+      </TableHeading>
+      <TableHeading
+        key="2"
+        name="heading"
+        verticalAlign="top"
+      >
+        Heading 3
+      </TableHeading>
+      <TableHeading
+        key="3"
+        name="heading"
+        verticalAlign="top"
       >
         Heading 4
       </TableHeading>
@@ -20,41 +40,86 @@ exports[`Table matches snapshot 1`] = `
     <tr
       key="0"
     >
-      <TableHeading
-        columnCount={1}
+      <TableData
         key="0"
-        name="one"
-        rowHeading={true}
-        verticalAlign="baseline"
+        verticalAlign="top"
+      >
+        Content 1-1
+      </TableData>
+      <TableData
+        key="1"
+        verticalAlign="top"
+      >
+        Content 1-2
+      </TableData>
+      <TableData
+        key="2"
+        verticalAlign="top"
+      >
+        Content 1-3
+      </TableData>
+      <TableData
+        key="3"
+        verticalAlign="top"
       >
         Content 1-4
-      </TableHeading>
+      </TableData>
     </tr>
     <tr
       key="1"
     >
-      <TableHeading
-        columnCount={1}
+      <TableData
         key="0"
-        name="two"
-        rowHeading={true}
-        verticalAlign="baseline"
+        verticalAlign="top"
+      >
+        Content 2-1
+      </TableData>
+      <TableData
+        key="1"
+        verticalAlign="top"
+      >
+        Content 2-2
+      </TableData>
+      <TableData
+        key="2"
+        verticalAlign="top"
+      >
+        Content 2-3
+      </TableData>
+      <TableData
+        key="3"
+        verticalAlign="top"
       >
         Content 2-4
-      </TableHeading>
+      </TableData>
     </tr>
     <tr
       key="2"
     >
-      <TableHeading
-        columnCount={1}
+      <TableData
         key="0"
-        name="three"
-        rowHeading={true}
-        verticalAlign="baseline"
+        verticalAlign="top"
+      >
+        Content 3-1
+      </TableData>
+      <TableData
+        key="1"
+        verticalAlign="top"
+      >
+        Content 3-2
+      </TableData>
+      <TableData
+        key="2"
+        verticalAlign="top"
+      >
+        Content 3-3
+      </TableData>
+      <TableData
+        key="3"
+        verticalAlign="top"
       >
         Content 3-4
-      </TableHeading>
+      </TableData>
     </tr>
   </tbody>
 </TableContainer>

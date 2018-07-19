@@ -14,8 +14,9 @@ describe('Table', () => {
     ['Content 2-1', 'Content 2-2', 'Content 2-3', 'Content 2-4'],
     ['Content 3-1', 'Content 3-2', 'Content 3-3', 'Content 3-4'],
   ];
-  const names = ['one', 'two', 'three', 'four'];
-  const rowIncludesHeadingNames = [['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four']];
+  
+  const verticalTableNames = { headings: 'heading', values: ['one', 'two', 'three', 'four'] };
+  const horizontalTableNames = { headings: 'heading', values: ['one', 'two', 'three'] };
 
   let wrapper;
 
@@ -32,21 +33,21 @@ describe('Table', () => {
     expect(wrapper.find('tr')).toHaveLength(4);
   });
 
+  it('names each cell according to its column', () => {
+    wrapper.setProps({name: 'name', names: verticalTableNames});
+    const th = wrapper.find('TableHeading').at(2);
+    expect(th.prop('name')).toBe('heading');
+    const td = wrapper.find('TableData').at(2);
+    expect(td.prop('name')).toBe('three');
+  });
+
   it('renders rows with header column', () => {
     wrapper.setProps({rowIncludesHeading: true});
     expect(wrapper.find('TableHeading')).toHaveLength(7);
   });
 
-  it('names each cell according to its column', () => {
-    wrapper.setProps({name: 'name', names});
-    const th = wrapper.find('TableHeading').at(2);
-    expect(th.prop('name')).toBe('three');
-    const td = wrapper.find('TableData').at(2);
-    expect(td.prop('name')).toBe('four');
-  });
-
   it('names each cell according to its row', () => {
-    wrapper.setProps({ names: rowIncludesHeadingNames });
+    wrapper.setProps({ names: horizontalTableNames });
 
     let td = wrapper.find('TableData').at(0);
     expect(td.prop('name')).toBe('one');
@@ -64,6 +65,26 @@ describe('Table', () => {
     const r = rows.map(row => row.slice(-1));
     wrapper.setProps({titles: t, rows: r});
     expect(wrapper.find('TableHeading').at(3)).toHaveStyleRule('width', '25%');
+  });
+
+  it('sets vertical-align to \'top\' prop', () => {
+    wrapper = shallow(<Component titles={titles} rows={rows} />);
+
+    wrapper.find('TableHeading').forEach((heading) => {
+      expect(heading).toHaveStyleRule('vertical-align', 'baseline');
+    });
+    wrapper.find('TableData').forEach((heading) => {
+      expect(heading).toHaveStyleRule('vertical-align', 'baseline');
+    });
+
+    wrapper.setProps({verticalAlign: 'top'});
+
+    wrapper.find('TableHeading').forEach((heading) => {
+      expect(heading).toHaveStyleRule('vertical-align', 'top');
+    });
+    wrapper.find('TableData').forEach((value) => {
+      expect(value).toHaveStyleRule('vertical-align', 'top');
+    });
   });
 
   it('sets table-layout according to flexibleColumns prop', () => {
