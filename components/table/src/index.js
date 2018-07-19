@@ -47,12 +47,8 @@ const TableHeading = styled('th')(
   ),
 );
 
-const getName = (names, row, column, isHeading = false) => {
-  const colName = names[column];
-  if (Array.isArray(colName)) {
-    return colName[(isHeading ? column : row)];
-  }
-  return colName;
+const getName = (names, row, column, rowIncludesHeading = false) => {
+  return (rowIncludesHeading) ? names.values[row] : names.values[column];
 };
 
 /**
@@ -61,7 +57,8 @@ const getName = (names, row, column, isHeading = false) => {
  *
  * Simple
  * ```jsx
- * <Table titles={arrayExampleHeadings} rows={arrayExampleContent} names={exampleNames} />
+ * const verticalTableNames = { headings: 'heading', values: ['one', 'two', 'three', 'four'] };
+ * <Table titles={arrayExampleHeadings} rows={arrayExampleContent} names={verticalTableNames} />
  * ```
  * 
  * rowIncludesHeading, vertical align override
@@ -71,17 +68,20 @@ const getName = (names, row, column, isHeading = false) => {
  * 
  * rowIncludesHeading, no titles
  * ```jsx
- * <Table rows={arrayExampleContent} rowIncludesHeading names={exampleNames} />
+ * const horizontalTableNames = { headings: 'heading', values: ['one', 'two', 'three'] };
+ * <Table rows={arrayExampleContent} rowIncludesHeading names={horizontalTableNames} />
  * ```
  * 
  * rowIncludesHeading, no titles, small single row
  * ```jsx
- * <Table rows={[['title', 'value']]} rowIncludesHeading />
+ * const horizontalTableNames = { headings: 'heading', values: ['one', 'two', 'three'] };
+ * <Table rows={[['title', 'value']]} rowIncludesHeading names={horizontalTableNames} />
  * ```
  * 
  * rowIncludesHeading, with flexible columns
  * ```jsx
- * <Table titles={arrayExampleHeadings} rows={arrayExampleContent} flexibleColumns rowIncludesHeading />
+ * const horizontalTableNames = { headings: 'heading', values: ['one', 'two', 'three'] };
+ * <Table titles={arrayExampleHeadings} rows={arrayExampleContent} flexibleColumns rowIncludesHeading names={horizontalTableNames} />
  * ```
  */
 const Table = ({ name, names = [], rowIncludesHeading, titles, rows, flexibleColumns, verticalAlign }) => (
@@ -93,7 +93,7 @@ const Table = ({ name, names = [], rowIncludesHeading, titles, rows, flexibleCol
           {titles.map((title, index) => (
             // disable false-positive rule - this is an access into an array of strings, not object access
             // eslint-disable-next-line security/detect-object-injection
-            <TableHeading key={title.key || index} verticalAlign={verticalAlign} name={getName(names, 0, index, true)}>
+            <TableHeading key={title.key || index} verticalAlign={verticalAlign} name={names.headings}>
               {title}
             </TableHeading>
           ))}
@@ -106,13 +106,13 @@ const Table = ({ name, names = [], rowIncludesHeading, titles, rows, flexibleCol
           {row.map(
             (item, itemIndex) =>
               rowIncludesHeading && itemIndex === 0 ? (
-                <TableHeading rowHeading columnCount={row.length} key={item.key || itemIndex} verticalAlign={verticalAlign} name={getName(names, index, itemIndex)}>
+                <TableHeading rowHeading columnCount={row.length} key={item.key || itemIndex} verticalAlign={verticalAlign} name={names.headings}>
                   {item}
                 </TableHeading>
               ) : (
                 // disable false-positive rule - this is an access into an array of strings, not object access
                 // eslint-disable-next-line security/detect-object-injection
-                <TableData key={item.key || itemIndex} verticalAlign={verticalAlign} name={getName(names, index, itemIndex)}>
+                <TableData key={item.key || itemIndex} verticalAlign={verticalAlign} name={getName(names, index, itemIndex, rowIncludesHeading)}>
                   {item}
                 </TableData>
               ),
@@ -126,10 +126,10 @@ const Table = ({ name, names = [], rowIncludesHeading, titles, rows, flexibleCol
 Table.propTypes = {
   flexibleColumns: PropTypes.bool,
   name: PropTypes.string,
-  names: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.string),
-    PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
-  ]),
+  names: PropTypes.shape({
+    headings: PropTypes.string,
+    values: PropTypes.arrayOf(PropTypes.string),
+  }),
   rowIncludesHeading: PropTypes.bool,
   rows: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.node]))).isRequired,
   titles: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.node])),
@@ -137,6 +137,12 @@ Table.propTypes = {
 };
 
 Table.defaultProps = {
+  flexibleColumns: false,
+  names: {
+    headings: 'heading',
+    values: [],
+  },
+  rowIncludesHeading: false,
   verticalAlign: 'baseline',
 };
 
