@@ -11,7 +11,8 @@ Table
 
 Simple
 ```jsx
-<Table titles={arrayExampleHeadings} rows={arrayExampleContent} names={exampleNames} />
+const verticalTableNames = { headings: 'heading', values: ['one', 'two', 'three', 'four'] };
+<Table titles={arrayExampleHeadings} rows={arrayExampleContent} names={verticalTableNames} />
 ```
 
 rowIncludesHeading, vertical align override
@@ -21,26 +22,29 @@ rowIncludesHeading, vertical align override
 
 rowIncludesHeading, no titles
 ```jsx
-<Table rows={arrayExampleContent} rowIncludesHeading names={exampleNames} />
+const horizontalTableNames = { headings: 'heading', values: ['one', 'two', 'three'] };
+<Table rows={arrayExampleContent} rowIncludesHeading names={horizontalTableNames} />
 ```
 
 rowIncludesHeading, no titles, small single row
 ```jsx
-<Table rows={[['title', 'value']]} rowIncludesHeading />
+const horizontalTableNames = { headings: 'heading', values: ['one', 'two', 'three'] };
+<Table rows={[['title', 'value']]} rowIncludesHeading names={horizontalTableNames} />
 ```
 
 rowIncludesHeading, with flexible columns
 ```jsx
-<Table titles={arrayExampleHeadings} rows={arrayExampleContent} flexibleColumns rowIncludesHeading />
+const horizontalTableNames = { headings: 'heading', values: ['one', 'two', 'three'] };
+<Table titles={arrayExampleHeadings} rows={arrayExampleContent} flexibleColumns rowIncludesHeading names={horizontalTableNames} />
 ```
 
 ### Properties
 Prop | Required | Default | Type | Description
 :--- | :------- | :------ | :--- | :----------
- `flexibleColumns` |  | `````` | bool | 
+ `flexibleColumns` |  | ```false``` | bool | 
  `name` |  | `````` | string | 
- `names` |  | ```[]``` | union(arrayOf|arrayOf) | 
- `rowIncludesHeading` |  | `````` | bool | 
+ `names` |  | ```{   headings: 'heading',   values: [], }``` | shape[object Object] | 
+ `rowIncludesHeading` |  | ```false``` | bool | 
  `rows` | true | `````` | arrayOf[object Object] | 
  `titles` |  | `````` | arrayOf[object Object] | 
  `verticalAlign` |  | ```'baseline'``` | string | 
