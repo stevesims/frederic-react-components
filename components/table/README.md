@@ -14,9 +14,9 @@ Simple
 <Table titles={arrayExampleHeadings} rows={arrayExampleContent} names={exampleNames} />
 ```
 
-rowIncludesHeading
+rowIncludesHeading, vertical align override
 ```jsx
-<Table titles={arrayExampleHeadings} rows={arrayExampleContent} rowIncludesHeading />
+<Table verticalAlign="top" titles={arrayExampleHeadings} rows={arrayExampleContent} rowIncludesHeading />
 ```
 
 rowIncludesHeading, no titles
@@ -39,9 +39,10 @@ Prop | Required | Default | Type | Description
 :--- | :------- | :------ | :--- | :----------
  `flexibleColumns` |  | `````` | bool | 
  `name` |  | `````` | string | 
- `names` |  | ```[]``` | arrayOf[object Object] | 
+ `names` |  | ```[]``` | union(arrayOf|arrayOf) | 
  `rowIncludesHeading` |  | `````` | bool | 
  `rows` | true | `````` | arrayOf[object Object] | 
  `titles` |  | `````` | arrayOf[object Object] | 
+ `verticalAlign` |  | ```'baseline'``` | string | 
 
 

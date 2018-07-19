@@ -503,7 +503,7 @@ import { HashRouter, Link } from 'react-router-dom';
 
 <HashRouter>
   <CounterBar>
-    <CounterBar.Total score={2}>All counters</CounterBar.Total>
+    <CounterBar.Total score={15}>All counters</CounterBar.Total>
     <CounterBar.Counters>
       <CounterBar.Counter score={1} component={Link} to="/courses/1/">Counter 1</CounterBar.Counter>
       <CounterBar.Counter score={2}>Counter 2</CounterBar.Counter>
@@ -878,9 +878,9 @@ Simple
 <Table titles={arrayExampleHeadings} rows={arrayExampleContent} names={exampleNames} />
 ```
 
-rowIncludesHeading
+rowIncludesHeading, vertical align override
 ```jsx
-<Table titles={arrayExampleHeadings} rows={arrayExampleContent} rowIncludesHeading />
+<Table verticalAlign="top" titles={arrayExampleHeadings} rows={arrayExampleContent} rowIncludesHeading />
 ```
 
 rowIncludesHeading, no titles
@@ -903,10 +903,11 @@ Prop | Required | Default | Type | Description
 :--- | :------- | :------ | :--- | :----------
  `flexibleColumns` |  | `````` | bool | 
  `name` |  | `````` | string | 
- `names` |  | ```[]``` | arrayOf[object Object] | 
+ `names` |  | ```[]``` | union(arrayOf|arrayOf) | 
  `rowIncludesHeading` |  | `````` | bool | 
  `rows` | true | `````` | arrayOf[object Object] | 
  `titles` |  | `````` | arrayOf[object Object] | 
+ `verticalAlign` |  | ```'baseline'``` | string | 
 
 
 TitleResultCount
