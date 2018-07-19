@@ -140,7 +140,7 @@ exports[`CounterBar matches snapshot 1`] = `
             >
               <TotalWrapper
                 disabled={false}
-                empty={0}
+                empty={false}
               >
                 <a
                   className="emotion-6 emotion-7"
@@ -210,21 +210,21 @@ exports[`CounterBar matches snapshot 1`] = `
                 >
                   <CounterWrapper
                     disabled={false}
-                    empty={0}
+                    empty={false}
                     replace={false}
                     to="/courses/1/"
                   >
                     <Link
                       className="emotion-14 emotion-7"
                       disabled={false}
-                      empty={0}
+                      empty={false}
                       replace={false}
                       to="/courses/1/"
                     >
                       <a
                         className="emotion-14 emotion-7"
                         disabled={false}
-                        empty={0}
+                        empty={false}
                         href="#/courses/1/"
                         onClick={[Function]}
                       >
@@ -287,7 +287,7 @@ exports[`CounterBar matches snapshot 1`] = `
                 >
                   <CounterWrapper
                     disabled={false}
-                    empty={0}
+                    empty={false}
                   >
                     <a
                       className="emotion-14 emotion-7"
@@ -351,7 +351,7 @@ exports[`CounterBar matches snapshot 1`] = `
                 >
                   <CounterWrapper
                     disabled={false}
-                    empty={0}
+                    empty={false}
                   >
                     <a
                       className="emotion-14 emotion-7"
@@ -415,7 +415,7 @@ exports[`CounterBar matches snapshot 1`] = `
                 >
                   <CounterWrapper
                     disabled={false}
-                    empty={0}
+                    empty={false}
                   >
                     <a
                       className="emotion-14 emotion-7"
@@ -479,7 +479,7 @@ exports[`CounterBar matches snapshot 1`] = `
                 >
                   <CounterWrapper
                     disabled={false}
-                    empty={0}
+                    empty={false}
                   >
                     <a
                       className="emotion-14 emotion-7"
