@@ -10,6 +10,7 @@ exports[`Table matches snapshot 1`] = `
       <TableHeading
         key="0"
         name="one"
+        verticalAlign="baseline"
       >
         Heading 4
       </TableHeading>
@@ -24,6 +25,7 @@ exports[`Table matches snapshot 1`] = `
         key="0"
         name="one"
         rowHeading={true}
+        verticalAlign="baseline"
       >
         Content 1-4
       </TableHeading>
@@ -36,6 +38,7 @@ exports[`Table matches snapshot 1`] = `
         key="0"
         name="two"
         rowHeading={true}
+        verticalAlign="baseline"
       >
         Content 2-4
       </TableHeading>
@@ -48,6 +51,7 @@ exports[`Table matches snapshot 1`] = `
         key="0"
         name="three"
         rowHeading={true}
+        verticalAlign="baseline"
       >
         Content 3-4
       </TableHeading>

@@ -106,7 +106,7 @@ const Table = ({ name, names = [], rowIncludesHeading, titles, rows, flexibleCol
           {row.map(
             (item, itemIndex) =>
               rowIncludesHeading && itemIndex === 0 ? (
-                <TableHeading rowHeadingcolumnCount={row.length} key={item.key || itemIndex} verticalAlign={verticalAlign} name={getName(names, index, itemIndex)}>
+                <TableHeading rowHeading columnCount={row.length} key={item.key || itemIndex} verticalAlign={verticalAlign} name={getName(names, index, itemIndex)}>
                   {item}
                 </TableHeading>
               ) : (
