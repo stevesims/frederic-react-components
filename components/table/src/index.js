@@ -32,12 +32,12 @@ const TableData = styled('td', {
   forwardProps: ['name'],
 })(
   cellStyles,
-  (verticalAlign) => (verticalAlign), 
+  ({ verticalAlign }) => ({ verticalAlign }), 
 );
 
 const TableHeading = styled('th')(
   cellStyles,
-  (verticalAlign) => (verticalAlign), 
+  ({ verticalAlign }) => ({ verticalAlign }), 
   ({rowHeading, columnCount}) => (
     {
       fontWeight: 'bold',
