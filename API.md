@@ -879,9 +879,9 @@ const verticalTableNames = { headings: 'heading', values: ['one', 'two', 'three'
 <Table titles={arrayExampleHeadings} rows={arrayExampleContent} names={verticalTableNames} />
 ```
 
-rowIncludesHeading, vertical align override
+rowIncludesHeading
 ```jsx
-<Table verticalAlign="top" titles={arrayExampleHeadings} rows={arrayExampleContent} rowIncludesHeading />
+<Table titles={arrayExampleHeadings} rows={arrayExampleContent} rowIncludesHeading />
 ```
 
 rowIncludesHeading, no titles
@@ -911,7 +911,6 @@ Prop | Required | Default | Type | Description
  `rowIncludesHeading` |  | ```false``` | bool | 
  `rows` | true | `````` | arrayOf[object Object] | 
  `titles` |  | `````` | arrayOf[object Object] | 
- `verticalAlign` |  | ```'baseline'``` | string | 
 
 
 TitleResultCount

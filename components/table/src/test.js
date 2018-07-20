@@ -67,26 +67,6 @@ describe('Table', () => {
     expect(wrapper.find('TableHeading').at(3)).toHaveStyleRule('width', '25%');
   });
 
-  it('sets vertical-align to \'top\' prop', () => {
-    wrapper = shallow(<Component titles={titles} rows={rows} />);
-
-    wrapper.find('TableHeading').forEach((heading) => {
-      expect(heading).toHaveStyleRule('vertical-align', 'baseline');
-    });
-    wrapper.find('TableData').forEach((heading) => {
-      expect(heading).toHaveStyleRule('vertical-align', 'baseline');
-    });
-
-    wrapper.setProps({verticalAlign: 'top'});
-
-    wrapper.find('TableHeading').forEach((heading) => {
-      expect(heading).toHaveStyleRule('vertical-align', 'top');
-    });
-    wrapper.find('TableData').forEach((value) => {
-      expect(value).toHaveStyleRule('vertical-align', 'top');
-    });
-  });
-
   it('sets table-layout according to flexibleColumns prop', () => {
     expect(wrapper).toHaveStyleRule('table-layout', 'fixed');
     wrapper.setProps({flexibleColumns: true});

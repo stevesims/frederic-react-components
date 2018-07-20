@@ -27,7 +27,7 @@ stories.add('Component default', () =>
 );
 
 examples.add('rowIncludesHeading', () =>
-  <Table verticalAlign="top" titles={arrayExampleHeadings} rows={arrayExampleContent} rowIncludesHeading names={horizontalTableNames} />,
+  <Table titles={arrayExampleHeadings} rows={arrayExampleContent} rowIncludesHeading names={horizontalTableNames} />,
 );
 
 examples.add('rowIncludesHeading, no titles', () =>

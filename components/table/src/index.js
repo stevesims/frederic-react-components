@@ -25,19 +25,16 @@ const cellStyles = {
   display: 'table-cell',
   fontSize: '14px',
   padding: '15px 4px',
+  verticalAlign: 'top',
 };
 
 const TableData = styled('td', {
   // use `forwardProps` here as by default emotion doesn't allow setting `name` prop on a `td`
   forwardProps: ['name'],
-})(
-  cellStyles,
-  ({ verticalAlign }) => ({ verticalAlign }), 
-);
+})(cellStyles);
 
 const TableHeading = styled('th')(
   cellStyles,
-  ({ verticalAlign }) => ({ verticalAlign }), 
   ({rowHeading, columnCount}) => (
     {
       fontWeight: 'bold',
@@ -61,9 +58,9 @@ const getName = (names, row, column, rowIncludesHeading) => {
  * <Table titles={arrayExampleHeadings} rows={arrayExampleContent} names={verticalTableNames} />
  * ```
  * 
- * rowIncludesHeading, vertical align override
+ * rowIncludesHeading
  * ```jsx
- * <Table verticalAlign="top" titles={arrayExampleHeadings} rows={arrayExampleContent} rowIncludesHeading />
+ * <Table titles={arrayExampleHeadings} rows={arrayExampleContent} rowIncludesHeading />
  * ```
  * 
  * rowIncludesHeading, no titles
@@ -84,7 +81,7 @@ const getName = (names, row, column, rowIncludesHeading) => {
  * <Table titles={arrayExampleHeadings} rows={arrayExampleContent} flexibleColumns rowIncludesHeading names={horizontalTableNames} />
  * ```
  */
-const Table = ({ name, names, rowIncludesHeading, titles, rows, flexibleColumns, verticalAlign }) => (
+const Table = ({ name, names, rowIncludesHeading, titles, rows, flexibleColumns }) => (
   <TableContainer name={name} flexibleColumns={flexibleColumns}>
     {titles &&
       titles.length && (
@@ -93,7 +90,7 @@ const Table = ({ name, names, rowIncludesHeading, titles, rows, flexibleColumns,
           {titles.map((title, index) => (
             // disable false-positive rule - this is an access into an array of strings, not object access
             // eslint-disable-next-line security/detect-object-injection
-            <TableHeading key={title.key || index} verticalAlign={verticalAlign} name={names.headings}>
+            <TableHeading key={title.key || index} name={names.headings}>
               {title}
             </TableHeading>
           ))}
@@ -106,13 +103,13 @@ const Table = ({ name, names, rowIncludesHeading, titles, rows, flexibleColumns,
           {row.map(
             (item, itemIndex) =>
               rowIncludesHeading && itemIndex === 0 ? (
-                <TableHeading rowHeading columnCount={row.length} key={item.key || itemIndex} verticalAlign={verticalAlign} name={names.headings}>
+                <TableHeading rowHeading columnCount={row.length} key={item.key || itemIndex} name={names.headings}>
                   {item}
                 </TableHeading>
               ) : (
                 // disable false-positive rule - this is an access into an array of strings, not object access
                 // eslint-disable-next-line security/detect-object-injection
-                <TableData key={item.key || itemIndex} verticalAlign={verticalAlign} name={getName(names, index, itemIndex, rowIncludesHeading)}>
+                <TableData key={item.key || itemIndex} name={getName(names, index, itemIndex, rowIncludesHeading)}>
                   {item}
                 </TableData>
               ),
@@ -133,7 +130,6 @@ Table.propTypes = {
   rowIncludesHeading: PropTypes.bool,
   rows: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.node]))).isRequired,
   titles: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.node])),
-  verticalAlign: PropTypes.string,
 };
 
 Table.defaultProps = {
@@ -143,7 +139,6 @@ Table.defaultProps = {
     values: [],
   },
   rowIncludesHeading: false,
-  verticalAlign: 'baseline',
 };
 
 export default Table;
