@@ -44,8 +44,19 @@ const TableHeading = styled('th')(
   ),
 );
 
-const getName = (names, row, column, rowIncludesHeading) => {
-  return (rowIncludesHeading) ? names.values[row] : names.values[column];
+const getName = (names, row, column, nameByRow) => {
+  if (nameByRow) {
+    return Array.isArray(names[row]) ? names[row][column] : names[row];
+  } 
+  return Array.isArray(names[column]) ? names[column][row] : names[column];
+};
+
+const calculateIndex = (titles, nameByRow, index) => {
+  if (nameByRow) {
+    // Only if there are headings at the top, we need to increment the row
+    return (titles && titles.length) ? (index + 1) : index;
+  }
+  return (index + 1);
 };
 
 /**
@@ -81,7 +92,7 @@ const getName = (names, row, column, rowIncludesHeading) => {
  * <Table titles={arrayExampleHeadings} rows={arrayExampleContent} flexibleColumns rowIncludesHeading names={horizontalTableNames} />
  * ```
  */
-const Table = ({ name, names, rowIncludesHeading, titles, rows, flexibleColumns }) => (
+const Table = ({ name, names, rowIncludesHeading, nameByRow, titles, rows, flexibleColumns }) => (
   <TableContainer name={name} flexibleColumns={flexibleColumns}>
     {titles &&
       titles.length && (
@@ -90,7 +101,7 @@ const Table = ({ name, names, rowIncludesHeading, titles, rows, flexibleColumns 
           {titles.map((title, index) => (
             // disable false-positive rule - this is an access into an array of strings, not object access
             // eslint-disable-next-line security/detect-object-injection
-            <TableHeading key={title.key || index} name={names.headings}>
+            <TableHeading key={title.key || index} name={getName(names, 0, index, nameByRow)}>
               {title}
             </TableHeading>
           ))}
@@ -103,13 +114,13 @@ const Table = ({ name, names, rowIncludesHeading, titles, rows, flexibleColumns 
           {row.map(
             (item, itemIndex) =>
               rowIncludesHeading && itemIndex === 0 ? (
-                <TableHeading rowHeading columnCount={row.length} key={item.key || itemIndex} name={names.headings}>
+                <TableHeading rowHeading columnCount={row.length} key={item.key || itemIndex} name={getName(names, calculateIndex(titles, nameByRow, index), itemIndex, nameByRow)}>
                   {item}
                 </TableHeading>
               ) : (
                 // disable false-positive rule - this is an access into an array of strings, not object access
                 // eslint-disable-next-line security/detect-object-injection
-                <TableData key={item.key || itemIndex} name={getName(names, index, itemIndex, rowIncludesHeading)}>
+                <TableData key={item.key || itemIndex} name={getName(names, calculateIndex(titles, nameByRow, index), itemIndex, nameByRow)}>
                   {item}
                 </TableData>
               ),
@@ -123,10 +134,13 @@ const Table = ({ name, names, rowIncludesHeading, titles, rows, flexibleColumns 
 Table.propTypes = {
   flexibleColumns: PropTypes.bool,
   name: PropTypes.string,
-  names: PropTypes.shape({
-    headings: PropTypes.string,
-    values: PropTypes.arrayOf(PropTypes.string),
-  }),
+  names: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+    ]),
+  ),
+  nameByRow: PropTypes.bool,
   rowIncludesHeading: PropTypes.bool,
   rows: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.node]))).isRequired,
   titles: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.node])),
@@ -134,10 +148,8 @@ Table.propTypes = {
 
 Table.defaultProps = {
   flexibleColumns: false,
-  names: {
-    headings: 'heading',
-    values: [],
-  },
+  nameByRow: false,
+  names: [],
   rowIncludesHeading: false,
 };
 
