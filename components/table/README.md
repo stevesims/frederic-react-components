@@ -43,7 +43,8 @@ Prop | Required | Default | Type | Description
 :--- | :------- | :------ | :--- | :----------
  `flexibleColumns` |  | ```false``` | bool | 
  `name` |  | `````` | string | 
- `names` |  | ```{   headings: 'heading',   values: [], }``` | shape[object Object] | 
+ `nameByRow` |  | ```false``` | bool | 
+ `names` |  | ```[]``` | arrayOf[object Object] | 
  `rowIncludesHeading` |  | ```false``` | bool | 
  `rows` | true | `````` | arrayOf[object Object] | 
  `titles` |  | `````` | arrayOf[object Object] | 
