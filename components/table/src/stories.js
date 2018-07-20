@@ -13,8 +13,9 @@ const arrayExampleContent = [
   ['Content 3-1', 'Content 3-2', 'Content 3-3', 'Content 3-4'],
 ];
 
-const verticalTableNames = { headings: 'heading', values: ['one', 'two', 'three', 'four'] };
-const horizontalTableNames = { headings: 'heading', values: ['one', 'two', 'three'] };
+const columnTableNames = ['one', 'two', 'three', ['i', 'am', 'named', 'individually']];
+const rowTableNamesWithTitles = ['heading', 'one', ['i', 'am', 'named', 'individually'], 'three'];
+const rowTableNames = ['one', ['i', 'am', 'named', 'individually'], 'three'];
 
 const stories = storiesOf('Tables/Table', module);
 const examples = storiesOf('Tables/Table/Examples', module);
@@ -23,21 +24,21 @@ stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
 stories.add('Component default', () =>
-  <Table titles={arrayExampleHeadings} rows={arrayExampleContent} names={verticalTableNames} />,
+  <Table titles={arrayExampleHeadings} rows={arrayExampleContent} names={columnTableNames} />,
 );
 
-examples.add('rowIncludesHeading', () =>
-  <Table titles={arrayExampleHeadings} rows={arrayExampleContent} rowIncludesHeading names={horizontalTableNames} />,
+examples.add('rowIncludesHeading, with titles', () =>
+  <Table titles={arrayExampleHeadings} rows={arrayExampleContent} rowIncludesHeading nameByRow names={rowTableNamesWithTitles} />,
 );
 
 examples.add('rowIncludesHeading, no titles', () =>
-  <Table rows={arrayExampleContent} rowIncludesHeading names={horizontalTableNames} />,
+  <Table rows={arrayExampleContent} rowIncludesHeading nameByRow names={rowTableNames} />,
 );
 
 examples.add('rowIncludesHeading, no titles, small single row', () =>
-  <Table rows={[['title', 'value']]} rowIncludesHeading names={horizontalTableNames} />,
+  <Table rows={[['title', 'value']]} rowIncludesHeading nameByRow names={rowTableNames} />,
 );
 
 examples.add('rowIncludesHeading, with flexible columns', () =>
-  <Table titles={arrayExampleHeadings} rows={arrayExampleContent} flexibleColumns rowIncludesHeading names={horizontalTableNames} />,
+  <Table titles={arrayExampleHeadings} rows={arrayExampleContent} flexibleColumns rowIncludesHeading nameByRow names={rowTableNames} />,
 );
