@@ -15,8 +15,9 @@ describe('Table', () => {
     ['Content 3-1', 'Content 3-2', 'Content 3-3', 'Content 3-4'],
   ];
   
-  const verticalTableNames = { headings: 'heading', values: ['one', 'two', 'three', 'four'] };
-  const horizontalTableNames = { headings: 'heading', values: ['one', 'two', 'three'] };
+  const columnTableNames = ['one', 'two', 'three', ['i', 'am', 'named', 'individually']];
+  const rowTableNamesWithTitles = ['heading', 'one', ['i', 'am', 'named', 'individually'], 'three'];
+  const rowTableNames = ['one', ['i', 'am', 'named', 'individually'], 'three'];
 
   let wrapper;
 
@@ -34,26 +35,72 @@ describe('Table', () => {
   });
 
   it('names each cell according to its column', () => {
-    wrapper.setProps({name: 'name', names: verticalTableNames});
+    wrapper.setProps({name: 'name', names: columnTableNames});
     const th = wrapper.find('TableHeading').at(2);
-    expect(th.prop('name')).toBe('heading');
+    expect(th.prop('name')).toBe('three');
     const td = wrapper.find('TableData').at(2);
     expect(td.prop('name')).toBe('three');
   });
 
   it('renders rows with header column', () => {
-    wrapper.setProps({rowIncludesHeading: true});
+    wrapper.setProps({rowIncludesHeading: true, nameByRow: true});
     expect(wrapper.find('TableHeading')).toHaveLength(7);
   });
 
-  it('names each cell according to its row', () => {
-    wrapper.setProps({ names: horizontalTableNames });
+  it('names each cell according to its row, no titles', () => {
+    wrapper.setProps({ titles: undefined, names: rowTableNames });
+    
+    let th = wrapper.find('TableHeading').at(0);
+    expect(th.prop('name')).toBe('one');
 
     let td = wrapper.find('TableData').at(0);
     expect(td.prop('name')).toBe('one');
 
+    th = wrapper.find('TableHeading').at(1);
+    expect(th.prop('name')).toBe('i');
+
+    td = wrapper.find('TableData').at(3);
+    expect(td.prop('name')).toBe('am');
+
     td = wrapper.find('TableData').at(4);
-    expect(td.prop('name')).toBe('two');
+    expect(td.prop('name')).toBe('named');
+
+    td = wrapper.find('TableData').at(5);
+    expect(td.prop('name')).toBe('individually');
+
+    th = wrapper.find('TableHeading').at(2);
+    expect(th.prop('name')).toBe('three');
+
+    td = wrapper.find('TableData').at(8);
+    expect(td.prop('name')).toBe('three');
+  });
+
+  it('names each cell according to its row, with titles', () => {
+    wrapper.setProps({ titles, names: rowTableNamesWithTitles });
+
+    let th = wrapper.find('TableHeading').at(3);
+    expect(th.prop('name')).toBe('heading');
+
+    th = wrapper.find('TableHeading').at(4);
+    expect(th.prop('name')).toBe('one');
+
+    let td = wrapper.find('TableData').at(0);
+    expect(td.prop('name')).toBe('one');
+
+    th = wrapper.find('TableHeading').at(5);
+    expect(th.prop('name')).toBe('i');
+
+    td = wrapper.find('TableData').at(3);
+    expect(td.prop('name')).toBe('am');
+
+    td = wrapper.find('TableData').at(4);
+    expect(td.prop('name')).toBe('named');
+
+    td = wrapper.find('TableData').at(5);
+    expect(td.prop('name')).toBe('individually');
+
+    th = wrapper.find('TableHeading').at(6);
+    expect(th.prop('name')).toBe('three');
 
     td = wrapper.find('TableData').at(8);
     expect(td.prop('name')).toBe('three');
