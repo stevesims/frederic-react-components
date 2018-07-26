@@ -13,7 +13,9 @@ const OuterWrapper = styled('div')({
   lineHeight: '1',
 });
 
-const TotalWrapper = styled('a')(
+const TotalWrapper = styled('a', {
+  shouldForwardProp: prop => ['active', 'empty'].indexOf(prop) === -1,
+})(
   {
     ':focus': {
       outline: `solid 4px ${YELLOW}`,
@@ -39,7 +41,9 @@ const CountersWrapper = styled('div')({
   flexWrap: 'wrap',
 });
 
-const CounterWrapper = styled(TotalWrapper)(
+const CounterWrapper = styled(TotalWrapper, {
+  shouldForwardProp: prop => ['active', 'empty'].indexOf(prop) === -1,
+})(
   {
     color: WHITE,
   },
@@ -219,23 +223,6 @@ const CounterWrapper = styled(TotalWrapper)(
  *   </CounterBar>
  * </HashRouter>
  * ```
- * Use an active Link component for a counter
- * ```jsx
- * import { HashRouter, Link } from 'react-router-dom';
- * 
- * <HashRouter>
- *   <CounterBar>
- *     <CounterBar.Total score={15}>All counters</CounterBar.Total>
- *     <CounterBar.Counters>
- *       <CounterBar.Counter score={1} component={Link} to="/courses/1/" active>Counter *1</CounterBar.Counter>
- *       <CounterBar.Counter score={2}>Counter 2</CounterBar.Counter>
- *       <CounterBar.Counter score={3}>Counter 3</CounterBar.Counter>
- *       <CounterBar.Counter score={4}>Counter 4</CounterBar.Counter>
- *       <CounterBar.Counter score={5}>Counter 5</CounterBar.Counter>
- *     </CounterBar.Counters>
- *   </CounterBar>
- * </HashRouter>
- * 
  */
 const CounterBar = props => <OuterWrapper {...props}/>;
 
@@ -244,7 +231,6 @@ CounterBar.propTypes = {
 };
 
 CounterBar.Item = ({
-  active,
   children,
   component,
   score,
@@ -257,7 +243,7 @@ CounterBar.Item = ({
 }) => {
   const Wrapper = wrapper.withComponent(component);
   return (
-    <Wrapper active={active ? 1 : 0} disabled={!score} empty={ !children || children.length === 0 ? 1 : 0 } {...props}>
+    <Wrapper disabled={!score} empty={!children || children.length === 0} {...props}>
       <ResultCountTitle
         count={score}
         countColor={score > 0 ? scoreColor : scoreDisabledColor}
