@@ -76,7 +76,7 @@ exports[`CounterBar matches snapshot 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-14 {
+.emotion-24 {
   border: 0px;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -87,6 +87,25 @@ exports[`CounterBar matches snapshot 1`] = `
   background: #ffffff;
   color: #ffffff;
   background: #6f777b;
+}
+
+.emotion-24:focus {
+  outline: solid 4px #ffbf47;
+}
+
+.emotion-14 {
+  border: 0px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 6px 6px 0;
+  outline: none;
+  padding: 0 8px 0 0;
+  background: #005ea5;
+  color: #ffffff;
+  outline: 2px solid #005ea5;
+  color: #ffffff;
+  background: #005ea5;
 }
 
 .emotion-14:focus {
@@ -139,6 +158,7 @@ exports[`CounterBar matches snapshot 1`] = `
               wrapper={[Function]}
             >
               <TotalWrapper
+                active={0}
                 disabled={false}
                 empty={0}
               >
@@ -190,6 +210,7 @@ exports[`CounterBar matches snapshot 1`] = `
               className="emotion-50 emotion-51"
             >
               <Counter
+                active={true}
                 component={[Function]}
                 score={1}
                 scoreBackgroundColor="#b10e1e"
@@ -199,6 +220,7 @@ exports[`CounterBar matches snapshot 1`] = `
                 to="/courses/1/"
               >
                 <Item
+                  active={true}
                   component={[Function]}
                   score={1}
                   scoreBackgroundColor="#b10e1e"
@@ -209,12 +231,14 @@ exports[`CounterBar matches snapshot 1`] = `
                   wrapper={[Function]}
                 >
                   <CounterWrapper
+                    active={1}
                     disabled={false}
                     empty={0}
                     replace={false}
                     to="/courses/1/"
                   >
                     <Link
+                      active={1}
                       className="emotion-14 emotion-7"
                       disabled={false}
                       empty={0}
@@ -222,6 +246,7 @@ exports[`CounterBar matches snapshot 1`] = `
                       to="/courses/1/"
                     >
                       <a
+                        active={1}
                         className="emotion-14 emotion-7"
                         disabled={false}
                         empty={0}
@@ -286,11 +311,12 @@ exports[`CounterBar matches snapshot 1`] = `
                   wrapper={[Function]}
                 >
                   <CounterWrapper
+                    active={0}
                     disabled={false}
                     empty={0}
                   >
                     <a
-                      className="emotion-14 emotion-7"
+                      className="emotion-24 emotion-7"
                       disabled={false}
                     >
                       <ResultCountTitle
@@ -350,11 +376,12 @@ exports[`CounterBar matches snapshot 1`] = `
                   wrapper={[Function]}
                 >
                   <CounterWrapper
+                    active={0}
                     disabled={false}
                     empty={0}
                   >
                     <a
-                      className="emotion-14 emotion-7"
+                      className="emotion-24 emotion-7"
                       disabled={false}
                     >
                       <ResultCountTitle
@@ -414,11 +441,12 @@ exports[`CounterBar matches snapshot 1`] = `
                   wrapper={[Function]}
                 >
                   <CounterWrapper
+                    active={0}
                     disabled={false}
                     empty={0}
                   >
                     <a
-                      className="emotion-14 emotion-7"
+                      className="emotion-24 emotion-7"
                       disabled={false}
                     >
                       <ResultCountTitle
@@ -478,11 +506,12 @@ exports[`CounterBar matches snapshot 1`] = `
                   wrapper={[Function]}
                 >
                   <CounterWrapper
+                    active={0}
                     disabled={false}
                     empty={0}
                   >
                     <a
-                      className="emotion-14 emotion-7"
+                      className="emotion-24 emotion-7"
                       disabled={false}
                     >
                       <ResultCountTitle

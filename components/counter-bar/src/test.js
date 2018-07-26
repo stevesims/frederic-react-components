@@ -155,6 +155,23 @@ describe('CounterBar', () => {
     expect(counterWrapper.prop('component')).toBe(Link);
   });
 
+  it('accepts an active component for a counter', () => {
+    wrapper = mount(<HashRouter>
+      <CounterBar>
+        <CounterBar.Total score={2}>All counters</CounterBar.Total>
+        <CounterBar.Counters>
+          <CounterBar.Counter score={1} component={Link} to="/courses/1/" active>Counter 1</CounterBar.Counter>
+          <CounterBar.Counter score={2}>Counter 2</CounterBar.Counter>
+          <CounterBar.Counter score={3}>Counter 3</CounterBar.Counter>
+          <CounterBar.Counter score={4}>Counter 4</CounterBar.Counter>
+          <CounterBar.Counter score={5}>Counter 5</CounterBar.Counter>
+        </CounterBar.Counters>
+      </CounterBar>
+    </HashRouter>);
+    const counterWrapper = wrapper.find('Counter').first();
+    expect(counterWrapper.prop('component')).toBe(Link);
+  });
+
   it('matches snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
