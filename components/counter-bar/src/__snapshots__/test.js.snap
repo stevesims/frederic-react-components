@@ -34,16 +34,6 @@ exports[`CounterBar matches snapshot 1`] = `
   color: #005ea5;
 }
 
-.emotion-6:focus {
-  color: #005ea5;
-  outline: solid 4px #ffbf47;
-}
-
-.emotion-6:hover,
-.emotion-6:active {
-  color: #005ea5;
-}
-
 .emotion-4 {
   display: inline-block;
   white-space: nowrap;
@@ -107,26 +97,6 @@ exports[`CounterBar matches snapshot 1`] = `
 
 .emotion-24:visited {
   color: #005ea5;
-}
-
-.emotion-24:focus {
-  color: #005ea5;
-  outline: solid 4px #ffbf47;
-}
-
-.emotion-24:hover,
-.emotion-24:active {
-  color: #005ea5;
-}
-
-.emotion-24:visited {
-  color: #ffffff;
-}
-
-.emotion-24:focus,
-.emotion-24:hover,
-.emotion-24:active {
-  color: #ffffff;
 }
 
 .emotion-14 {
