@@ -17,6 +17,7 @@ exports[`CounterBar matches snapshot 1`] = `
 }
 
 .emotion-6 {
+  color: #005ea5;
   border: 0px;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -24,11 +25,23 @@ exports[`CounterBar matches snapshot 1`] = `
   margin: 0 6px 6px 0;
   outline: none;
   padding: 0 8px 0 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   background: #ffffff;
 }
 
+.emotion-6:visited {
+  color: #005ea5;
+}
+
 .emotion-6:focus {
+  color: #005ea5;
   outline: solid 4px #ffbf47;
+}
+
+.emotion-6:hover,
+.emotion-6:active {
+  color: #005ea5;
 }
 
 .emotion-4 {
@@ -76,7 +89,8 @@ exports[`CounterBar matches snapshot 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-14 {
+.emotion-24 {
+  color: #005ea5;
   border: 0px;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -84,13 +98,75 @@ exports[`CounterBar matches snapshot 1`] = `
   margin: 0 6px 6px 0;
   outline: none;
   padding: 0 8px 0 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   background: #ffffff;
   color: #ffffff;
   background: #6f777b;
 }
 
-.emotion-14:focus {
+.emotion-24:visited {
+  color: #005ea5;
+}
+
+.emotion-24:focus {
+  color: #005ea5;
   outline: solid 4px #ffbf47;
+}
+
+.emotion-24:hover,
+.emotion-24:active {
+  color: #005ea5;
+}
+
+.emotion-24:visited {
+  color: #ffffff;
+}
+
+.emotion-24:focus,
+.emotion-24:hover,
+.emotion-24:active {
+  color: #ffffff;
+}
+
+.emotion-14 {
+  color: #005ea5;
+  border: 0px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 6px 6px 0;
+  outline: none;
+  padding: 0 8px 0 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: #ffffff;
+  color: #ffffff;
+  background: #6f777b;
+}
+
+.emotion-14:visited {
+  color: #005ea5;
+}
+
+.emotion-14:focus {
+  color: #0b0c0c;
+  outline: solid 4px #ffbf47;
+}
+
+.emotion-14:hover,
+.emotion-14:active {
+  color: #0b0c0c;
+}
+
+.emotion-14:visited {
+  color: #ffffff;
+}
+
+.emotion-14:focus,
+.emotion-14:hover,
+.emotion-14:active {
+  color: #0b0c0c;
 }
 
 <HashRouter>
@@ -290,7 +366,7 @@ exports[`CounterBar matches snapshot 1`] = `
                     empty={0}
                   >
                     <a
-                      className="emotion-14 emotion-7"
+                      className="emotion-24 emotion-7"
                       disabled={false}
                     >
                       <ResultCountTitle
@@ -354,7 +430,7 @@ exports[`CounterBar matches snapshot 1`] = `
                     empty={0}
                   >
                     <a
-                      className="emotion-14 emotion-7"
+                      className="emotion-24 emotion-7"
                       disabled={false}
                     >
                       <ResultCountTitle
@@ -418,7 +494,7 @@ exports[`CounterBar matches snapshot 1`] = `
                     empty={0}
                   >
                     <a
-                      className="emotion-14 emotion-7"
+                      className="emotion-24 emotion-7"
                       disabled={false}
                     >
                       <ResultCountTitle
@@ -482,7 +558,7 @@ exports[`CounterBar matches snapshot 1`] = `
                     empty={0}
                   >
                     <a
-                      className="emotion-14 emotion-7"
+                      className="emotion-24 emotion-7"
                       disabled={false}
                     >
                       <ResultCountTitle
