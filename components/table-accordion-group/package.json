@@ -7,13 +7,14 @@
   },
   "dependencies": {
     "@govuk-frederic/open-button": "^0.0.2",
-    "@govuk-react/constants": "^0.2.2"
+    "@govuk-react/constants": "^0.2.2",
+    "react-collapse": ">=4",
+    "react-motion": "^0.5.2"
   },
   "peerDependencies": {
     "emotion": ">=9",
     "prop-types": ">=15",
     "react": ">=16.2.0",
-    "react-collapse": ">=4",
     "react-emotion": ">=9"
   },
   "scripts": {
