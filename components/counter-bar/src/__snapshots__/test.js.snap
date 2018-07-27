@@ -45,10 +45,7 @@ exports[`CounterBar matches snapshot 1`] = `
 }
 
 .emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -56,21 +53,10 @@ exports[`CounterBar matches snapshot 1`] = `
 .emotion-0 {
   background: #b10e1e;
   color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  display: inline-block;
   font-family: "nta",Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
+  font-size: 15px;
+  line-height: 1.25;
   min-height: 20px;
   min-width: 20px;
   padding: 1px 4px;
@@ -78,23 +64,11 @@ exports[`CounterBar matches snapshot 1`] = `
 }
 
 .emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  display: inline-block;
   font-family: "nta",Arial,sans-serif;
-  line-height: 1.1428571429;
-  font-size: 14px;
-  padding-left: 10px;
-  padding-right: 10px;
+  font-size: 15px;
+  line-height: 1.25;
+  margin-left: 10px;
 }
 
 .emotion-50 {
