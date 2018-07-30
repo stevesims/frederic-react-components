@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import { NTA_LIGHT } from '@govuk-react/constants';
+import { withWhiteSpace } from '@govuk-react/hoc';
 
 const TableContainer = styled('table', {
   // use `forwardProps` here as by default emotion doesn't allow setting `name` prop on a `table`
@@ -198,4 +199,4 @@ Table.defaultProps = {
   rowIncludesHeading: false,
 };
 
-export default Table;
+export default withWhiteSpace({ marginBottom: 3 })(Table);
