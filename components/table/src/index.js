@@ -138,7 +138,9 @@ const Table = ({ name, names, rowIncludesHeading, nameByRow, titles, rows, flexi
           {titles.map((title, index) => (
             // disable false-positive rule - this is an access into an array of strings, not object access
             // eslint-disable-next-line security/detect-object-injection
-            <TableHeading key={title.key || index} name={getName(names, 0, index, nameByRow)}>
+            <TableHeading 
+              key={title.key || index} 
+              name={getName(names, 0, index, nameByRow)}>
               {title}
             </TableHeading>
           ))}
@@ -151,13 +153,19 @@ const Table = ({ name, names, rowIncludesHeading, nameByRow, titles, rows, flexi
           {row.map(
             (item, itemIndex) =>
               rowIncludesHeading && itemIndex === 0 ? (
-                <TableHeading rowHeading columnCount={row.length} key={item.key || itemIndex} name={getName(names, calculateIndex(titles, nameByRow, index), itemIndex, nameByRow)}>
+                <TableHeading 
+                  rowHeading 
+                  columnCount={row.length} 
+                  key={item.key || itemIndex} 
+                  name={getName(names, calculateIndex(titles, nameByRow, index), itemIndex, nameByRow)}>
                   {item}
                 </TableHeading>
               ) : (
                 // disable false-positive rule - this is an access into an array of strings, not object access
                 // eslint-disable-next-line security/detect-object-injection
-                <TableData key={item.key || itemIndex} name={getName(names, calculateIndex(titles, nameByRow, index), itemIndex, nameByRow)}>
+                <TableData 
+                  key={item.key || itemIndex} 
+                  name={getName(names, calculateIndex(titles, nameByRow, index), itemIndex, nameByRow)}>
                   {item}
                 </TableData>
               ),
