@@ -981,7 +981,7 @@
     "@govuk-react/hoc" "^0.2.7"
     govuk-colours "^1.0.3"
 
-"@govuk-react/constants@^0.2.2", "@govuk-react/constants@^0.2.7":
+"@govuk-react/constants@^0.2.7":
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/@govuk-react/constants/-/constants-0.2.7.tgz#0be54d90a352dde8a96a82a20b6fe778b05807f1"
   dependencies:

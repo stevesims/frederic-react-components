@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import { Collapse } from 'react-collapse';
 import { NTA_LIGHT } from '@govuk-react/constants';
+import { withWhiteSpace } from '@govuk-react/hoc';
 
 import OpenButton from '@govuk-frederic/open-button';
 
@@ -137,6 +138,6 @@ CompactTableAccordionGroup.defaultProps = {
   open: false,
 };
 
-export default CompactTableAccordionGroup;
+export default withWhiteSpace({ marginBottom: 3 })(CompactTableAccordionGroup);
 
 export { Title };
