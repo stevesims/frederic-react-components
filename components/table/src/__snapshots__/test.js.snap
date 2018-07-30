@@ -140,11 +140,9 @@ exports[`Table matches snapshot 1`] = `
     <TableContainer
       className="emotion-10"
       flexibleColumns={true}
-      name="name"
     >
       <table
         className="emotion-8 emotion-9"
-        name="name"
       >
         <thead>
           <tr>

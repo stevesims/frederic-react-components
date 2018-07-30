@@ -116,7 +116,7 @@ const CompactTableAccordionGroup = ({
         {title}
       </Title>
       <div>
-        <div>{ children }</div>  
+        <div>{children}</div>  
       </div>
     </TitleRow>
     <Collapse isOpened={open}>{expanded}</Collapse>
