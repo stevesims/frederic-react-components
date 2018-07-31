@@ -20,3 +20,6 @@ export { default as Table } from '@govuk-frederic/table';
 export { default as TableAccordionGroup } from '@govuk-frederic/table-accordion-group';
 export { default as TableOfContents } from '@govuk-frederic/table-of-contents';
 export { default as TitleResultCount } from '@govuk-frederic/title-result-count';
+
+// Utilities
+export * from '@govuk-frederic/utils';
