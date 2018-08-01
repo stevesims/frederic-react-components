@@ -88,6 +88,7 @@
     "@govuk-frederic/distraction-free": "*",
     "@govuk-frederic/header-button": "*",
     "@govuk-frederic/keyline": "*",
+    "@govuk-frederic/object-table": "*",
     "@govuk-frederic/open-button": "*",
     "@govuk-frederic/remove-button": "*",
     "@govuk-frederic/result-count": "*",

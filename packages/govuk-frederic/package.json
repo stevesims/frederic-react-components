@@ -12,6 +12,7 @@
     "@govuk-frederic/distraction-free": "^0.0.3",
     "@govuk-frederic/header-button": "^0.0.3",
     "@govuk-frederic/keyline": "^0.0.3",
+    "@govuk-frederic/object-table": "^0.0.1",
     "@govuk-frederic/open-button": "^0.0.3",
     "@govuk-frederic/remove-button": "^0.0.3",
     "@govuk-frederic/result-count": "^0.0.3",
