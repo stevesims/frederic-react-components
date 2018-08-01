@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 
 import Component from '.';
 
-describe('ArrayObjectTable', () => {
+describe('ObjectTable', () => {
   it('does not render with no data', () => {
     const wrapper = mount(<Component />);
     expect(wrapper.html()).toBe(null);
@@ -40,7 +40,25 @@ describe('ArrayObjectTable', () => {
       two: 'test',
     }];
     const wrapper = mount(<Component fields={fields} array={array} title="Heading" />);
+
     expect(wrapper.find('div').first().text()).toBe('Heading');
+  });
+
+  it('omits rows in table for null values', () => {
+    const fields = [
+      { key: 'one', heading: 'one' },
+      { key: 'two', heading: 'two', transform: () => null },
+      { key: 'three', heading: 'three'},
+    ];
+    const object = {
+      one: 'test',
+      two: 'test',
+      three: null,
+    };
+    const wrapper = mount(<Component fields={fields} object={object} />);
+    const rows = wrapper.find('tr');
+    
+    expect(rows.length).toBe(1);
   });
 });
 
