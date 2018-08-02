@@ -25,6 +25,6 @@ stories.add('Component default', () => (
   <ObjectTable fields={fields} object={obj} title={title}/>
 ));
 
-examples.add('With no matching values', () => (
+examples.add('With no values for found fields', () => (
   <ObjectTable fields={fields} object={objectWithNoValues} title={title} />
 ));
