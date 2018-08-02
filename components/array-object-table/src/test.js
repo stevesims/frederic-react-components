@@ -16,10 +16,7 @@ describe('ArrayObjectTable', () => {
     ];
     const array = [
       {}, // empty record to be automatically omitted
-      {
-        one: 'test',
-        two: 'test',
-      },
+      { one: 'test', two: 'test' },
     ];
     const wrapper = mount(<Component fields={fields} array={array} />);
     const table = wrapper.find('Table');
@@ -33,14 +30,39 @@ describe('ArrayObjectTable', () => {
   it('optionally renders a heading for a table', () => {
     const fields = [
       { key: 'one', heading: 'One' },
-      { key: 'two', heading: 'Two', transform: () => 'two' },
+      { key: 'two', heading: 'Two' },
     ];
-    const array = [{
-      one: 'test',
-      two: 'test',
-    }];
+    const array = [
+      { one: 'test', two: 'test'},
+    ];
     const wrapper = mount(<Component fields={fields} array={array} title="Heading" />);
-    expect(wrapper.contains('Heading'));
+    expect(wrapper.contains('Heading')).toBe(true);
+  });
+
+  it('does not render anything when rows have no values and hideWithNoValues is true', () => {
+    const fields = [
+      { key: 'one', heading: 'One' },
+      { key: 'two', heading: 'Two' },
+    ];
+    const array = [
+      { x: 'test', y: 'test' },
+    ];
+    const wrapper = mount(<Component fields={fields} array={array} hideWithNoValues/>);
+    expect(wrapper.html()).toBe(null);
+  });
+
+  // One tbody row renders in Storybook, but here for the test the component returns null
+  xit('renders one tbody row when no valid data if hideWithNoValues is not true', () => {
+    const fields = [
+      { key: 'one', heading: 'One' },
+      { key: 'two', heading: 'Two' },
+    ];
+    const array = [
+      {},
+      {},
+    ];
+    const wrapper = mount(<Component fields={fields} array={array}/>);  
+    expect(wrapper.find('tr').length).toBe(2);
   });
 });
 

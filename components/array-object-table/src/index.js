@@ -7,13 +7,13 @@ import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
 // TODO document format of `fields` prop
 // TODO consider refactoring so that table props provided by utility functions
 
-const ArrayObjectTable = ({ fields = [], array = [], hideWithNoValues = false, skipEmptyRows = true, title }) => {
+const ArrayObjectTable = ({ fields = [], array = [], hideWithNoValues = false, skipEmptyRows = true, title, ...props }) => {
   let rows = rowsFromArray(array, fields, skipEmptyRows);
   if (!rows.length && !hideWithNoValues) rows = rowsFromArray([{}], fields, false);
   return rows.length ?
     <Fragment>
       {title ? title : null}
-      <Table rows={rows} titles={titlesFromFields(fields)} />
+      <Table rows={rows} titles={titlesFromFields(fields)} {...props}/>
     </Fragment>
     :
     null;
