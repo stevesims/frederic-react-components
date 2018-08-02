@@ -4,9 +4,9 @@ import { mount } from 'enzyme';
 import Component from '.';
 
 describe('ArrayObjectTable', () => {
-  it('does not render with no data', () => {
+  it('does render with no data', () => {
     const wrapper = mount(<Component />);
-    expect(wrapper.html()).toBe(null);
+    expect(wrapper.html());
   });
   it('renders a table of data based on params', () => {
     const fields = [
@@ -26,8 +26,8 @@ describe('ArrayObjectTable', () => {
     const rows = table.prop('rows');
     const titles = table.prop('titles');
   
-    expect(rows).toBe([['test', 'two', '-']]);
-    expect(titles).toBe(['One', 'Two', 'Three']);
+    expect(rows).toEqual([['test', 'two', '-']]);
+    expect(titles).toEqual(['One', 'Two', 'Three']);
   });
 
   it('optionally renders a heading for a table', () => {
@@ -40,7 +40,7 @@ describe('ArrayObjectTable', () => {
       two: 'test',
     }];
     const wrapper = mount(<Component fields={fields} array={array} title="Heading" />);
-    expect(wrapper.find('div').first().text()).toBe('Heading');
+    expect(wrapper.contains('Heading'));
   });
 });
 

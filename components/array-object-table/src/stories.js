@@ -7,22 +7,88 @@ import ArrayObjectTable from '.';
 import ReadMe from '../README.md';
 
 const stories = storiesOf('Tables/ArrayObjectTable', module);
+const examples = storiesOf('Tables/ArrayObjectTable/Examples', module);
 
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-const fields = [
-  { heading: 'A', key: 'a', transform: (d) => d },
-  { heading: 'B', key: 'b', transform: (d) => d },
-  { heading: 'C', key: 'c', transform: (d) => d },
-];
-const array = [
-  { a: 'Alpha', b: 'Beta', c: 'Gamma' },
-  { a: 'Alpha', b: 'Beta', c: 'Gamma' },
-  { a: 'Alpha', b: 'Beta', c: 'Gamma' },
-];
-const title = ['My ArrayObjectTable'];
 
-stories.add('Component default', () => (
-  <ArrayObjectTable fields={fields} array={array} title={title}/>
-));
+stories.add('Component default', () => {
+  const fields = [
+    { heading: 'A', key: 'a' },
+    { heading: 'B', key: 'b' },
+    { heading: 'C', key: 'c' },
+  ];
+  const array = [
+    { a: 'Alpha', b: 'Beta', c: 'Gamma' },
+    { a: 'Alpha', b: 'Beta', c: 'Gamma' },
+    { a: 'Alpha', b: 'Beta', c: 'Gamma' },
+  ];
+  const title = ['My ArrayObjectTable'];
+  
+  return <ArrayObjectTable fields={fields} array={array} title={title}/>;
+});
+
+examples.add('Component default shows empty cells', () => {
+  const fields = [
+    { heading: 'A', key: 'a' },
+    { heading: 'B', key: 'b' },
+    { heading: 'C', key: 'c' },
+  ];
+  const array = [
+    { a: 'Alpha', b: 'Beta', c: 'Gamma' },
+    { a: 'Alpha', b: 'Beta', c: 'Gamma' },
+    { a: 'Alpha', z: 'Beta', c: 'Gamma' },
+  ];
+  const title = ['My ArrayObjectTable'];
+  
+  return <ArrayObjectTable fields={fields} array={array} title={title}/>;
+});
+
+examples.add('Component default omits empty rows', () => {
+  const fields = [
+    { heading: 'A', key: 'a' },
+    { heading: 'B', key: 'b' },
+    { heading: 'C', key: 'c' },
+  ];
+  const array = [
+    { a: 'Alpha', b: 'Beta', c: 'Gamma' },
+    { a: 'Alpha', b: 'Beta', c: 'Gamma' },
+    { d: 'Alpha', e: 'Beta', f: 'Gamma' },
+  ];
+  const title = ['My ArrayObjectTable'];
+  
+  return <ArrayObjectTable fields={fields} array={array} title={title}/>;
+});
+
+examples.add('hideWithNoValues set to true', () => {
+  const fields = [
+    { heading: 'A', key: 'a'},
+    { heading: 'B', key: 'b' },
+    { heading: 'C', key: 'c' },
+  ];
+  const array = [
+    { d: 'Alpha', e: 'Beta', f: 'Gamma' },
+    { d: 'Alpha', e: 'Beta', f: 'Gamma' },
+    { d: 'Alpha', e: 'Beta', f: 'Gamma' },
+  ];
+  const title = ['My ArrayObjectTable'];
+
+  return <ArrayObjectTable fields={fields} array={array} title={title} hideWithNoValues/>;
+});
+
+examples.add('skipEmptyRows set to false', () => {
+  const fields = [
+    { heading: 'A', key: 'a' },
+    { heading: 'B', key: 'b' },
+    { heading: 'C', key: 'c' },
+  ];
+  const array = [
+    { d: 'Alpha', e: 'Beta', f: 'Gamma' },
+    { d: 'Alpha', e: 'Beta', f: 'Gamma' },
+    { d: 'Alpha', e: 'Beta', f: 'Gamma' },
+  ];
+  const title = ['My ArrayObjectTable'];
+
+  return <ArrayObjectTable fields={fields} array={array} title={title} skipEmptyRows={false}/>;
+});

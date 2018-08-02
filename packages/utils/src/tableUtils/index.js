@@ -12,11 +12,11 @@ export function keysFromFields(fields) {
 
 export const titlesFromFields = fields => fields.map(field => field.heading || field.title);
 
-export const rowsFromArray = (array, fields) => {
+export const rowsFromArray = (array, fields, skipEmptyRows) => {
   const keys = keysFromFields(fields);
 
   return array.reduce((rows, item) => {
-    if (objectHasValueForKeys(item, keys)) {
+    if (!skipEmptyRows || objectHasValueForKeys(item, keys)) {
       rows.push(
         fields.map(({ key, transform = result => (result || '-')}) => transform(item[key], item)),
       );
