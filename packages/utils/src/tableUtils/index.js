@@ -26,11 +26,11 @@ export const rowsFromArray = (array, fields, skipEmptyRows) => {
   }, []);
 };
 
-export const rowsFromObject = (object, fields) => fields.reduce(
+export const rowsFromObject = (object, fields, skipEmptyRows) => fields.reduce(
   (rows, { key, heading, transform = (result = '-') => result }) => {
     const result = transform(object[key], object);
 
-    if (result !== null) {
+    if (!skipEmptyRows || result !== null) {
       rows.push([heading, result]);
     }
 

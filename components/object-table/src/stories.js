@@ -8,23 +8,37 @@ import ReadMe from '../README.md';
 
 const stories = storiesOf('Tables/ObjectTable', module);
 const examples = storiesOf('Tables/ObjectTable/Examples', module);
-
+const title = ['Heading'];
+  
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-const fields = [
-  { heading: 'A', key: 'a', transform: (d) => d },
-  { heading: 'B', key: 'b' },
-  { heading: 'C', key: 'c', transform: (d) => d },
-];
-const obj = { a: 'Alpha', b: 'Beta', c: 'Gamma' };
-const objectWithNoValues = { a: '', b: '', c: '' };
-const title = ['My ArrayObjectTable'];
+stories.add('Component default', () => {
+  const fields = [
+    { key: 'one', heading: 'One' },
+    { key: 'two', heading: 'Two' },
+  ];
+  const object = { one: 'test', two: 'test' };
 
-stories.add('Component default', () => (
-  <ObjectTable fields={fields} object={obj} title={title}/>
-));
+  return <ObjectTable fields={fields} object={object} title={title}/>;
+});
 
-examples.add('With no values for found fields', () => (
-  <ObjectTable fields={fields} object={objectWithNoValues} title={title} />
-));
+examples.add('Component default shows empty cells', () => {
+  const fields = [
+    { key: 'one', heading: 'One' },
+    { key: 'two', heading: 'Two' },
+  ];
+  const object = { one: 'test' };
+  
+  return <ObjectTable fields={fields} object={object} title={title}/>;
+});
+
+examples.add('With no values for found fields', () => {
+  const fields = [
+    { key: 'one', heading: 'One' },
+    { key: 'two', heading: 'Two' },
+  ];
+  const objectWithNoValues = { };
+  
+  return <ObjectTable fields={fields} object={objectWithNoValues} title={title} />;
+});
