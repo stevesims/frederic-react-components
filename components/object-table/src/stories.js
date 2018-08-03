@@ -42,3 +42,52 @@ examples.add('With no values for found fields', () => {
   
   return <ObjectTable fields={fields} object={objectWithNoValues} title={title} />;
 });
+
+examples.add('Mixed values no skip rows', () => {
+  const fields = [
+    { key: 'one', heading: 'One' },
+    { key: 'two', heading: 'Two' },
+    { key: 'three', heading: 'Three' },
+    { key: 'four', heading: 'Four' },
+    { key: 'five', heading: 'Five' },
+    { key: 'sixe', heading: 'Six' },
+    { key: 'seven', heading: 'Seven' },
+  ];
+  const object = {
+    one: 'test',
+    two: 'test',
+    three: '',
+    four: 'Beta',
+    five: null,
+    six: 0,
+    seven: undefined,
+    eight: undefined,
+  };
+  
+  return <ObjectTable fields={fields} object={object} title={title} />;
+});
+
+examples.add('Mixed values with skip rows', () => {
+  const fields = [
+    { key: 'one', heading: 'One' },
+    { key: 'two', heading: 'Two' },
+    { key: 'three', heading: 'Three' },
+    { key: 'four', heading: 'Four' },
+    { key: 'five', heading: 'Five' },
+    { key: 'sixe', heading: 'Six' },
+    { key: 'seven', heading: 'Seven' },
+  ];
+  const object = {
+    one: 'test',
+    two: 'test',
+    three: '',
+    four: 'Beta',
+    five: null,
+    six: 0,
+    seven: undefined,
+    eight: undefined,
+  };
+  
+  return <ObjectTable fields={fields} object={object} title={title} skipEmptyRows />;
+});
+
