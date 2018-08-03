@@ -43,7 +43,7 @@ examples.add('With no values for found fields', () => {
   return <ObjectTable fields={fields} object={objectWithNoValues} title={title} />;
 });
 
-examples.add('Show table even when no data with hideWithNoValues', () => {
+examples.add('Hide table even when no data with hideWithNoValues', () => {
   const fields = [
     { key: 'one', heading: 'One' },
     { key: 'two', heading: 'Two' },
