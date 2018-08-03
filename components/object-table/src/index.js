@@ -7,14 +7,14 @@ import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-fr
 // TODO document format of `fields` prop
 // TODO consider refactoring so that table props provided by utility functions
 
-const ObjectTable = ({ fields = [], object = {}, hideWithNoValues = false, skipEmptyRows = true, title }) => {
+const ObjectTable = ({ fields = [], object = {}, hideWithNoValues = false, skipEmptyRows = true, title, ...props }) => {
   if (objectHasValueForKeys(object, keysFromFields(fields))) {
     let rows = rowsFromObject(object, fields, skipEmptyRows);
     if (!rows.length && !hideWithNoValues) rows = rowsFromObject({}, fields, false);
     if (rows.length) {
       return <Fragment>
         {title ? title : null}
-        <Table rows={rows} rowIncludesHeading />
+        <Table rows={rows} rowIncludesHeading {...props} />
       </Fragment>;
     }
   }
