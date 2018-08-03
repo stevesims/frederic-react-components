@@ -43,6 +43,16 @@ examples.add('With no values for found fields', () => {
   return <ObjectTable fields={fields} object={objectWithNoValues} title={title} />;
 });
 
+examples.add('Show table even when no data with hideWithNoValues', () => {
+  const fields = [
+    { key: 'one', heading: 'One' },
+    { key: 'two', heading: 'Two' },
+  ];
+  const objectWithNoValues = { };
+  
+  return <ObjectTable fields={fields} object={objectWithNoValues} title={title} hideWithNoValues />;
+});
+
 examples.add('Mixed values no skip rows', () => {
   const fields = [
     { key: 'one', heading: 'One' },
@@ -50,7 +60,7 @@ examples.add('Mixed values no skip rows', () => {
     { key: 'three', heading: 'Three' },
     { key: 'four', heading: 'Four' },
     { key: 'five', heading: 'Five' },
-    { key: 'sixe', heading: 'Six' },
+    { key: 'six', heading: 'Six' },
     { key: 'seven', heading: 'Seven' },
   ];
   const object = {
@@ -74,7 +84,7 @@ examples.add('Mixed values with skip rows', () => {
     { key: 'three', heading: 'Three' },
     { key: 'four', heading: 'Four' },
     { key: 'five', heading: 'Five' },
-    { key: 'sixe', heading: 'Six' },
+    { key: 'six', heading: 'Six' },
     { key: 'seven', heading: 'Seven' },
   ];
   const object = {
