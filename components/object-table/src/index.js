@@ -9,9 +9,8 @@ import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-fr
 
 const ObjectTable = ({ fields = [], object = {}, hideWithNoValues = false, skipEmptyRows = true, title, ...props }) => {
   if (objectHasValueForKeys(object, keysFromFields(fields))) {
-    let rows = rowsFromObject(object, fields, skipEmptyRows);
-    if (!rows.length && !hideWithNoValues) rows = rowsFromObject({}, fields, false);
-    if (rows.length) {
+    const rows = rowsFromObject(object, fields, skipEmptyRows);
+    if (rows.length || !hideWithNoValues) {
       return <Fragment>
         {title ? title : null}
         <Table rows={rows} rowIncludesHeading {...props} />
