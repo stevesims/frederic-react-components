@@ -58,6 +58,7 @@ export const rowsFromObject = (object, fields, skipEmptyValues, defaultTransform
 
       // Empty values are empty strings (normalised above)
       // We never render null
+      /* istanbul ignore else */
       if (result !== null && !(skipEmptyValues && result === '')) {
         table.rows.push([heading, result]);
         table.names.push(nameAttribute);
