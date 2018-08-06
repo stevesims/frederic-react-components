@@ -33,6 +33,9 @@ export const rowsFromObject = (object, fields, skipEmptyValues, defaultTransform
   return fields.reduce(
     (table, { key, heading, names, transform }) => {
       let result;
+
+      // If there is a name attribute in the fields object use it, otherwise fallback to the key
+      const nameAttribute = names ? names : key;
   
       // Do we have a specific transform to run?
       if (transform) {
@@ -52,16 +55,12 @@ export const rowsFromObject = (object, fields, skipEmptyValues, defaultTransform
         // If it is, normalise it to an empty string so we can decide if we want skip rendering or not
         result = '';
       }
-  
+
       // Empty values are empty strings (normalised above)
       // We never render null
       if (result !== null && !(skipEmptyValues && result === '')) {
         table.rows.push([heading, result]);
-        if (names) {
-          table.names.push(names);
-        } else {
-          table.names.push(key);
-        }
+        table.names.push(nameAttribute);
       }
   
       return table;
