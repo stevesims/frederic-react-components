@@ -13,14 +13,14 @@ stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
 
-stories.add('Component default', () => {
+stories.add('Component default (renders empty values and rows)', () => {
   const fields = [
     { key: 'one', heading: 'One' },
     { key: 'two', heading: 'Two' },
   ];
   const array = [
-    { one: 'test' },
     { one: 'test', two: 'test' },
+    { one: 'test' },
     {},
   ];
   const title = ['Heading'];
