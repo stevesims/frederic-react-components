@@ -4,9 +4,10 @@ import { Table } from 'govuk-frederic';
 
 import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
 
+
+// TODO: THIS RENDERS COLUMNS BASED ON THE FIELDS ARRAY
 // TODO document format of `fields` prop
 // TODO consider refactoring so that table props provided by utility functions
-
 const ArrayObjectTable = ({ fields = [], array = [], hideWithNoValues = false, skipEmptyRows = true, title, ...props }) => {
   let rows = rowsFromArray(array, fields, skipEmptyRows);
   if (!rows.length && !hideWithNoValues) rows = rowsFromArray([{}], fields, false);
