@@ -52,7 +52,7 @@ export const rowsFromObject = (object, fields, skipEmptyValues, defaultTransform
       result = '';
     }
 
-    // Empty values are undefined and empty strings
+    // Empty values are empty strings (normalised above)
     // We never render null
     if (result !== null && !(skipEmptyValues && result === '')) {
       rows.push([heading, result]);
