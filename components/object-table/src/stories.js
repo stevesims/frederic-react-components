@@ -13,37 +13,43 @@ const title = ['Heading'];
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Component default', () => {
+stories.add('Component default (skips blank or null values)', () => {
   const fields = [
     { key: 'one', heading: 'One' },
     { key: 'two', heading: 'Two' },
+    { key: 'three', heading: 'Three' },
+    { key: 'four', heading: 'Four' },
   ];
-  const object = { one: 'test', two: 'test' };
+  const object = { one: 'test', two: 'test', three: '', four: null };
 
   return <ObjectTable fields={fields} object={object} title={title}/>;
 });
 
-examples.add('Component default shows empty cells', () => {
+examples.add('skipEmptyRows false (renders empty values but not null ones)', () => {
   const fields = [
     { key: 'one', heading: 'One' },
     { key: 'two', heading: 'Two' },
+    { key: 'three', heading: 'Three' },
+    { key: 'four', heading: 'Four' },
   ];
-  const object = { one: 'test' };
-  
-  return <ObjectTable fields={fields} object={object} title={title}/>;
+  const object = { one: 'test', two: 'test', three: '', four: null };
+
+  return <ObjectTable fields={fields} object={object} title={title} skipEmptyValues={false}/>;
 });
 
-examples.add('With no values for found fields', () => {
+examples.add('No values found for fields', () => {
   const fields = [
     { key: 'one', heading: 'One' },
     { key: 'two', heading: 'Two' },
+    { key: 'three', heading: 'Three' },
+    { key: 'four', heading: 'Four' },
   ];
-  const objectWithNoValues = { };
+  const object = { };
   
-  return <ObjectTable fields={fields} object={objectWithNoValues} title={title} />;
+  return <ObjectTable fields={fields} object={object} title={title} />;
 });
 
-examples.add('Hide table even when no data with hideWithNoValues', () => {
+examples.add('Hide table when no data with hideWithNoValues', () => {
   const fields = [
     { key: 'one', heading: 'One' },
     { key: 'two', heading: 'Two' },
