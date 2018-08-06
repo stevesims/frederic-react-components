@@ -20,7 +20,8 @@ import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-fr
  *   { key: 'four', heading: 'Four' },
  * ];
  * const object = { one: 'test', two: 'test', three: '', four: null };
- *
+ * const title = ['Heading'];
+ * 
  * <ObjectTable fields={fields} object={object} title={title}/>;
  * ```
  * 
@@ -35,7 +36,8 @@ import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-fr
  *   { key: 'four', heading: 'Four' },
  * ];
  * const object = { one: 'test', two: 'test', three: '', four: null };
- *
+ * const title = ['Heading'];
+ * 
  * <ObjectTable fields={fields} object={object} title={title} skipEmptyValues={false}/>
  * ```
  * 
@@ -48,6 +50,7 @@ import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-fr
  *   { key: 'two', heading: 'Two' },
  * ];
  * const object = { };
+ * const title = ['Heading'];
  *
  * <ObjectTable fields={fields} object={object} title={title} hideWithNoValues />;
  * ```

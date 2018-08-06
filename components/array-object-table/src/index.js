@@ -4,11 +4,62 @@ import { Table } from 'govuk-frederic';
 
 import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
 
-
-// THIS RENDERS COLUMNS BASED ON THE FIELDS ARRAY
-// Renders a row for each item in the array, rendering cell values for each matching property defined in fields
-// TODO document format of `fields` prop
-// TODO consider refactoring so that table props provided by utility functions
+/**
+ *
+ * ### Usage
+ *
+ * Simple
+ * ```jsx
+ * import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
+ * 
+ * const fields = [
+ *   { key: 'one', heading: 'One' },
+ *   { key: 'two', heading: 'Two' },
+ * ];
+ * const array = [
+ *   { one: 'test', two: 'test' },
+ *   { one: 'test' },
+ *   {},
+ * ];
+ * const title = ['Heading'];
+ * 
+ * <ArrayObjectTable fields={fields} array={array} title={title}/>;
+ * ```
+ * 
+ * With skipEmptyRows
+ * ```jsx
+ * import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
+ * 
+ * const fields = [
+ *   { key: 'one', heading: 'One' },
+ *   { key: 'two', heading: 'Two' },
+ * ];
+ * const array = [
+ *   {},
+ *   {},
+ * ];
+ * const title = ['Heading'];
+ * 
+ * <ArrayObjectTable fields={fields} array={array} title={title} skipEmptyRows/>
+ * ```
+ * 
+ * With skipEmptyRows and hideWithNoValues
+ * ```jsx
+ * import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
+ * 
+ * const fields = [
+ *   { key: 'one', heading: 'One' },
+ *   { key: 'two', heading: 'Two' },
+ * ];
+ * const array = [
+ *   {},
+ *   {},
+ * ];
+ * const title = ['Heading'];
+ * 
+ * <ArrayObjectTable fields={fields} array={array} title={title} skipEmptyRows hideWithNoValues/>;
+ * ```
+ * */
 const ArrayObjectTable = ({ fields = [], array = [], hideWithNoValues = false, skipEmptyRows = false, title, ...props }) => {
   let rows = rowsFromArray(array, fields, skipEmptyRows);
   if (!rows.length && !hideWithNoValues) rows = rowsFromArray([{}], fields, false);
