@@ -25,7 +25,7 @@ stories.add('Component default (skips blank or null values)', () => {
   return <ObjectTable fields={fields} object={object} title={title}/>;
 });
 
-examples.add('skipEmptyRows false (renders empty values but not null ones)', () => {
+examples.add('skipEmptyValues false (renders empty values but not null ones)', () => {
   const fields = [
     { key: 'one', heading: 'One' },
     { key: 'two', heading: 'Two' },
@@ -54,9 +54,9 @@ examples.add('Hide table when no data with hideWithNoValues', () => {
     { key: 'one', heading: 'One' },
     { key: 'two', heading: 'Two' },
   ];
-  const objectWithNoValues = { };
+  const object = { };
   
-  return <ObjectTable fields={fields} object={objectWithNoValues} title={title} hideWithNoValues />;
+  return <ObjectTable fields={fields} object={object} title={title} hideWithNoValues />;
 });
 
 examples.add('Mixed values no skip rows', () => {
@@ -105,7 +105,7 @@ examples.add('Mixed values with skip rows', () => {
     eight: undefined,
   };
   
-  return <ObjectTable fields={fields} object={object} title={title} skipEmptyRows />;
+  return <ObjectTable fields={fields} object={object} title={title} skipEmptyValues />;
 });
 
 examples.add('Missing item specified in key', () => {
@@ -129,7 +129,7 @@ examples.add('Missing item specified in key', () => {
     eight: undefined,
   };
   
-  return <ObjectTable fields={fields} object={object} title={title} skipEmptyRows />;
+  return <ObjectTable fields={fields} object={object} title={title} skipEmptyValues />;
 });
 
 examples.add('With default transform', () => {
