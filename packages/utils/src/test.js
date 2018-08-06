@@ -44,7 +44,7 @@ describe('rowsFromObject', () => {
   it('can use a default transform', () => {
     const { rowsFromObject } = exports;
     const fields = [
-      { key: 'one', heading: 'One' },
+      { key: 'one', heading: 'One', names: ['firstCol', 'secondCol'] },
       { key: 'two', heading: 'Two', transform: (val) => val },
     ];
     const object = { one: 'test', two: 'some val' };
@@ -58,7 +58,7 @@ describe('rowsFromObject', () => {
         ['Two', 'some val'],
       ],
       names: [
-        'one',
+        ['firstCol', 'secondCol'],
         'two',
       ],
     });
