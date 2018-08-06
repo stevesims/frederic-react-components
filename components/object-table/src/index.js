@@ -4,11 +4,54 @@ import { Table } from 'govuk-frederic';
 
 import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-frederic/utils';
 
-// THIS RENDERS ROWS BASED ON THE FIELDS ARRAY
-// TODO document format of `fields` prop
-// TODO consider refactoring so that table props provided by utility functions
-// TODO: ALL THE DOCS
-// TODO: SOME TESTS
+
+/**
+ *
+ * ### Usage
+ * 
+ * Simple
+ * ```jsx
+ * import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-frederic/utils';
+ * 
+ * const fields = [
+ *   { key: 'one', heading: 'One' },
+ *   { key: 'two', heading: 'Two' },
+ *   { key: 'three', heading: 'Three' },
+ *   { key: 'four', heading: 'Four' },
+ * ];
+ * const object = { one: 'test', two: 'test', three: '', four: null };
+ *
+ * <ObjectTable fields={fields} object={object} title={title}/>;
+ * ```
+ * 
+ * With skipEmptyValues
+ * ```jsx
+ * import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-frederic/utils';
+ * 
+ * const fields = [
+ *   { key: 'one', heading: 'One' },
+ *   { key: 'two', heading: 'Two' },
+ *   { key: 'three', heading: 'Three' },
+ *   { key: 'four', heading: 'Four' },
+ * ];
+ * const object = { one: 'test', two: 'test', three: '', four: null };
+ *
+ * <ObjectTable fields={fields} object={object} title={title} skipEmptyValues={false}/>
+ * ```
+ * 
+ * With hideWithNoValues
+ * ```jsx
+ * import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-frederic/utils';
+ * 
+ * const fields = [
+ *   { key: 'one', heading: 'One' },
+ *   { key: 'two', heading: 'Two' },
+ * ];
+ * const object = { };
+ *
+ * <ObjectTable fields={fields} object={object} title={title} hideWithNoValues />;
+ * ```
+ */
 const ObjectTable = ({
   title,
   fields = [],
