@@ -59,7 +59,10 @@ describe('ArrayObjectTable', () => {
       {},
       {},
     ];
-
+    wrapper = mount(<Component fields={fields} array={array} skipEmptyRows/>);
+    const table = wrapper.find('Table');
+    const rows = table.prop('rows');
+    expect(rows).toEqual([['-', '-']]);
     expect(wrapper.find('tbody tr').length).toBe(1);
   });
 
