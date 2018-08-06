@@ -6,6 +6,7 @@ import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
 
 
 // THIS RENDERS COLUMNS BASED ON THE FIELDS ARRAY
+// Each item in the array renders a row with a cell value for each defined column in the fields array
 // TODO document format of `fields` prop
 // TODO consider refactoring so that table props provided by utility functions
 const ArrayObjectTable = ({ fields = [], array = [], hideWithNoValues = false, skipEmptyRows = true, title, ...props }) => {
