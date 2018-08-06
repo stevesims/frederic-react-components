@@ -26,11 +26,35 @@ export const rowsFromArray = (array, fields, skipEmptyRows) => {
   }, []);
 };
 
-export const rowsFromObject = (object, fields, skipEmptyRows) => fields.reduce(
-  (rows, { key, heading, transform = (result = '-') => result }) => {
-    const result = transform(object[key], object);
+// TODO: ALL THE DOCS
+// TODO: SOME TESTS
+// Empty values and keys are treated the same
+export const rowsFromObject = (object, fields, skipEmptyValues, defaultTransform) => fields.reduce(
+  (rows, { key, heading, transform }) => {
+    let result;
 
-    if (!skipEmptyRows || result !== null) {
+    // Do we have a specific transform to run?
+    if (transform) {
+      result = transform(object[key], object);
+    // if not, do we have a default transform to run?
+    } else if (defaultTransform) {
+      result = defaultTransform(object[key], object);
+    } else {
+      result = object[key];
+    }
+
+    // Is the value undefined?
+    // This can happen if there;
+      // is no property in the object for provided key AND
+      // there is no value for a found property in the object
+    if (result === undefined) {
+      // If it is, normalise it to an empty string so we can decide if we want skip rendering or not
+      result = '';
+    }
+
+    // Empty values are undefined and empty strings
+    // We never render null
+    if (result !== null && !(skipEmptyValues && result === '')) {
       rows.push([heading, result]);
     }
 

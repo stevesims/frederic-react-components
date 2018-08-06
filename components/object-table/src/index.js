@@ -6,10 +6,19 @@ import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-fr
 
 // TODO document format of `fields` prop
 // TODO consider refactoring so that table props provided by utility functions
-
-const ObjectTable = ({ title, fields = [], object = {}, hideWithNoValues = false, skipEmptyRows = true, ...props }) => {
+// TODO: ALL THE DOCS
+// TODO: SOME TESTS
+const ObjectTable = ({
+  title,
+  fields = [],
+  object = {},
+  hideWithNoValues = false,
+  skipEmptyValues = true,
+  defaultTransform,
+  ...props
+}) => {
   if (!hideWithNoValues || objectHasValueForKeys(object, keysFromFields(fields))) {
-    const rows = rowsFromObject(object, fields, skipEmptyRows);
+    const rows = rowsFromObject(object, fields, skipEmptyValues, defaultTransform);
     if (rows.length) {
       return <Fragment>
         {title ? title : null}
@@ -29,7 +38,9 @@ ObjectTable.propTypes = {
   })),
   object: PropTypes.object,
   hideWithNoValues: PropTypes.bool,
-  skipEmptyRows: PropTypes.bool,
+  skipEmptyValues: PropTypes.bool,
+  skipMissingKeys: PropTypes.bool,
+  defaultTransform: PropTypes.func,
   title: PropTypes.node,
 };
 

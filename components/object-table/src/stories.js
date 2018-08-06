@@ -86,6 +86,7 @@ examples.add('Mixed values with skip rows', () => {
     { key: 'five', heading: 'Five' },
     { key: 'six', heading: 'Six' },
     { key: 'seven', heading: 'Seven' },
+    { key: 'eight', heading: 'Eight', transform: (result = 'TOBOLOL') => result },
   ];
   const object = {
     one: 'test',
@@ -101,3 +102,58 @@ examples.add('Mixed values with skip rows', () => {
   return <ObjectTable fields={fields} object={object} title={title} skipEmptyRows />;
 });
 
+examples.add('Missing item specified in key', () => {
+  const fields = [
+    { key: 'one', heading: 'One' },
+    { key: 'two', heading: 'Two' },
+    { key: 'three', heading: 'Three' },
+    { key: 'four', heading: 'Four' },
+    { key: 'five', heading: 'Five' },
+    { key: 'six', heading: 'Six' },
+    { key: 'seven', heading: 'Seven' },
+  ];
+  const object = {
+    one: 'test',
+    MISSING: 'test',
+    three: '',
+    four: 'Beta',
+    five: null,
+    six: 0,
+    seven: undefined,
+    eight: undefined,
+  };
+  
+  return <ObjectTable fields={fields} object={object} title={title} skipEmptyRows />;
+});
+
+examples.add('With default transform', () => {
+  const fields = [
+    { key: 'one', heading: 'One' },
+    { key: 'two', heading: 'Two' },
+    { key: 'three', heading: 'Three' },
+    { key: 'four', heading: 'Four' },
+    { key: 'five', heading: 'Five' },
+    { key: 'six', heading: 'Six' },
+    { key: 'seven', heading: 'Seven' },
+  ];
+  const object = {
+    one: 'test',
+    MISSING: 'test',
+    three: '',
+    four: 'Beta',
+    five: null,
+    six: 0,
+    seven: undefined,
+    eight: undefined,
+  };
+
+  const defaultTransform = (result = '-') => result;
+  
+  return <ObjectTable
+    fields={fields}
+    object={object}
+    title={title}
+    defaultTransform={defaultTransform}
+    skipEmptyRows
+  />;
+});
