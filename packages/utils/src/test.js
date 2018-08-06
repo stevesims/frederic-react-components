@@ -32,12 +32,12 @@ describe('rowsFromObject', () => {
     expect(rows).toEqual({
       rows: [
         ['One', 'test'],
-        ['Two', 'two']
+        ['Two', 'two'],
       ],
       names: [
         'one',
         'two',
-      ]
+      ],
     });
   });
 });
