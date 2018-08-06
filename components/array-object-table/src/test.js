@@ -16,6 +16,11 @@ describe('ArrayObjectTable', () => {
   const title = 'Heading';
   let wrapper;
 
+  it('renders with defaults', () => {
+    wrapper = mount(<Component />);
+    expect(wrapper.exists()).toBe(true);
+  });
+
   it('renders with basic props', () => {
     wrapper = mount(<Component fields={fields} array={array} />);
     
