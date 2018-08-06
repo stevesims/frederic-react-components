@@ -13,8 +13,11 @@ describe('rowsFromArray', () => {
       { one: 'test', two: 'test' },
     ];
     
-    const rows = rowsFromArray(array, fields, false);
+    let rows = rowsFromArray(array, fields, false);
     expect(rows).toEqual([['-', 'two', '-'], ['test', 'two', '-']]);
+
+    rows = rowsFromArray(array, fields, true);
+    expect(rows).toEqual([['test', 'two', '-']]);
   });
 });
 
@@ -124,7 +127,9 @@ describe('arrayHasValueForKeys', () => {
     const { arrayHasValueForKeys } = exports;
     const keys = ['one', 'two'];
     const array = [{}];
-    const result = arrayHasValueForKeys(array, keys);
+    let result = arrayHasValueForKeys(array, keys);
+    expect(result).toBe(false);
+    result = arrayHasValueForKeys();
     expect(result).toBe(false);
   });
 });
@@ -142,7 +147,9 @@ describe('objectHasValueForKeys', () => {
     const { objectHasValueForKeys } = exports;
     const keys = ['one', 'two'];
     const item = {};
-    const result = objectHasValueForKeys(item, keys);
+    let result = objectHasValueForKeys(item, keys);
+    expect(result).toBe(false);
+    result = objectHasValueForKeys();
     expect(result).toBe(false);
   });
 });
