@@ -23,7 +23,7 @@ describe('rowsFromObject', () => {
     const { rowsFromObject } = exports;
     const fields = [
       { key: 'one', heading: 'One' },
-      { key: 'two', heading: 'Two', transform: () => 'two' },
+      { key: 'two', heading: 'Two', transform: () => 'hardcodedstring' },
     ];
     const object = { one: 'test', two: 'test' };    
     const skipEmptyValues = true;
@@ -32,7 +32,52 @@ describe('rowsFromObject', () => {
     expect(rows).toEqual({
       rows: [
         ['One', 'test'],
-        ['Two', 'two'],
+        ['Two', 'hardcodedstring'],
+      ],
+      names: [
+        'one',
+        'two',
+      ],
+    });
+  });
+
+  it('can use a default transform', () => {
+    const { rowsFromObject } = exports;
+    const fields = [
+      { key: 'one', heading: 'One' },
+      { key: 'two', heading: 'Two', transform: (val) => val },
+    ];
+    const object = { one: 'test', two: 'some val' };
+    const skipEmptyValues = true;
+    const deafultTransform = (david) => `${david} david`;
+    const rows = rowsFromObject(object, fields, skipEmptyValues, deafultTransform);
+
+    expect(rows).toEqual({
+      rows: [
+        ['One', 'test david'],
+        ['Two', 'some val'],
+      ],
+      names: [
+        'one',
+        'two',
+      ],
+    });
+  });
+
+  it('handles undefined values without skipping', () => {
+    const { rowsFromObject } = exports;
+    const fields = [
+      { key: 'one', heading: 'One' },
+      { key: 'two', heading: 'Two' },
+    ];
+    const object = { one: 'test', two: undefined };
+    const skipEmptyValues = false;
+    const rows = rowsFromObject(object, fields, skipEmptyValues);
+
+    expect(rows).toEqual({
+      rows: [
+        ['One', 'test'],
+        ['Two', ''],
       ],
       names: [
         'one',
