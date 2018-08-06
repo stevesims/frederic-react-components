@@ -30,13 +30,8 @@ export const rowsFromArray = (array, fields, skipEmptyRows) => {
 // TODO: SOME TESTS
 // Empty values and keys are treated the same
 export const rowsFromObject = (object, fields, skipEmptyValues, defaultTransform) => {
-  const table = {
-    rows: [],
-    names: [],
-  };
-
-  table.rows = fields.reduce(
-    (rows, { key, heading, names, transform }) => {
+  return fields.reduce(
+    (table, { key, heading, names, transform }) => {
       let result;
   
       // Do we have a specific transform to run?
@@ -61,19 +56,19 @@ export const rowsFromObject = (object, fields, skipEmptyValues, defaultTransform
       // Empty values are empty strings (normalised above)
       // We never render null
       if (result !== null && !(skipEmptyValues && result === '')) {
-        rows.push([heading, result]);
+        table.rows.push([heading, result]);
         if (names) {
           table.names.push(names);
         } else {
-          table.names.push(false);
+          table.names.push(key);
         }
       }
   
-      return rows;
+      return table;
     },
-    [],
+    {
+      rows: [],
+      names: [],  
+    },
   );
-
-  console.log(table);
-  return table;
 };
