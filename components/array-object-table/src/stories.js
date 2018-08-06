@@ -19,35 +19,8 @@ stories.add('Component default', () => {
     { key: 'two', heading: 'Two' },
   ];
   const array = [
-    { one: 'test', two: 'test' },
-    { one: 'test', two: 'test' },
-  ];
-  const title = ['Heading'];
-  
-  return <ArrayObjectTable fields={fields} array={array} title={title}/>;
-});
-
-examples.add('Component default shows empty cells', () => {
-  const fields = [
-    { key: 'one', heading: 'One' },
-    { key: 'two', heading: 'Two' },
-  ];
-  const array = [
     { one: 'test' },
     { one: 'test', two: 'test' },
-  ];
-  const title = ['Heading'];
-  
-  return <ArrayObjectTable fields={fields} array={array} title={title}/>;
-});
-
-examples.add('Component default shows one empty row if none are returned', () => {
-  const fields = [
-    { key: 'one', heading: 'One' },
-    { key: 'two', heading: 'Two' },
-  ];
-  const array = [
-    {},
     {},
   ];
   const title = ['Heading'];
@@ -55,7 +28,7 @@ examples.add('Component default shows one empty row if none are returned', () =>
   return <ArrayObjectTable fields={fields} array={array} title={title}/>;
 });
 
-examples.add('hideWithNoValues set to true', () => {
+examples.add('skipEmptyRows (one mock empty row is shown if no rows)', () => {
   const fields = [
     { key: 'one', heading: 'One' },
     { key: 'two', heading: 'Two' },
@@ -65,20 +38,20 @@ examples.add('hideWithNoValues set to true', () => {
     {},
   ];
   const title = ['Heading'];
-
-  return <ArrayObjectTable fields={fields} array={array} title={title} hideWithNoValues/>;
+  
+  return <ArrayObjectTable fields={fields} array={array} title={title} skipEmptyRows/>;
 });
 
-examples.add('skipEmptyRows set to false', () => {
+examples.add('skipEmtpyRows and hideWithNoValues (table is hidden if no rows)', () => {
   const fields = [
     { key: 'one', heading: 'One' },
     { key: 'two', heading: 'Two' },
   ];
   const array = [
-    { one: 'test', two: 'test' },
+    {},
     {},
   ];
   const title = ['Heading'];
 
-  return <ArrayObjectTable fields={fields} array={array} title={title} skipEmptyRows={false}/>;
+  return <ArrayObjectTable fields={fields} array={array} title={title} skipEmptyRows hideWithNoValues/>;
 });

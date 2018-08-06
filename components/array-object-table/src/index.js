@@ -9,7 +9,7 @@ import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
 // Renders a row for each item in the array, rendering cell values for each matching property defined in fields
 // TODO document format of `fields` prop
 // TODO consider refactoring so that table props provided by utility functions
-const ArrayObjectTable = ({ fields = [], array = [], hideWithNoValues = false, skipEmptyRows = true, title, ...props }) => {
+const ArrayObjectTable = ({ fields = [], array = [], hideWithNoValues = false, skipEmptyRows = false, title, ...props }) => {
   let rows = rowsFromArray(array, fields, skipEmptyRows);
   if (!rows.length && !hideWithNoValues) rows = rowsFromArray([{}], fields, false);
   return rows.length ?
