@@ -61,7 +61,7 @@ const ObjectTable = ({
   object = {},
   hideWithNoValues = false,
   skipEmptyValues = true,
-  defaultTransform,
+  defaultTransform, 
   ...props
 }) => {
   if (!hideWithNoValues || objectHasValueForKeys(object, keysFromFields(fields))) {

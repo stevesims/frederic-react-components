@@ -67,7 +67,7 @@ export const rowsFromObject = (object, fields, skipEmptyValues, defaultTransform
     },
     {
       rows: [],
-      names: [],  
+      names: [],
     },
   );
 };
