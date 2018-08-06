@@ -134,13 +134,13 @@ examples.add('Missing item specified in key', () => {
 
 examples.add('With default transform', () => {
   const fields = [
-    { key: 'one', heading: 'One' },
-    { key: 'two', heading: 'Two' },
+    { key: 'one', heading: 'One', names: ['nameForTitleOne', 'nameForValueOne'] },
+    { key: 'two', heading: 'Two', names: 'nameForBoth' },
     { key: 'three', heading: 'Three' },
     { key: 'four', heading: 'Four' },
     { key: 'five', heading: 'Five' },
     { key: 'six', heading: 'Six' },
-    { key: 'seven', heading: 'Seven' },
+    { key: 'seven', heading: 'Seven', names: ['anotherNameForTitleOne', 'anotherNameForValueOne'] },
   ];
   const object = {
     one: 'test',
@@ -152,7 +152,6 @@ examples.add('With default transform', () => {
     seven: undefined,
     eight: undefined,
   };
-
   const defaultTransform = (result = '-') => result;
   
   return <ObjectTable

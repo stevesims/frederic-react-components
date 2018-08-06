@@ -66,10 +66,10 @@ const ObjectTable = ({
 }) => {
   if (!hideWithNoValues || objectHasValueForKeys(object, keysFromFields(fields))) {
     const rows = rowsFromObject(object, fields, skipEmptyValues, defaultTransform);
-    if (rows.length) {
+    if (rows.rows.length) {
       return <Fragment>
         {title ? title : null}
-        <Table rows={rows} rowIncludesHeading {...props} />
+        <Table rows={rows.rows} names={rows.names} rowIncludesHeading nameByRow {...props} />
       </Fragment>;
     }
   }
