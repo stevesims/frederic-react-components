@@ -4,7 +4,7 @@ import { Table } from 'govuk-frederic';
 
 import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-frederic/utils';
 
-// TODO: THIS RENDERS ROWS BASED ON THE FIELDS ARRAY
+// THIS RENDERS ROWS BASED ON THE FIELDS ARRAY
 // TODO document format of `fields` prop
 // TODO consider refactoring so that table props provided by utility functions
 // TODO: ALL THE DOCS
