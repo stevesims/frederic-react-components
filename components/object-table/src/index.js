@@ -61,7 +61,7 @@ const ObjectTable = ({
     const rows = rowsFromObject(object, fields, skipEmptyValues, defaultTransform);
     if (rows.rows.length) {
       return <Fragment>
-        {title ? title : null}
+        {title}
         <Table rows={rows.rows} names={rows.names} rowIncludesHeading nameByRow {...props} />
       </Fragment>;
     }
