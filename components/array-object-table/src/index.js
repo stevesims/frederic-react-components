@@ -56,7 +56,9 @@ import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
  * */
 const ArrayObjectTable = ({ fields = [], array = [], hideWithNoValues = false, skipEmptyRows = false, title, ...props }) => {
   let rows = rowsFromArray(array, fields, skipEmptyRows);
-  if (!rows.length && !hideWithNoValues) rows = rowsFromArray([{}], fields, false);
+  if (!rows.length && !hideWithNoValues) {
+    rows = rowsFromArray([{}], fields, false);
+  }
   return rows.length ?
     <Fragment>
       {title ? title : null}

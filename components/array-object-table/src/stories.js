@@ -12,7 +12,6 @@ const examples = storiesOf('Tables/ArrayObjectTable/Examples', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-
 stories.add('Component default (renders empty values and rows)', () => {
   const fields = [
     { key: 'one', heading: 'One' },

@@ -80,7 +80,6 @@ ObjectTable.propTypes = {
   object: PropTypes.object,
   hideWithNoValues: PropTypes.bool,
   skipEmptyValues: PropTypes.bool,
-  skipMissingKeys: PropTypes.bool,
   defaultTransform: PropTypes.func,
   title: PropTypes.node,
 };
