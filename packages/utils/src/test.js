@@ -27,8 +27,9 @@ describe('rowsFromObject', () => {
     const fields = [
       { key: 'one', heading: 'One' },
       { key: 'two', heading: 'Two', transform: () => 'hardcodedstring' },
+      { key: 'three', heading: 'Three' },
     ];
-    const object = { one: 'test', two: 'test' };    
+    const object = { one: 'test', two: 'test', three: null };    
     const skipEmptyValues = true;
     const rows = rowsFromObject(object, fields, skipEmptyValues);
 
