@@ -4,7 +4,6 @@ import { Table } from 'govuk-frederic';
 
 import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-frederic/utils';
 
-
 /**
  *
  * ### Usage
