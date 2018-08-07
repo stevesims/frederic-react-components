@@ -37,11 +37,7 @@ const KeylineWrapper = styled('span')(({ inlineBlock, borderColor }) => ({
  * </Keyline>
  * ```
  */
-const Keyline = ({ children, ...props }) => (
-  <KeylineWrapper {...props}>
-    {children}
-  </KeylineWrapper>
-);
+const Keyline = props => <KeylineWrapper {...props} />;
 
 Keyline.propTypes = {
   borderColor: PropTypes.string,
