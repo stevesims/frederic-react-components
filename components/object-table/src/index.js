@@ -50,10 +50,10 @@ import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-fr
  */
 const ObjectTable = ({
   title,
-  fields = [],
-  object = {},
-  hideWithNoValues = false,
-  skipEmptyValues = true,
+  fields,
+  object,
+  hideWithNoValues,
+  skipEmptyValues,
   defaultTransform, 
   ...props
 }) => {
@@ -81,6 +81,14 @@ ObjectTable.propTypes = {
   skipEmptyValues: PropTypes.bool,
   defaultTransform: PropTypes.func,
   title: PropTypes.node,
+};
+
+ObjectTable.defaultProps = {
+  fields: [],
+  object: {},
+  hideWithNoValues: false,
+  skipEmptyValues: true,
+  title: null,
 };
 
 export default ObjectTable;
