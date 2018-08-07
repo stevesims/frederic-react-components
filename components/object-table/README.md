@@ -11,8 +11,6 @@ ObjectTable
 
 Simple
 ```jsx
-import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-frederic/utils';
-
 const fields = [
   { key: 'one', heading: 'One' },
   { key: 'two', heading: 'Two' },
@@ -27,8 +25,6 @@ const title = ['Heading'];
 
 With skipEmptyValues
 ```jsx
-import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-frederic/utils';
-
 const fields = [
   { key: 'one', heading: 'One' },
   { key: 'two', heading: 'Two' },
@@ -43,8 +39,6 @@ const title = ['Heading'];
 
 With hideWithNoValues
 ```jsx
-import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-frederic/utils';
-
 const fields = [
   { key: 'one', heading: 'One' },
   { key: 'two', heading: 'Two' },

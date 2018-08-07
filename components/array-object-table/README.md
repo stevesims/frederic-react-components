@@ -11,8 +11,6 @@ ArrayObjectTable
 
 Simple
 ```jsx
-import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
-
 const fields = [
   { key: 'one', heading: 'One' },
   { key: 'two', heading: 'Two' },
@@ -29,8 +27,6 @@ const title = ['Heading'];
 
 With skipEmptyRows
 ```jsx
-import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
-
 const fields = [
   { key: 'one', heading: 'One' },
   { key: 'two', heading: 'Two' },
@@ -46,8 +42,6 @@ const title = ['Heading'];
 
 With skipEmptyRows and hideWithNoValues
 ```jsx
-import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
-
 const fields = [
   { key: 'one', heading: 'One' },
   { key: 'two', heading: 'Two' },

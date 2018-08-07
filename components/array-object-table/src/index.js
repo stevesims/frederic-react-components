@@ -10,8 +10,6 @@ import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
  *
  * Simple
  * ```jsx
- * import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
- * 
  * const fields = [
  *   { key: 'one', heading: 'One' },
  *   { key: 'two', heading: 'Two' },
@@ -28,8 +26,6 @@ import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
  * 
  * With skipEmptyRows
  * ```jsx
- * import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
- * 
  * const fields = [
  *   { key: 'one', heading: 'One' },
  *   { key: 'two', heading: 'Two' },
@@ -45,8 +41,6 @@ import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
  * 
  * With skipEmptyRows and hideWithNoValues
  * ```jsx
- * import { rowsFromArray, titlesFromFields } from '@govuk-frederic/utils';
- * 
  * const fields = [
  *   { key: 'one', heading: 'One' },
  *   { key: 'two', heading: 'Two' },

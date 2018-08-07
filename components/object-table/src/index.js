@@ -11,8 +11,6 @@ import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-fr
  * 
  * Simple
  * ```jsx
- * import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-frederic/utils';
- * 
  * const fields = [
  *   { key: 'one', heading: 'One' },
  *   { key: 'two', heading: 'Two' },
@@ -27,8 +25,6 @@ import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-fr
  * 
  * With skipEmptyValues
  * ```jsx
- * import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-frederic/utils';
- * 
  * const fields = [
  *   { key: 'one', heading: 'One' },
  *   { key: 'two', heading: 'Two' },
@@ -43,8 +39,6 @@ import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-fr
  * 
  * With hideWithNoValues
  * ```jsx
- * import { objectHasValueForKeys, keysFromFields, rowsFromObject } from '@govuk-frederic/utils';
- * 
  * const fields = [
  *   { key: 'one', heading: 'One' },
  *   { key: 'two', heading: 'Two' },
