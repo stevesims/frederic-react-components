@@ -146,6 +146,7 @@
     "url": "https://github.com/stevesims/govuk-frederic.git"
   },
   "author": "Steve Sims",
+  "contributors": ["Tarandeep Singh Chauhan", "Gavin Orland", "Toby Brancher"],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/stevesims/govuk-frederic/issues"
