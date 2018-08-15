@@ -145,8 +145,17 @@
     "type": "git",
     "url": "https://github.com/stevesims/govuk-frederic.git"
   },
-  "author": "Steve Sims",
-  "contributors": ["Tarandeep Singh Chauhan", "Gavin Orland", "Toby Brancher"],
+  "author": "The govuk-frederic authors",
+  "contributors": [
+    "Toby Brancher",
+    "Mark Chambers",
+    "Tarandeep Singh Chauhan",
+    "Alasdair Mcleay",
+    "Simon Moore",
+    "Gavin Orland",
+    "Jonathan Sheldrake",
+    "Steve Sims"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/stevesims/govuk-frederic/issues"

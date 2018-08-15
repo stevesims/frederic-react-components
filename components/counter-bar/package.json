@@ -26,6 +26,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": "Gavin Orland",
+  "contributors": ["Steve Sims", "Toby Brancher"],
   "license": "MIT",
   "homepage": "https://www.npmjs.com/package/@govuk-frederic/counter-bar",
   "description": "A 'construction kit' for creating a counter bar with counters and a total, with various configurable parameters.",

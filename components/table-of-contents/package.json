@@ -22,8 +22,8 @@
   },
   "main": "lib/index.js",
   "module": "es/index.js",
-  "author": "Toby Brancher",
-  "contributors": ["Steve Sims", "Gavin Orland"],
+  "author": "Steve Sims",
+  "contributors": ["Gavin Orland"],
   "license": "MIT",
   "homepage": "https://www.npmjs.com/package/@govuk-frederic/table-of-contents",
   "description": "Construction kit to build a table of contents - uses Context API."
