@@ -24,6 +24,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": "The govuk-frederic authors",
+  "contributors": ["Taran Chauhan"],
   "license": "MIT",
   "homepage": "https://www.npmjs.com/package/@govuk-frederic/result-count",
   "description": "Renders children, expected to be a number, styled and with customisable color and background-color.",

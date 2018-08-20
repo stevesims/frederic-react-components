@@ -25,7 +25,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": "Mark Chambers",
-  "contributors": ["Gavin Orland"],
+  "contributors": ["Gavin Orland", "Taran Chauhan"],
   "license": "MIT",
   "homepage": "https://www.npmjs.com/package/@govuk-frederic/distraction-free",
   "description": "Provides border, arrow-left button and body area for document display.",

@@ -25,7 +25,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": "Jonathan Sheldrake",
-  "contributors": ["Gavin Orland"],
+  "contributors": ["Gavin Orland", "Taran Chauhan"],
   "license": "MIT",
   "homepage": "https://www.npmjs.com/package/@govuk-frederic/compact-table-accordion-group",
   "description": "An accordion menu with various customisable features.",

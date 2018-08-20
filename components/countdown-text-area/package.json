@@ -25,7 +25,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": "Steve Sims",
-  "contributors": ["Tarandeep Singh Chauhan", "Gavin Orland"],
+  "contributors": ["Taran Chauhan", "Gavin Orland"],
   "license": "MIT",
   "homepage": "https://www.npmjs.com/package/@govuk-frederic/countdown-text-area",
   "description": "TextArea which accepts a maxlength prop and renders a TextAreaField, limits characters and styles accordingly.",

@@ -23,7 +23,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": "Mark Chambers",
-  "contributors": ["Gavin Orland"],
+  "contributors": ["Gavin Orland", "Taran Chauhan"],
   "license": "MIT",
   "homepage": "https://www.npmjs.com/package/@govuk-frederic/remove-button",
   "description": "Renders a styled button containing an x character.",

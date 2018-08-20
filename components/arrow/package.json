@@ -18,6 +18,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": "The govuk-frederic authors",
+  "contributors": ["Taran Chauhan"],
   "license": "MIT",
   "homepage": "https://www.npmjs.com/package/@govuk-frederic/arrow",
   "description": "Downward-pointing triangular icon created using SVG.",

@@ -24,11 +24,10 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": "Steve Sims",
-  "contributors": ["Tarandeep Singh Chauhan", "Gavin Orland"],
+  "contributors": ["Taran Chauhan", "Gavin Orland"],
   "license": "MIT",
   "homepage": "https://www.npmjs.com/package/@govuk-frederic/title-result-count",
   "description": "Renders a ResultCount using count prop provided and a title from children.",
-  "private": false,
   "private": false,
   "publishConfig": {
     "access": "public"

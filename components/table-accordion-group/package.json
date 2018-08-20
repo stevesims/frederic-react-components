@@ -27,7 +27,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": "Alasdair Mcleay",
-  "contributors": ["Gavin Orland"],
+  "contributors": ["Gavin Orland", "Taran Chauhan"],
   "license": "MIT",
   "homepage": "https://www.npmjs.com/package/@govuk-frederic/table-accordion-group",
   "description": "Accordion menu which uses manage-state and react-collapse.",
