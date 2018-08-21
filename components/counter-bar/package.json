@@ -25,7 +25,7 @@
   },
   "main": "lib/index.js",
   "module": "es/index.js",
-  "author": "GO",
+  "author": "Gavin Orland",
   "contributors": ["Steve Sims", "Toby Brancher", "Taran Chauhan"],
   "license": "MIT",
   "homepage": "https://www.npmjs.com/package/@govuk-frederic/counter-bar",
