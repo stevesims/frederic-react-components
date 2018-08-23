@@ -31,16 +31,19 @@ export class Entry extends Component {
   }
 }
 
-const Section = props => (
-  <Context.Consumer>
-    {toc => <Entry {...props} toc={toc} />}
-  </Context.Consumer>
-);
+const Section = ({standalone, ...props}) => {
+  return standalone ?
+    <Entry {...props} /> :
+    <Context.Consumer>
+      {toc => <Entry {...props} toc={toc} />}
+    </Context.Consumer>;
+};
 
 Section.propTypes = {
   children: PropTypes.node.isRequired,
   id: PropTypes.string.isRequired,
   title: PropTypes.node.isRequired,
+  standalone: PropTypes.bool,
 };
 
 export default Section;
