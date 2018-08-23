@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TableOfContents Section Entry matches snapshot 1`] = `""`;
+exports[`TableOfContents Section Entry works with Context API matches snapshot 1`] = `""`;
+
+exports[`TableOfContents Section Entry works without Context API matches snapshot 1`] = `null`;
