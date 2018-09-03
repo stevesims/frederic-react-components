@@ -50,7 +50,7 @@ stories.add('Component default', () => (
 ));
 
 examples.add('Standalone Section', () => (
-  <TOC.Section id="first" title="First" standalone>
+  <TOC.Section id="first" title="First">
     <h3>First</h3>
     <p>
       Content of first section goes here<br/>

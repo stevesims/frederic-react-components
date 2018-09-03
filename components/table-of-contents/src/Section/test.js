@@ -8,7 +8,7 @@ let wrapper;
 describe('TableOfContents Section', () => {
   it('renders standalone', () => {
     wrapper = mount(
-      <Section id="id" title="Title" standalone>Section text here</Section>,
+      <Section id="id" title="Title">Section text here</Section>,
     );
     expect(wrapper.exists()).toBe(true);
   });
