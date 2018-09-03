@@ -15,13 +15,13 @@ export class Entry extends Component {
   }
 
   componentDidMount() {
-    if(this.props.toc) {
+    if (this.props.toc) {
       this.props.toc.addContent(this.props.id, this.props.title);
     }
   }
 
   componentWillUnmount() {
-    if(this.props.toc) {
+    if (this.props.toc) {
       this.props.toc.removeContent(this.props.id);
     }
   }

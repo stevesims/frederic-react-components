@@ -50,7 +50,7 @@ describe('TableOfContents Section Entry', () => {
     it('renders without crashing', () => {
       wrapper = mount(
         <Entry id="id" title="Title">
-        Section text here
+          Section text here
         </Entry>,
       );
       expect(wrapper.exists()).toBe(true);
