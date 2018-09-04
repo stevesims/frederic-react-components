@@ -29,17 +29,16 @@ const RotatingButton = styled('button')(
  * Simple
  * ```jsx
  * import manageState from 'manage-state';
- * 
+ *
  * const ManagedOpenButton = manageState(OpenButton, { propsToState: ['open']});
- * 
+ *
  * <ManagedOpenButton />
  * ```
  */
-const OpenButton = ({ open, onChange, ...props }) => (
+const OpenButton = ({ open, onChange, ...props }) =>
   <RotatingButton open={open} onClick={() => onChange && onChange({ open: !open })} {...props}>
     <Arrow width={20} />
-  </RotatingButton>
-);
+  </RotatingButton>;
 
 OpenButton.propTypes = {
   onChange: PropTypes.func,

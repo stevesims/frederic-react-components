@@ -37,18 +37,23 @@ describe('ArrayObjectTable', () => {
 
   describe('responds as expected to additional props', () => {
     it('renders a table heading if provided', () => {
-      const wrapper = shallow(<ArrayObjectTable fields={fields} array={array} title="Heading"/>);
+      const wrapper = shallow(<ArrayObjectTable fields={fields} array={array} title="Heading" />);
       expect(wrapper.contains('Heading')).toBe(true);
     });
 
     it('skips empty rows if skipEmptyRows is true', () => {
-      const wrapper = mount(<ArrayObjectTable fields={fields} array={array} skipEmptyRows/>);
+      const wrapper = mount(<ArrayObjectTable fields={fields} array={array} skipEmptyRows />);
       expect(getRows(wrapper)).toEqual([['test', 'two', '-']]);
     });
 
     it('renders nothing if no rows are returned and hideWithNoValues is true', () => {
       const emptyArray = [{}, {}, {}];
-      const wrapper = shallow(<ArrayObjectTable fields={fields} array={emptyArray} skipEmptyRows hideWithNoValues />);
+      const wrapper = shallow(<ArrayObjectTable
+        fields={fields}
+        array={emptyArray}
+        skipEmptyRows
+        hideWithNoValues
+      />);
       expect(wrapper.html()).toBe(null);
     });
 
@@ -62,12 +67,12 @@ describe('ArrayObjectTable', () => {
   describe('uses transforms as expected', () => {
     const fieldsWithTransforms = [
       { key: 'one', heading: 'One' },
-      { key: 'two', heading: 'Two', transform: value => value ? value.toLowerCase() : '-' },
+      { key: 'two', heading: 'Two', transform: value => (value ? value.toLowerCase() : '-') },
       { key: 'three', heading: 'Three' },
-      { key: 'four', heading: 'Four', transform: value => value ? value.toLowerCase() : '*' },
+      { key: 'four', heading: 'Four', transform: value => (value ? value.toLowerCase() : '*') },
     ];
     const arrayOfOnlyTwo = [
-      {one: 'One', two: 'Two'},
+      { one: 'One', two: 'Two' },
     ];
 
     it('sends table row cells as expected', () => {

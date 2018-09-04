@@ -26,12 +26,12 @@ const StyledResultCount = styled('span')(({ backgroundColor, color }) => ({
  * ```jsx
  * <ResultCount>0</ResultCount>
  * ```
- * 
+ *
  * Overriding background and text colours
  * ```jsx
  * <ResultCount backgroundColor="#6f777b" color="white">000</ResultCount>
  * ```
- * 
+ *
  */
 const ResultCount = props => <StyledResultCount {...props} />;
 

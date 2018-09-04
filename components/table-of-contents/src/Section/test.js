@@ -12,7 +12,7 @@ describe('TableOfContents Section Entry', () => {
     wrapper = shallow(
       <Entry id="id" title="Title" toc={{ addContent, removeContent }}>
         Section text here
-      </Entry>,
+      </Entry>
     );
   });
 

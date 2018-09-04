@@ -22,7 +22,7 @@ describe('Table', () => {
     const wrapper = shallow(<Table rows={rows} />);
     expect(wrapper.exists()).toBe(true);
   });
-  
+
   it('renders rows from prop', () => {
     const wrapper = mount(<Table rows={rows} />);
     expect(wrapper.find('tr')).toHaveLength(3);
@@ -34,7 +34,8 @@ describe('Table', () => {
   });
 
   it('names each cell according to its column', () => {
-    const wrapper = mount(<Table rows={rows} titles={titles} name="name" names={columnTableNames} />);
+    const wrapper = mount(
+      <Table rows={rows} titles={titles} name="name" names={columnTableNames} />);
     const th = wrapper.find('TableHeading').at(2);
     expect(th.prop('name')).toBe('three');
     const td = wrapper.find('TableData').at(2);
@@ -42,23 +43,23 @@ describe('Table', () => {
   });
 
   it('renders rows with header column', () => {
-    const wrapper = mount(<Table 
+    const wrapper = mount(<Table
       rows={rows}
       name="name"
       titles={titles}
       names={columnTableNames}
-      rowIncludesHeading 
+      rowIncludesHeading
       nameByRow
     />);
     expect(wrapper.find('TableHeading')).toHaveLength(7);
   });
 
   it('names each cell according to its row, no titles', () => {
-    const wrapper = mount(<Table 
+    const wrapper = mount(<Table
       rows={rows}
       name="name"
       names={rowTableNames}
-      rowIncludesHeading 
+      rowIncludesHeading
       nameByRow
     />);
 
@@ -88,10 +89,10 @@ describe('Table', () => {
   });
 
   it('renders name on table element', () => {
-    const wrapper = mount(<Table 
+    const wrapper = mount(<Table
       name="tableNameAtt"
       rows={rows}
-      rowIncludesHeading 
+      rowIncludesHeading
       nameByRow
     />);
 
@@ -99,15 +100,15 @@ describe('Table', () => {
   });
 
   it('names each cell according to its row, with titles', () => {
-    const wrapper = mount(<Table 
+    const wrapper = mount(<Table
       rows={rows}
       name="name"
       names={rowTableNamesWithTitles}
-      rowIncludesHeading 
+      rowIncludesHeading
       nameByRow
       titles={titles}
     />);
-    
+
     let th = wrapper.find('TableHeading').at(3);
     expect(th.prop('name')).toBe('heading');
 
@@ -137,41 +138,41 @@ describe('Table', () => {
   });
 
   it('sets th width according to rowHeading prop', () => {
-    const wrapper = mount(<Table 
+    const wrapper = mount(<Table
       rows={rows}
       name="name"
       names={rowTableNamesWithTitles}
-      rowIncludesHeading 
+      rowIncludesHeading
       nameByRow
       titles={titles}
     />);
     expect(wrapper.find('TableHeading').at(3)).not.toHaveStyleRule('width');
     const t = titles.slice(-1);
     const r = rows.map(row => row.slice(-1));
-    wrapper.setProps({titles: t, rows: r});
+    wrapper.setProps({ titles: t, rows: r });
     expect(wrapper.find('TableHeading').at(3)).toHaveStyleRule('width', '25%');
   });
 
   it('sets table-layout according to flexibleColumns prop', () => {
-    const wrapper = mount(<Table 
+    const wrapper = mount(<Table
       rows={rows}
       name="name"
       names={rowTableNamesWithTitles}
-      rowIncludesHeading 
+      rowIncludesHeading
       nameByRow
       titles={titles}
     />);
     expect(wrapper).toHaveStyleRule('table-layout', 'fixed');
-    wrapper.setProps({flexibleColumns: true});
+    wrapper.setProps({ flexibleColumns: true });
     expect(wrapper).toHaveStyleRule('table-layout', 'auto');
   });
-  
+
   it('matches snapshot', () => {
-    const wrapper = mount(<Table 
+    const wrapper = mount(<Table
       rows={rows}
       name="name"
       names={rowTableNamesWithTitles}
-      rowIncludesHeading 
+      rowIncludesHeading
       flexibleColumns
       nameByRow
       titles={titles}

@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs/react';
 import { WithDocsCustom } from '@govuk-react/storybook-components';
+
 import manageState from 'manage-state';
 
 import CountdownTextArea from '.';
@@ -19,5 +21,11 @@ stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
 stories.add('Component default', () => <ManagedCountdownTextarea />);
-examples.add('With maxLength (150)', () => <ManagedCountdownTextarea noMaxLengthAttr maxLength={150} />);
-examples.add('With maxLength (100) and positiveOnly', () => <ManagedCountdownTextarea maxLength={100} positiveOnly />);
+
+examples.add('With maxLength (150)', () =>
+  <ManagedCountdownTextarea noMaxLengthAttr maxLength={150} />
+);
+
+examples.add('With maxLength (100) and positiveOnly', () =>
+  <ManagedCountdownTextarea maxLength={100} positiveOnly />
+);

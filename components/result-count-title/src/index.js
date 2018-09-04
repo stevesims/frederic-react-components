@@ -30,19 +30,21 @@ const Title = styled('div')({
  *
  * In black with count value 0
  * ```jsx
- * <ResultCountTitle count={0} countColor="black" countBackgroundColor="#dee0e2">Title</ResultCountTitle>
+ * <ResultCountTitle
+ *  count={0}
+ *  countColor="black"
+ *  countBackgroundColor="#dee0e2">Title</ResultCountTitle>
  * ```
  */
-const ResultCountTitle = ({ countBackgroundColor, children, count, countColor, ...props }) => {
-  return (
-    <Wrapper {...props}>
-      <ResultCount backgroundColor={countBackgroundColor} color={countColor}>
-        {count}
-      </ResultCount>
-      <Title>{children}</Title>
-    </Wrapper>
-  );
-};
+const ResultCountTitle = ({
+  countBackgroundColor, children, count, countColor, ...props
+}) =>
+  <Wrapper {...props}>
+    <ResultCount backgroundColor={countBackgroundColor} color={countColor}>
+      {count}
+    </ResultCount>
+    <Title>{children}</Title>
+  </Wrapper>;
 
 ResultCountTitle.propTypes = {
   children: PropTypes.node,

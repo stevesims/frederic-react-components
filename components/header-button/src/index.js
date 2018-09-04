@@ -21,15 +21,15 @@ const Button = styled('button')(
     textAlign: 'center',
   },
   ({ active }) =>
-    active
+    (active
       ? {
         borderBottomColor: LINK_COLOUR,
         borderTopColor: LINK_COLOUR,
         color: LINK_COLOUR,
       }
-      : {},
+      : {}),
   ({ disabled }) =>
-    disabled
+    (disabled
       ? {
         opacity: '0.35',
       }
@@ -42,7 +42,7 @@ const Button = styled('button')(
           borderBottomColor: `${LINK_ACTIVE_COLOUR}`,
           borderTopColor: `${LINK_ACTIVE_COLOUR}`,
         },
-      },
+      }),
 );
 
 /**
@@ -53,7 +53,7 @@ const Button = styled('button')(
  * ```jsx
  * <HeaderButton>One</HeaderButton>
  * ```
- * 
+ *
  * Multiple header buttons
  * ```jsx
  * <Fragment>
@@ -61,11 +61,11 @@ const Button = styled('button')(
  *  <HeaderButton>Two</HeaderButton>
  * </Fragment>
  * ```
- * 
+ *
  * Multiple header buttons with keyline
  * ```jsx
  * import Keyline from '@govuk-frederic/keyline';
- * 
+ *
  * <Fragment>
  *  <Keyline>
  *    <HeaderButton>One</HeaderButton>
@@ -73,12 +73,12 @@ const Button = styled('button')(
  *  </Keyline>
  * </Fragment>
  * ```
- * 
+ *
  * Active header button
  * ```jsx
  * <HeaderButton active>On</HeaderButton>
  * ```
- * 
+ *
  * Disabled header button
  * ```jsx
  * <HeaderButton disabled>Off</HeaderButton>

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs/react';
 import { WithDocsCustom } from '@govuk-react/storybook-components';
@@ -9,7 +10,7 @@ import ReadMe from '../README.md';
 const stories = storiesOf('Tables/ObjectTable', module);
 const examples = storiesOf('Tables/ObjectTable/Examples', module);
 const title = ['Heading'];
-  
+
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
@@ -20,9 +21,11 @@ stories.add('Component default (skips blank or null values)', () => {
     { key: 'three', heading: 'Three' },
     { key: 'four', heading: 'Four' },
   ];
-  const object = { one: 'test', two: 'test', three: '', four: null };
+  const object = {
+    one: 'test', two: 'test', three: '', four: null,
+  };
 
-  return <ObjectTable fields={fields} object={object} title={title}/>;
+  return <ObjectTable fields={fields} object={object} title={title} />;
 });
 
 examples.add('skipEmptyValues false (renders empty values but not null ones)', () => {
@@ -32,9 +35,11 @@ examples.add('skipEmptyValues false (renders empty values but not null ones)', (
     { key: 'three', heading: 'Three' },
     { key: 'four', heading: 'Four' },
   ];
-  const object = { one: 'test', two: 'test', three: '', four: null };
+  const object = {
+    one: 'test', two: 'test', three: '', four: null,
+  };
 
-  return <ObjectTable fields={fields} object={object} title={title} skipEmptyValues={false}/>;
+  return <ObjectTable fields={fields} object={object} title={title} skipEmptyValues={false} />;
 });
 
 examples.add('No values found for fields', () => {
@@ -45,7 +50,7 @@ examples.add('No values found for fields', () => {
     { key: 'four', heading: 'Four' },
   ];
   const object = { };
-  
+
   return <ObjectTable fields={fields} object={object} title={title} />;
 });
 
@@ -55,7 +60,7 @@ examples.add('Hide table when no data with hideWithNoValues', () => {
     { key: 'two', heading: 'Two' },
   ];
   const object = { };
-  
+
   return <ObjectTable fields={fields} object={object} title={title} hideWithNoValues />;
 });
 
@@ -79,7 +84,7 @@ examples.add('Mixed values no skip rows', () => {
     seven: undefined,
     eight: undefined,
   };
-  
+
   return <ObjectTable fields={fields} object={object} title={title} />;
 });
 
@@ -104,7 +109,7 @@ examples.add('Mixed values with skip rows', () => {
     seven: undefined,
     eight: undefined,
   };
-  
+
   return <ObjectTable fields={fields} object={object} title={title} skipEmptyValues />;
 });
 
@@ -128,7 +133,7 @@ examples.add('Missing item specified in key', () => {
     seven: undefined,
     eight: undefined,
   };
-  
+
   return <ObjectTable fields={fields} object={object} title={title} skipEmptyValues />;
 });
 
@@ -153,7 +158,7 @@ examples.add('With default transform', () => {
     eight: undefined,
   };
   const defaultTransform = (result = '-') => result;
-  
+
   return <ObjectTable
     fields={fields}
     object={object}

@@ -1,14 +1,14 @@
 import React from 'react';
+import ResultCountTitle from '@govuk-frederic/result-count-title';
+import Spinner from '@govuk-frederic/spinner';
+import manageState from 'manage-state';
+
 import { storiesOf } from '@storybook/react';
 import { WithDocsCustom } from '@govuk-react/storybook-components';
 import { withKnobs } from '@storybook/addon-knobs/react';
 
 import CompactTableAccordionGroup from '.';
 import ReadMe from '../README.md';
-import ResultCountTitle from '@govuk-frederic/result-count-title';
-import Spinner from '@govuk-frederic/spinner';
-
-import manageState from 'manage-state';
 
 class CompactTableAccordionGroupAsyncExample extends React.Component {
   constructor(props) {
@@ -28,6 +28,31 @@ class CompactTableAccordionGroupAsyncExample extends React.Component {
     };
   }
 
+  onChange(open, index) {
+    this.setState(() => {
+      const newItems = this.state.items.map((item, i) => {
+        if (index === i) {
+          return {
+            ...item,
+            open,
+          };
+        } return item;
+      });
+      return { items: newItems };
+    });
+
+    // eslint disable justification:
+    // "avoid the use of user input in property name fields"
+    // https://blog.liftsecurity.io/2015/01/14/the-dangers-of-square-bracket-notation/
+    // - `index` is not a user input as it comes from items.map in render.
+    // - This code is also not expected to be executed on a server, other than during unit tests,
+    //   in which case this vulnerability is not relevant.
+    if (open && !this.state.items[index].loaded) {
+      // eslint-disable-line security/detect-object-injection
+      this.loadItem(index);
+    }
+  }
+
   loadItem(index) {
     // mock ajax call
     setTimeout(() => {
@@ -41,33 +66,9 @@ class CompactTableAccordionGroupAsyncExample extends React.Component {
             };
           } return item;
         });
-        return {items: newItems};
+        return { items: newItems };
       });
     }, 1000);
-  }
-
-  onChange(open, index) {
-    this.setState(() => {
-      const newItems = this.state.items.map((item, i) => {
-        if (index === i) {
-          return {
-            ...item,
-            open,
-          };
-        } return item;
-      });
-      return {items: newItems};
-    });
-
-    // eslint disable justification:
-    // "avoid the use of user input in property name fields"
-    // https://blog.liftsecurity.io/2015/01/14/the-dangers-of-square-bracket-notation/
-    // - `index` is not a user input as it comes from items.map in render.
-    // - This code is also not expected to be executed on a server, other than during unit tests,
-    //   in which case this vulnerability is not relevant.
-    if(open && !this.state.items[index].loaded) { // eslint-disable-line security/detect-object-injection
-      this.loadItem(index);
-    }
   }
 
   render() {
@@ -83,7 +84,8 @@ class CompactTableAccordionGroupAsyncExample extends React.Component {
           }
           open={item.open}
           expanded={item.loaded ? item.text : <Spinner visible />}
-          onChange={({open}) => this.onChange(open, index)}>
+          onChange={({ open }) => this.onChange(open, index)}
+        >
           {item.firstItem}
         </CompactTableAccordionGroup>
       ))}
@@ -103,36 +105,50 @@ const examples = storiesOf('Tables/CompactTableAccordionGroup/Examples', module)
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Component default', () => <CompactTableAccordionGroup title="Title" expanded="expanded">
-      Children
-</CompactTableAccordionGroup>);
+stories.add('Component default', () =>
+  <CompactTableAccordionGroup title="Title" expanded="expanded">
+    Children
+  </CompactTableAccordionGroup>
+);
 
-examples.add('No children', () => <CompactTableAccordionGroup open title="Title" expanded="expanded"/>);
+examples.add('No children', () =>
+  <CompactTableAccordionGroup open title="Title" expanded="expanded" />
+);
 
-examples.add('Open', () => <CompactTableAccordionGroup open title="Title" expanded="expanded">
-      Children
-</CompactTableAccordionGroup>);
+examples.add('Open', () =>
+  <CompactTableAccordionGroup open title="Title" expanded="expanded">
+    Children
+  </CompactTableAccordionGroup>
+);
 
-examples.add('State managed', () => <ManagedCompactTableAccordionGroup title="Title" expanded="expanded">
-          Children
-</ManagedCompactTableAccordionGroup>);
+examples.add('State managed', () =>
+  <ManagedCompactTableAccordionGroup title="Title" expanded="expanded">
+    Children
+  </ManagedCompactTableAccordionGroup>
+);
 
-examples.add('State managed without children', () => <ManagedCompactTableAccordionGroup title="Title" expanded="expanded"/>);
+examples.add('State managed without children', () =>
+  <ManagedCompactTableAccordionGroup title="Title" expanded="expanded" />
+);
 
-examples.add('changeOnTitleClick', () => <ManagedCompactTableAccordionGroup changeOnTitleClick title="Title" expanded="expanded">
-          Children
-</ManagedCompactTableAccordionGroup>);
+examples.add('changeOnTitleClick', () =>
+  <ManagedCompactTableAccordionGroup changeOnTitleClick title="Title" expanded="expanded">
+    Children
+  </ManagedCompactTableAccordionGroup>
+);
 
-examples.add('array', () => <ManagedCompactTableAccordionGroup
-  expanded={
+examples.add('array', () =>
+  <ManagedCompactTableAccordionGroup
+    expanded={
     arrayExampleItems.map((item, index) => {
       if (index) {
         return <div>{item}</div>;
       }
       return null;
     })}
->
-  {arrayExampleItems[0]}
-</ManagedCompactTableAccordionGroup>);
+  >
+    {arrayExampleItems[0]}
+  </ManagedCompactTableAccordionGroup>
+);
 
 examples.add('async', () => <CompactTableAccordionGroupAsyncExample />);

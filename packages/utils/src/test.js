@@ -12,7 +12,7 @@ describe('rowsFromArray', () => {
       {},
       { one: 'test', two: 'test' },
     ];
-    
+
     let rows = rowsFromArray(array, fields, false);
     expect(rows).toEqual([['-', 'two', '-'], ['test', 'test', '-']]);
 
@@ -29,7 +29,7 @@ describe('rowsFromObject', () => {
       { key: 'two', heading: 'Two', transform: () => 'hardcodedstring' },
       { key: 'three', heading: 'Three' },
     ];
-    const object = { one: 'test', two: 'test', three: null };    
+    const object = { one: 'test', two: 'test', three: null };
     const skipEmptyValues = true;
     const rows = rowsFromObject(object, fields, skipEmptyValues);
 
@@ -49,12 +49,12 @@ describe('rowsFromObject', () => {
     const { rowsFromObject } = exports;
     const fields = [
       { key: 'one', heading: 'One', names: ['firstCol', 'secondCol'] },
-      { key: 'two', heading: 'Two', transform: (val) => val },
+      { key: 'two', heading: 'Two', transform: val => val },
     ];
     const object = { one: 'test', two: 'some val' };
     const skipEmptyValues = true;
-    const deafultTransform = (david) => `${david} david`;
-    const rows = rowsFromObject(object, fields, skipEmptyValues, deafultTransform);
+    const defaultTransform = david => `${david} david`;
+    const rows = rowsFromObject(object, fields, skipEmptyValues, defaultTransform);
 
     expect(rows).toEqual({
       rows: [

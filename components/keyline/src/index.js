@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
-import { withWhiteSpace } from '@govuk-react/hoc';
 
+import { withWhiteSpace } from '@govuk-react/hoc';
 import { GREY_1 } from 'govuk-colours';
 import { NTA_LIGHT } from '@govuk-react/constants';
 
@@ -23,14 +23,14 @@ const KeylineWrapper = styled('span')(({ inlineBlock, borderColor }) => ({
  *    <p>example</p>
  * </Keyline>
  * ```
- * 
+ *
  * inlineBlock
  * ```jsx
  * <Keyline inlineBlock>
  *    <p>example</p>
  * </Keyline>
  * ```
- * 
+ *
  * inlineBlock with orange border
  * ```jsx
  * <<Keyline inlineBlock borderColor="#ff9900">

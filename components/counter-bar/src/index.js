@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
+
 import { withWhiteSpace } from '@govuk-react/hoc';
-
 import ResultCountTitle from '@govuk-frederic/result-count-title';
-
 import { BLACK, GREY_1, GREY_3, LINK_COLOUR, RED, WHITE, YELLOW } from 'govuk-colours';
 
 const OuterWrapper = styled('div')({
@@ -177,7 +176,9 @@ const CounterWrapper = styled(TotalWrapper, {
  * Custom colours on total
  * ```jsx
  * <CounterBar>
- *   <CounterBar.Total score={15} scoreColor="yellow" scoreBackgroundColor="pink">All counters</CounterBar.Total>
+ *   <CounterBar.Total score={15} scoreColor="yellow" scoreBackgroundColor="pink">
+ *     All counters
+ *   </CounterBar.Total>
  *   <CounterBar.Counters>
  *     <CounterBar.Counter score={1}>Counter 1</CounterBar.Counter>
  *     <CounterBar.Counter score={2}>Counter 2</CounterBar.Counter>
@@ -193,9 +194,14 @@ const CounterWrapper = styled(TotalWrapper, {
  *   <CounterBar.Total score={15}>All counters</CounterBar.Total>
  *   <CounterBar.Counters>
  *     <CounterBar.Counter score={1}>Counter 1</CounterBar.Counter>
- *     <CounterBar.Counter score={2} scoreColor="orange" scoreBackgroundColor="blue">Counter 2</CounterBar.Counter>
+ *     <CounterBar.Counter score={2} scoreColor="orange" scoreBackgroundColor="blue">
+ *       Counter 2
+ *     </CounterBar.Counter>
  *     <CounterBar.Counter score={3}>Counter 3</CounterBar.Counter>
- *     <CounterBar.Counter score={4} scoreColor="yellow" scoreBackgroundColor="purple">Counter 4</CounterBar.Counter>
+ *     <CounterBar.Counter
+ *      score={4}
+ *      scoreColor="yellow"
+ *      scoreBackgroundColor="purple">Counter 4</CounterBar.Counter>
  *     <CounterBar.Counter score={5}>Counter 5</CounterBar.Counter>
  *   </CounterBar.Counters>
  * </CounterBar>
@@ -219,7 +225,9 @@ const CounterWrapper = styled(TotalWrapper, {
  *
  * <HashRouter>
  *   <CounterBar>
- *     <CounterBar.Total score={15} component={Link} to="/courses?sort=name'/">All counters</CounterBar.Total>
+ *     <CounterBar.Total score={15} component={Link} to="/courses?sort=name'/">
+ *       All counters
+ *     </CounterBar.Total>
  *     <CounterBar.Counters>
  *       <CounterBar.Counter score={1}>Counter 1</CounterBar.Counter>
  *       <CounterBar.Counter score={2}>Counter 2</CounterBar.Counter>
@@ -251,7 +259,9 @@ const CounterWrapper = styled(TotalWrapper, {
  *   <CounterBar>
  *     <CounterBar.Total score={15}>All counters</CounterBar.Total>
  *     <CounterBar.Counters>
- *       <CounterBar.Counter score={1} component={Link} to="/courses/1/">Counter 1</CounterBar.Counter>
+ *       <CounterBar.Counter score={1} component={Link} to="/courses/1/">
+ *         Counter 1
+ *       </CounterBar.Counter>
  *       <CounterBar.Counter score={2}>Counter 2</CounterBar.Counter>
  *       <CounterBar.Counter score={3}>Counter 3</CounterBar.Counter>
  *       <CounterBar.Counter score={4}>Counter 4</CounterBar.Counter>
@@ -261,7 +271,7 @@ const CounterWrapper = styled(TotalWrapper, {
  * </HashRouter>
  * ```
  */
-const CounterBar = withWhiteSpace({ marginBottom: 3 })(props => <OuterWrapper {...props}/>);
+const CounterBar = withWhiteSpace({ marginBottom: 3 })(props => <OuterWrapper {...props} />);
 
 CounterBar.propTypes = {
   children: PropTypes.node.isRequired,
@@ -285,7 +295,7 @@ CounterBar.Item = ({
         count={score}
         countColor={score > 0 ? scoreColor : scoreDisabledColor}
         countBackgroundColor={score > 0 ? scoreBackgroundColor : scoreDisabledBackgroundColor}
-        >
+      >
         {children}
       </ResultCountTitle>
     </Wrapper>

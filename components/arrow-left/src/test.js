@@ -7,7 +7,7 @@ import ArrowLeft from '.';
 
 expect.extend(createMatchers(emotion));
 
-describe('ArrowLeft', () => { 
+describe('ArrowLeft', () => {
   it('renders without crashing', () => {
     const wrapper = shallow(<ArrowLeft />);
     expect(wrapper.exists()).toBe(true);
@@ -29,10 +29,10 @@ describe('ArrowLeft', () => {
   });
 
   it('supports no setting of color', () => {
-    const wrapper = shallow(<ArrowLeft/>);
+    const wrapper = shallow(<ArrowLeft />);
     expect(wrapper).not.toHaveStyleRule('color', 'purple');
   });
-  
+
   it('matches snapshot', () => {
     const wrapper = mount(<ArrowLeft fill="red" color="purple">Title</ArrowLeft>);
     expect(wrapper).toMatchSnapshot();

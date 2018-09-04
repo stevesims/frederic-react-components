@@ -14,13 +14,8 @@ describe('CompactTableAccordionGroup', () => {
   });
 
   it('renders title when passed', () => {
-    const wrapper = mount(<CompactTableAccordionGroup expanded="Expanded" title="Title"/>);
-    expect(
-      wrapper
-        .find('Title')
-        .childAt(0)
-        .text(),
-    ).toBe('Title');
+    const wrapper = mount(<CompactTableAccordionGroup expanded="Expanded" title="Title" />);
+    expect(wrapper.find('Title').childAt(0).text()).toBe('Title');
   });
 
   it('triggers onChange when open button is clicked', () => {
@@ -28,7 +23,7 @@ describe('CompactTableAccordionGroup', () => {
     const wrapper = mount(
       <CompactTableAccordionGroup expanded="Expanded" onChange={changeHandler}>
         Test
-      </CompactTableAccordionGroup>,
+      </CompactTableAccordionGroup>
     );
     wrapper.find('OpenButton').simulate('click');
     expect(changeHandler).toHaveBeenCalledTimes(1);
@@ -39,7 +34,7 @@ describe('CompactTableAccordionGroup', () => {
     const wrapper = mount(
       <CompactTableAccordionGroup expanded="Expanded" onChange={changeHandler}>
         Test
-      </CompactTableAccordionGroup>,
+      </CompactTableAccordionGroup>
     );
     wrapper.find('Title').simulate('click');
     expect(changeHandler).not.toHaveBeenCalledTimes(1);
@@ -50,18 +45,18 @@ describe('CompactTableAccordionGroup', () => {
     const wrapper = mount(
       <CompactTableAccordionGroup expanded="Expanded" onChange={changeHandler} changeOnTitleClick>
         Test
-      </CompactTableAccordionGroup>,
+      </CompactTableAccordionGroup>
     );
     wrapper.find('Title').simulate('click');
     expect(changeHandler).toHaveBeenCalledTimes(1);
   });
-  
+
   it('matches snapshot', () => {
     const changeHandler = jest.fn();
     const wrapper = mount(
       <CompactTableAccordionGroup expanded="Expanded" onChange={changeHandler} changeOnTitleClick>
         Test
-      </CompactTableAccordionGroup>,
+      </CompactTableAccordionGroup>
     );
     expect(wrapper).toMatchSnapshot();
   });

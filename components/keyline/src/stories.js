@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs/react';
 import { WithDocsCustom } from '@govuk-react/storybook-components';
@@ -12,26 +13,26 @@ const examples = storiesOf('Typography/Keyline/Examples', module);
 stories.addDecorator(WithDocsCustom(ReadMe));
 stories.addDecorator(withKnobs);
 
-stories.add('Component default', () => (
+stories.add('Component default', () =>
   <div>
     <Keyline>
       <p>example</p>
     </Keyline>
   </div>
-));
+);
 
-examples.add('inlineBlock', () => (
+examples.add('inlineBlock', () =>
   <div>
     <Keyline inlineBlock>
       <p>example</p>
     </Keyline>
   </div>
-));
+);
 
-examples.add('inlineBlock with orange border', () => (
+examples.add('inlineBlock with orange border', () =>
   <div>
     <Keyline inlineBlock borderColor="#ff9900">
       <p>example</p>
     </Keyline>
   </div>
-));
+);
