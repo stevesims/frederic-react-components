@@ -89,6 +89,26 @@ describe('rowsFromObject', () => {
       ],
     });
   });
+
+  it('dont render rows with null regardless of whether skipEmptyValues is set to false', () => {
+    const { rowsFromObject } = exports;
+    const fields = [
+      { key: 'one', heading: 'One' },
+      { key: 'two', heading: 'Two' },
+    ];
+    const object = { one: 'test', two: null };
+    const skipEmptyValues = false;
+    const rows = rowsFromObject(object, fields, skipEmptyValues);
+
+    expect(rows).toEqual({
+      rows: [
+        ['One', 'test'],
+      ],
+      names: [
+        'one',
+      ],
+    });
+  });
 });
 
 describe('titlesFromFields', () => {

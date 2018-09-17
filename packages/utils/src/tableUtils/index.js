@@ -34,8 +34,13 @@ export const rowsFromObject = (object, fields, skipEmptyValues, defaultTransform
     (table, { key, heading, names, transform = defaultTransform}) => {
       // If there is a name attribute in the fields object use it, otherwise fallback to the key
       const nameAttribute = names ? names : key;
-      // Run any passed transforms and normalise undefined values to an empty string
-      const result = transform(object[key], object) || '';
+      // Run any passed transforms
+      let result = transform(object[key], object);
+
+      // Normalise undefined values to empty strings
+      if (result === undefined) {
+        result = '';
+      }
 
       // Empty values are empty strings (normalised above)
       // We never render null
