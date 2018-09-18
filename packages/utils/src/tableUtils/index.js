@@ -27,7 +27,6 @@ export const rowsFromArray = (array, fields, skipEmptyRows, defaultTransform = v
 };
 
 // TODO: ALL THE DOCS
-// TODO: SOME TESTS
 // Empty values and keys are treated the same
 export const rowsFromObject = (object, fields, skipEmptyValues, defaultTransform = value => value) => {
   return fields.reduce(
