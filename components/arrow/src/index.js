@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { BLUE } from 'govuk-colours;
 
 // center of gravity of the triangle should be in the center of the svg
 // for triangle pointing downwards, as it is right angled and isoceles:
@@ -31,7 +32,7 @@ Arrow.propTypes = {
 };
 
 Arrow.defaultProps = {
-  fill: '#0C60A2',
+  fill: BLUE,
   width: 20,
 };
 
