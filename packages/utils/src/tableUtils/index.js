@@ -12,7 +12,7 @@ export function keysFromFields(fields) {
 
 export const titlesFromFields = fields => fields.map(field => field.heading || field.title);
 
-export const rowsFromArray = (array, fields, skipEmptyRows, defaultTransform = value => (value || '-')) => {
+export const rowsFromArray = (array, fields, skipEmptyRows, defaultTransform = value => value) => {
   const keys = keysFromFields(fields);
 
   return array.reduce((rows, item) => {

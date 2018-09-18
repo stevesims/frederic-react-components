@@ -12,12 +12,12 @@ describe('rowsFromArray', () => {
       {},
       { one: 'test', two: 'test' },
     ];
-    
+
     let rows = rowsFromArray(array, fields, false);
-    expect(rows).toEqual([['-', 'two', '-'], ['test', 'test', '-']]);
+    expect(rows).toEqual([[undefined, 'two', undefined], ['test', 'test', undefined]]);
 
     rows = rowsFromArray(array, fields, true);
-    expect(rows).toEqual([['test', 'test', '-']]);
+    expect(rows).toEqual([['test', 'test', undefined]]);
   });
 });
 
@@ -29,7 +29,7 @@ describe('rowsFromObject', () => {
       { key: 'two', heading: 'Two', transform: () => 'hardcodedstring' },
       { key: 'three', heading: 'Three' },
     ];
-    const object = { one: 'test', two: 'test', three: null };    
+    const object = { one: 'test', two: 'test', three: null };
     const skipEmptyValues = true;
     const rows = rowsFromObject(object, fields, skipEmptyValues);
 
