@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 import { WHITE, BLACK, YELLOW, RED } from 'govuk-colours';
-
+import { SPACING } from '@govuk-react/constants';
 
 const LogoAnchor = styled(({
   as: T = 'a',
