@@ -33,11 +33,11 @@ const NavigationContainer = styled('div')({
  * ### Usage
  *
  * Default example
- * 
+ *
  * ```jsx
  * import { Link } from 'react-router-dom';
  * import PageHeader, { asLogoAnchor, asNavAnchor } from '@govuk-frederic/page-header';
- * 
+ *
  * const LogoLink = asLogoAnchor(Link);
  * const NavLink = asNavAnchor(Link);
  * const PageLogo = (<LogoLink to="/">Logo text</LogoLink>);
@@ -80,5 +80,5 @@ PageHeader.defaultProps = {
 
 export default PageHeader;
 
-export asLogoAnchor from './hoc/asLogoAnchor';
-export asNavAnchor from './hoc/asNavAnchor';
+export LogoAnchor from './atoms/logo-anchor';
+export Anchor from './atoms/anchor';
