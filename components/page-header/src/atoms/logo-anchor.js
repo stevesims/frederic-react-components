@@ -9,8 +9,3 @@ const PageHeaderAnchor = styled(({
 });
 
 export default PageHeaderAnchor;
-
-const StyledLogoAnchor = styled(Anchor)({
-
-});
-return StyledLogoAnchor;
