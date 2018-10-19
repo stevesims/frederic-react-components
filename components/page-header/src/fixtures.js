@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import asNavLink from 'as-nav-link';
 
-import PageHeader, { LogoAnchor, Anchor } from '.';
+import PageHeader, { LogoAnchor, NavAnchor } from '.';
 
-const LogoLink = asNavLink(LogoAnchor);
-const NavLink = asNavLink(Anchor);
+const LogoLink = asNavLink()(LogoAnchor);
+const NavLink = asNavLink()(NavAnchor);
 
 const PageLogo = (<LogoLink to="/">Logo text</LogoLink>);
 

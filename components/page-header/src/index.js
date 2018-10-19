@@ -81,4 +81,4 @@ PageHeader.defaultProps = {
 export default PageHeader;
 
 export LogoAnchor from './atoms/logo-anchor';
-export Anchor from './atoms/anchor';
+export NavAnchor from './atoms/nav-anchor';

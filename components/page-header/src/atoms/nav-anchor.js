@@ -1,10 +1,14 @@
+import React from 'react';
 import styled from 'react-emotion';
-
 import { WHITE, BLACK, YELLOW, RED } from 'govuk-colours';
 
-const PageHeaderAnchor = styled(({
+const NavAnchor = styled(({
   as: T = 'a',
-}))({
+  ...props
+}) => <T {...props } />)({
+  fontSize: '16px',
+  fontWeight: '700',
+  lineHeight: '1.25',
   display: 'flex',
   padding: SPACING.SCALE_1,
   color: WHITE,
@@ -21,4 +25,4 @@ const PageHeaderAnchor = styled(({
   color: RED,
 }));
 
-export default PageHeaderAnchor;
+export default NavAnchor;
