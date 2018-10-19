@@ -5,6 +5,7 @@ import { SPACING } from '@govuk-react/constants';
 
 const LogoAnchor = styled(({
   as: T = 'a',
+  active, // include here so we don't pass to <a />
   ...props
 }) => <T {...props } />)({
   fontSize: '30px',
