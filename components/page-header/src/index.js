@@ -36,10 +36,10 @@ const NavigationContainer = styled('div')({
  *
  * ```jsx
  * import { Link } from 'react-router-dom';
- * import PageHeader, { asLogoAnchor, asNavAnchor } from '@govuk-frederic/page-header';
+ * import PageHeader, { LogoAnchor, NavAnchor } from '@govuk-frederic/page-header';
  *
- * const LogoLink = asLogoAnchor(Link);
- * const NavLink = asNavAnchor(Link);
+ * const LogoLink = asNavLink()(LogoAnchor);
+ * const NavLink = asNavLink()(NavAnchor);
  * const PageLogo = (<LogoLink to="/">Logo text</LogoLink>);
  * const PriorityNavigation = (<NavLink to="/">My Account</NavLink>);
  *
