@@ -5,6 +5,8 @@ import styled from 'react-emotion';
 import { SPACING } from '@govuk-react/constants';
 import { BLUE, WHITE } from 'govuk-colours';
 
+import Anchor from './atoms/anchor';
+
 const StyledNavigation = styled('div')({
   width: '100%',
   background: WHITE,
@@ -29,12 +31,13 @@ const NavigationItems = styled('div')({
  * ### Usage
  *
  * Default example
- * 
+ *
  * ```jsx
  * import { Link } from 'react-router-dom';
- * import PageNavigation, { asAnchor } from '@govuk-frederic/page-navigation';
+ * import asNavLink from 'as-nav-link';
+ * import PageNavigation from '@govuk-frederic/page-navigation';
  *
- * const NavLink = asAnchor(Link);
+ * const NavLink = asNavLink(PageNavigation.Anchor);
  * const NavigationItems = [
  *   {
  *     url: '/',
@@ -82,6 +85,6 @@ PageNavigation.defaultProps = {
   children: null,
 };
 
-export default PageNavigation;
+PageNavigation.Anchor = Anchor;
 
-export asAnchor from './hoc/asAnchor';
+export default PageNavigation;

@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Link } from 'react-router-dom';
+import asNavLink from 'as-nav-link';
 
-import PageNavigation, { asAnchor } from '.';
+import PageNavigation from '.';
 
-const NavLink = asAnchor(Link);
+const NavLink = asNavLink(PageNavigation.Anchor);
 const NavigationItems = [
   {
     url: '/',
