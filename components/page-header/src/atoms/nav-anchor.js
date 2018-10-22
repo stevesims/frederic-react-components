@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import { WHITE, BLACK, YELLOW } from 'govuk-colours';
 import { SPACING } from '@govuk-react/constants';
@@ -24,5 +25,10 @@ const NavAnchor = styled(({
     background: YELLOW,
   },
 });
+
+NavAnchor.propTypes = {
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
+  active: PropTypes.bool,
+};
 
 export default NavAnchor;

@@ -40,7 +40,6 @@ exports[`PageHeaderExample renders the storybook example 1`] = `
   color: #ffffff;
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #b10e1e;
 }
 
 .emotion-0:hover {
@@ -71,7 +70,6 @@ exports[`PageHeaderExample renders the storybook example 1`] = `
   color: #ffffff;
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #b10e1e;
 }
 
 .emotion-8:hover {
@@ -80,31 +78,6 @@ exports[`PageHeaderExample renders the storybook example 1`] = `
 }
 
 .emotion-8:focus {
-  outline: none;
-  color: #0b0c0c;
-  background: #ffbf47;
-}
-
-.emotion-14 {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.25;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 5px;
-  color: #ffffff;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.emotion-14:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.emotion-14:focus {
   outline: none;
   color: #0b0c0c;
   background: #ffbf47;
@@ -260,16 +233,16 @@ exports[`PageHeaderExample renders the storybook example 1`] = `
                             <Component
                               active={false}
                               as={[Function]}
-                              className="emotion-14 emotion-9"
+                              className="emotion-8 emotion-9"
                               to="/account"
                             >
                               <Link
-                                className="emotion-14 emotion-9"
+                                className="emotion-8 emotion-9"
                                 replace={false}
                                 to="/account"
                               >
                                 <a
-                                  className="emotion-14 emotion-9"
+                                  className="emotion-8 emotion-9"
                                   href="/account"
                                   onClick={[Function]}
                                 >
@@ -299,16 +272,16 @@ exports[`PageHeaderExample renders the storybook example 1`] = `
                             <Component
                               active={false}
                               as={[Function]}
-                              className="emotion-14 emotion-9"
+                              className="emotion-8 emotion-9"
                               to="/account/subsection"
                             >
                               <Link
-                                className="emotion-14 emotion-9"
+                                className="emotion-8 emotion-9"
                                 replace={false}
                                 to="/account/subsection"
                               >
                                 <a
-                                  className="emotion-14 emotion-9"
+                                  className="emotion-8 emotion-9"
                                   href="/account/subsection"
                                   onClick={[Function]}
                                 >

@@ -40,6 +40,7 @@ const NavigationContainer = styled('div')({
  * ```jsx
  * import { Link } from 'react-router-dom';
  * import PageHeader from '@govuk-frederic/page-header';
+ * import asNavLink from 'as-nav-link';
  *
  * const LogoLink = asNavLink()(PageHeader.LogoAnchor);
  * const NavLink = asNavLink()(PageHeader.NavAnchor);
