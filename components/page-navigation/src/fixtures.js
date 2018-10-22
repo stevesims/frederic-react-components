@@ -10,8 +10,8 @@ const ReactRouterExample = () => (
   <BrowserRouter>
     <PageNavigation>
       <NavLink exact to="/">Home</NavLink>
-      <NavLink exact to="/section-01">Section 01</NavLink>
-      <NavLink exact to="/section-02">Section 02</NavLink>
+      <NavLink to="/section-01">Section 01</NavLink>
+      <NavLink to="/section-02">Section 02</NavLink>
     </PageNavigation>
   </BrowserRouter>
 );
