@@ -307,16 +307,13 @@ exports[`PageNavigationExample renders the with React Router 1`] = `
                       </NavLinkWithProp>
                     </Component>
                     <Component
-                      exact={true}
                       to="/section-01"
                     >
                       <NavLinkWithProp
                         activeProp="active"
-                        exact={true}
                         to="/section-01"
                       >
                         <Route
-                          exact={true}
                           path="\\\\/section-01"
                         >
                           <Anchor
@@ -349,16 +346,13 @@ exports[`PageNavigationExample renders the with React Router 1`] = `
                       </NavLinkWithProp>
                     </Component>
                     <Component
-                      exact={true}
                       to="/section-02"
                     >
                       <NavLinkWithProp
                         activeProp="active"
-                        exact={true}
                         to="/section-02"
                       >
                         <Route
-                          exact={true}
                           path="\\\\/section-02"
                         >
                           <Anchor
