@@ -4,19 +4,15 @@ import { mount } from 'enzyme';
 import { PageNavigationExample, ReactRouterExample } from './fixtures';
 
 describe(PageNavigationExample, () => {
-  let wrapper;
-
   it('renders the storybook example', () => {
-    wrapper = mount(<PageNavigationExample />);
+    const wrapper = mount(<PageNavigationExample />);
     expect(wrapper).toMatchSnapshot();
   });
 });
 
 describe(PageNavigationExample, () => {
-  let wrapper;
-
   it('renders the with React Router', () => {
-    wrapper = mount(<ReactRouterExample />);
+    const wrapper = mount(<ReactRouterExample />);
     expect(wrapper).toMatchSnapshot();
   });
 });
