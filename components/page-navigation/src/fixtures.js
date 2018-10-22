@@ -18,9 +18,9 @@ const ReactRouterExample = () => (
 
 const PageNavigationExample = () => (
   <PageNavigation>
-    <PageNavigation.Anchor exact to="/">Home</PageNavigation.Anchor>
-    <PageNavigation.Anchor exact to="/section-01">Section 01</PageNavigation.Anchor>
-    <PageNavigation.Anchor exact to="/section-02">Section 02</PageNavigation.Anchor>
+    <PageNavigation.Anchor href="/">Home</PageNavigation.Anchor>
+    <PageNavigation.Anchor href="/section-01">Section 01</PageNavigation.Anchor>
+    <PageNavigation.Anchor href="/section-02">Section 02</PageNavigation.Anchor>
   </PageNavigation>
 );
 

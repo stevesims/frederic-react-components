@@ -75,54 +75,45 @@ exports[`PageNavigationExample renders the storybook example 1`] = `
                 className="emotion-12 emotion-13"
               >
                 <Anchor
-                  exact={true}
-                  to="/"
+                  href="/"
                 >
                   <Component
                     className="emotion-0 emotion-1"
-                    exact={true}
-                    to="/"
+                    href="/"
                   >
                     <a
                       className="emotion-0 emotion-1"
-                      exact={true}
-                      to="/"
+                      href="/"
                     >
                       Home
                     </a>
                   </Component>
                 </Anchor>
                 <Anchor
-                  exact={true}
-                  to="/section-01"
+                  href="/section-01"
                 >
                   <Component
                     className="emotion-0 emotion-1"
-                    exact={true}
-                    to="/section-01"
+                    href="/section-01"
                   >
                     <a
                       className="emotion-0 emotion-1"
-                      exact={true}
-                      to="/section-01"
+                      href="/section-01"
                     >
                       Section 01
                     </a>
                   </Component>
                 </Anchor>
                 <Anchor
-                  exact={true}
-                  to="/section-02"
+                  href="/section-02"
                 >
                   <Component
                     className="emotion-0 emotion-1"
-                    exact={true}
-                    to="/section-02"
+                    href="/section-02"
                   >
                     <a
                       className="emotion-0 emotion-1"
-                      exact={true}
-                      to="/section-02"
+                      href="/section-02"
                     >
                       Section 02
                     </a>
