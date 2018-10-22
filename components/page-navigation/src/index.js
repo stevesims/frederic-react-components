@@ -33,38 +33,27 @@ const NavigationItems = styled('div')({
  * Default example
  *
  * ```jsx
- * import { Link } from 'react-router-dom';
+ * import React from 'react';
+ * import { BrowserRouter } from 'react-router-dom';
  * import asNavLink from 'as-nav-link';
- * import PageNavigation from '@govuk-frederic/page-navigation';
- *
- * const NavLink = asNavLink(PageNavigation.Anchor);
- * const NavigationItems = [
- *   {
- *     url: '/',
- *     title: 'Home',
- *   },
- *   {
- *     url: '/section-01',
- *     title: 'Section 01',
- *   },
- *   {
- *     url: '/section-02',
- *     title: 'Section 02',
- *   },
- * ];
- *
- * …
- *
- * <PageNavigation>
- *   {NavigationItems.map(({url, title}, index) => (
- *     <NavLink key={index} to={url}>{title}</NavLink>
- *   ))}
- * </PageNavigation>
+
+ * import PageNavigation from '.';
+
+ * const NavLink = asNavLink()(PageNavigation.Anchor);
+
+ * const PageNavigationExample = () => (
+ *   <BrowserRouter>
+ *     <PageNavigation>
+ *       <NavLink exact to="/">Home</NavLink>
+ *       <NavLink exact to="/section-01">Section 01</NavLink>
+ *       <NavLink exact to="/section-02">Section 02</NavLink>
+ *     </PageNavigation>
+ *   </BrowserRouter>
+ * );
  * ```
  *
  * ### TODO:
  * - Add responsive considerations
- * - Replace magic numbers from HOC items with constants
  */
 const PageNavigation = ({ children }) => (
   <StyledNavigation>
