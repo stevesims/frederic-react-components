@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
-import { WHITE, BLACK, YELLOW, RED } from 'govuk-colours';
+import { WHITE, BLACK, YELLOW } from 'govuk-colours';
 import { SPACING } from '@govuk-react/constants';
 
 const NavAnchor = styled(({
@@ -23,8 +23,6 @@ const NavAnchor = styled(({
     color: BLACK,
     background: YELLOW,
   },
-}, ({ active }) => (active && {
-  color: RED,
-}));
+});
 
 export default NavAnchor;
