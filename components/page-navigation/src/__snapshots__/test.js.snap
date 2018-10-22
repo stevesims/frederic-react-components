@@ -49,14 +49,43 @@ exports[`PageNavigationExample renders the storybook example 1`] = `
   padding-left: 15px;
   padding-bottom: 11px;
   padding-right: 15px;
+  border-color: #005ea5;
 }
 
 .emotion-0:hover {
   color: #2b8cc4;
-  border-bottom: 4px solid #2b8cc4;
+  border-color: #2b8cc4;
 }
 
 .emotion-0:focus {
+  outline: 3px solid #ffbf47;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  color: #005ea5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 700;
+  border-bottom: 4px solid transparent;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-bottom: 11px;
+  padding-right: 15px;
+}
+
+.emotion-6:hover {
+  color: #2b8cc4;
+  border-color: #2b8cc4;
+}
+
+.emotion-6:focus {
   outline: 3px solid #ffbf47;
 }
 
@@ -97,75 +126,132 @@ exports[`PageNavigationExample renders the storybook example 1`] = `
                   <div
                     className="emotion-18 emotion-19"
                   >
-                    <StyledHoc
-                      key="0"
+                    <Component
+                      exact={true}
                       to="/"
                     >
-                      <Anchor
-                        className="emotion-0 emotion-1"
+                      <NavLinkWithProp
+                        activeProp="active"
+                        exact={true}
                         to="/"
                       >
-                        <Link
-                          className="emotion-0 emotion-1"
-                          replace={false}
-                          to="/"
+                        <Route
+                          exact={true}
+                          path="\\\\/"
                         >
-                          <a
-                            className="emotion-0 emotion-1"
-                            href="/"
-                            onClick={[Function]}
+                          <Anchor
+                            active={true}
+                            as={[Function]}
+                            to="/"
                           >
-                            Home
-                          </a>
-                        </Link>
-                      </Anchor>
-                    </StyledHoc>
-                    <StyledHoc
-                      key="1"
+                            <Component
+                              active={true}
+                              as={[Function]}
+                              className="emotion-0 emotion-1"
+                              to="/"
+                            >
+                              <Link
+                                className="emotion-0 emotion-1"
+                                replace={false}
+                                to="/"
+                              >
+                                <a
+                                  className="emotion-0 emotion-1"
+                                  href="/"
+                                  onClick={[Function]}
+                                >
+                                  Home
+                                </a>
+                              </Link>
+                            </Component>
+                          </Anchor>
+                        </Route>
+                      </NavLinkWithProp>
+                    </Component>
+                    <Component
+                      exact={true}
                       to="/section-01"
                     >
-                      <Anchor
-                        className="emotion-0 emotion-1"
+                      <NavLinkWithProp
+                        activeProp="active"
+                        exact={true}
                         to="/section-01"
                       >
-                        <Link
-                          className="emotion-0 emotion-1"
-                          replace={false}
-                          to="/section-01"
+                        <Route
+                          exact={true}
+                          path="\\\\/section-01"
                         >
-                          <a
-                            className="emotion-0 emotion-1"
-                            href="/section-01"
-                            onClick={[Function]}
+                          <Anchor
+                            active={false}
+                            as={[Function]}
+                            to="/section-01"
                           >
-                            Section 01
-                          </a>
-                        </Link>
-                      </Anchor>
-                    </StyledHoc>
-                    <StyledHoc
-                      key="2"
+                            <Component
+                              active={false}
+                              as={[Function]}
+                              className="emotion-6 emotion-1"
+                              to="/section-01"
+                            >
+                              <Link
+                                className="emotion-6 emotion-1"
+                                replace={false}
+                                to="/section-01"
+                              >
+                                <a
+                                  className="emotion-6 emotion-1"
+                                  href="/section-01"
+                                  onClick={[Function]}
+                                >
+                                  Section 01
+                                </a>
+                              </Link>
+                            </Component>
+                          </Anchor>
+                        </Route>
+                      </NavLinkWithProp>
+                    </Component>
+                    <Component
+                      exact={true}
                       to="/section-02"
                     >
-                      <Anchor
-                        className="emotion-0 emotion-1"
+                      <NavLinkWithProp
+                        activeProp="active"
+                        exact={true}
                         to="/section-02"
                       >
-                        <Link
-                          className="emotion-0 emotion-1"
-                          replace={false}
-                          to="/section-02"
+                        <Route
+                          exact={true}
+                          path="\\\\/section-02"
                         >
-                          <a
-                            className="emotion-0 emotion-1"
-                            href="/section-02"
-                            onClick={[Function]}
+                          <Anchor
+                            active={false}
+                            as={[Function]}
+                            to="/section-02"
                           >
-                            Section 02
-                          </a>
-                        </Link>
-                      </Anchor>
-                    </StyledHoc>
+                            <Component
+                              active={false}
+                              as={[Function]}
+                              className="emotion-6 emotion-1"
+                              to="/section-02"
+                            >
+                              <Link
+                                className="emotion-6 emotion-1"
+                                replace={false}
+                                to="/section-02"
+                              >
+                                <a
+                                  className="emotion-6 emotion-1"
+                                  href="/section-02"
+                                  onClick={[Function]}
+                                >
+                                  Section 02
+                                </a>
+                              </Link>
+                            </Component>
+                          </Anchor>
+                        </Route>
+                      </NavLinkWithProp>
+                    </Component>
                   </div>
                 </NavigationItems>
               </div>

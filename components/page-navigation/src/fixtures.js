@@ -1,31 +1,17 @@
 import React from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import asNavLink from 'as-nav-link';
 
 import PageNavigation from '.';
 
-const NavLink = asNavLink(PageNavigation.Anchor);
-const NavigationItems = [
-  {
-    url: '/',
-    title: 'Home',
-  },
-  {
-    url: '/section-01',
-    title: 'Section 01',
-  },
-  {
-    url: '/section-02',
-    title: 'Section 02',
-  },
-];
+const NavLink = asNavLink()(PageNavigation.Anchor);
 
 const PageNavigationExample = () => (
   <BrowserRouter>
     <PageNavigation>
-      {NavigationItems.map(({url, title}, index) => (
-        <NavLink key={index} to={url}>{title}</NavLink>
-      ))}
+      <NavLink exact to="/">Home</NavLink>
+      <NavLink exact to="/section-01">Section 01</NavLink>
+      <NavLink exact to="/section-02">Section 02</NavLink>
     </PageNavigation>
   </BrowserRouter>
 );
