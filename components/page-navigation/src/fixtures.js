@@ -6,7 +6,7 @@ import PageNavigation from '.';
 
 const NavLink = asNavLink()(PageNavigation.Anchor);
 
-const PageNavigationExample = () => (
+const ReactRouterExample = () => (
   <BrowserRouter>
     <PageNavigation>
       <NavLink exact to="/">Home</NavLink>
@@ -16,8 +16,17 @@ const PageNavigationExample = () => (
   </BrowserRouter>
 );
 
+const PageNavigationExample = () => (
+  <PageNavigation>
+    <PageNavigation.Anchor exact to="/">Home</PageNavigation.Anchor>
+    <PageNavigation.Anchor exact to="/section-01">Section 01</PageNavigation.Anchor>
+    <PageNavigation.Anchor exact to="/section-02">Section 02</PageNavigation.Anchor>
+  </PageNavigation>
+);
+
 export default PageNavigation;
 
 export {
   PageNavigationExample,
+  ReactRouterExample,
 };

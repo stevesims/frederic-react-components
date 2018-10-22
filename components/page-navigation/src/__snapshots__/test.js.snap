@@ -1,6 +1,144 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageNavigationExample renders the storybook example 1`] = `
+.emotion-16 {
+  width: 100%;
+  background: #ffffff;
+  color: #005ea5;
+  border-bottom: solid 1px #e2e2e2;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  color: #005ea5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 700;
+  border-bottom: 4px solid transparent;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-bottom: 11px;
+  padding-right: 15px;
+}
+
+.emotion-0:hover {
+  color: #2b8cc4;
+  border-color: #2b8cc4;
+}
+
+.emotion-0:focus {
+  outline: 3px solid #ffbf47;
+}
+
+<PageNavigationExample>
+  <PageNavigation>
+    <StyledNavigation>
+      <div
+        className="emotion-16 emotion-17"
+      >
+        <InnerContainer>
+          <div
+            className="emotion-14 emotion-15"
+          >
+            <NavigationItems>
+              <div
+                className="emotion-12 emotion-13"
+              >
+                <Anchor
+                  exact={true}
+                  to="/"
+                >
+                  <Component
+                    className="emotion-0 emotion-1"
+                    exact={true}
+                    to="/"
+                  >
+                    <a
+                      className="emotion-0 emotion-1"
+                      exact={true}
+                      to="/"
+                    >
+                      Home
+                    </a>
+                  </Component>
+                </Anchor>
+                <Anchor
+                  exact={true}
+                  to="/section-01"
+                >
+                  <Component
+                    className="emotion-0 emotion-1"
+                    exact={true}
+                    to="/section-01"
+                  >
+                    <a
+                      className="emotion-0 emotion-1"
+                      exact={true}
+                      to="/section-01"
+                    >
+                      Section 01
+                    </a>
+                  </Component>
+                </Anchor>
+                <Anchor
+                  exact={true}
+                  to="/section-02"
+                >
+                  <Component
+                    className="emotion-0 emotion-1"
+                    exact={true}
+                    to="/section-02"
+                  >
+                    <a
+                      className="emotion-0 emotion-1"
+                      exact={true}
+                      to="/section-02"
+                    >
+                      Section 02
+                    </a>
+                  </Component>
+                </Anchor>
+              </div>
+            </NavigationItems>
+          </div>
+        </InnerContainer>
+      </div>
+    </StyledNavigation>
+  </PageNavigation>
+</PageNavigationExample>
+`;
+
+exports[`PageNavigationExample renders the with React Router 1`] = `
 .emotion-22 {
   width: 100%;
   background: #ffffff;
@@ -32,6 +170,34 @@ exports[`PageNavigationExample renders the storybook example 1`] = `
   display: flex;
 }
 
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  color: #005ea5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 700;
+  border-bottom: 4px solid transparent;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-bottom: 11px;
+  padding-right: 15px;
+}
+
+.emotion-6:hover {
+  color: #2b8cc4;
+  border-color: #2b8cc4;
+}
+
+.emotion-6:focus {
+  outline: 3px solid #ffbf47;
+}
+
 .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -61,35 +227,7 @@ exports[`PageNavigationExample renders the storybook example 1`] = `
   outline: 3px solid #ffbf47;
 }
 
-.emotion-6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 5px;
-  color: #005ea5;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 700;
-  border-bottom: 4px solid transparent;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-bottom: 11px;
-  padding-right: 15px;
-}
-
-.emotion-6:hover {
-  color: #2b8cc4;
-  border-color: #2b8cc4;
-}
-
-.emotion-6:focus {
-  outline: 3px solid #ffbf47;
-}
-
-<PageNavigationExample>
+<ReactRouterExample>
   <BrowserRouter>
     <Router
       history={
@@ -261,5 +399,5 @@ exports[`PageNavigationExample renders the storybook example 1`] = `
       </PageNavigation>
     </Router>
   </BrowserRouter>
-</PageNavigationExample>
+</ReactRouterExample>
 `;
