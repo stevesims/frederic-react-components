@@ -15,40 +15,41 @@ exports[`Table matches snapshot 1`] = `
   border-bottom: 1px solid #bfc1c3;
   display: table-cell;
   font-size: 14px;
-  padding: 15px 4px;
+  padding: 15px 5px;
   vertical-align: top;
 }
 
 .emotion-10:first-child {
-  padding: 15px 4px 15px 0;
+  padding: 15px 5px 15px 0;
 }
 
 .emotion-10:last-child {
-  padding: 15px 0 15px 4px;
+  padding: 15px 0 15px 5px;
 }
 
 .emotion-0 {
   border-bottom: 1px solid #bfc1c3;
   display: table-cell;
   font-size: 14px;
-  padding: 15px 4px;
+  padding: 15px 5px;
   vertical-align: top;
   font-weight: bold;
   text-align: left;
 }
 
 .emotion-0:first-child {
-  padding: 15px 4px 15px 0;
+  padding: 15px 5px 15px 0;
 }
 
 .emotion-0:last-child {
-  padding: 15px 0 15px 4px;
+  padding: 15px 0 15px 5px;
 }
 
 .emotion-32 {
   display: table;
   font-family: "nta",Arial,sans-serif;
   width: 100%;
+  border-collapse: collapse;
   table-layout: auto;
   margin-bottom: 15px;
 }
@@ -60,6 +61,7 @@ exports[`Table matches snapshot 1`] = `
 }
 
 <Styled(Table)
+  borderless={false}
   flexibleColumns={true}
   name="name"
   nameByRow={true}
@@ -99,6 +101,7 @@ exports[`Table matches snapshot 1`] = `
       ],
     ]
   }
+  spacing="15px"
   titles={
     Array [
       "Heading 1",
@@ -109,6 +112,7 @@ exports[`Table matches snapshot 1`] = `
   }
 >
   <Table
+    borderless={false}
     className="emotion-34"
     flexibleColumns={true}
     name="name"
@@ -149,6 +153,7 @@ exports[`Table matches snapshot 1`] = `
         ],
       ]
     }
+    spacing="15px"
     titles={
       Array [
         "Heading 1",
@@ -170,45 +175,57 @@ exports[`Table matches snapshot 1`] = `
         <thead>
           <tr>
             <TableHeading
+              borderless={false}
               key="0"
               name="heading"
+              spacing="15px"
             >
               <th
                 className="emotion-0 emotion-1"
                 name="heading"
+                spacing="15px"
               >
                 Heading 1
               </th>
             </TableHeading>
             <TableHeading
+              borderless={false}
               key="1"
               name="heading"
+              spacing="15px"
             >
               <th
                 className="emotion-0 emotion-1"
                 name="heading"
+                spacing="15px"
               >
                 Heading 2
               </th>
             </TableHeading>
             <TableHeading
+              borderless={false}
               key="2"
               name="heading"
+              spacing="15px"
             >
               <th
                 className="emotion-0 emotion-1"
                 name="heading"
+                spacing="15px"
               >
                 Heading 3
               </th>
             </TableHeading>
             <TableHeading
+              borderless={false}
               key="3"
               name="heading"
+              spacing="15px"
             >
               <th
                 className="emotion-0 emotion-1"
                 name="heading"
+                spacing="15px"
               >
                 Heading 4
               </th>
@@ -220,47 +237,59 @@ exports[`Table matches snapshot 1`] = `
             key="0"
           >
             <TableHeading
+              borderless={false}
               columnCount={4}
               key="0"
               name="one"
               rowHeading={true}
+              spacing="15px"
             >
               <th
                 className="emotion-0 emotion-1"
                 name="one"
+                spacing="15px"
               >
                 Content 1-1
               </th>
             </TableHeading>
             <TableData
+              borderless={false}
               key="1"
               name="one"
+              spacing="15px"
             >
               <td
                 className="emotion-10 emotion-11"
                 name="one"
+                spacing="15px"
               >
                 Content 1-2
               </td>
             </TableData>
             <TableData
+              borderless={false}
               key="2"
               name="one"
+              spacing="15px"
             >
               <td
                 className="emotion-10 emotion-11"
                 name="one"
+                spacing="15px"
               >
                 Content 1-3
               </td>
             </TableData>
             <TableData
+              borderless={false}
               key="3"
               name="one"
+              spacing="15px"
             >
               <td
                 className="emotion-10 emotion-11"
                 name="one"
+                spacing="15px"
               >
                 Content 1-4
               </td>
@@ -270,47 +299,59 @@ exports[`Table matches snapshot 1`] = `
             key="1"
           >
             <TableHeading
+              borderless={false}
               columnCount={4}
               key="0"
               name="i"
               rowHeading={true}
+              spacing="15px"
             >
               <th
                 className="emotion-0 emotion-1"
                 name="i"
+                spacing="15px"
               >
                 Content 2-1
               </th>
             </TableHeading>
             <TableData
+              borderless={false}
               key="1"
               name="am"
+              spacing="15px"
             >
               <td
                 className="emotion-10 emotion-11"
                 name="am"
+                spacing="15px"
               >
                 Content 2-2
               </td>
             </TableData>
             <TableData
+              borderless={false}
               key="2"
               name="named"
+              spacing="15px"
             >
               <td
                 className="emotion-10 emotion-11"
                 name="named"
+                spacing="15px"
               >
                 Content 2-3
               </td>
             </TableData>
             <TableData
+              borderless={false}
               key="3"
               name="individually"
+              spacing="15px"
             >
               <td
                 className="emotion-10 emotion-11"
                 name="individually"
+                spacing="15px"
               >
                 Content 2-4
               </td>
@@ -320,47 +361,59 @@ exports[`Table matches snapshot 1`] = `
             key="2"
           >
             <TableHeading
+              borderless={false}
               columnCount={4}
               key="0"
               name="three"
               rowHeading={true}
+              spacing="15px"
             >
               <th
                 className="emotion-0 emotion-1"
                 name="three"
+                spacing="15px"
               >
                 Content 3-1
               </th>
             </TableHeading>
             <TableData
+              borderless={false}
               key="1"
               name="three"
+              spacing="15px"
             >
               <td
                 className="emotion-10 emotion-11"
                 name="three"
+                spacing="15px"
               >
                 Content 3-2
               </td>
             </TableData>
             <TableData
+              borderless={false}
               key="2"
               name="three"
+              spacing="15px"
             >
               <td
                 className="emotion-10 emotion-11"
                 name="three"
+                spacing="15px"
               >
                 Content 3-3
               </td>
             </TableData>
             <TableData
+              borderless={false}
               key="3"
               name="three"
+              spacing="15px"
             >
               <td
                 className="emotion-10 emotion-11"
                 name="three"
+                spacing="15px"
               >
                 Content 3-4
               </td>
