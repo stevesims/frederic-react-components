@@ -40,10 +40,10 @@ const TableData = styled('td', {
 })(cellStyles);
 
 const TableHeading = styled('th', {
-  shouldForwardProp: prop => ['borderless', 'spacing'].indexOf(prop) === -1,
+  shouldForwardProp: prop => ['borderless', 'columnCount', 'rowHeading', 'spacing'].indexOf(prop) === -1,
 })(
   cellStyles,
-  ({rowHeading, columnCount}) => (
+  ({ rowHeading, columnCount }) => (
     {
       fontWeight: 'bold',
       textAlign: 'left',

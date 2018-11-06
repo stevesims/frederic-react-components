@@ -242,9 +242,7 @@ exports[`Table matches snapshot 1`] = `
             >
               <th
                 className="emotion-0 emotion-1"
-                columnCount={4}
                 name="one"
-                rowHeading={true}
               >
                 Content 1-1
               </th>
@@ -302,9 +300,7 @@ exports[`Table matches snapshot 1`] = `
             >
               <th
                 className="emotion-0 emotion-1"
-                columnCount={4}
                 name="i"
-                rowHeading={true}
               >
                 Content 2-1
               </th>
@@ -362,9 +358,7 @@ exports[`Table matches snapshot 1`] = `
             >
               <th
                 className="emotion-0 emotion-1"
-                columnCount={4}
                 name="three"
-                rowHeading={true}
               >
                 Content 3-1
               </th>
