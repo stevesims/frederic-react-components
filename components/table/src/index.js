@@ -36,9 +36,12 @@ const cellStyles = ({ borderless, spacing }) => ({
 const TableData = styled('td', {
   // use `forwardProps` here as by default emotion doesn't allow setting `name` prop on a `td`
   forwardProps: ['name'],
+  shouldForwardProp: prop => ['borderless', 'spacing'].indexOf(prop) === -1,
 })(cellStyles);
 
-const TableHeading = styled('th')(
+const TableHeading = styled('th', {
+  shouldForwardProp: prop => ['borderless', 'spacing'].indexOf(prop) === -1,
+})(
   cellStyles,
   ({rowHeading, columnCount}) => (
     {
