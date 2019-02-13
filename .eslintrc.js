@@ -1,5 +1,5 @@
 const { devDependencies } = require('./package.json');
-const { dependencies: gfdd } = require('./packages/govuk-frederic/package.json');
+const { dependencies: gfd } = require('./packages/govuk-frederic/package.json');
 
 module.exports = {
   parser: 'babel-eslint',
@@ -75,7 +75,7 @@ module.exports = {
         "import/core-modules": [
           'govuk-frederic',
           ...Object.keys(devDependencies),
-          ...Object.keys(gffd).filter(dep => dep.startsWith('@govuk-frederic/'))
+          ...Object.keys(gfd).filter(dep => dep.startsWith('@govuk-frederic/'))
         ]
       },
     },
